@@ -23,3 +23,7 @@ CREATE TABLE IF NOT EXISTS wash_encounters (
     model_version VARCHAR(128) NOT NULL,
     model_sha256 VARCHAR(64) NOT NULL,
     dataset_version VARCHAR(128) NOT NULL,
+    attempts_restarted INTEGER NOT NULL DEFAULT 0,
+    producer_client_id VARCHAR(128),
+    producer_epoch VARCHAR(64),
+    protocol_profile_version INTEGER,

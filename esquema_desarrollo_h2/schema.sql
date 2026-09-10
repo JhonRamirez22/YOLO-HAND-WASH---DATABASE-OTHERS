@@ -13,3 +13,8 @@ CREATE TABLE IF NOT EXISTS failed_attempts (
 
 CREATE INDEX IF NOT EXISTS idx_failed_attempts_created
     ON failed_attempts (created_at_epoch_ms);
+
+CREATE TABLE IF NOT EXISTS wash_encounters (
+    session_id VARCHAR(36) PRIMARY KEY,
+    protocol_code VARCHAR(64) NOT NULL,
+    status VARCHAR(32) NOT NULL,

@@ -27,3 +27,7 @@ CREATE TABLE IF NOT EXISTS wash_encounters (
     producer_client_id VARCHAR(128),
     producer_epoch VARCHAR(64),
     protocol_profile_version INTEGER,
+    CONSTRAINT chk_wash_encounters_attempts CHECK (attempts_restarted >= 0)
+);
+
+CREATE INDEX IF NOT EXISTS idx_wash_encounters_started

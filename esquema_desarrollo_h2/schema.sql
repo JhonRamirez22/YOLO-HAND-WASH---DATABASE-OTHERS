@@ -75,3 +75,7 @@ CREATE TABLE IF NOT EXISTS audit_seals (
     object_key VARCHAR(160)
 );
 
+CREATE INDEX IF NOT EXISTS idx_wash_audit_session_event
+    ON wash_audit_events (session_id, event_id DESC);
+
+CREATE INDEX IF NOT EXISTS idx_wash_audit_event_time

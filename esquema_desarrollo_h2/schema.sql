@@ -39,3 +39,7 @@ CREATE TABLE IF NOT EXISTS wash_audit_events (
     event_type VARCHAR(48) NOT NULL,
     actor_subject VARCHAR(128),
     step_code VARCHAR(64),
+    decision_code VARCHAR(48) NOT NULL,
+    reason_code VARCHAR(80),
+    attempt_number INTEGER,
+    frame_sequence BIGINT,

@@ -71,3 +71,7 @@ CREATE TABLE IF NOT EXISTS audit_seals (
     results_digest CHAR(64) NOT NULL,
     results_count BIGINT NOT NULL,
     keyed BOOLEAN NOT NULL,
+    signature CHAR(64) NOT NULL,
+    object_key VARCHAR(160)
+);
+

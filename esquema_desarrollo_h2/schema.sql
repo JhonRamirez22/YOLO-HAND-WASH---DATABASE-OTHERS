@@ -55,3 +55,7 @@ ALTER TABLE wash_audit_events ADD COLUMN IF NOT EXISTS event_hash CHAR(64);
 CREATE TABLE IF NOT EXISTS audit_chain_head (
     id SMALLINT PRIMARY KEY,
     last_event_id BIGINT,
+    last_hash CHAR(64) NOT NULL
+);
+INSERT INTO audit_chain_head (id, last_event_id, last_hash)
+SELECT 1, NULL, '0000000000000000000000000000000000000000000000000000000000000000' FROM (VALUES (1)) AS seed(one)

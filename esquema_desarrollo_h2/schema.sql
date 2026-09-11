@@ -67,3 +67,7 @@ CREATE TABLE IF NOT EXISTS audit_seals (
     window_start_epoch_ms BIGINT NOT NULL,
     to_event_id BIGINT,
     head_hash CHAR(64) NOT NULL,
+    event_count BIGINT NOT NULL,
+    results_digest CHAR(64) NOT NULL,
+    results_count BIGINT NOT NULL,
+    keyed BOOLEAN NOT NULL,

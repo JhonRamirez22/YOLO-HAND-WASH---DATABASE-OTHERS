@@ -43,3 +43,7 @@ CREATE TABLE IF NOT EXISTS wash_audit_events (
     reason_code VARCHAR(80),
     attempt_number INTEGER,
     frame_sequence BIGINT,
+    confidence DOUBLE PRECISION,
+    occurred_at_epoch_ms BIGINT NOT NULL,
+    CONSTRAINT chk_wash_audit_confidence
+        CHECK (confidence IS NULL OR (confidence >= 0 AND confidence <= 1))

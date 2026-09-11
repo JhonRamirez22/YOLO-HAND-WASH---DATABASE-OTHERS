@@ -47,3 +47,7 @@ CREATE TABLE IF NOT EXISTS wash_audit_events (
     occurred_at_epoch_ms BIGINT NOT NULL,
     CONSTRAINT chk_wash_audit_confidence
         CHECK (confidence IS NULL OR (confidence >= 0 AND confidence <= 1))
+);
+
+ALTER TABLE wash_audit_events ADD COLUMN IF NOT EXISTS prev_hash CHAR(64);
+ALTER TABLE wash_audit_events ADD COLUMN IF NOT EXISTS event_hash CHAR(64);

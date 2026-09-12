@@ -83,3 +83,7 @@ CREATE INDEX IF NOT EXISTS idx_wash_audit_event_time
 
 CREATE TABLE IF NOT EXISTS station_enrollment_codes (
     code_hash VARCHAR(64) PRIMARY KEY,
+    station_name VARCHAR(80) NOT NULL,
+    created_by VARCHAR(128) NOT NULL,
+    created_at_epoch_ms BIGINT NOT NULL,
+    expires_at_epoch_ms BIGINT NOT NULL,

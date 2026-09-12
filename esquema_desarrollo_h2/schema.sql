@@ -79,3 +79,7 @@ CREATE INDEX IF NOT EXISTS idx_wash_audit_session_event
     ON wash_audit_events (session_id, event_id DESC);
 
 CREATE INDEX IF NOT EXISTS idx_wash_audit_event_time
+    ON wash_audit_events (occurred_at_epoch_ms DESC);
+
+CREATE TABLE IF NOT EXISTS station_enrollment_codes (
+    code_hash VARCHAR(64) PRIMARY KEY,

@@ -95,3 +95,7 @@ CREATE INDEX IF NOT EXISTS idx_station_enrollment_expiry
     ON station_enrollment_codes (expires_at_epoch_ms);
 
 CREATE TABLE IF NOT EXISTS handwash_stations (
+    station_id VARCHAR(36) PRIMARY KEY,
+    station_name VARCHAR(80) NOT NULL,
+    credential_hash VARCHAR(64) NOT NULL UNIQUE,
+    created_at_epoch_ms BIGINT NOT NULL,

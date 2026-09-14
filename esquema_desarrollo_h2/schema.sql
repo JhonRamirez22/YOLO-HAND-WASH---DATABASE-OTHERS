@@ -103,3 +103,7 @@ CREATE TABLE IF NOT EXISTS handwash_stations (
     revoked_at_epoch_ms BIGINT,
     last_started_at_epoch_ms BIGINT,
     active_session_id VARCHAR(36),
+    active_request_id VARCHAR(36),
+    producer_client_id VARCHAR(128),
+    activation_hash VARCHAR(64),
+    activation_expires_at_epoch_ms BIGINT,

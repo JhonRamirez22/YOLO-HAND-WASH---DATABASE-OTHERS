@@ -107,3 +107,7 @@ CREATE TABLE IF NOT EXISTS handwash_stations (
     producer_client_id VARCHAR(128),
     activation_hash VARCHAR(64),
     activation_expires_at_epoch_ms BIGINT,
+    activated_at_epoch_ms BIGINT,
+    CONSTRAINT chk_station_active_reservation CHECK (
+        (active_session_id IS NULL AND active_request_id IS NULL)
+        OR (active_session_id IS NOT NULL AND active_request_id IS NOT NULL)

@@ -127,3 +127,7 @@ CREATE TABLE IF NOT EXISTS station_operator_access_codes (
     target_email VARCHAR(254) NOT NULL,
     created_by VARCHAR(128) NOT NULL,
     created_at_epoch_ms BIGINT NOT NULL,
+    consumed_at_epoch_ms BIGINT,
+    consumed_by VARCHAR(128),
+    revoked_at_epoch_ms BIGINT,
+    CONSTRAINT fk_operator_code_station FOREIGN KEY (station_id) REFERENCES handwash_stations(station_id)

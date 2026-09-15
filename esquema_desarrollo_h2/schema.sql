@@ -159,3 +159,7 @@ CREATE TABLE IF NOT EXISTS api_keys (
     created_at_epoch_ms BIGINT NOT NULL,
     last_used_at_epoch_ms BIGINT,
     last_used_ip VARCHAR(64),
+    revoked_at_epoch_ms BIGINT,
+    revoked_by VARCHAR(128),
+    CONSTRAINT fk_api_key_station FOREIGN KEY (station_id) REFERENCES handwash_stations(station_id)
+);

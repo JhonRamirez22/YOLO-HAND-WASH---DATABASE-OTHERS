@@ -119,3 +119,7 @@ CREATE INDEX IF NOT EXISTS idx_handwash_stations_created
 
 CREATE UNIQUE INDEX IF NOT EXISTS uq_handwash_stations_activation
     ON handwash_stations (activation_hash);
+
+CREATE TABLE IF NOT EXISTS station_operator_access_codes (
+    code_id VARCHAR(36) PRIMARY KEY,
+    code_hash VARCHAR(64) NOT NULL UNIQUE,

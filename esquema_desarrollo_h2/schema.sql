@@ -151,3 +151,7 @@ CREATE INDEX IF NOT EXISTS idx_operator_grants_station
 
 CREATE TABLE IF NOT EXISTS api_keys (
     key_id VARCHAR(16) PRIMARY KEY,
+    station_id VARCHAR(36) NOT NULL,
+    label VARCHAR(80) NOT NULL,
+    secret_hash VARCHAR(64) NOT NULL,
+    scopes VARCHAR(32) NOT NULL,

@@ -123,3 +123,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uq_handwash_stations_activation
 CREATE TABLE IF NOT EXISTS station_operator_access_codes (
     code_id VARCHAR(36) PRIMARY KEY,
     code_hash VARCHAR(64) NOT NULL UNIQUE,
+    station_id VARCHAR(36) NOT NULL,
+    target_email VARCHAR(254) NOT NULL,
+    created_by VARCHAR(128) NOT NULL,
+    created_at_epoch_ms BIGINT NOT NULL,

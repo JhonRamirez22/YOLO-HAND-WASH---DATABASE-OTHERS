@@ -135,3 +135,7 @@ CREATE TABLE IF NOT EXISTS station_operator_access_codes (
 
 CREATE INDEX IF NOT EXISTS idx_operator_codes_station_created
     ON station_operator_access_codes (station_id, created_at_epoch_ms DESC);
+
+CREATE TABLE IF NOT EXISTS station_operator_grants (
+    cognito_subject VARCHAR(128) PRIMARY KEY,
+    email VARCHAR(254) NOT NULL,

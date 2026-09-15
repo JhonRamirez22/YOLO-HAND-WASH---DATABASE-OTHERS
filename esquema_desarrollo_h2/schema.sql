@@ -147,3 +147,7 @@ CREATE TABLE IF NOT EXISTS station_operator_grants (
 );
 
 CREATE INDEX IF NOT EXISTS idx_operator_grants_station
+    ON station_operator_grants (station_id, revoked_at_epoch_ms);
+
+CREATE TABLE IF NOT EXISTS api_keys (
+    key_id VARCHAR(16) PRIMARY KEY,

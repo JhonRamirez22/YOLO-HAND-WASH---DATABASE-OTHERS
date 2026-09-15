@@ -115,3 +115,7 @@ CREATE TABLE IF NOT EXISTS handwash_stations (
 );
 
 CREATE INDEX IF NOT EXISTS idx_handwash_stations_created
+    ON handwash_stations (created_at_epoch_ms DESC);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uq_handwash_stations_activation
+    ON handwash_stations (activation_hash);

@@ -139,3 +139,7 @@ CREATE INDEX IF NOT EXISTS idx_operator_codes_station_created
 CREATE TABLE IF NOT EXISTS station_operator_grants (
     cognito_subject VARCHAR(128) PRIMARY KEY,
     email VARCHAR(254) NOT NULL,
+    station_id VARCHAR(36) NOT NULL,
+    granted_by VARCHAR(128) NOT NULL,
+    granted_at_epoch_ms BIGINT NOT NULL,
+    revoked_at_epoch_ms BIGINT,

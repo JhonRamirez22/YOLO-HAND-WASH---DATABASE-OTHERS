@@ -143,3 +143,7 @@ CREATE TABLE IF NOT EXISTS station_operator_grants (
     granted_by VARCHAR(128) NOT NULL,
     granted_at_epoch_ms BIGINT NOT NULL,
     revoked_at_epoch_ms BIGINT,
+    CONSTRAINT fk_operator_grant_station FOREIGN KEY (station_id) REFERENCES handwash_stations(station_id)
+);
+
+CREATE INDEX IF NOT EXISTS idx_operator_grants_station

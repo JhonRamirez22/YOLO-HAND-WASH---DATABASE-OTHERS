@@ -163,3 +163,7 @@ CREATE TABLE IF NOT EXISTS api_keys (
     revoked_by VARCHAR(128),
     CONSTRAINT fk_api_key_station FOREIGN KEY (station_id) REFERENCES handwash_stations(station_id)
 );
+
+CREATE INDEX IF NOT EXISTS idx_api_keys_station ON api_keys (station_id, revoked_at_epoch_ms);
+
+CREATE TABLE IF NOT EXISTS api_key_sessions (

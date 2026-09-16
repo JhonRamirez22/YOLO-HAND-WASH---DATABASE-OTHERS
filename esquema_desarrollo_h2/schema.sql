@@ -195,3 +195,7 @@ CREATE TABLE IF NOT EXISTS admin_sessions (
     account_id BIGINT NOT NULL,
     expires_at_epoch_ms BIGINT NOT NULL,
     CONSTRAINT fk_admin_session_account FOREIGN KEY (account_id) REFERENCES admin_accounts(account_id)
+);
+
+CREATE INDEX IF NOT EXISTS idx_admin_sessions_expiry ON admin_sessions (expires_at_epoch_ms);
+

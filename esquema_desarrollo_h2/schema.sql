@@ -171,3 +171,7 @@ CREATE TABLE IF NOT EXISTS api_key_sessions (
     key_id VARCHAR(16) NOT NULL,
     expires_at_epoch_ms BIGINT NOT NULL,
     CONSTRAINT fk_api_key_session_key FOREIGN KEY (key_id) REFERENCES api_keys(key_id)
+);
+
+CREATE INDEX IF NOT EXISTS idx_api_key_sessions_expiry ON api_key_sessions (expires_at_epoch_ms);
+

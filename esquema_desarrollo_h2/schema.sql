@@ -211,3 +211,7 @@ CREATE TABLE IF NOT EXISTS friction_attempt_validation (
     created_at_epoch_ms BIGINT NOT NULL,
     updated_at_epoch_ms BIGINT NOT NULL,
     started_at_epoch_ms BIGINT,
+    finished_at_epoch_ms BIGINT,
+    duration_ms BIGINT CHECK (duration_ms >= 0),
+    slow BOOLEAN DEFAULT FALSE NOT NULL,
+    -- No value-list CHECK here: H2 2.4 binds IN-list checks (and ORs it rewrites to IN)

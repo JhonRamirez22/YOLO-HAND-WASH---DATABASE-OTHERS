@@ -167,3 +167,7 @@ CREATE TABLE IF NOT EXISTS api_keys (
 CREATE INDEX IF NOT EXISTS idx_api_keys_station ON api_keys (station_id, revoked_at_epoch_ms);
 
 CREATE TABLE IF NOT EXISTS api_key_sessions (
+    token_hash VARCHAR(64) PRIMARY KEY,
+    key_id VARCHAR(16) NOT NULL,
+    expires_at_epoch_ms BIGINT NOT NULL,
+    CONSTRAINT fk_api_key_session_key FOREIGN KEY (key_id) REFERENCES api_keys(key_id)

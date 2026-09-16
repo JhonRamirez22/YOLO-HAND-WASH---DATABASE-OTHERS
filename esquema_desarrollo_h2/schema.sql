@@ -199,3 +199,7 @@ CREATE TABLE IF NOT EXISTS admin_sessions (
 
 CREATE INDEX IF NOT EXISTS idx_admin_sessions_expiry ON admin_sessions (expires_at_epoch_ms);
 
+CREATE TABLE IF NOT EXISTS friction_attempt_validation (
+    session_id VARCHAR(36) NOT NULL,
+    attempt_number INTEGER NOT NULL CHECK (attempt_number > 0),
+    policy_version VARCHAR(48) NOT NULL,

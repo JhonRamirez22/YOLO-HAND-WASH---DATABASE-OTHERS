@@ -191,3 +191,7 @@ CREATE TABLE IF NOT EXISTS admin_accounts (
 );
 
 CREATE TABLE IF NOT EXISTS admin_sessions (
+    token_hash VARCHAR(64) PRIMARY KEY,
+    account_id BIGINT NOT NULL,
+    expires_at_epoch_ms BIGINT NOT NULL,
+    CONSTRAINT fk_admin_session_account FOREIGN KEY (account_id) REFERENCES admin_accounts(account_id)

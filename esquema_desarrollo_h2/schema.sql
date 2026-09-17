@@ -219,3 +219,7 @@ CREATE TABLE IF NOT EXISTS friction_attempt_validation (
     -- these values; PostgreSQL migration V8 keeps the CHECKs.
     outcome VARCHAR(16),
     evidence_status VARCHAR(24),
+    PRIMARY KEY (session_id, attempt_number)
+);
+CREATE TABLE IF NOT EXISTS friction_step_validation (
+    session_id VARCHAR(36) NOT NULL,

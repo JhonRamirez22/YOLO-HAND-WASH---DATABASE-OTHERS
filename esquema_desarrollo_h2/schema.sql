@@ -215,3 +215,7 @@ CREATE TABLE IF NOT EXISTS friction_attempt_validation (
     duration_ms BIGINT CHECK (duration_ms >= 0),
     slow BOOLEAN DEFAULT FALSE NOT NULL,
     -- No value-list CHECK here: H2 2.4 binds IN-list checks (and ORs it rewrites to IN)
+    -- to the creating session and fails once that connection closes. Java enums constrain
+    -- these values; PostgreSQL migration V8 keeps the CHECKs.
+    outcome VARCHAR(16),
+    evidence_status VARCHAR(24),

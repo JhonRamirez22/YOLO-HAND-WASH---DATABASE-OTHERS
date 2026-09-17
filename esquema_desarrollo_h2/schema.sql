@@ -227,3 +227,7 @@ CREATE TABLE IF NOT EXISTS friction_step_validation (
     step_code VARCHAR(64) NOT NULL,
     status VARCHAR(32) NOT NULL,
     credited_ms BIGINT NOT NULL CHECK (credited_ms >= 0),
+    required_ms BIGINT NOT NULL CHECK (required_ms > 0),
+    reason VARCHAR(80),
+    PRIMARY KEY (session_id, attempt_number, step_code),
+    FOREIGN KEY (session_id, attempt_number) REFERENCES friction_attempt_validation(session_id, attempt_number)

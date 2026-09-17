@@ -251,3 +251,7 @@ CREATE TABLE IF NOT EXISTS protocol_profiles (
 MERGE INTO protocol_profiles (version, step_1_ms, step_2_ms, step_3_ms, step_4_ms,
     step_5_ms, step_6_ms, slow_threshold_ms, created_by, created_at_epoch_ms)
 KEY (version) VALUES (1, 7000, 7000, 7000, 7000, 7000, 7000, 60000, 'SYSTEM', 0);
+
+ALTER TABLE protocol_profiles ADD COLUMN IF NOT EXISTS reason VARCHAR(200);
+ALTER TABLE protocol_profiles ADD COLUMN IF NOT EXISTS reverted_from INTEGER;
+ALTER TABLE protocol_profiles ADD COLUMN IF NOT EXISTS status VARCHAR(10) DEFAULT 'ACTIVE' NOT NULL;

@@ -231,3 +231,7 @@ CREATE TABLE IF NOT EXISTS friction_step_validation (
     reason VARCHAR(80),
     PRIMARY KEY (session_id, attempt_number, step_code),
     FOREIGN KEY (session_id, attempt_number) REFERENCES friction_attempt_validation(session_id, attempt_number)
+);
+
+ALTER TABLE wash_encounters ADD COLUMN IF NOT EXISTS protocol_profile_version INTEGER;
+

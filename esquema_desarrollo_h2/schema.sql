@@ -287,3 +287,7 @@ CREATE TABLE IF NOT EXISTS validation_reports (
     created_at_epoch_ms BIGINT NOT NULL
 );
 
+-- Upgrades local H2 files created before V8; fresh databases get the CHECKs above.
+ALTER TABLE friction_attempt_validation ADD COLUMN IF NOT EXISTS started_at_epoch_ms BIGINT;
+ALTER TABLE friction_attempt_validation ADD COLUMN IF NOT EXISTS finished_at_epoch_ms BIGINT;
+ALTER TABLE friction_attempt_validation ADD COLUMN IF NOT EXISTS duration_ms BIGINT;

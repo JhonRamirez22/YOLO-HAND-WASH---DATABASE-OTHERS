@@ -295,3 +295,7 @@ ALTER TABLE friction_attempt_validation ADD COLUMN IF NOT EXISTS slow BOOLEAN DE
 ALTER TABLE friction_attempt_validation ADD COLUMN IF NOT EXISTS outcome VARCHAR(16);
 ALTER TABLE friction_attempt_validation ADD COLUMN IF NOT EXISTS evidence_status VARCHAR(24);
 ALTER TABLE friction_attempt_validation ADD COLUMN IF NOT EXISTS score_pct INTEGER;
+ALTER TABLE friction_attempt_validation ADD COLUMN IF NOT EXISTS verdict VARCHAR(10);
+ALTER TABLE friction_step_validation ADD COLUMN IF NOT EXISTS quality_pct INTEGER;
+CREATE INDEX IF NOT EXISTS idx_friction_attempt_outcome_finished
+    ON friction_attempt_validation (outcome, finished_at_epoch_ms);

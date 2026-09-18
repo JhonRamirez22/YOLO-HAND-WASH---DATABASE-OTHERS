@@ -259,3 +259,7 @@ ALTER TABLE protocol_profiles ADD COLUMN IF NOT EXISTS decided_by VARCHAR(128);
 ALTER TABLE protocol_profiles ADD COLUMN IF NOT EXISTS decided_at_epoch_ms BIGINT;
 
 CREATE TABLE IF NOT EXISTS change_control_settings (
+    id SMALLINT PRIMARY KEY,
+    second_approver_required BOOLEAN NOT NULL,
+    updated_by VARCHAR(128) NOT NULL,
+    updated_at_epoch_ms BIGINT NOT NULL

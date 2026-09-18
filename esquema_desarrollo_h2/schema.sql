@@ -291,3 +291,7 @@ CREATE TABLE IF NOT EXISTS validation_reports (
 ALTER TABLE friction_attempt_validation ADD COLUMN IF NOT EXISTS started_at_epoch_ms BIGINT;
 ALTER TABLE friction_attempt_validation ADD COLUMN IF NOT EXISTS finished_at_epoch_ms BIGINT;
 ALTER TABLE friction_attempt_validation ADD COLUMN IF NOT EXISTS duration_ms BIGINT;
+ALTER TABLE friction_attempt_validation ADD COLUMN IF NOT EXISTS slow BOOLEAN DEFAULT FALSE NOT NULL;
+ALTER TABLE friction_attempt_validation ADD COLUMN IF NOT EXISTS outcome VARCHAR(16);
+ALTER TABLE friction_attempt_validation ADD COLUMN IF NOT EXISTS evidence_status VARCHAR(24);
+ALTER TABLE friction_attempt_validation ADD COLUMN IF NOT EXISTS score_pct INTEGER;

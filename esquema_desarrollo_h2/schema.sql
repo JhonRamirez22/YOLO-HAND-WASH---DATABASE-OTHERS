@@ -283,3 +283,7 @@ CREATE TABLE IF NOT EXISTS validation_reports (
     title VARCHAR(120) NOT NULL,
     summary VARCHAR(500) NOT NULL,
     document_sha256 CHAR(64) NOT NULL,
+    created_by VARCHAR(128) NOT NULL,
+    created_at_epoch_ms BIGINT NOT NULL
+);
+

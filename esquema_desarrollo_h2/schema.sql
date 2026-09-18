@@ -267,3 +267,7 @@ CREATE TABLE IF NOT EXISTS change_control_settings (
 INSERT INTO change_control_settings (id, second_approver_required, updated_by, updated_at_epoch_ms)
 SELECT 1, FALSE, 'SYSTEM', 0 FROM (VALUES (1)) AS seed(one)
 WHERE NOT EXISTS (SELECT 1 FROM change_control_settings WHERE id = 1);
+
+CREATE TABLE IF NOT EXISTS model_releases (
+    model_sha256 CHAR(64) NOT NULL,
+    model_version VARCHAR(128) NOT NULL,

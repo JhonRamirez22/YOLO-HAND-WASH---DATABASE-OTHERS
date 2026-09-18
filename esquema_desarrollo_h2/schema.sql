@@ -255,3 +255,7 @@ KEY (version) VALUES (1, 7000, 7000, 7000, 7000, 7000, 7000, 60000, 'SYSTEM', 0)
 ALTER TABLE protocol_profiles ADD COLUMN IF NOT EXISTS reason VARCHAR(200);
 ALTER TABLE protocol_profiles ADD COLUMN IF NOT EXISTS reverted_from INTEGER;
 ALTER TABLE protocol_profiles ADD COLUMN IF NOT EXISTS status VARCHAR(10) DEFAULT 'ACTIVE' NOT NULL;
+ALTER TABLE protocol_profiles ADD COLUMN IF NOT EXISTS decided_by VARCHAR(128);
+ALTER TABLE protocol_profiles ADD COLUMN IF NOT EXISTS decided_at_epoch_ms BIGINT;
+
+CREATE TABLE IF NOT EXISTS change_control_settings (

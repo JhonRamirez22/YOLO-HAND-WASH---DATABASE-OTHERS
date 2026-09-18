@@ -271,3 +271,7 @@ WHERE NOT EXISTS (SELECT 1 FROM change_control_settings WHERE id = 1);
 CREATE TABLE IF NOT EXISTS model_releases (
     model_sha256 CHAR(64) NOT NULL,
     model_version VARCHAR(128) NOT NULL,
+    dataset_version VARCHAR(128) NOT NULL,
+    first_seen_epoch_ms BIGINT NOT NULL,
+    PRIMARY KEY (model_sha256, model_version, dataset_version)
+);

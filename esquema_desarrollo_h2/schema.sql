@@ -299,3 +299,7 @@ ALTER TABLE friction_attempt_validation ADD COLUMN IF NOT EXISTS verdict VARCHAR
 ALTER TABLE friction_step_validation ADD COLUMN IF NOT EXISTS quality_pct INTEGER;
 CREATE INDEX IF NOT EXISTS idx_friction_attempt_outcome_finished
     ON friction_attempt_validation (outcome, finished_at_epoch_ms);
+
+CREATE TABLE IF NOT EXISTS wash_report_evidence (
+    session_id VARCHAR(36) NOT NULL,
+    attempt_number INTEGER NOT NULL,

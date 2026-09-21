@@ -319,3 +319,7 @@ CREATE TABLE IF NOT EXISTS station_shifts (
     started_by VARCHAR(128) NOT NULL,
     started_at_epoch_ms BIGINT NOT NULL,
     ends_at_epoch_ms BIGINT NOT NULL,
+    ended_at_epoch_ms BIGINT,
+    end_reason VARCHAR(24),
+    open_station_id VARCHAR(36),
+    CONSTRAINT uq_station_open_shift UNIQUE (open_station_id),

@@ -327,3 +327,7 @@ CREATE TABLE IF NOT EXISTS station_shifts (
     CONSTRAINT chk_shift_closed CHECK ((ended_at_epoch_ms IS NULL) = (end_reason IS NULL)),
     CONSTRAINT chk_shift_open_marker CHECK ((ended_at_epoch_ms IS NULL) = (open_station_id IS NOT NULL))
 );
+
+CREATE TABLE IF NOT EXISTS evidence_settings (
+    id SMALLINT PRIMARY KEY,
+    capture_enabled BOOLEAN NOT NULL,

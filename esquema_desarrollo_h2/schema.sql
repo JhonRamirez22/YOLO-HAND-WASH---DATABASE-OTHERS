@@ -311,3 +311,7 @@ CREATE TABLE IF NOT EXISTS wash_report_evidence (
     FOREIGN KEY (session_id, attempt_number) REFERENCES friction_attempt_validation(session_id, attempt_number)
 );
 
+-- Same columns as migration V9 (no value-list CHECK: H2 2.4 ties those to the creating session).
+CREATE TABLE IF NOT EXISTS station_shifts (
+    shift_id VARCHAR(36) PRIMARY KEY,
+    station_id VARCHAR(36) NOT NULL REFERENCES handwash_stations(station_id),

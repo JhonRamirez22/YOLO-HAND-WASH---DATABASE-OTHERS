@@ -9,3 +9,6 @@ CREATE ROLE handwash_migrator LOGIN PASSWORD :'migrator_pw';
 GRANT CONNECT ON DATABASE handwash TO handwash_runtime, handwash_migrator;
 ALTER SCHEMA public OWNER TO handwash_migrator;
 GRANT USAGE ON SCHEMA public TO handwash_runtime;
+ALTER DEFAULT PRIVILEGES FOR ROLE handwash_migrator IN SCHEMA public GRANT SELECT, INSERT, UPDATE, DELETE ON TABLES TO handwash_runtime;
+ALTER DEFAULT PRIVILEGES FOR ROLE handwash_migrator IN SCHEMA public GRANT USAGE, SELECT, UPDATE ON SEQUENCES TO handwash_runtime;
+SQL

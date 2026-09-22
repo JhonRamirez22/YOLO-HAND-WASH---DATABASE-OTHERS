@@ -22,3 +22,7 @@ CREATE TABLE wash_encounters (
     ended_at_epoch_ms BIGINT,
     model_version VARCHAR(128) NOT NULL,
     model_sha256 VARCHAR(64) NOT NULL,
+    dataset_version VARCHAR(128) NOT NULL,
+    attempts_restarted INTEGER NOT NULL DEFAULT 0,
+    CONSTRAINT chk_wash_encounters_attempts CHECK (attempts_restarted >= 0)
+);

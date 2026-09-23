@@ -45,3 +45,6 @@ CREATE TABLE wash_audit_events (
     CONSTRAINT chk_wash_audit_confidence
         CHECK (confidence IS NULL OR (confidence >= 0 AND confidence <= 1))
 );
+
+CREATE INDEX idx_wash_audit_session_event
+    ON wash_audit_events (session_id, event_id DESC);

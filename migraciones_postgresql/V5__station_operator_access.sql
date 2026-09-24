@@ -6,3 +6,7 @@ CREATE TABLE station_operator_access_codes (
     created_by VARCHAR(128) NOT NULL,
     created_at_epoch_ms BIGINT NOT NULL,
     consumed_at_epoch_ms BIGINT,
+    consumed_by VARCHAR(128),
+    revoked_at_epoch_ms BIGINT
+);
+

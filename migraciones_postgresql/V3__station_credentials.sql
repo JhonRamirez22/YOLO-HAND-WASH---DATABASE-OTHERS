@@ -20,3 +20,6 @@ CREATE TABLE handwash_stations (
     revoked_at_epoch_ms BIGINT,
     last_started_at_epoch_ms BIGINT,
     active_session_id VARCHAR(36),
+    active_request_id VARCHAR(36),
+    CONSTRAINT chk_station_active_reservation CHECK (
+        (active_session_id IS NULL AND active_request_id IS NULL)

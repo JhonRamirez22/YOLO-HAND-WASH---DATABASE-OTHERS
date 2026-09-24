@@ -10,3 +10,7 @@ CREATE TABLE station_operator_access_codes (
     revoked_at_epoch_ms BIGINT
 );
 
+CREATE INDEX idx_operator_codes_station_created
+    ON station_operator_access_codes (station_id, created_at_epoch_ms DESC);
+
+CREATE TABLE station_operator_grants (

@@ -26,3 +26,6 @@ CREATE TABLE handwash_stations (
         OR (active_session_id IS NOT NULL AND active_request_id IS NOT NULL)
     )
 );
+
+CREATE INDEX idx_handwash_stations_created
+    ON handwash_stations (created_at_epoch_ms DESC);

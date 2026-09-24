@@ -10,3 +10,7 @@ CREATE TABLE station_enrollment_codes (
 
 CREATE INDEX idx_station_enrollment_expiry
     ON station_enrollment_codes (expires_at_epoch_ms);
+
+CREATE TABLE handwash_stations (
+    station_id VARCHAR(36) PRIMARY KEY,
+    station_name VARCHAR(80) NOT NULL,

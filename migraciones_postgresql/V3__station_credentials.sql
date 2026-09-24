@@ -23,3 +23,6 @@ CREATE TABLE handwash_stations (
     active_request_id VARCHAR(36),
     CONSTRAINT chk_station_active_reservation CHECK (
         (active_session_id IS NULL AND active_request_id IS NULL)
+        OR (active_session_id IS NOT NULL AND active_request_id IS NOT NULL)
+    )
+);

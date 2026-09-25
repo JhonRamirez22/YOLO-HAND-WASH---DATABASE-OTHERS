@@ -6,3 +6,7 @@ CREATE TABLE friction_attempt_validation (
     status VARCHAR(32) NOT NULL,
     result VARCHAR(48),
     reason VARCHAR(80),
+    terminal BOOLEAN NOT NULL,
+    created_at_epoch_ms BIGINT NOT NULL,
+    updated_at_epoch_ms BIGINT NOT NULL,
+    PRIMARY KEY (session_id, attempt_number)

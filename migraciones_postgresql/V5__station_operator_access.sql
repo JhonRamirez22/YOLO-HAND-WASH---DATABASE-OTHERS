@@ -21,3 +21,6 @@ CREATE TABLE station_operator_grants (
     granted_at_epoch_ms BIGINT NOT NULL,
     revoked_at_epoch_ms BIGINT
 );
+
+CREATE INDEX idx_operator_grants_station
+    ON station_operator_grants (station_id, revoked_at_epoch_ms);

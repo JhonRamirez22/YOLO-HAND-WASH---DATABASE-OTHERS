@@ -10,3 +10,6 @@ CREATE TABLE friction_attempt_validation (
     created_at_epoch_ms BIGINT NOT NULL,
     updated_at_epoch_ms BIGINT NOT NULL,
     PRIMARY KEY (session_id, attempt_number)
+);
+CREATE TABLE friction_step_validation (
+    session_id VARCHAR(36) NOT NULL,

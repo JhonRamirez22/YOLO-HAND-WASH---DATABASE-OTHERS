@@ -16,3 +16,6 @@ CREATE TABLE friction_step_validation (
     attempt_number INTEGER NOT NULL,
     step_code VARCHAR(64) NOT NULL,
     status VARCHAR(32) NOT NULL,
+    credited_ms BIGINT NOT NULL CHECK (credited_ms >= 0),
+    required_ms BIGINT NOT NULL CHECK (required_ms > 0),
+    reason VARCHAR(80),

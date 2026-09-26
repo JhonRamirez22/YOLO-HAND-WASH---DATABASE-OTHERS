@@ -13,3 +13,6 @@ CREATE TABLE protocol_profiles (
 
 INSERT INTO protocol_profiles (version, step_1_ms, step_2_ms, step_3_ms, step_4_ms,
     step_5_ms, step_6_ms, slow_threshold_ms, created_by, created_at_epoch_ms)
+VALUES (1, 7000, 7000, 7000, 7000, 7000, 7000, 60000, 'SYSTEM', 0);
+
+ALTER TABLE wash_encounters ADD COLUMN protocol_profile_version INTEGER;

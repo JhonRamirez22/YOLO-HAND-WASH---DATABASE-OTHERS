@@ -6,3 +6,7 @@ ALTER TABLE friction_attempt_validation ADD COLUMN slow BOOLEAN NOT NULL DEFAULT
 ALTER TABLE friction_attempt_validation ADD COLUMN outcome VARCHAR(16)
     CHECK (outcome IN ('CORRECTO', 'REPORTADO', 'REINICIADO', 'INTERRUMPIDO'));
 ALTER TABLE friction_attempt_validation ADD COLUMN evidence_status VARCHAR(24)
+    CHECK (evidence_status IN ('DESACTIVADA', 'PENDIENTE', 'CAPTURADA', 'NO_CAPTURADA', 'EXPIRADA'));
+
+CREATE INDEX idx_friction_attempt_outcome_finished
+    ON friction_attempt_validation (outcome, finished_at_epoch_ms);

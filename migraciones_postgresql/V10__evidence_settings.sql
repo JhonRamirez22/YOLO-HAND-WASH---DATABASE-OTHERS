@@ -7,3 +7,5 @@ CREATE TABLE evidence_settings (
     CONSTRAINT chk_evidence_settings_single CHECK (id = 1)
 );
 
+INSERT INTO evidence_settings (id, capture_enabled, updated_by, updated_at_epoch_ms)
+VALUES (1, FALSE, 'SYSTEM', 0);

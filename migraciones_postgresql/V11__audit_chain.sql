@@ -10,3 +10,7 @@ CREATE TABLE audit_chain_head (
     last_hash CHAR(64) NOT NULL,
     CONSTRAINT chk_audit_chain_head_single CHECK (id = 1)
 );
+INSERT INTO audit_chain_head (id, last_event_id, last_hash)
+VALUES (1, NULL, '0000000000000000000000000000000000000000000000000000000000000000');
+
+-- Daily seals: head hash, a digest of the finished-wash results of the window and an HMAC signature,

@@ -6,3 +6,7 @@ ALTER TABLE protocol_profiles ADD COLUMN reverted_from INTEGER;
 ALTER TABLE protocol_profiles ADD COLUMN status VARCHAR(10) NOT NULL DEFAULT 'ACTIVE';
 ALTER TABLE protocol_profiles ADD COLUMN decided_by VARCHAR(128);
 ALTER TABLE protocol_profiles ADD COLUMN decided_at_epoch_ms BIGINT;
+ALTER TABLE protocol_profiles ADD CONSTRAINT chk_protocol_profile_status CHECK (status IN ('ACTIVE', 'PENDING', 'REJECTED'));
+UPDATE protocol_profiles SET reason = 'Perfil inicial del proyecto' WHERE reason IS NULL;
+
+CREATE TABLE change_control_settings (

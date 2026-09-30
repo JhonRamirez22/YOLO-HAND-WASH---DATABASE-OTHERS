@@ -23,3 +23,6 @@ CREATE TABLE audit_seals (
     head_hash CHAR(64) NOT NULL,
     event_count BIGINT NOT NULL CHECK (event_count >= 0),
     results_digest CHAR(64) NOT NULL,
+    results_count BIGINT NOT NULL CHECK (results_count >= 0),
+    keyed BOOLEAN NOT NULL,
+    signature CHAR(64) NOT NULL,

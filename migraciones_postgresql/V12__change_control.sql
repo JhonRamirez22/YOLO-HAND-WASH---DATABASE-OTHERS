@@ -10,3 +10,7 @@ ALTER TABLE protocol_profiles ADD CONSTRAINT chk_protocol_profile_status CHECK (
 UPDATE protocol_profiles SET reason = 'Perfil inicial del proyecto' WHERE reason IS NULL;
 
 CREATE TABLE change_control_settings (
+    id SMALLINT PRIMARY KEY,
+    second_approver_required BOOLEAN NOT NULL,
+    updated_by VARCHAR(128) NOT NULL,
+    updated_at_epoch_ms BIGINT NOT NULL CHECK (updated_at_epoch_ms >= 0),

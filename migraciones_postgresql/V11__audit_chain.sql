@@ -20,3 +20,6 @@ CREATE TABLE audit_seals (
     sealed_at_epoch_ms BIGINT NOT NULL CHECK (sealed_at_epoch_ms >= 0),
     window_start_epoch_ms BIGINT NOT NULL CHECK (window_start_epoch_ms >= 0),
     to_event_id BIGINT,
+    head_hash CHAR(64) NOT NULL,
+    event_count BIGINT NOT NULL CHECK (event_count >= 0),
+    results_digest CHAR(64) NOT NULL,

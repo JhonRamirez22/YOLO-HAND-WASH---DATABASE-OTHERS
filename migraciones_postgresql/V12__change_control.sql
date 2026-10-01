@@ -22,3 +22,7 @@ VALUES (1, FALSE, 'SYSTEM', 0);
 CREATE TABLE model_releases (
     model_sha256 CHAR(64) NOT NULL,
     model_version VARCHAR(128) NOT NULL,
+    dataset_version VARCHAR(128) NOT NULL,
+    first_seen_epoch_ms BIGINT NOT NULL CHECK (first_seen_epoch_ms >= 0),
+    PRIMARY KEY (model_sha256, model_version, dataset_version)
+);

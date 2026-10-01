@@ -18,3 +18,7 @@ CREATE TABLE change_control_settings (
 );
 INSERT INTO change_control_settings (id, second_approver_required, updated_by, updated_at_epoch_ms)
 VALUES (1, FALSE, 'SYSTEM', 0);
+
+CREATE TABLE model_releases (
+    model_sha256 CHAR(64) NOT NULL,
+    model_version VARCHAR(128) NOT NULL,

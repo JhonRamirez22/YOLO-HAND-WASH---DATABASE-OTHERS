@@ -35,3 +35,6 @@ CREATE TABLE validation_reports (
     summary VARCHAR(500) NOT NULL,
     document_sha256 CHAR(64) NOT NULL,
     created_by VARCHAR(128) NOT NULL,
+    created_at_epoch_ms BIGINT NOT NULL CHECK (created_at_epoch_ms >= 0)
+);
+CREATE INDEX idx_validation_reports_model ON validation_reports (model_sha256);

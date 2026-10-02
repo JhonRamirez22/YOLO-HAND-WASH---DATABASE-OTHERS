@@ -10,3 +10,7 @@ CREATE TABLE api_keys (
     created_at_epoch_ms BIGINT NOT NULL,
     last_used_at_epoch_ms BIGINT,
     last_used_ip VARCHAR(64),
+    revoked_at_epoch_ms BIGINT,
+    revoked_by VARCHAR(128)
+);
+

@@ -17,3 +17,6 @@ CREATE TABLE api_keys (
 CREATE INDEX idx_api_keys_station ON api_keys (station_id, revoked_at_epoch_ms);
 
 CREATE TABLE api_key_sessions (
+    token_hash VARCHAR(64) PRIMARY KEY,
+    key_id VARCHAR(16) NOT NULL REFERENCES api_keys(key_id),
+    expires_at_epoch_ms BIGINT NOT NULL

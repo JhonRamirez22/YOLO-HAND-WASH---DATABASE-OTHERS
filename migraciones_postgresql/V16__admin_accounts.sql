@@ -13,3 +13,6 @@ CREATE TABLE admin_accounts (
     locked_until_ms BIGINT,
     created_at_epoch_ms BIGINT NOT NULL,
     disabled BOOLEAN NOT NULL DEFAULT FALSE
+);
+
+CREATE TABLE admin_sessions (

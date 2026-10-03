@@ -10,3 +10,6 @@ CREATE TABLE admin_accounts (
     password_failures INTEGER NOT NULL DEFAULT 0,
     totp_failures INTEGER NOT NULL DEFAULT 0,
     failure_window_start_ms BIGINT,
+    locked_until_ms BIGINT,
+    created_at_epoch_ms BIGINT NOT NULL,
+    disabled BOOLEAN NOT NULL DEFAULT FALSE

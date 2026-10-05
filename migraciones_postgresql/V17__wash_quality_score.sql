@@ -4,3 +4,5 @@ ALTER TABLE friction_step_validation ADD COLUMN quality_pct INTEGER
     CHECK (quality_pct BETWEEN 0 AND 100);
 ALTER TABLE friction_attempt_validation ADD COLUMN score_pct INTEGER
     CHECK (score_pct BETWEEN 0 AND 100);
+ALTER TABLE friction_attempt_validation ADD COLUMN verdict VARCHAR(10)
+    CHECK (verdict IN ('CORRECTO', 'RECHAZADO'));

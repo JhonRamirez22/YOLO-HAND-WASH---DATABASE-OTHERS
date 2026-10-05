@@ -14,3 +14,7 @@ CREATE TABLE failed_attempts (
 
 CREATE INDEX idx_failed_attempts_created
     ON failed_attempts (created_at_epoch_ms);
+
+CREATE TABLE wash_encounters (
+    session_id VARCHAR(36) PRIMARY KEY,
+    protocol_code VARCHAR(64) NOT NULL,

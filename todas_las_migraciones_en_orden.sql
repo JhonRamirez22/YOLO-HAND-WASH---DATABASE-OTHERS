@@ -58,3 +58,7 @@ CREATE INDEX idx_wash_audit_event_time
 ALTER TABLE wash_encounters ADD COLUMN producer_client_id VARCHAR(128);
 ALTER TABLE wash_encounters ADD COLUMN producer_epoch VARCHAR(64);
 
+
+-- ===== V3__station_credentials.sql =====
+CREATE TABLE station_enrollment_codes (
+    code_hash VARCHAR(64) PRIMARY KEY,

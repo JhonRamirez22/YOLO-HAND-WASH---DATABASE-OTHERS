@@ -54,3 +54,7 @@ CREATE INDEX idx_wash_audit_event_time
     ON wash_audit_events (occurred_at_epoch_ms DESC);
 
 
+-- ===== V2__producer_build_identity.sql =====
+ALTER TABLE wash_encounters ADD COLUMN producer_client_id VARCHAR(128);
+ALTER TABLE wash_encounters ADD COLUMN producer_epoch VARCHAR(64);
+

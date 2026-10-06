@@ -38,3 +38,7 @@ CREATE TABLE wash_audit_events (
     actor_subject VARCHAR(128),
     step_code VARCHAR(64),
     decision_code VARCHAR(48) NOT NULL,
+    reason_code VARCHAR(80),
+    attempt_number INTEGER,
+    frame_sequence BIGINT,
+    confidence DOUBLE PRECISION,

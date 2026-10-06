@@ -18,3 +18,7 @@ CREATE INDEX idx_failed_attempts_created
 CREATE TABLE wash_encounters (
     session_id VARCHAR(36) PRIMARY KEY,
     protocol_code VARCHAR(64) NOT NULL,
+    status VARCHAR(32) NOT NULL,
+    started_at_epoch_ms BIGINT NOT NULL,
+    ended_at_epoch_ms BIGINT,
+    model_version VARCHAR(128) NOT NULL,

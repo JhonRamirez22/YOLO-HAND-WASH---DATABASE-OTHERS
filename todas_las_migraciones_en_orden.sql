@@ -90,3 +90,7 @@ CREATE TABLE handwash_stations (
 );
 
 CREATE INDEX idx_handwash_stations_created
+    ON handwash_stations (created_at_epoch_ms DESC);
+
+
+-- ===== V4__station_producer_binding.sql =====

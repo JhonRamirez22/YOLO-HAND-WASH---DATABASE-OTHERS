@@ -94,3 +94,7 @@ CREATE INDEX idx_handwash_stations_created
 
 
 -- ===== V4__station_producer_binding.sql =====
+ALTER TABLE handwash_stations
+    ADD COLUMN producer_client_id VARCHAR(128);
+
+CREATE INDEX idx_handwash_stations_producer_client

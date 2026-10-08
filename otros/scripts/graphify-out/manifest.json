@@ -1,0 +1,206 @@
+{
+  "audit_dependencies.sh": {
+    "mtime": 1791155345.9216733,
+    "seen": 1791354627.9271228,
+    "ast_hash": "5589778bd9627d9fbaf7841dfed08f23",
+    "semantic_hash": ""
+  },
+  "audit_yolo_split_duplicates.py": {
+    "mtime": 1791002694.9175887,
+    "seen": 1791354627.927125,
+    "ast_hash": "1e12c897e57be7e36eed1770f3c0bfb2",
+    "semantic_hash": ""
+  },
+  "build_handwash_station.sh": {
+    "mtime": 1791155142.154927,
+    "seen": 1791354627.9271271,
+    "ast_hash": "d97bfd75ea620ad550413550498944f2",
+    "semantic_hash": ""
+  },
+  "dataset_contracts.py": {
+    "mtime": 1791111028.7017567,
+    "seen": 1791354627.9271271,
+    "ast_hash": "db4f07b4f59ff9daf57fd73adca00e81",
+    "semantic_hash": ""
+  },
+  "evaluate_derived_detector.py": {
+    "mtime": 1791354585.5863209,
+    "seen": 1791354627.927128,
+    "ast_hash": "ff7132243ec99492ab5654533744cbf4",
+    "semantic_hash": ""
+  },
+  "evaluate_derived_sequence.py": {
+    "mtime": 1791111334.9824026,
+    "seen": 1791354627.927128,
+    "ast_hash": "3b1128e2e6334deebcb29085f2bdbe7b",
+    "semantic_hash": ""
+  },
+  "evaluate_who_classifier.py": {
+    "mtime": 1790475933.1954668,
+    "seen": 1791354627.927129,
+    "ast_hash": "dd5c986787d81781987a4c8f0d5d29e5",
+    "semantic_hash": ""
+  },
+  "prepare_dataset5.py": {
+    "mtime": 1789947782.3470535,
+    "seen": 1791354627.927129,
+    "ast_hash": "a3707b44aeb14bcf17f92c31b8b41177",
+    "semantic_hash": ""
+  },
+  "prepare_grouped_yolo_dataset.py": {
+    "mtime": 1791002803.9200995,
+    "seen": 1791354627.9271302,
+    "ast_hash": "4f5c51cb449bba45f4be5a371d7f8fcd",
+    "semantic_hash": ""
+  },
+  "prepare_oms_review_frames.py": {
+    "mtime": 1790224550.881321,
+    "seen": 1791354627.9271302,
+    "ast_hash": "97087191281e4d6f4c6ae3bd35c6af8f",
+    "semantic_hash": ""
+  },
+  "rebalance_dataset.py": {
+    "mtime": 1789948392.4508767,
+    "seen": 1791354627.927131,
+    "ast_hash": "64583da8c7691907bf7f1092c6efaf3b",
+    "semantic_hash": ""
+  },
+  "run_backend_yolo_foreground.sh": {
+    "mtime": 1790172081.5116239,
+    "seen": 1791354627.927131,
+    "ast_hash": "d3b7ea546c88c4e6538c56aa08dfb66a",
+    "semantic_hash": ""
+  },
+  "run_handwash_station.py": {
+    "mtime": 1791161674.7572112,
+    "seen": 1791354627.927132,
+    "ast_hash": "c2aa17bc9705f2035098050d2d28791c",
+    "semantic_hash": ""
+  },
+  "run_yolo26_continuity_camera.py": {
+    "mtime": 1791354585.585224,
+    "seen": 1791354627.927132,
+    "ast_hash": "ecc4103f45976a584b02b87b22520bc5",
+    "semantic_hash": ""
+  },
+  "start_handwash.sh": {
+    "mtime": 1791007031.4569764,
+    "seen": 1791354627.9271328,
+    "ast_hash": "7cb1fdaf542b036963a1890fc383d7c4",
+    "semantic_hash": ""
+  },
+  "test_audit_yolo_split_duplicates.py": {
+    "mtime": 1791002723.276672,
+    "seen": 1791354627.9271328,
+    "ast_hash": "6ee36ab88027118506a88e0556f52e5c",
+    "semantic_hash": ""
+  },
+  "test_evaluate_derived_sequence.py": {
+    "mtime": 1791111216.053788,
+    "seen": 1791354627.927134,
+    "ast_hash": "24f4d47132898a39d95f7a1cb011f5b8",
+    "semantic_hash": ""
+  },
+  "test_handwash_motion.py": {
+    "mtime": 1790483683.70078,
+    "seen": 1791354627.927134,
+    "ast_hash": "ba0d797aa86c37e34afd0d9791bb03b1",
+    "semantic_hash": ""
+  },
+  "test_prepare_grouped_yolo_dataset.py": {
+    "mtime": 1791002411.3421786,
+    "seen": 1791354627.927135,
+    "ast_hash": "86de816384a9b3ca32562a1c6a466919",
+    "semantic_hash": ""
+  },
+  "test_prepare_oms_review_frames.py": {
+    "mtime": 1790224550.9412773,
+    "seen": 1791354627.927135,
+    "ast_hash": "903b79d7d55abbf616ce3c25b614aeb2",
+    "semantic_hash": ""
+  },
+  "test_run_handwash_station.py": {
+    "mtime": 1791353893.5530355,
+    "seen": 1791354627.927136,
+    "ast_hash": "20ff66602f9826801f0acfef4db964e0",
+    "semantic_hash": ""
+  },
+  "test_run_yolo26_continuity_camera.py": {
+    "mtime": 1791354585.5870526,
+    "seen": 1791354627.927136,
+    "ast_hash": "b470eef43dcebe4fdcf115e76a8a5e2b",
+    "semantic_hash": ""
+  },
+  "test_train_handwash_robust.py": {
+    "mtime": 1791002447.823711,
+    "seen": 1791354627.9271371,
+    "ast_hash": "a58d331212fdfc30c01195fe69eaaae1",
+    "semantic_hash": ""
+  },
+  "test_train_handwash_who.py": {
+    "mtime": 1790225896.4811528,
+    "seen": 1791354627.9271371,
+    "ast_hash": "67a2ff09da6908b5d01c913887b78096",
+    "semantic_hash": ""
+  },
+  "train_dataset5.py": {
+    "mtime": 1789948652.2021673,
+    "seen": 1791354627.927138,
+    "ast_hash": "073a9c5bc67922569476886c5523ef24",
+    "semantic_hash": ""
+  },
+  "train_hand_hygiene_transfer.py": {
+    "mtime": 1790395124.572077,
+    "seen": 1791354627.927138,
+    "ast_hash": "3eeda9e6175ff0235f5168fb2d79c8a7",
+    "semantic_hash": ""
+  },
+  "train_handwash_mfh.py": {
+    "mtime": 1790049429.039035,
+    "seen": 1791354627.927138,
+    "ast_hash": "c75b97ee21af76490e8465537177481c",
+    "semantic_hash": ""
+  },
+  "train_handwash_robust.py": {
+    "mtime": 1791002744.5940282,
+    "seen": 1791354627.927139,
+    "ast_hash": "5de2660c895aa26cb1457e5fade0b4f8",
+    "semantic_hash": ""
+  },
+  "train_handwash_who.py": {
+    "mtime": 1790225882.6313457,
+    "seen": 1791354627.927139,
+    "ast_hash": "96d826b38852b510879defdb396cb574",
+    "semantic_hash": ""
+  },
+  "train_v2.py": {
+    "mtime": 1789948652.1342807,
+    "seen": 1791354627.92714,
+    "ast_hash": "1fae73eae8e1b7f7b526d9ac37cc5e7e",
+    "semantic_hash": ""
+  },
+  "train_yolo26_seg.py": {
+    "mtime": 1789956635.470571,
+    "seen": 1791354627.92714,
+    "ast_hash": "0b194dbdbba4cbfaa9510552ff000656",
+    "semantic_hash": ""
+  },
+  "validate_handwash_models.py": {
+    "mtime": 1791001453.7526917,
+    "seen": 1791354627.9271412,
+    "ast_hash": "0b2646772df40113feffa3495c0d13e7",
+    "semantic_hash": ""
+  },
+  "verify_handwash_project.sh": {
+    "mtime": 1791143634.4258826,
+    "seen": 1791354627.9271412,
+    "ast_hash": "da9f8b4fdae6dca433c8744b8c17c130",
+    "semantic_hash": ""
+  },
+  "testdata/station-release-data.yaml": {
+    "mtime": 1791098711.5564024,
+    "seen": 1791354627.9271412,
+    "ast_hash": "55485df06b36520e714dfae3bdecb726",
+    "semantic_hash": ""
+  }
+}

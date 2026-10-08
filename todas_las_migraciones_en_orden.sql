@@ -118,3 +118,7 @@ CREATE INDEX idx_operator_codes_station_created
     ON station_operator_access_codes (station_id, created_at_epoch_ms DESC);
 
 CREATE TABLE station_operator_grants (
+    cognito_subject VARCHAR(128) PRIMARY KEY,
+    email VARCHAR(254) NOT NULL,
+    station_id VARCHAR(36) NOT NULL REFERENCES handwash_stations(station_id),
+    granted_by VARCHAR(128) NOT NULL,

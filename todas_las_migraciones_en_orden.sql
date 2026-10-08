@@ -138,3 +138,7 @@ CREATE TABLE friction_attempt_validation (
     revision BIGINT NOT NULL,
     status VARCHAR(32) NOT NULL,
     result VARCHAR(48),
+    reason VARCHAR(80),
+    terminal BOOLEAN NOT NULL,
+    created_at_epoch_ms BIGINT NOT NULL,
+    updated_at_epoch_ms BIGINT NOT NULL,

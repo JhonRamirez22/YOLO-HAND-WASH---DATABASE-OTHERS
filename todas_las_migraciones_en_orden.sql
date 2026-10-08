@@ -146,3 +146,7 @@ CREATE TABLE friction_attempt_validation (
 );
 CREATE TABLE friction_step_validation (
     session_id VARCHAR(36) NOT NULL,
+    attempt_number INTEGER NOT NULL,
+    step_code VARCHAR(64) NOT NULL,
+    status VARCHAR(32) NOT NULL,
+    credited_ms BIGINT NOT NULL CHECK (credited_ms >= 0),

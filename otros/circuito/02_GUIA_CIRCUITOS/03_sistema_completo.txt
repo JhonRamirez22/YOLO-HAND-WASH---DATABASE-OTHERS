@@ -1,0 +1,114 @@
+================================================================
+  DIAGRAMA DE SISTEMA COMPLETO
+================================================================
+
+VISTA GENERAL
+-------------
+El sistema completo consta de 3 partes principales:
+
+    1. ESTACION DE LAVADO (Hardware fisico)
+    2. ESP32 (Microcontrolador)
+    3. iPhone (App iOS con YOLO)
+
+
+DIAGRAMA DE BLOQUES
+-------------------
+
+  +=========================================================+
+  |              ESTACION DE LAVADO                         |
+  |                                                         |
+  |  +-----------+    +-----------+    +---------------+    |
+  |  |  VL53L0X  |    |   ESP32   |    | LEDs + Buzzer |    |
+  |  |  (Laser)  |--->| DevKit V1 |--->|  (Feedback)   |    |
+  |  | Distancia | I2C|           |GPI |               |    |
+  |  | 3-200cm   |    | BLE Radio |    | R/G/B + Sonido|    |
+  |  +-----------+    |           |    +---------------+    |
+  |                   | SDA/SCL   |                         |
+  |  +-----------+    | (bus      |                         |
+  |  |  MPU6050  |--->| comparti-)|                         |
+  |  |   (IMU)   | I2C|  do)     |                         |
+  |  | 6 ejes    |    |           |                         |
+  |  +-----------+    +-----+-----+                         |
+  |                       |                                 |
+  |                Bluetooth Low Energy                     |
+  +======================|==================================+
+                         |
+                         v
+  +=========================================================+
+  |                  iPhone (iOS)                            |
+  |                                                         |
+  |  +-----------+    +-----------+    +---------------+    |
+  |  |  Camara   |--->|   YOLO    |--->|  App Swift    |    |
+  |  |  Trasera  |    | (CoreML)  |    |  SwiftUI      |    |
+  |  |           |    | 7 pasos   |    |               |    |
+  |  +-----------+    +-----------+    | Timer 20s     |    |
+  |                                    | Progreso      |    |
+  |  +-----------+                    | Estado BLE    |    |
+  |  |CoreBluetooth<------------------|               |    |
+  |  |   (BLE)   |                    | WebSocket     |    |
+  |  +-----------+                    +-------+-------+    |
+  +=========================================================+
+                                                  |
+                                                  v
+                                        +---------------+
+                                        | Java Backend  |
+                                        | Spring Boot   |
+                                        +---------------+
+
+
+CONECCIONES ELECTRICAS RESUMEN
+------------------------------
+
+    ALIMENTACION:
+    ESP32 3V3 ──┬── VL53L0X VIN
+                └── MPU6050 VCC
+    
+    ESP32 GND ──┬── VL53L0X GND
+                ├── MPU6050 GND
+                ├── LED Rojo (-)
+                ├── LED Verde (-)
+                ├── LED Azul (-)
+                └── Buzzer (-)
+
+    BUS I2C (compartido):
+    ESP32 GPIO21 (SDA) ──┬── VL53L0X SDA
+                          └── MPU6050 SDA
+    
+    ESP32 GPIO22 (SCL) ──┬── VL53L0X SCL
+                          └── MPU6050 SCL
+
+    FEEDBACK:
+    ESP32 GPIO25 ──[BUZZER+]── BUZZER(-) ── GND
+    ESP32 GPIO26 ──[220 ohm]── LED ROJO(+) ── GND
+    ESP32 GPIO27 ──[220 ohm]── LED VERDE(+) ── GND
+    ESP32 GPIO14 ──[220 ohm]── LED AZUL(+) ── GND
+
+
+TABLA DE COLORES DE CABLES
+---------------------------
+
+    COLOR       USO                  COMPONENTE
+    ─────       ───                  ──────────
+    Rojo        Alimentacion 3.3V    VIN/VCC
+    Negro       Tierra (GND)         GND
+    Verde       Datos I2C (SDA)      GPIO21
+    Azul        Reloj I2C (SCL)      GPIO22
+    Amarillo    Senal buzzer         GPIO25
+    Naranja     LED Rojo             GPIO26
+    Verde claro LED Verde            GPIO27
+    Azul claro  LED Azul             GPIO14
+
+
+CONSUMO ESTIMADO
+----------------
+    Componente       Consumo
+    ───────────       ───────
+    ESP32 (activo)    ~80 mA
+    VL53L0X           ~20 mA
+    MPU6050           ~3.5 mA
+    3 LEDs (max)      ~45 mA
+    Buzzer            ~30 mA
+    ─────────────────────────
+    TOTAL MAXIMO      ~179 mA
+
+    Alimentacion: USB (500mA) o bateria LiPo 3.7V 1000mAh

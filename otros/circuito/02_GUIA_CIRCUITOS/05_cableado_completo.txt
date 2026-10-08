@@ -1,0 +1,173 @@
+================================================================
+  CABLEADO COMPLETO - GUIA DE ENSAMBLAJE
+================================================================
+
+ANTES DE EMPEZAR
+----------------
+Verifica que tengas todos los componentes:
+
+    [ ] 1x ESP32 DevKit V1
+    [ ] 1x VL53L0X (modulo con 6 pines)
+    [ ] 1x MPU6050 (modulo con 8 pines)
+    [ ] 1x Buzzer pasivo (2 pines)
+    [ ] 3x LEDs (rojo, verde, azul)
+    [ ] 3x Resistencias 220 ohm
+    [ ] 1x Protoboard 400 puntos
+    [ ] 15x Cables jumper M-F
+
+
+PASO 1: COLOCAR ESP32 EN PROTOBOARD
+-------------------------------------
+Coloca el ESP32 cruzando el canal central del protoboard.
+
+    Protoboard (vista superior):
+    +-----+-----+-----+-----+-----+-----+
+    +  |  |  |  |  |  |  |  |  |  |  |  +
+    +--+--+--+--+--+--+--+--+--+--+--+--+
+    |  |  |  |  |  |  |  |  |  |  |  |  |  <-- canal central
+    +--+--+--+--+--+--+--+--+--+--+--+--+
+    +  |  |  |  |  |  |  |  |  |  |  |  +
+    +-----+-----+-----+-----+-----+-----+
+    
+    ESP32 va aqui, cruzando el canal:
+    [ESP32 pins izq] canal [ESP32 pins der]
+
+
+PASO 2: ALIMENTACION
+---------------------
+Conecta la fila + (roja) del protoboard al pin 3V3 del ESP32.
+Conecta la fila - (azul/negra) del protoboard al pin GND del ESP32.
+
+    ESP32 3V3 ──────── Fila + del protoboard (roja)
+    ESP32 GND ──────── Fila - del protoboard (azul)
+
+    IMPORTANTE: Los sensores接arian a estas filas para
+    obtener 3.3V y GND.
+
+
+PASO 3: CONECTAR VL53L0X
+--------------------------
+    VL53L0X              Protoboard/ESP32
+    ────────             ────────────────
+    VIN  ───[ROJO]────── Fila + (3.3V)
+    GND  ───[NEGRO]───── Fila - (GND)
+    SDA  ───[VERDE]───── ESP32 GPIO21
+    SCL  ───[AZUL]────── ESP32 GPIO22
+    XSHUT  (sin conectar)
+    GPIO1  (sin conectar)
+
+
+PASO 4: CONECTAR MPU6050
+--------------------------
+    MPU6050              Protoboard/ESP32
+    ────────             ────────────────
+    VCC  ───[ROJO]────── Fila + (3.3V)
+    GND  ───[NEGRO]───── Fila - (GND)
+    SDA  ───[VERDE]───── ESP32 GPIO21  (MISMO que VL53L0X)
+    SCL  ───[AZUL]────── ESP32 GPIO22  (MISMO que VL53L0X)
+    AD0    (sin conectar - para dir 0x68)
+    INT    (sin conectar)
+    XCL    (sin conectar)
+    XDA    (sin conectar)
+
+    NOTA: Ambos sensores comparten los cables SDA y SCL.
+    Esto es correcto - funciona por direcciones I2C.
+
+
+PASO 5: CONECTAR LEDs
+-----------------------
+Cada LED necesita una resistencia de 220 ohm.
+
+    LED ROJO:
+    ESP32 GPIO26 ──[220 ohm]──(+) LED ROJO (-)── GND
+
+    LED VERDE:
+    ESP32 GPIO27 ──[220 ohm]──(+) LED VERDE (-)── GND
+
+    LED AZUL:
+    ESP32 GPIO14 ──[220 ohm]──(+) LED AZUL (-)── GND
+
+    COMO IDENTIFICAR POLARIDAD DEL LED:
+    - Patilla LARGA = Positivo (+)
+    - Patilla CORTA = Negativo (-)
+    - Lado PLANO del LED = Negativo (-)
+    
+    Sin la resistencia, el LED se QUAMARA.
+
+
+PASO 6: CONECTAR BUZZER
+-------------------------
+    ESP32 GPIO25 ────(+) BUZZER (-)──── GND
+
+    El buzzer pasivo tiene un pin marcado con "+".
+    Ese pin va al GPIO25. El otro va a GND.
+
+
+PASO 7: VERIFICAR ANTES DE ENCENDER
+-------------------------------------
+ANTES de conectar USB, verifica:
+
+    [ ] Todos los GND conectados entre si
+    [ ] VL53L0X y MPU6050 en 3.3V (NO 5V)
+    [ ] SDA va a GPIO21 (no GPIO22)
+    [ ] SCL va a GPIO22 (no GPIO21)
+    [ ] LEDs tienen resistencias 220 ohm
+    [ ] LEDs en polaridad correcta (largo=+, corto=-)
+    [ ] Buzzer en polaridad correcta (marcado=+)
+    [ ] No hay cables sueltos tocando otros pines
+
+
+PASO 8: SUBIR CODIGO
+---------------------
+1. Conectar ESP32 por USB
+2. Abrir Arduino IDE
+3. Seleccionar placa: ESP32 Dev Module
+4. Seleccionar puerto COM
+5. Boton "Upload" (flecha derecha)
+6. Abrir Monitor Serial (115200 baud)
+7. Verificar que dice "Sistema listo..."
+
+
+DIAGRAMA DE PROTBOARD COMPLETO
+-------------------------------
+    +================================================================+
+    |  +   +   +   +   +   +   +   +   +   +   +   +   +   +       |
+    |  |   |   |   |   |   |   |   |   |   |   |   |   |   |       |
+    |  +---+---+---+---+---+---+---+---+---+---+---+---+---+       |
+    |  |   |   |   |   |   |   |   |   |   |   |   |   |   |       |
+    |  +---+---+---+---+---+---+---+---+---+---+---+---+---+       |
+    |       |       |       |       |       |       |               |
+    |     [R]     [R]     [R]     [BZR]                           |
+    |       |       |       |       |                             |
+    |     LED     LED     LED     BUZZER                           |
+    |     ROJO   VERDE   AZUL                                     |
+    |       |       |       |       |                             |
+    |       +---+---+---+---+---+---+                             |
+    |           |           |                                      |
+    |     [VL53L0X]    [MPU6050]                                   |
+    |     (I2C)        (I2C)                                       |
+    |           |           |                                      |
+    |           +---+---+---+                                      |
+    |               |                                              |
+    |          [ ESP32 ]                                           |
+    |          [ DevKit]                                           |
+    |          [  V1   ]                                           |
+    +================================================================+
+
+
+ERRORES COMUNES DE ENSAMBLAJE
+------------------------------
+Problema: LEDs no encienden
+Solucion: Verificar polaridad (largo=+, corto=-) y resistencias
+
+Problema: Sensores no responden
+Solucion: Verificar SDA->GPIO21, SCL->GPIO22 (no invertir)
+
+Problema: Buzzer no suena
+Solucion: Verificar polaridad (pin marcado=+ a GPIO25)
+
+Problema: Todo parpadea raro
+Solucion: Verificar que todos los GND estan conectados
+
+Problema: ESP32 no enciende
+Solucion: Verificar conexion USB, probar otro cable

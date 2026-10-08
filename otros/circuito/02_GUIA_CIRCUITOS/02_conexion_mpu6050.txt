@@ -1,0 +1,159 @@
+================================================================
+  CONEXION MPU6050 A ESP32 - GUIA COMPLETA
+================================================================
+
+QUE ES EL MPU6050?
+------------------
+IMU (Unidad de Medicion Inercial) de 6 ejes:
+- Acelerometro: mide aceleracion en X, Y, Z
+- Giroscopio: mide rotacion en X, Y, Z
+
+Detecta si las manos se estan frotando midiendo el movimiento.
+
+- Alimentacion: 3.3V (NO 5V - se quema)
+- Frecuencia: 100 Hz
+- Direccion I2C: 0x68
+
+
+PINOUT DEL MPU6050
+------------------
+El modulo tiene 8 pines pero solo usamos 4:
+
+    MPU6050 (vista con pines abajo)
+    ================================
+    
+      VCC   GND   SDA   SCL   AD0   INT   XCL   XDA
+       |     |     |     |     |     |     |     |
+       |     |     |     |     |     |     |     |
+      [1]   [2]   [3]   [4]   [5]   [6]   [7]   [8]
+    
+    [1] VCC = Alimentacion 3.3V (NO 5V)
+    [2] GND = Tierra
+    [3] SDA = Datos I2C
+    [4] SCL = Reloj I2C
+    [5] AD0 = Direccion I2C (sin conectar = 0x68)
+    [6] INT = Interrupcion (no usar)
+    [7] XCL = I2C auxiliar (no usar)
+    [8] XDA = I2C auxiliar (no usar)
+
+
+CONECTOR AL ESP32
+-----------------
+
+    CABLE      COLOR      MPU6050      ESP32
+    ─────      ─────      ────────     ──────
+    Alimenta.  ROJO       VCC    →    Pin 3V3
+    Tierra     NEGRO      GND    →    Pin GND
+    Datos      VERDE      SDA    →    Pin GPIO21
+    Reloj      AZUL       SCL    →    Pin GPIO22
+    (no usar)  ---        AD0    →    SIN CONECTAR (para dir 0x68)
+    (no usar)  ---        INT    →    SIN CONECTAR
+
+
+COMPARTIR BUS I2C
+-----------------
+El MPU6050 y VL53L0X comparten los MISMOS cables I2C:
+
+    ESP32 GPIO21 (SDA) ───┬──── VL53L0X SDA
+                           └──── MPU6050 SDA
+    
+    ESP32 GPIO22 (SCL) ───┬──── VL53L0X SCL
+                           └──── MPU6050 SCL
+
+Esto funciona porque cada sensor tiene direccion diferente:
+- VL53L0X = 0x29
+- MPU6050 = 0x68
+
+
+ALIMENTACION COMPARTIDA
+-----------------------
+Ambos sensores comparten la misma alimentacion:
+
+    ESP32 3V3 ───┬──── VL53L0X VIN
+                  └──── MPU6050 VCC
+    
+    ESP32 GND ───┬──── VL53L0X GND
+                  └──── MPU6050 GND
+
+
+COMO CALCULA EL MOVIMIENTO
+---------------------------
+El MPU6050 mide aceleracion en 3 ejes:
+
+    Quieto (gravedad solamente):
+    magnitud = sqrt(0 + 0 + 9.8^2) = 9.8 m/s2
+
+    Frotando manos (movimiento + gravedad):
+    magnitud = sqrt(3^2 + 4^2 + 9.8^2) = 11.2 m/s2
+
+    Mucho movimiento:
+    magnitud = sqrt(8^2 + 6^2 + 9.8^2) = 14.1 m/s2
+
+Umbral de deteccion: 12.0 m/s2
+Si magnitud > 12.0, se considera "frotando"
+
+
+VERIFICACION
+------------
+Despues de conectar, sube este codigo de prueba:
+
+    #include <Wire.h>
+    #include <Adafruit_MPU6050.h>
+    #include <Adafruit_Sensor.h>
+    
+    Adafruit_MPU6050 mpu;
+    
+    void setup() {
+      Serial.begin(115200);
+      Wire.begin(21, 22);
+      
+      if (!mpu.begin()) {
+        Serial.println("ERROR: MPU6050 no encontrado");
+        while (1);
+      }
+      
+      mpu.setAccelerometerRange(MPU6050_RANGE_4_G);
+      mpu.setGyroRange(MPU6050_RANGE_500_DEG);
+      mpu.setFilterBandwidth(MPU6050_BAND_21_HZ);
+      Serial.println("MPU6050 OK");
+    }
+    
+    void loop() {
+      sensors_event_t a, g, temp;
+      mpu.getEvent(&a, &g, &temp);
+      
+      float mag = sqrt(
+        a.acceleration.x * a.acceleration.x +
+        a.acceleration.y * a.acceleration.y +
+        a.acceleration.z * a.acceleration.z
+      );
+      
+      Serial.print("Magnitud: ");
+      Serial.println(mag);
+      delay(100);
+    }
+
+Si ves ~9.8 cuando esta quieto y >12 cuando mueves, funciona.
+
+
+ERRORES COMUNES
+---------------
+Problema: No encontrado (ERROR: MPU6050 no encontrado)
+Causa:    Voltaje incorrecto o conexiones I2C mal
+Solucion: Verificar 3.3V (NO 5V), SDA->GPIO21, SCL->GPIO22
+
+Problema: Siempre lee ~14-16
+Causa:    Sensor en modo incorrecto o defectuoso
+Solucion: Verificar setFilterBandwidth y ranges
+
+Problema: No detecta movimiento
+Causa:    Umbral muy alto
+Solucion: Bajar umbralMovimiento a 10.0
+
+Problema: Mucho ruido en lecturas
+Causa:    Filtro de bandwidth muy bajo
+Solucion: Usar MPU6050_BAND_44_HZ para mas estabilidad
+
+Problema: Sensor calienta o se dania
+Causa:    Conectado a 5V en vez de 3.3V
+Solucion: Inmediatamente desconectar y usar 3.3V

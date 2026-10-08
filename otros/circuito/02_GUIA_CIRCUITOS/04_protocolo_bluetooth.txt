@@ -1,0 +1,168 @@
+================================================================
+  PROTOCOLO BLUETOOTH LOW ENERGY (BLE)
+================================================================
+
+IMPORTANTE: iOS solo soporta BLE (Bluetooth Low Energy).
+NO usa Bluetooth Classic (SPP). El ESP32 debe configurarse
+como servidor BLE.
+
+
+QUE ES BLE?
+-----------
+BLE (Bluetooth Low Energy) es un protocolo de comunicacion
+inalambrica de bajo consumo. A diferencia del Bluetooth
+Classical (que usan audifonos), BLE es ideal para sensores
+porque envia pocos datos y consume muy poca bateria.
+
+
+COMO FUNCIONA
+-------------
+El ESP32 actua como SERVIDOR BLE y el iPhone como CLIENTE:
+
+    ESP32 (Servidor)              iPhone (Cliente)
+    ────────────────              ────────────────
+    1. Anuncia servicio BLE
+       nombre: "Lavamanos"
+    ──────────────────────────>   2. Escucha dispositivos
+    
+    3. iPhone encuentra ESP32
+    <──────────────────────────
+    
+    4. iPhone se conecta
+    ──────────────────────────>
+    
+    5. iPhone descubre servicios
+    ──────────────────────────>
+    
+    6. Se suscribe a caracteristica
+       (notificaciones automaticas)
+    ──────────────────────────>
+    
+    7. ESP32 envia datos
+       "MANOS_DETECTADAS"
+    ──────────────────────────>
+    
+    8. ESP32 envia movimiento
+       "MOVIMIENTO:15.3"
+    ──────────────────────────>
+    
+    9. iPhone envia comando
+       "WASHING_COMPLETE"
+    <──────────────────────────
+
+
+ESTRUCTURA BLE DEL ESP32
+------------------------
+    Servicio: Hand Wash Sensors
+    UUID: 12345678-1234-1234-1234-123456789abc
+    
+        Caracteristica: Sensor Data
+        UUID: abcd1234-ab12-cd34-ef56-123456789abc
+        Propiedades: READ + NOTIFY
+        (El iPhone se suscribe y recibe datos automaticamente)
+        
+        Caracteristica: Command
+        UUID: abcd5678-ab12-cd34-ef56-123456789abc
+        Propiedades: WRITE
+        (El iPhone envia comandos al ESP32)
+
+
+MENSAJES BLE
+------------
+
+    DIRECCION         MENJE                      SIGNIFICADO
+    ─────────         ─────                      ───────────
+    ESP32 → iPhone    MANOS_DETECTADAS           Distancia < 20cm
+    ESP32 → iPhone    MANOS_ALEJADAS             Distancia > 30cm
+    ESP32 → iPhone    FROTANDO_INICIO            Movimiento > umbral
+    ESP32 → iPhone    FROTANDO_FIN               Movimiento se detuvo
+    ESP32 → iPhone    MOVIMIENTO:XX.X            Valor de aceleracion
+    iPhone → ESP32    WASHING_COMPLETE           Lavado completado (20s)
+
+
+COMO SE ENVIAN LOS MENSAJES
+----------------------------
+Los mensajes son strings de texto simples:
+
+    // En Arduino (ESP32):
+    pCharacteristic->setValue("MANOS_DETECTADAS");
+    pCharacteristic->notify();
+    
+    // En iOS (Swift):
+    func peripheral(_ peripheral: CBPeripheral,
+                    didUpdateValueFor characteristic: CBCharacteristic,
+                    error: Error?) {
+        let message = String(data: characteristic.value!, encoding: .utf8)
+        // "MANOS_DETECTADAS" -> actualizar UI
+    }
+
+
+VENTAJAS DE BLE vs BLUETOOTH CLASSIC
+-------------------------------------
+    BLE                         Bluetooth Classic
+    ───                         ─────────────────
+    Funciona con iPhone         NO funciona bien
+    Bajo consumo                Alto consumo
+    Rapido (ms)                 Lento (segundos)
+    Ideal para sensores         Para audio/streaming
+    Sin emparejar               Requiere emparejar
+
+
+CONFIGURACION EN ARDUINO
+------------------------
+El codigo BLE del ESP32 usa estas librerias:
+
+    #include <BLEDevice.h>
+    #include <BLEServer.h>
+    #include <BLEUtils.h>
+    #include <BLE2902.h>
+
+Pasos:
+1. BLEDevice::init("Lavamanos")
+2. Crear servidor con callback
+3. Crear servicio con UUID
+4. Crear caracteristica con UUID
+5. Agregar descriptor BLE2902 (para notificaciones)
+6. Iniciar servicio
+7. Empezar a anunciar (advertising)
+
+
+CONFIGURACION EN iOS (SWIFT)
+----------------------------
+El iPhone usa CoreBluetooth:
+
+    import CoreBluetooth
+    
+    let centralManager = CBCentralManager()
+    
+    // Escanear
+    centralManager.scanForPeripherals(
+        withServices: [serviceUUID],
+        options: nil
+    )
+    
+    // Conectar
+    centralManager.connect(peripheral, options: nil)
+    
+    // Descubrir servicios
+    peripheral.discoverServices([serviceUUID])
+    
+    // Suscribir a notificaciones
+    peripheral.setNotifyValue(true, for: characteristic)
+    
+    // Recibir datos
+    func peripheral(_ peripheral: CBPeripheral,
+                    didUpdateValueFor characteristic: CBCharacteristic,
+                    error: Error?) {
+        let data = characteristic.value
+        // Procesar mensaje
+    }
+
+
+TIPS DE DEPURACION
+------------------
+1. Usar LightBlue (app iOS) para ver si el ESP32 anuncia
+2. Ver Monitor Serial del ESP32 para errores BLE
+3. Verificar que UUIDs coinciden en ambos lados
+4. Mantener distancia menor a 10 metros
+5. Verificar que iPhone tiene Bluetooth activado

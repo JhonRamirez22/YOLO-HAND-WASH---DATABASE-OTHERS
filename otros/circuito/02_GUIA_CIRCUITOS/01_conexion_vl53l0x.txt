@@ -1,0 +1,129 @@
+================================================================
+  CONEXION VL53L0X A ESP32 - GUIA COMPLETA
+================================================================
+
+QUE ES EL VL53L0X?
+------------------
+Sensor de distancia laser (Time-of-Flight). Emite un rayo laser
+infrarrojo y mide cuantos nanosegundos tarda en rebotar para
+calcular la distancia exacta.
+
+- Rango: 3cm a 200cm
+- Precision: +/- 3%
+- Frecuencia: 50 lecturas/segundo
+- Direccion I2C: 0x29 (fija)
+
+
+PINOUT DEL VL53L0X
+------------------
+El modulo tiene 6 pines pero solo usamos 4:
+
+    VL53L0X (vista con pines abajo)
+    ================================
+    
+      VIN   GND   SDA   SCL   XSHUT  GPIO1
+       |     |     |     |      |      |
+       |     |     |     |      |      |
+      [1]   [2]   [3]   [4]   [5]    [6]
+    
+    [1] VIN  = Alimentacion (3.3V a 5V)
+    [2] GND  = Tierra
+    [3] SDA  = Datos I2C
+    [4] SCL  = Reloj I2C
+    [5] XSHUT = Control de modo (NO CONECTAR)
+    [6] GPIO1 = Interrupcion (NO CONECTAR)
+
+
+CONECTOR AL ESP32
+-----------------
+
+    CABLE      COLOR      VL53L0X      ESP32
+    ─────      ─────      ────────     ──────
+    Alimenta.  ROJO       VIN    →    Pin 3V3
+    Tierra     NEGRO      GND    →    Pin GND
+    Datos      VERDE      SDA    →    Pin GPIO21
+    Reloj      AZUL       SCL    →    Pin GPIO22
+    (no usar)  ---        XSHUT  →    SIN CONECTAR
+    (no usar)  ---        GPIO1  →    SIN CONECTAR
+
+
+DIAGRAMA DE CABLEADO
+--------------------
+
+    VL53L0X                      ESP32
+    ────────                     ─────
+    
+    VIN  ────[ROJO]──────────── 3V3
+    GND  ────[NEGRO]─────────── GND
+    SDA  ────[VERDE]─────────── GPIO21
+    SCL  ────[AZUL]──────────── GPIO22
+    XSHUT    (sin conectar)
+    GPIO1    (sin conectar)
+
+
+NOTAS IMPORTANTES
+-----------------
+1. El VL53L0X ya tiene resistencias pull-up I2C internamente.
+   NO necesitas agregar resistencias adicionales.
+
+2. Usar cables CORTOS (menos de 15cm) para mejor estabilidad.
+
+3. La direccion I2C es 0x29 y NO se puede cambiar.
+
+4. Al encender, el sensor tarda ~200ms en inicializar.
+
+5. El VL53L0X funciona con 3.3V pero tambien acepta 5V.
+   Recomendado: usar 3.3V para consistencia con MPU6050.
+
+
+VERIFICACION
+------------
+Despues de conectar, sube este codigo de prueba:
+
+    #include <Wire.h>
+    #include <Adafruit_VL53L0X.h>
+    
+    Adafruit_VL53L0X lox = Adafruit_VL53L0X();
+    
+    void setup() {
+      Serial.begin(115200);
+      Wire.begin(21, 22);
+      
+      if (!lox.begin()) {
+        Serial.println("ERROR: VL53L0X no encontrado");
+        while (1);
+      }
+      Serial.println("VL53L0X OK");
+      lox.startRangeContinuous();
+    }
+    
+    void loop() {
+      if (lox.isRangeComplete()) {
+        Serial.print("Distancia: ");
+        Serial.print(lox.readRange());
+        Serial.println(" mm");
+      }
+      delay(10);
+    }
+
+Si ves numeros de 30 a 200, el sensor funciona correctamente.
+Si ves 0 o 8190, verificar conexiones SDA/SCL.
+
+
+ERRORES COMUNES
+---------------
+Problema: Siempre lee 0 o 8190
+Causa:    Cable SDA o SCL invertido o suelto
+Solucion: Verificar SDA->GPIO21, SCL->GPIO22
+
+Problema: No encontrado en I2C
+Causa:    Bus I2C no inicializado
+Solucion: Asegurar Wire.begin(21, 22) en setup()
+
+Problema: Lecturas inestables
+Causa:    Cables demasiado largos
+Solucion: Usar cables menores a 15cm
+
+Problema: Sensor calienta
+Causa:    Sobrevoltaje
+Solucion: Verificar que usa 3.3V, no 5V

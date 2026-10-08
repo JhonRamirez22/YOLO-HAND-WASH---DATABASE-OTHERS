@@ -1,0 +1,210 @@
+================================================================
+  INSTRUCCIONES DE INSTALACION Y USO
+================================================================
+
+PLATAFORMA: iOS (iPhone) + ESP32
+COMUNICACION: Bluetooth Low Energy (BLE)
+LENGUAJE: Swift (iOS) + C++ (Arduino)
+
+
+========================================
+PARTE 1: CODIGO ESP32 (Arduino IDE)
+========================================
+
+ARCHIVO: esp32/lavamanos_sensores.ino
+
+REQUISITOS:
+- Arduino IDE (https://www.arduino.cc/en/software)
+- ESP32 boards package
+- Librerias necesarias
+
+INSTALACION DE ESP32 EN ARDUINO IDE:
+1. Abrir Arduino IDE
+2. Ir a Archivo > Preferencias
+3. En "URLs adicionales de gestor de tarjetas" agregar:
+   https://dl.espressif.com/dl/package_esp32_index.json
+4. Ir a Herramientas > Placas > Gestor de tarjetas
+5. Buscar "ESP32" e instalar "ESP32 by Espressif Systems"
+
+INSTALACION DE LIBRERIAS:
+1. Ir a Herramientas > Administrar librerias
+2. Buscar e instalar cada una:
+   - "Adafruit VL53L0X" (por Adafruit)
+   - "Adafruit MPU6050" (por Adafruit)
+   - "Adafruit Unified Sensor" (por Adafruit)
+3. Las librerias BLE vienen incluidas con ESP32
+
+SUBIR CODIGO:
+1. Conectar ESP32 por USB
+2. Ir a Herramientas > Placa > "ESP32 Dev Module"
+3. Ir a Herramientas > Puerto > seleccionar puerto COM
+4. Boton "Upload" (flecha derecha)
+5. Abrir Monitor Serial ( boton derecha arriba )
+6. Configurar baud rate: 115200
+7. Verificar mensaje: "Sistema listo..."
+
+OBTENER DIRECCION BLE:
+El ESP32 aparece como "Lavamanos" en escaneos BLE.
+No necesita MAC address como Bluetooth Classic.
+
+
+========================================
+PARTE 2: CODIGO iOS (Xcode)
+========================================
+
+ARCHIVOS:
+- ios/BluetoothService.swift
+- ios/SensorViewModel.swift
+- ios/SensorViews.swift
+
+REQUISITOS:
+- Xcode (https://developer.apple.com/xcode/)
+- iPhone con iOS 13 o superior
+- Mac con macOS Catalina o superior
+
+CREAR PROYECTO EN XCODE:
+1. Abrir Xcode
+2. File > New > Project
+3. Seleccionar "iOS" > "App"
+4. Product Name: HandWashSensors
+5. Interface: SwiftUI
+6. Language: Swift
+7. Location: elegir carpeta
+
+AGREGAR ARCHIVOS:
+1. Arrastrar BluetoothService.swift al proyecto
+2. Arrastrar SensorViewModel.swift al proyecto
+3. Arrastrar SensorViews.swift al proyecto
+4. Seleccionar "Copy items if needed"
+
+CONFIGURAR PERMISOS:
+1. Abrir Info.plist (Click derecho > Open As > Source Code)
+2. Agregar estas claves:
+
+    <key>NSBluetoothAlwaysUsageDescription</key>
+    <string>Necesitamos Bluetooth para conectarnos al ESP32</string>
+    
+    <key>NSBluetoothPeripheralUsageDescription</key>
+    <string>Necesitamos Bluetooth para conectarnos al ESP32</string>
+    
+    <key>NSCameraUsageDescription</key>
+    <string>Necesitamos la camara para detectar pasos de lavado</string>
+
+CONFIGURAR CAPACIDADES:
+1. Seleccionar target del proyecto
+2. Pestaña "Signing & Capabilities"
+3. Click "+ Capability"
+4. Agregar "Bluetooth"
+5. En Background Modes, habilitar:
+   - Uses Bluetooth LE accessories
+   - Acts as a Bluetooth LE accessory
+
+COMPILAR Y EJECUTAR:
+1. Conectar iPhone por USB
+2. Seleccionar iPhone como destino
+3. Product > Run (Cmd+R)
+4. Aceptar permisos en el iPhone
+
+
+========================================
+PARTE 3: VERIFICACION
+========================================
+
+PASO 1: Verificar ESP32
+1. Subir codigo al ESP32
+2. Abrir Monitor Serial
+3. Deberia decir:
+   "Iniciando VL53L0X... OK"
+   "Iniciando MPU6050... OK"
+   "Bluetooth: Lavamanos"
+   "Sistema listo..."
+
+PASO 2: Verificar BLE
+1. Abrir app "LightBlue" en iPhone
+2. Escanear dispositivos
+3. Deberia aparecer "Lavamanos"
+4. Click para conectarse
+5. Deberia ver servicios BLE
+
+PASO 3: Verificar App iOS
+1. Ejecutar app en iPhone
+2. Ver "Conectado al ESP32"
+3. Acercar manos al VL53L0X
+4. Ver "Manos detectadas"
+5. Frotar manos
+6. Ver timer de 20 segundos
+
+
+========================================
+PARTE 4: SOLUCION DE PROBLEMAS
+========================================
+
+Problema: VL53L0X no encontrado
+Solucion:
+- Verificar conexiones SDA/SCL
+- Verificar que Wire.begin(21, 22) esta en setup()
+- Probar con codigo de prueba (ver 01_conexion_vl53l0x.txt)
+
+Problema: MPU6050 no encontrado
+Solucion:
+- Verificar voltaje (3.3V, NO 5V)
+- Verificar SDA->GPIO21, SCL->GPIO22
+- Verificar que mpu.begin() funciona
+
+Problema: iPhone no encuentra ESP32
+Solucion:
+- Verificar que ESP32 esta corriendo
+- Activar Bluetooth en iPhone
+- Usar LightBlue para verificar que ESP32 anuncia
+- Verificar que usa BLE (no Bluetooth Classic)
+
+Problema: App no recibe datos
+Solucion:
+- Verificar UUIDs coinciden en ESP32 y Swift
+- Verificar que se suscribio a notificaciones
+- Ver Monitor Serial del ESP32 para errores
+
+Problema: Timer no inicia
+Solucion:
+- Verificar que FROTANDO_INICIO se recibe
+- Verificar logica de Timer en SensorViewModel
+- Verificar que umbralMovimiento no es muy alto
+
+Problema: App crashea
+Solucion:
+- Verificar permisos en Info.plist
+- Verificar que Background Modes estan habilitados
+- Ver consola de Xcode para errores
+
+Problema: BLE se desconecta
+Solucion:
+- Mantener iPhone cerca del ESP32 (< 10 metros)
+- No haber otros dispositivos BLE interferencia
+- Verificar bateria del ESP32 no baja
+
+
+========================================
+PARTE 5: OBTENER MAC DEL ESP32
+========================================
+
+Para Bluetooth Classic (NO RECOMENDADO para iOS):
+
+Subir este codigo temporal:
+
+    #include <BluetoothSerial.h>
+    BluetoothSerial SerialBT;
+    
+    void setup() {
+      Serial.begin(115200);
+      SerialBT.begin("Test");
+      Serial.println("MAC: " + String(SerialBT.get_mac_address()));
+    }
+    
+    void loop() {
+      delay(1000);
+    }
+
+Abrir Monitor Serial para ver la MAC.
+
+NOTA: Para iOS, usar BLE (no necesita MAC).
+El ESP32 aparece como "Lavamanos" en escaneos BLE.

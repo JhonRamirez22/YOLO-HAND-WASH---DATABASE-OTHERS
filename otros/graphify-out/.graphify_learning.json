@@ -1,0 +1,1631 @@
+{
+  "generated_at": "2026-10-08T20:52:03.011341+00:00",
+  "nodes": {
+    "backend_src_main_java_com_handwash_agent_evaluadorsecuencia_evaluadorsecuencia": {
+      "code_fingerprint": "7615f5d32eb5eec484cd728b91b916a5a23a7e0a38a01164d5681c3b3656aedf",
+      "label": "EvaluadorSecuencia",
+      "last": "2026-10-08T18:47:23.138644+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-08T18:47:23.138644+00:00",
+          "outcome": "useful",
+          "q": "enfocate en mejorar todo, y dejarlo apto para hospitales, haciendo que el modelo funcione bien de la mano ahora usando yolo26 con el modelo entrenado, java con patrones de software y en estos patrones en java ahora usando OPENCV, necesito que todo quede perfecto para el uso hospitalario, haciendo que detecte cada paso, empezando primero por que detecte las manos, al detectar las manos empezar con el primer paso y asi hasta el final, todo funcional desde distintos angulos"
+        },
+        {
+          "date": "2026-10-08T00:55:17.505761+00:00",
+          "outcome": "useful",
+          "q": "Can a negative System.nanoTime origin corrupt server event timestamps in the clinical evaluator?"
+        }
+      ],
+      "score": 1.978982856,
+      "source_file": "backend/src/main/java/com/handwash/agent/EvaluadorSecuencia.java",
+      "status": "preferred",
+      "uses": 2
+    },
+    "backend_src_main_java_com_handwash_agent_notificador_notificador": {
+      "code_fingerprint": "95d86acefbc26a9755318671b017dbd88a084042189cd22c316bd41af93edfe2",
+      "label": "Notificador",
+      "last": "2026-10-08T18:47:23.138644+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-08T18:47:23.138644+00:00",
+          "outcome": "useful",
+          "q": "enfocate en mejorar todo, y dejarlo apto para hospitales, haciendo que el modelo funcione bien de la mano ahora usando yolo26 con el modelo entrenado, java con patrones de software y en estos patrones en java ahora usando OPENCV, necesito que todo quede perfecto para el uso hospitalario, haciendo que detecte cada paso, empezando primero por que detecte las manos, al detectar las manos empezar con el primer paso y asi hasta el final, todo funcional desde distintos angulos"
+        },
+        {
+          "date": "2026-10-08T18:35:23.844604+00:00",
+          "outcome": "useful",
+          "q": "Actúa como un Arquitecto de Software Senior y Experto en Visión por Computadora en Java. \n\nEstoy diseñando un sistema de auditoría en tiempo real para validar el lavado de manos según el protocolo de la OMS. Ya tengo una arquitectura base definida y aprobada. Tu objetivo NO es reemplazarla, rediseñarla ni cambiar los componentes actuales; tu tarea es EVALUAR su viabilidad y PROPONER ADICIONES O COMPLEMENTOS técnicos que enriquezcan la solución para resolver el problema de precisión.\n\n### Arquitectura Base Actual (NO REEMPLAZAR):\n1. Stack Tecnológico: Backend en Java utilizando la biblioteca JavaCV (wrapper de OpenCV y YOLO).\n2. Rol de YOLO: Localización inicial de las manos (detección de la Región de Interés - ROI).\n3. Rol de OpenCV: Preprocesamiento de frames, segmentación por color (HSV para espuma) y flujo óptico (Optical Flow) para medir la fricción/movimiento en la ROI.\n4. Patrones de Diseño Implementados (Regla de negocio obligatoria de 5 patrones):\n   - Singleton: Para la carga única en memoria del modelo YOLO.\n   - Factory Method: Para inicializar componentes de captura y procesamiento según el stream de video.\n   - Strategy: Para intercambiar la lógica de validación específica de cada paso de la OMS.\n   - Chain of Responsibility (Pipeline): Para el flujo secuencial del frame (Preprocesamiento -> YOLO -> ROI OpenCV -> Estrategia).\n   - Observer: Para notificar el estado y progreso de los pasos en tiempo real (vía WebSockets/DB).\n\n### Tareas solicitadas:\n1. Confirmación de Viabilidad Base: Valida brevemente que la combinación actual de JavaCV + los 5 patrones es viable, identificando si existe algún riesgo menor de rendimiento (como el Garbage Collector con memoria nativa C++) que debamos prever en la implementación.\n2. Extensiones y Adiciones de Precisión (Qué agregar): Proponme componentes, técnicas, librerías complementarias o capas lógicas adicionales que se integren de forma natural dentro de esta estructura para asegurar que el sistema no falle al distinguir los pasos finos de la OMS. (Por ejemplo: algoritmos específicos de tracking de OpenCV para no saturar a YOLO, clasificadores secundarios ligeros dentro de las \"Strategies\", o control de estados temporales).\n3. Ajuste de Patrones: Explica brevemente cómo las adiciones propuestas se acoplan o enriquecen los 5 patrones ya existentes sin romperlos (por ejemplo, cómo una nueva técnica de análisis se sumaría como un eslabón extra en la Chain of Responsibility o una nueva clase en la Strategy).\n\nMantén un enfoque estrictamente aditivo: construye sobre lo que ya tengo construido."
+        },
+        {
+          "date": "2026-10-08T16:42:36.770147+00:00",
+          "outcome": "useful",
+          "q": "Actúa como arquitecto senior: evalúa la viabilidad de JavaCV + YOLO/OpenCV para auditar pasos OMS, propón complementos aditivos de precisión y explica cómo se acoplan a Singleton, Factory Method, Strategy, Chain of Responsibility y Observer."
+        },
+        {
+          "date": "2026-10-08T05:14:33.549832+00:00",
+          "outcome": "useful",
+          "q": "Trace the live hand-presence warmup, step acceptance, and clinical-approval path for production readiness."
+        },
+        {
+          "date": "2026-10-08T00:55:17.505814+00:00",
+          "outcome": "useful",
+          "q": "How is the WHO handwashing sequence represented and prevented from producing an unsupported clinical approval?"
+        }
+      ],
+      "score": 5.921945977,
+      "source_file": "backend/src/main/java/com/handwash/agent/Notificador.java",
+      "status": "preferred",
+      "uses": 6
+    },
+    "backend_src_main_java_com_handwash_agent_receptor_receptor": {
+      "code_fingerprint": "5d319d0175e777db4c6d9ecbf368c7bc3566f40ac52ef6ebf8ec177088d64782",
+      "label": "Receptor",
+      "last": "2026-10-08T18:47:23.138644+00:00",
+      "neg": 1,
+      "provenance": [
+        {
+          "date": "2026-10-08T18:47:23.138644+00:00",
+          "outcome": "useful",
+          "q": "enfocate en mejorar todo, y dejarlo apto para hospitales, haciendo que el modelo funcione bien de la mano ahora usando yolo26 con el modelo entrenado, java con patrones de software y en estos patrones en java ahora usando OPENCV, necesito que todo quede perfecto para el uso hospitalario, haciendo que detecte cada paso, empezando primero por que detecte las manos, al detectar las manos empezar con el primer paso y asi hasta el final, todo funcional desde distintos angulos"
+        },
+        {
+          "date": "2026-10-08T18:35:23.844604+00:00",
+          "outcome": "useful",
+          "q": "Actúa como un Arquitecto de Software Senior y Experto en Visión por Computadora en Java. \n\nEstoy diseñando un sistema de auditoría en tiempo real para validar el lavado de manos según el protocolo de la OMS. Ya tengo una arquitectura base definida y aprobada. Tu objetivo NO es reemplazarla, rediseñarla ni cambiar los componentes actuales; tu tarea es EVALUAR su viabilidad y PROPONER ADICIONES O COMPLEMENTOS técnicos que enriquezcan la solución para resolver el problema de precisión.\n\n### Arquitectura Base Actual (NO REEMPLAZAR):\n1. Stack Tecnológico: Backend en Java utilizando la biblioteca JavaCV (wrapper de OpenCV y YOLO).\n2. Rol de YOLO: Localización inicial de las manos (detección de la Región de Interés - ROI).\n3. Rol de OpenCV: Preprocesamiento de frames, segmentación por color (HSV para espuma) y flujo óptico (Optical Flow) para medir la fricción/movimiento en la ROI.\n4. Patrones de Diseño Implementados (Regla de negocio obligatoria de 5 patrones):\n   - Singleton: Para la carga única en memoria del modelo YOLO.\n   - Factory Method: Para inicializar componentes de captura y procesamiento según el stream de video.\n   - Strategy: Para intercambiar la lógica de validación específica de cada paso de la OMS.\n   - Chain of Responsibility (Pipeline): Para el flujo secuencial del frame (Preprocesamiento -> YOLO -> ROI OpenCV -> Estrategia).\n   - Observer: Para notificar el estado y progreso de los pasos en tiempo real (vía WebSockets/DB).\n\n### Tareas solicitadas:\n1. Confirmación de Viabilidad Base: Valida brevemente que la combinación actual de JavaCV + los 5 patrones es viable, identificando si existe algún riesgo menor de rendimiento (como el Garbage Collector con memoria nativa C++) que debamos prever en la implementación.\n2. Extensiones y Adiciones de Precisión (Qué agregar): Proponme componentes, técnicas, librerías complementarias o capas lógicas adicionales que se integren de forma natural dentro de esta estructura para asegurar que el sistema no falle al distinguir los pasos finos de la OMS. (Por ejemplo: algoritmos específicos de tracking de OpenCV para no saturar a YOLO, clasificadores secundarios ligeros dentro de las \"Strategies\", o control de estados temporales).\n3. Ajuste de Patrones: Explica brevemente cómo las adiciones propuestas se acoplan o enriquecen los 5 patrones ya existentes sin romperlos (por ejemplo, cómo una nueva técnica de análisis se sumaría como un eslabón extra en la Chain of Responsibility o una nueva clase en la Strategy).\n\nMantén un enfoque estrictamente aditivo: construye sobre lo que ya tengo construido."
+        },
+        {
+          "date": "2026-10-08T18:05:13.313001+00:00",
+          "outcome": "useful",
+          "q": "Evalúa la viabilidad de JavaCV, OpenCV, YOLO y cinco patrones para detectar pasos OMS; propone complementos aditivos de precisión."
+        },
+        {
+          "date": "2026-10-08T16:42:36.770147+00:00",
+          "outcome": "useful",
+          "q": "Actúa como arquitecto senior: evalúa la viabilidad de JavaCV + YOLO/OpenCV para auditar pasos OMS, propón complementos aditivos de precisión y explica cómo se acoplan a Singleton, Factory Method, Strategy, Chain of Responsibility y Observer."
+        },
+        {
+          "date": "2026-10-08T15:39:38.764540+00:00",
+          "outcome": "useful",
+          "q": "¿Cómo se aplica la compuerta bilateral de tres segundos entre el productor YOLO y Java antes de aceptar pasos?"
+        }
+      ],
+      "score": 7.928727411,
+      "source_file": "backend/src/main/java/com/handwash/agent/Receptor.java",
+      "status": "contested",
+      "uses": 9,
+      "verdict": "useful"
+    },
+    "backend_src_main_java_com_handwash_api_v1_deploymentstatuscontroller_deploymentstatuscontroller": {
+      "code_fingerprint": "b03b669b5e053f227506c55273038b38ed49a1dc4f0b58cb1350f16f55dec444",
+      "label": "DeploymentStatusController",
+      "last": "2026-10-07T14:39:53.429119+00:00",
+      "neg": 1,
+      "provenance": [
+        {
+          "date": "2026-10-07T14:39:53.429119+00:00",
+          "outcome": "corrected",
+          "q": "Can DeploymentStatusService permit a production clinical decision today?"
+        },
+        {
+          "date": "2026-10-07T06:51:58.412165+00:00",
+          "outcome": "useful",
+          "q": "¿La firma de release autoriza aprobación clínica automática?"
+        }
+      ],
+      "score": -0.0072653,
+      "source_file": "backend/src/main/java/com/handwash/api/v1/DeploymentStatusController.java",
+      "status": "contested",
+      "uses": 1,
+      "verdict": "dead end"
+    },
+    "backend_src_main_java_com_handwash_api_v1_dto_omsactionresponse_omsactionresponse": {
+      "code_fingerprint": "04617eca0ccb195d06366a73c2c214bbaaa6e0710073afdd46b3d5cc4a9da555",
+      "label": "OmsActionResponse",
+      "last": "2026-10-07T15:32:57.197619+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-07T15:32:57.197619+00:00",
+          "outcome": "useful",
+          "q": "Trace OMS phase transitions and canonical wire codes through API, summaries, and dashboard."
+        }
+      ],
+      "score": 0.97216976,
+      "source_file": "backend/src/main/java/com/handwash/api/v1/dto/OmsActionResponse.java",
+      "status": "tentative",
+      "uses": 1
+    },
+    "backend_src_main_java_com_handwash_api_v1_dto_soapevidencerequest_soapevidencerequest": {
+      "code_fingerprint": "905f743d3f7b4ed037f958920ffa271626c66a4f744739e4c5651fc62de93a96",
+      "label": "SoapEvidenceRequest",
+      "last": "2026-10-07T06:51:58.354875+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-07T06:51:58.354875+00:00",
+          "outcome": "useful",
+          "q": "¿Qué valida el backend en la secuencia OMS y en la cobertura regional de jabón?"
+        }
+      ],
+      "score": 0.964077095,
+      "source_file": "backend/src/main/java/com/handwash/api/v1/dto/SoapEvidenceRequest.java",
+      "status": "tentative",
+      "uses": 1
+    },
+    "backend_src_main_java_com_handwash_api_v1_mapper_protocolcatalogmapper": {
+      "code_fingerprint": "835da82d20f88735345846797f7762e8dcff31c96ab8c81f589058e2a6ad7b0c",
+      "label": "ProtocolCatalogMapper.java",
+      "last": "2026-10-07T15:32:57.197619+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-07T15:32:57.197619+00:00",
+          "outcome": "useful",
+          "q": "Trace OMS phase transitions and canonical wire codes through API, summaries, and dashboard."
+        }
+      ],
+      "score": 0.97216976,
+      "source_file": "backend/src/main/java/com/handwash/api/v1/mapper/ProtocolCatalogMapper.java",
+      "status": "tentative",
+      "uses": 1
+    },
+    "backend_src_main_java_com_handwash_api_v1_mapper_protocolcatalogmapper_protocolcatalogmapper": {
+      "code_fingerprint": "835da82d20f88735345846797f7762e8dcff31c96ab8c81f589058e2a6ad7b0c",
+      "label": "ProtocolCatalogMapper",
+      "last": "2026-10-08T00:57:00.814461+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-08T00:57:00.814461+00:00",
+          "outcome": "useful",
+          "q": "¿La secuencia OMS y sus instrucciones del catálogo coinciden con la lámina oficial en español?"
+        }
+      ],
+      "score": 0.98100821,
+      "source_file": "backend/src/main/java/com/handwash/api/v1/mapper/ProtocolCatalogMapper.java",
+      "status": "tentative",
+      "uses": 1
+    },
+    "backend_src_main_java_com_handwash_config_observerpipelineconfig": {
+      "code_fingerprint": "437becce323b9c07e914d9040e8851ecbb253b8af44d4a9dc2166a4b1c1103a0",
+      "label": "ObserverPipelineConfig.java",
+      "last": "2026-10-08T19:38:09.582709+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-08T19:38:09.582709+00:00",
+          "outcome": "useful",
+          "q": "Actúa como un Arquitecto de Software Senior y Experto en Visión por Computadora en Java. Estoy diseñando un sistema de auditoría en tiempo real para validar el lavado de manos según el protocolo de la OMS. Evalúa la viabilidad de JavaCV + OpenCV + YOLO con Singleton, Factory Method, Strategy, Chain of Responsibility y Observer; propone adiciones de precisión sin reemplazar la arquitectura."
+        }
+      ],
+      "score": 0.998815124,
+      "source_file": "backend/src/main/java/com/handwash/config/ObserverPipelineConfig.java",
+      "status": "tentative",
+      "uses": 1
+    },
+    "backend_src_main_java_com_handwash_config_observerpipelineconfig_observerpipelineconfig": {
+      "code_fingerprint": "437becce323b9c07e914d9040e8851ecbb253b8af44d4a9dc2166a4b1c1103a0",
+      "label": "ObserverPipelineConfig",
+      "last": "2026-10-08T19:59:53.435577+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-08T19:59:53.435577+00:00",
+          "outcome": "useful",
+          "q": "Evalúa viabilidad JavaCV + OpenCV + YOLO y los cinco patrones; propone complementos aditivos para mejorar precisión del lavado OMS."
+        },
+        {
+          "date": "2026-10-08T19:22:45.900164+00:00",
+          "outcome": "useful",
+          "q": "Evalúa viabilidad JavaCV, YOLO y patrones para lavado OMS"
+        },
+        {
+          "date": "2026-10-08T18:47:23.138644+00:00",
+          "outcome": "useful",
+          "q": "enfocate en mejorar todo, y dejarlo apto para hospitales, haciendo que el modelo funcione bien de la mano ahora usando yolo26 con el modelo entrenado, java con patrones de software y en estos patrones en java ahora usando OPENCV, necesito que todo quede perfecto para el uso hospitalario, haciendo que detecte cada paso, empezando primero por que detecte las manos, al detectar las manos empezar con el primer paso y asi hasta el final, todo funcional desde distintos angulos"
+        },
+        {
+          "date": "2026-10-08T18:35:23.844604+00:00",
+          "outcome": "useful",
+          "q": "Actúa como un Arquitecto de Software Senior y Experto en Visión por Computadora en Java. \n\nEstoy diseñando un sistema de auditoría en tiempo real para validar el lavado de manos según el protocolo de la OMS. Ya tengo una arquitectura base definida y aprobada. Tu objetivo NO es reemplazarla, rediseñarla ni cambiar los componentes actuales; tu tarea es EVALUAR su viabilidad y PROPONER ADICIONES O COMPLEMENTOS técnicos que enriquezcan la solución para resolver el problema de precisión.\n\n### Arquitectura Base Actual (NO REEMPLAZAR):\n1. Stack Tecnológico: Backend en Java utilizando la biblioteca JavaCV (wrapper de OpenCV y YOLO).\n2. Rol de YOLO: Localización inicial de las manos (detección de la Región de Interés - ROI).\n3. Rol de OpenCV: Preprocesamiento de frames, segmentación por color (HSV para espuma) y flujo óptico (Optical Flow) para medir la fricción/movimiento en la ROI.\n4. Patrones de Diseño Implementados (Regla de negocio obligatoria de 5 patrones):\n   - Singleton: Para la carga única en memoria del modelo YOLO.\n   - Factory Method: Para inicializar componentes de captura y procesamiento según el stream de video.\n   - Strategy: Para intercambiar la lógica de validación específica de cada paso de la OMS.\n   - Chain of Responsibility (Pipeline): Para el flujo secuencial del frame (Preprocesamiento -> YOLO -> ROI OpenCV -> Estrategia).\n   - Observer: Para notificar el estado y progreso de los pasos en tiempo real (vía WebSockets/DB).\n\n### Tareas solicitadas:\n1. Confirmación de Viabilidad Base: Valida brevemente que la combinación actual de JavaCV + los 5 patrones es viable, identificando si existe algún riesgo menor de rendimiento (como el Garbage Collector con memoria nativa C++) que debamos prever en la implementación.\n2. Extensiones y Adiciones de Precisión (Qué agregar): Proponme componentes, técnicas, librerías complementarias o capas lógicas adicionales que se integren de forma natural dentro de esta estructura para asegurar que el sistema no falle al distinguir los pasos finos de la OMS. (Por ejemplo: algoritmos específicos de tracking de OpenCV para no saturar a YOLO, clasificadores secundarios ligeros dentro de las \"Strategies\", o control de estados temporales).\n3. Ajuste de Patrones: Explica brevemente cómo las adiciones propuestas se acoplan o enriquecen los 5 patrones ya existentes sin romperlos (por ejemplo, cómo una nueva técnica de análisis se sumaría como un eslabón extra en la Chain of Responsibility o una nueva clase en la Strategy).\n\nMantén un enfoque estrictamente aditivo: construye sobre lo que ya tengo construido."
+        },
+        {
+          "date": "2026-10-08T18:05:13.313001+00:00",
+          "outcome": "useful",
+          "q": "Evalúa la viabilidad de JavaCV, OpenCV, YOLO y cinco patrones para detectar pasos OMS; propone complementos aditivos de precisión."
+        }
+      ],
+      "score": 6.982519438,
+      "source_file": "backend/src/main/java/com/handwash/config/ObserverPipelineConfig.java",
+      "status": "preferred",
+      "uses": 7
+    },
+    "backend_src_main_java_com_handwash_config_stationprofilesafetyguard_stationprofilesafetyguard": {
+      "code_fingerprint": "ad290b6bbafbd6a299af1100b438fd5a0842dd3730072bd25f733ec32d4ceacc",
+      "label": "StationProfileSafetyGuard",
+      "last": "2026-10-08T20:48:57.342379+00:00",
+      "neg": 4,
+      "provenance": [
+        {
+          "date": "2026-10-08T20:48:57.342379+00:00",
+          "outcome": "corrected",
+          "q": "Reestructura el proyecto según convenciones profesionales sin cambiar comportamiento"
+        },
+        {
+          "date": "2026-10-08T20:47:39.434037+00:00",
+          "outcome": "corrected",
+          "q": "Reorganize this software project professionally without changing behavior"
+        },
+        {
+          "date": "2026-10-08T20:36:48.758279+00:00",
+          "outcome": "corrected",
+          "q": "Organize the frontend, backend and databases into clear folders and remove files that are no longer useful"
+        },
+        {
+          "date": "2026-10-08T15:50:41.156369+00:00",
+          "outcome": "useful",
+          "q": "propon agregar un parametro que primero detecte manos y, tras 3 segundos, habilite el lavado por pasos para uso clinico"
+        },
+        {
+          "date": "2026-10-08T05:28:52.113729+00:00",
+          "outcome": "useful",
+          "q": "¿El perfil station impide sobrescribir umbrales clínicos de movimiento sin calibración y firma?"
+        }
+      ],
+      "score": 2.911921887,
+      "source_file": "backend/src/main/java/com/handwash/config/StationProfileSafetyGuard.java",
+      "status": "contested",
+      "uses": 7,
+      "verdict": "useful"
+    },
+    "backend_src_main_java_com_handwash_config_stationreleasemanifestverifier_stationreleasemanifestverifier": {
+      "code_fingerprint": "f6842639cfdb37979d25967ac474eba9e356e5885eecc303b0b0fc384587613d",
+      "label": "StationReleaseManifestVerifier",
+      "last": "2026-10-08T16:05:23.312595+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-08T16:05:23.312595+00:00",
+          "outcome": "useful",
+          "q": "¿El YAML local prueba la semántica del checkpoint activo y permite validar su precisión para hospital?"
+        },
+        {
+          "date": "2026-10-08T05:37:15.711018+00:00",
+          "outcome": "useful",
+          "q": "Can delayed presence pulses falsely complete the three-second hand warmup?"
+        },
+        {
+          "date": "2026-10-08T05:28:52.113729+00:00",
+          "outcome": "useful",
+          "q": "¿El perfil station impide sobrescribir umbrales clínicos de movimiento sin calibración y firma?"
+        },
+        {
+          "date": "2026-10-08T05:03:44.766914+00:00",
+          "outcome": "useful",
+          "q": "¿Qué bloquea hoy el uso hospitalario y cómo se corrigió el desfase entre la compuerta local y Java?"
+        },
+        {
+          "date": "2026-10-08T04:40:40.777432+00:00",
+          "outcome": "useful",
+          "q": "Do the release manifest flags for active movement magnitude thresholds match Java behavior?"
+        }
+      ],
+      "score": 15.605718683,
+      "source_file": "backend/src/main/java/com/handwash/config/StationReleaseManifestVerifier.java",
+      "status": "preferred",
+      "uses": 16
+    },
+    "backend_src_main_java_com_handwash_controller_detectioncontroller": {
+      "code_fingerprint": "577089e68bcec6ca7ab108cdc7ea28a6269a4dea1f1afbfe25e3cc53f8d71a64",
+      "label": "DetectionController.java",
+      "last": "2026-10-08T17:06:46.334475+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-08T17:06:46.334475+00:00",
+          "outcome": "useful",
+          "q": "Actúa como un Arquitecto de Software Senior y evalúa aditivamente JavaCV + OpenCV + YOLO y los cinco patrones para el lavado de manos OMS."
+        },
+        {
+          "date": "2026-10-07T19:01:10.904432+00:00",
+          "outcome": "useful",
+          "q": "Audita el flujo actual de evidencia bilateral YOLO→Java y los bloqueos de producción hospitalaria."
+        }
+      ],
+      "score": 1.971815175,
+      "source_file": "backend/src/main/java/com/handwash/controller/DetectionController.java",
+      "status": "preferred",
+      "uses": 2
+    },
+    "backend_src_main_java_com_handwash_controller_detectioncontroller_detectioncontroller": {
+      "code_fingerprint": "577089e68bcec6ca7ab108cdc7ea28a6269a4dea1f1afbfe25e3cc53f8d71a64",
+      "label": "DetectionController",
+      "last": "2026-10-08T17:15:24.630711+00:00",
+      "neg": 1,
+      "provenance": [
+        {
+          "date": "2026-10-08T17:15:24.630711+00:00",
+          "outcome": "useful",
+          "q": "Evalúa si JavaCV+OpenCV+YOLO y cinco patrones son viables para auditar lavado OMS; propone mejoras aditivas sin reemplazar la arquitectura"
+        },
+        {
+          "date": "2026-10-07T04:56:07.837898+00:00",
+          "outcome": "corrected",
+          "q": "¿Qué conecta al productor Python de cámara con el backend Java?"
+        }
+      ],
+      "score": 0.034243198,
+      "source_file": "backend/src/main/java/com/handwash/controller/DetectionController.java",
+      "status": "contested",
+      "uses": 1,
+      "verdict": "useful"
+    },
+    "backend_src_main_java_com_handwash_controller_sessioncontroller_sessioncontroller": {
+      "code_fingerprint": "9979aec0969a61ee4a5c7cc67839c4a8f7d90f860d59475485a8001405456497",
+      "label": "SessionController",
+      "last": "2026-10-08T02:02:11.980315+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-08T02:02:11.980315+00:00",
+          "outcome": "useful",
+          "q": "¿Puede una sesión de estación evitar la compuerta de presencia v2 usando el flujo legacy?"
+        }
+      ],
+      "score": 0.982034799,
+      "source_file": "backend/src/main/java/com/handwash/controller/SessionController.java",
+      "status": "tentative",
+      "uses": 1
+    },
+    "backend_src_main_java_com_handwash_intention_cadenaintencionlavado_cadenaintencionlavado": {
+      "code_fingerprint": "f08908b3dfab0ee3039b60414636029c05cb69b589c991368e8e0d2d91c21259",
+      "label": "CadenaIntencionLavado",
+      "last": "2026-10-08T17:06:46.334475+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-08T17:06:46.334475+00:00",
+          "outcome": "useful",
+          "q": "Actúa como un Arquitecto de Software Senior y evalúa aditivamente JavaCV + OpenCV + YOLO y los cinco patrones para el lavado de manos OMS."
+        },
+        {
+          "date": "2026-10-08T16:57:32.906230+00:00",
+          "outcome": "useful",
+          "q": "Actúa como un Arquitecto de Software Senior y Experto en Visión por Computadora en Java.\n\nEstoy diseñando un sistema de auditoría en tiempo real para validar el lavado de manos según el protocolo de la OMS. Ya tengo una arquitectura base definida y aprobada. Tu objetivo NO es reemplazarla, rediseñarla ni cambiar los componentes actuales; tu tarea es EVALUAR su viabilidad y PROPONER ADICIONES O COMPLEMENTOS técnicos que enriquezcan la solución para resolver el problema de precisión.\n\n### Arquitectura Base Actual (NO REEMPLAZAR):\n1. Stack Tecnológico: Backend en Java utilizando la biblioteca JavaCV (wrapper de OpenCV y YOLO).\n2. Rol de YOLO: Localización inicial de las manos (detección de la Región de Interés - ROI).\n3. Rol de OpenCV: Preprocesamiento de frames, segmentación por color (HSV para espuma) y flujo óptico (Optical Flow) para medir la fricción/movimiento en la ROI.\n4. Patrones de Diseño Implementados (Regla de negocio obligatoria de 5 patrones):\n   - Singleton: Para la carga única en memoria del modelo YOLO.\n   - Factory Method: Para inicializar componentes de captura y procesamiento según el stream de video.\n   - Strategy: Para intercambiar la lógica de validación específica de cada paso de la OMS.\n   - Chain of Responsibility (Pipeline): Para el flujo secuencial del frame (Preprocesamiento -> YOLO -> ROI OpenCV -> Estrategia).\n   - Observer: Para notificar el estado y progreso de los pasos en tiempo real (vía WebSockets/DB).\n\n### Tareas solicitadas:\n1. Confirmación de Viabilidad Base: Valida brevemente que la combinación actual de JavaCV + los 5 patrones es viable, identificando si existe algún riesgo menor de rendimiento (como el Garbage Collector con memoria nativa C++) que debamos prever en la implementación.\n2. Extensiones y Adiciones de Precisión (Qué agregar): Proponme componentes, técnicas, librerías complementarias o capas lógicas adicionales que se integren de forma natural dentro de esta estructura para asegurar que el sistema no falle al distinguir los pasos finos de la OMS. (Por ejemplo: algoritmos específicos de tracking de OpenCV para no saturar a YOLO, clasificadores secundarios ligeros dentro de las \"Strategies\", o control de estados temporales).\n3. Ajuste de Patrones: Explica brevemente cómo las adiciones propuestas se acoplan o enriquecen los 5 patrones ya existentes sin romperlos (por ejemplo, cómo una nueva técnica de análisis se sumaría como un eslabón extra en la Chain of Responsibility o una nueva clase en la Strategy).\n\nMantén un enfoque estrictamente aditivo: construye sobre lo que ya tengo construido."
+        },
+        {
+          "date": "2026-10-08T16:42:36.770147+00:00",
+          "outcome": "useful",
+          "q": "Actúa como arquitecto senior: evalúa la viabilidad de JavaCV + YOLO/OpenCV para auditar pasos OMS, propón complementos aditivos de precisión y explica cómo se acoplan a Singleton, Factory Method, Strategy, Chain of Responsibility y Observer."
+        },
+        {
+          "date": "2026-10-08T16:19:56.229434+00:00",
+          "outcome": "useful",
+          "q": "Evalúa la viabilidad de una arquitectura JavaCV + OpenCV + YOLO con Singleton, Factory Method, Strategy, Chain of Responsibility y Observer, y propone complementos aditivos de precisión para auditoría de lavado de manos OMS."
+        },
+        {
+          "date": "2026-10-08T04:40:40.777432+00:00",
+          "outcome": "useful",
+          "q": "Do the release manifest flags for active movement magnitude thresholds match Java behavior?"
+        }
+      ],
+      "score": 20.572830851,
+      "source_file": "backend/src/main/java/com/handwash/intention/CadenaIntencionLavado.java",
+      "status": "preferred",
+      "uses": 21
+    },
+    "backend_src_main_java_com_handwash_intention_filtrointencion_filtrointencion": {
+      "code_fingerprint": "2ff319d81c562865cfe7d73739c04b4ac512a812740bfb4f7b88b6fad172503a",
+      "label": "FiltroIntencion",
+      "last": "2026-10-08T16:19:56.229434+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-08T16:19:56.229434+00:00",
+          "outcome": "useful",
+          "q": "Evalúa la viabilidad de una arquitectura JavaCV + OpenCV + YOLO con Singleton, Factory Method, Strategy, Chain of Responsibility y Observer, y propone complementos aditivos de precisión para auditoría de lavado de manos OMS."
+        }
+      ],
+      "score": 0.995643444,
+      "source_file": "backend/src/main/java/com/handwash/intention/FiltroIntencion.java",
+      "status": "tentative",
+      "uses": 1
+    },
+    "backend_src_main_java_com_handwash_intention_seguimientointencion_seguimientointencion": {
+      "code_fingerprint": "cb4ee5f013a6950fa33f3ca2d6a9d02b6a8dab73d7a91c1594bd975fe7f8adab",
+      "label": "SeguimientoIntencion",
+      "last": "2026-10-08T16:00:02.322984+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-08T16:00:02.322984+00:00",
+          "outcome": "useful",
+          "q": "propon agregar un parametro que haga que primero se deban detectar las manos, y cuando ya esten manos presentes despues de 3 segundos de detectar las manos, empiece el lavado por los pasos correspondientes, esto que quede super bien funcional para el uso clinico en hospitales"
+        },
+        {
+          "date": "2026-10-08T00:55:17.505761+00:00",
+          "outcome": "useful",
+          "q": "Can a negative System.nanoTime origin corrupt server event timestamps in the clinical evaluator?"
+        },
+        {
+          "date": "2026-10-07T23:38:10.769412+00:00",
+          "outcome": "useful",
+          "q": "propon agregar un parametro que haga que primero se deban detectar las manos, y cuando ya esten manos presentes despues de 3 segundos de detectar las manos, empiece el lavado por los pasos correspondientes, esto que quede super bien funcional para el uso clinico en hospitales"
+        },
+        {
+          "date": "2026-10-07T23:18:43.335424+00:00",
+          "outcome": "useful",
+          "q": "Propon agregar un parametro para detectar ambas manos durante 3 segundos antes de habilitar el lavado por pasos"
+        },
+        {
+          "date": "2026-10-07T21:54:47.735723+00:00",
+          "outcome": "useful",
+          "q": "¿Cómo agregar preparación de manos durante 3 s antes del inicio del lavado sin acreditar presencia como paso?"
+        }
+      ],
+      "score": 12.675653257,
+      "source_file": "backend/src/main/java/com/handwash/intention/SeguimientoIntencion.java",
+      "status": "preferred",
+      "uses": 13
+    },
+    "backend_src_main_java_com_handwash_model_accionoms_accionoms": {
+      "code_fingerprint": "15f9bd731e167cc72b48d8195cee33c39d0f7e9ea9789ced0e2db314bbe5ea55",
+      "label": "AccionOms",
+      "last": "2026-10-08T04:26:02.097537+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-08T04:26:02.097537+00:00",
+          "outcome": "useful",
+          "q": "Can the Java OMS sequence and bilateral soap-region evidence drift from the clinical protocol?"
+        },
+        {
+          "date": "2026-10-08T00:57:00.814461+00:00",
+          "outcome": "useful",
+          "q": "¿La secuencia OMS y sus instrucciones del catálogo coinciden con la lámina oficial en español?"
+        },
+        {
+          "date": "2026-10-08T00:55:17.505814+00:00",
+          "outcome": "useful",
+          "q": "How is the WHO handwashing sequence represented and prevented from producing an unsupported clinical approval?"
+        }
+      ],
+      "score": 2.946293121,
+      "source_file": "backend/src/main/java/com/handwash/model/AccionOms.java",
+      "status": "preferred",
+      "uses": 3
+    },
+    "backend_src_main_java_com_handwash_model_evidenciamovimiento_evidenciamovimiento": {
+      "code_fingerprint": "9490516c94d9501fa030c73cbefb852ff12deae48c611e26fc7cf3811be30cdf",
+      "label": "EvidenciaMovimiento",
+      "last": "2026-10-08T18:05:13.313001+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-08T18:05:13.313001+00:00",
+          "outcome": "useful",
+          "q": "Evalúa la viabilidad de JavaCV, OpenCV, YOLO y cinco patrones para detectar pasos OMS; propone complementos aditivos de precisión."
+        },
+        {
+          "date": "2026-10-08T17:47:52.035539+00:00",
+          "outcome": "useful",
+          "q": "Actúa como un Arquitecto de Software Senior y Experto en Visión por Computadora en Java.\n\nEstoy diseñando un sistema de auditoría en tiempo real para validar el lavado de manos según el protocolo de la OMS. Ya tengo una arquitectura base definida y aprobada. El objetivo es evaluarla y proponer adiciones técnicas, sin reemplazar los componentes ni patrones actuales.\n\nBase: JavaCV para captura/OpenCV/YOLO; YOLO localiza manos y ROI; OpenCV usa HSV para espuma y Optical Flow para movimiento; patrones Singleton, Factory Method, Strategy, Chain of Responsibility y Observer.\n\nTareas: validar viabilidad/riesgos de rendimiento y memoria nativa; proponer técnicas y capas para mejorar precisión de pasos finos; explicar cómo se integran en los cinco patrones."
+        },
+        {
+          "date": "2026-10-07T21:22:54.546934+00:00",
+          "outcome": "useful",
+          "q": "Can an active wash step be credited when bilateral motion measurement is invalid or zero?"
+        },
+        {
+          "date": "2026-10-07T19:44:15.642986+00:00",
+          "outcome": "useful",
+          "q": "Audit whether the hand-presence warmup makes clinical handwashing verification production-ready"
+        }
+      ],
+      "score": 3.948117556,
+      "source_file": "backend/src/main/java/com/handwash/model/EvidenciaMovimiento.java",
+      "status": "preferred",
+      "uses": 4
+    },
+    "backend_src_main_java_com_handwash_model_pasolavado_pasolavado_fondo": {
+      "code_fingerprint": "18e86306b751fa026e25c37001d80a94a22f323758dbca7c415bf8004c447fcd",
+      "label": "FONDO",
+      "last": "2026-10-08T05:43:15.265083+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-08T05:43:15.265083+00:00",
+          "outcome": "useful",
+          "q": "Is the stored DataSet5 YAML safe for training, and does the full verifier enforce that?"
+        }
+      ],
+      "score": 0.985524103,
+      "source_file": "backend/src/main/java/com/handwash/model/PasoLavado.java",
+      "status": "tentative",
+      "uses": 1
+    },
+    "backend_src_main_java_com_handwash_model_regionjabon_regionjabon": {
+      "code_fingerprint": "97900658bea1ee9acaef9051e36ae586f100803e27fca1f19691e50ea0a1fa67",
+      "label": "RegionJabon",
+      "last": "2026-10-08T04:26:02.097537+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-08T04:26:02.097537+00:00",
+          "outcome": "useful",
+          "q": "Can the Java OMS sequence and bilateral soap-region evidence drift from the clinical protocol?"
+        },
+        {
+          "date": "2026-10-07T06:51:58.354875+00:00",
+          "outcome": "useful",
+          "q": "¿Qué valida el backend en la secuencia OMS y en la cobertura regional de jabón?"
+        }
+      ],
+      "score": 1.948380898,
+      "source_file": "backend/src/main/java/com/handwash/model/RegionJabon.java",
+      "status": "preferred",
+      "uses": 2
+    },
+    "backend_src_main_java_com_handwash_model_sesionlavado_sesionlavado": {
+      "code_fingerprint": "4004751ea8ca68e4cbe098f69a667300881cbb41b6251b94d2630cd0505c92ba",
+      "label": "SesionLavado",
+      "last": "2026-10-08T19:22:45.900164+00:00",
+      "neg": 1,
+      "provenance": [
+        {
+          "date": "2026-10-08T19:22:45.900164+00:00",
+          "outcome": "useful",
+          "q": "Evalúa viabilidad JavaCV, YOLO y patrones para lavado OMS"
+        },
+        {
+          "date": "2026-10-08T04:07:00.206705+00:00",
+          "outcome": "useful",
+          "q": "Trace the live detector-to-clinical-decision path: YOLO hand pose and step/classifier candidates, transport v2 validation, bilateral evidence, Java intention start, State/Strategy acceptance, and the ACK. Identify inconsistencies that can make a visible/correct step be missed or a false step credited."
+        },
+        {
+          "date": "2026-10-07T21:59:05.244718+00:00",
+          "outcome": "corrected",
+          "q": "¿Existe ya la espera de dos manos durante tres segundos y cómo afectan los controles FONDO al inicio?"
+        },
+        {
+          "date": "2026-10-07T21:54:47.735723+00:00",
+          "outcome": "useful",
+          "q": "¿Cómo agregar preparación de manos durante 3 s antes del inicio del lavado sin acreditar presencia como paso?"
+        },
+        {
+          "date": "2026-10-07T20:52:47.837269+00:00",
+          "outcome": "useful",
+          "q": "propon agregar un parametro que haga que primero se deban detectar las manos, y cuando ya esten manos presentes despues de 3 segundos de detectar las manos, empiece el lavado por los pasos correspondientes, esto que quede super bien funcional para el uso clinico en hospitales"
+        }
+      ],
+      "score": 9.716313091,
+      "source_file": "backend/src/main/java/com/handwash/model/SesionLavado.java",
+      "status": "contested",
+      "uses": 11,
+      "verdict": "useful"
+    },
+    "backend_src_main_java_com_handwash_model_sesionoms_sesionoms": {
+      "code_fingerprint": "f75889ae06ac05b9e7746dbdc6c552d7f41b15f72e046ce8d2ec21d2c19cc177",
+      "label": "SesionOms",
+      "last": "2026-10-08T04:26:02.097537+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-08T04:26:02.097537+00:00",
+          "outcome": "useful",
+          "q": "Can the Java OMS sequence and bilateral soap-region evidence drift from the clinical protocol?"
+        },
+        {
+          "date": "2026-10-08T00:57:00.814461+00:00",
+          "outcome": "useful",
+          "q": "¿La secuencia OMS y sus instrucciones del catálogo coinciden con la lámina oficial en español?"
+        },
+        {
+          "date": "2026-10-08T00:55:17.505814+00:00",
+          "outcome": "useful",
+          "q": "How is the WHO handwashing sequence represented and prevented from producing an unsupported clinical approval?"
+        },
+        {
+          "date": "2026-10-08T00:55:17.505761+00:00",
+          "outcome": "useful",
+          "q": "Can a negative System.nanoTime origin corrupt server event timestamps in the clinical evaluator?"
+        },
+        {
+          "date": "2026-10-07T20:02:38.103238+00:00",
+          "outcome": "useful",
+          "q": "Diagnose the isolated DetectionApiIntegrationTest failure for OMS_SIN_EVIDENCIA and verify actual behavior"
+        }
+      ],
+      "score": 6.839906601,
+      "source_file": "backend/src/main/java/com/handwash/model/SesionOms.java",
+      "status": "preferred",
+      "uses": 7
+    },
+    "backend_src_main_java_com_handwash_service_clinicaldecisionpolicy_clinicaldecisionpolicy": {
+      "code_fingerprint": "0b77885e62bd5c750a27b6981b040dd74a46a9b8ba48b75e5d4c2d83654edfbb",
+      "label": "ClinicalDecisionPolicy",
+      "last": "2026-10-08T19:59:53.435577+00:00",
+      "neg": 2,
+      "provenance": [
+        {
+          "date": "2026-10-08T19:59:53.435577+00:00",
+          "outcome": "useful",
+          "q": "Evalúa viabilidad JavaCV + OpenCV + YOLO y los cinco patrones; propone complementos aditivos para mejorar precisión del lavado OMS."
+        },
+        {
+          "date": "2026-10-08T19:46:21.797742+00:00",
+          "outcome": "useful",
+          "q": "enfocate en mejorar todo, y dejarlo apto para hospitales, haciendo que el modelo funcione bien de la mano ahora usando yolo26 con el modelo entrenado, java con patrones de software y en estos patrones en java ahora usando OPENCV, necesito que todo quede perfecto para el uso hospitalario, haciendo que detecte cada paso, empezando primero por que detecte las manos, al detectar las manos empezar con el primer paso y asi hasta el final, todo funcional desde distintos angulos"
+        },
+        {
+          "date": "2026-10-08T16:27:11.705735+00:00",
+          "outcome": "corrected",
+          "q": "Audit the current camera-presence/Java-intention gate and fix any UI mismatch that could make step progression appear stuck."
+        },
+        {
+          "date": "2026-10-08T05:14:33.549832+00:00",
+          "outcome": "useful",
+          "q": "Trace the live hand-presence warmup, step acceptance, and clinical-approval path for production readiness."
+        },
+        {
+          "date": "2026-10-08T05:03:44.766914+00:00",
+          "outcome": "useful",
+          "q": "¿Qué bloquea hoy el uso hospitalario y cómo se corrigió el desfase entre la compuerta local y Java?"
+        }
+      ],
+      "score": 17.529927503,
+      "source_file": "backend/src/main/java/com/handwash/service/ClinicalDecisionPolicy.java",
+      "status": "contested",
+      "uses": 20,
+      "verdict": "useful"
+    },
+    "backend_src_main_java_com_handwash_service_handwashmetrics_handwashmetrics": {
+      "code_fingerprint": "a37788a8a109332dd0e75dd1b03026ce090079b2ee04798ed49013f8430fedb4",
+      "label": "HandwashMetrics",
+      "last": "2026-10-07T21:22:54.546934+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-07T21:22:54.546934+00:00",
+          "outcome": "useful",
+          "q": "Can an active wash step be credited when bilateral motion measurement is invalid or zero?"
+        }
+      ],
+      "score": 0.977643913,
+      "source_file": "backend/src/main/java/com/handwash/service/HandwashMetrics.java",
+      "status": "tentative",
+      "uses": 1
+    },
+    "backend_src_main_java_com_handwash_service_inferenceservice_inferenceservice": {
+      "code_fingerprint": "f8f15c049947d5962679e30b95f6f230196b46d5f988c295082ec4d01d1780ed",
+      "label": "InferenceService",
+      "last": "2026-10-08T17:23:12.650568+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-08T17:23:12.650568+00:00",
+          "outcome": "useful",
+          "q": "Continúa la mejora del flujo manos→pasos: verifica si la recuperación actual puede mejorar la detección bilateral y si Java usa OpenCV en el camino activo"
+        },
+        {
+          "date": "2026-10-08T17:15:24.630711+00:00",
+          "outcome": "useful",
+          "q": "Evalúa si JavaCV+OpenCV+YOLO y cinco patrones son viables para auditar lavado OMS; propone mejoras aditivas sin reemplazar la arquitectura"
+        },
+        {
+          "date": "2026-10-08T17:06:46.334475+00:00",
+          "outcome": "useful",
+          "q": "Actúa como un Arquitecto de Software Senior y evalúa aditivamente JavaCV + OpenCV + YOLO y los cinco patrones para el lavado de manos OMS."
+        }
+      ],
+      "score": 2.989576723,
+      "source_file": "backend/src/main/java/com/handwash/service/InferenceService.java",
+      "status": "preferred",
+      "uses": 3
+    },
+    "backend_src_main_java_com_handwash_service_producerprotocolregistry_producerprotocolregistry": {
+      "code_fingerprint": "a1ee68280f7799eb3462651a806beec470413e2cc0b600e8291595d85f82b18a",
+      "label": "ProducerProtocolRegistry",
+      "last": "2026-10-08T17:47:52.035539+00:00",
+      "neg": 3,
+      "provenance": [
+        {
+          "date": "2026-10-08T17:47:52.035539+00:00",
+          "outcome": "useful",
+          "q": "Actúa como un Arquitecto de Software Senior y Experto en Visión por Computadora en Java.\n\nEstoy diseñando un sistema de auditoría en tiempo real para validar el lavado de manos según el protocolo de la OMS. Ya tengo una arquitectura base definida y aprobada. El objetivo es evaluarla y proponer adiciones técnicas, sin reemplazar los componentes ni patrones actuales.\n\nBase: JavaCV para captura/OpenCV/YOLO; YOLO localiza manos y ROI; OpenCV usa HSV para espuma y Optical Flow para movimiento; patrones Singleton, Factory Method, Strategy, Chain of Responsibility y Observer.\n\nTareas: validar viabilidad/riesgos de rendimiento y memoria nativa; proponer técnicas y capas para mejorar precisión de pasos finos; explicar cómo se integran en los cinco patrones."
+        },
+        {
+          "date": "2026-10-08T17:15:24.630711+00:00",
+          "outcome": "useful",
+          "q": "Evalúa si JavaCV+OpenCV+YOLO y cinco patrones son viables para auditar lavado OMS; propone mejoras aditivas sin reemplazar la arquitectura"
+        },
+        {
+          "date": "2026-10-08T16:40:12.070732+00:00",
+          "outcome": "useful",
+          "q": "Audita la ruta Java↔YOLO de presencia, secuencia temporal y errores reproducibles para avanzar el proyecto hacia despliegue hospitalario, sin entrenar modelos."
+        },
+        {
+          "date": "2026-10-08T16:27:11.705735+00:00",
+          "outcome": "corrected",
+          "q": "Audit the current camera-presence/Java-intention gate and fix any UI mismatch that could make step progression appear stuck."
+        },
+        {
+          "date": "2026-10-08T05:26:30.411807+00:00",
+          "outcome": "useful",
+          "q": "Trace the live YOLO-to-Java sequence path and identify any producer/consumer sequencing race."
+        }
+      ],
+      "score": 8.87581157,
+      "source_file": "backend/src/main/java/com/handwash/service/ProducerProtocolRegistry.java",
+      "status": "contested",
+      "uses": 12,
+      "verdict": "useful"
+    },
+    "backend_src_main_java_com_handwash_service_sessionmanager_sessionmanager": {
+      "code_fingerprint": "27a6d664fdb61d4142767414f943dc2ac672e25f450211b2cb60f3310f0b8588",
+      "label": "SessionManager",
+      "last": "2026-10-08T19:56:06.934523+00:00",
+      "neg": 3,
+      "provenance": [
+        {
+          "date": "2026-10-08T19:56:06.934523+00:00",
+          "outcome": "useful",
+          "q": "Enfócate en mejorar todo y dejarlo apto para hospitales, haciendo que el modelo funcione bien con YOLO26, Java, patrones y OpenCV; detecta manos y pasos desde distintos ángulos."
+        },
+        {
+          "date": "2026-10-08T19:46:21.797742+00:00",
+          "outcome": "useful",
+          "q": "enfocate en mejorar todo, y dejarlo apto para hospitales, haciendo que el modelo funcione bien de la mano ahora usando yolo26 con el modelo entrenado, java con patrones de software y en estos patrones en java ahora usando OPENCV, necesito que todo quede perfecto para el uso hospitalario, haciendo que detecte cada paso, empezando primero por que detecte las manos, al detectar las manos empezar con el primer paso y asi hasta el final, todo funcional desde distintos angulos"
+        },
+        {
+          "date": "2026-10-08T19:38:09.582709+00:00",
+          "outcome": "useful",
+          "q": "Actúa como un Arquitecto de Software Senior y Experto en Visión por Computadora en Java. Estoy diseñando un sistema de auditoría en tiempo real para validar el lavado de manos según el protocolo de la OMS. Evalúa la viabilidad de JavaCV + OpenCV + YOLO con Singleton, Factory Method, Strategy, Chain of Responsibility y Observer; propone adiciones de precisión sin reemplazar la arquitectura."
+        },
+        {
+          "date": "2026-10-08T19:12:36.784916+00:00",
+          "outcome": "useful",
+          "q": "Comprueba si el estado nativo de OpenCV se libera al expirar/eliminar sesiones y si Java valida manos duplicadas o solapadas."
+        },
+        {
+          "date": "2026-10-08T19:09:07.710169+00:00",
+          "outcome": "useful",
+          "q": "Actúa como Arquitecto de Software Senior y evalúa aditivamente JavaCV + OpenCV + YOLO y cinco patrones para auditoría de lavado OMS."
+        }
+      ],
+      "score": 40.44816744,
+      "source_file": "backend/src/main/java/com/handwash/service/SessionManager.java",
+      "status": "contested",
+      "uses": 44,
+      "verdict": "useful"
+    },
+    "backend_src_main_java_com_handwash_strategy_reglavalidacionstrategyfactory_reglavalidacionstrategyfactory": {
+      "code_fingerprint": "d3d6aabebe5193e8100f94f0765e2b435ca3b8fc3be155e2ae2e2394408c703d",
+      "label": "ReglaValidacionStrategyFactory",
+      "last": "2026-10-08T19:59:53.435577+00:00",
+      "neg": 1,
+      "provenance": [
+        {
+          "date": "2026-10-08T19:59:53.435577+00:00",
+          "outcome": "useful",
+          "q": "Evalúa viabilidad JavaCV + OpenCV + YOLO y los cinco patrones; propone complementos aditivos para mejorar precisión del lavado OMS."
+        },
+        {
+          "date": "2026-10-08T19:38:09.582709+00:00",
+          "outcome": "useful",
+          "q": "Actúa como un Arquitecto de Software Senior y Experto en Visión por Computadora en Java. Estoy diseñando un sistema de auditoría en tiempo real para validar el lavado de manos según el protocolo de la OMS. Evalúa la viabilidad de JavaCV + OpenCV + YOLO con Singleton, Factory Method, Strategy, Chain of Responsibility y Observer; propone adiciones de precisión sin reemplazar la arquitectura."
+        },
+        {
+          "date": "2026-10-08T19:22:45.900164+00:00",
+          "outcome": "useful",
+          "q": "Evalúa viabilidad JavaCV, YOLO y patrones para lavado OMS"
+        },
+        {
+          "date": "2026-10-08T18:05:13.313001+00:00",
+          "outcome": "useful",
+          "q": "Evalúa la viabilidad de JavaCV, OpenCV, YOLO y cinco patrones para detectar pasos OMS; propone complementos aditivos de precisión."
+        },
+        {
+          "date": "2026-10-08T16:42:36.770147+00:00",
+          "outcome": "useful",
+          "q": "Actúa como arquitecto senior: evalúa la viabilidad de JavaCV + YOLO/OpenCV para auditar pasos OMS, propón complementos aditivos de precisión y explica cómo se acoplan a Singleton, Factory Method, Strategy, Chain of Responsibility y Observer."
+        }
+      ],
+      "score": 3.994064846,
+      "source_file": "backend/src/main/java/com/handwash/strategy/ReglaValidacionStrategyFactory.java",
+      "status": "contested",
+      "uses": 5,
+      "verdict": "useful"
+    },
+    "backend_src_test_java_com_handwash_config_stationprofilesafetyguardtest_stationprofilesafetyguardtest": {
+      "code_fingerprint": "61ff70967525f4ee10be76cc8c46e05584627cb1cb5dde89fed423eb6bdba96e",
+      "label": "StationProfileSafetyGuardTest",
+      "last": "2026-10-08T05:28:52.113729+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-08T05:28:52.113729+00:00",
+          "outcome": "useful",
+          "q": "¿El perfil station impide sobrescribir umbrales clínicos de movimiento sin calibración y firma?"
+        },
+        {
+          "date": "2026-10-08T02:02:11.980315+00:00",
+          "outcome": "useful",
+          "q": "¿Puede una sesión de estación evitar la compuerta de presencia v2 usando el flujo legacy?"
+        }
+      ],
+      "score": 1.967331447,
+      "source_file": "backend/src/test/java/com/handwash/config/StationProfileSafetyGuardTest.java",
+      "status": "preferred",
+      "uses": 2
+    },
+    "backend_src_test_java_com_handwash_config_stationreleasemanifestverifiertest_stationreleasemanifestverifiertest": {
+      "code_fingerprint": "4d1bac8c6cac18f72bcff71e95b676b8501db2b372b1ff5c70741cd7270fd2cf",
+      "label": "StationReleaseManifestVerifierTest",
+      "last": "2026-10-08T20:06:13.255883+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-08T20:06:13.255883+00:00",
+          "outcome": "useful",
+          "q": "¿Qué prueban el preflight de cámara, los pesos YOLO activos y el warmup bilateral en el estado actual?"
+        },
+        {
+          "date": "2026-10-08T15:42:39.685786+00:00",
+          "outcome": "useful",
+          "q": "¿Qué evidencia exige el gate de release para validar la taxonomía del checkpoint antes del uso hospitalario?"
+        },
+        {
+          "date": "2026-10-08T05:28:52.113729+00:00",
+          "outcome": "useful",
+          "q": "¿El perfil station impide sobrescribir umbrales clínicos de movimiento sin calibración y firma?"
+        },
+        {
+          "date": "2026-10-08T03:09:01.939018+00:00",
+          "outcome": "useful",
+          "q": "¿Es utilizable runs/detect/handwash-v2-yolo26s como reemplazo del detector activo?"
+        }
+      ],
+      "score": 3.962698154,
+      "source_file": "backend/src/test/java/com/handwash/config/StationReleaseManifestVerifierTest.java",
+      "status": "preferred",
+      "uses": 4
+    },
+    "backend_src_test_java_com_handwash_controller_detectionapiintegrationtest_detectionapiintegrationtest": {
+      "code_fingerprint": "d3ce00ee0ecc8b94ae5b3bced73054310e68ca2283ac69a67c17c9110a16795e",
+      "label": "DetectionApiIntegrationTest",
+      "last": "2026-10-08T05:26:30.411807+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-08T05:26:30.411807+00:00",
+          "outcome": "useful",
+          "q": "Trace the live YOLO-to-Java sequence path and identify any producer/consumer sequencing race."
+        },
+        {
+          "date": "2026-10-08T04:54:31.357942+00:00",
+          "outcome": "useful",
+          "q": "propon agregar un parametro que haga que primero se deban detectar las manos, y cuando ya esten manos presentes despues de 3 segundos de detectar las manos, empiece el lavado por los pasos correspondientes, esto que quede super bien funcional para el uso clinico en hospitales"
+        },
+        {
+          "date": "2026-10-08T00:57:00.814461+00:00",
+          "outcome": "useful",
+          "q": "¿La secuencia OMS y sus instrucciones del catálogo coinciden con la lámina oficial en español?"
+        },
+        {
+          "date": "2026-10-08T00:55:17.505814+00:00",
+          "outcome": "useful",
+          "q": "How is the WHO handwashing sequence represented and prevented from producing an unsupported clinical approval?"
+        },
+        {
+          "date": "2026-10-07T20:02:38.103238+00:00",
+          "outcome": "useful",
+          "q": "Diagnose the isolated DetectionApiIntegrationTest failure for OMS_SIN_EVIDENCIA and verify actual behavior"
+        }
+      ],
+      "score": 4.908387964,
+      "source_file": "backend/src/test/java/com/handwash/controller/DetectionApiIntegrationTest.java",
+      "status": "preferred",
+      "uses": 5
+    },
+    "backend_src_test_java_com_handwash_intention_handpresencewarmuptest": {
+      "code_fingerprint": "57d6150fcd4f011c1fdd0dc513ebe485388b5d48e8fd2f66b4dedb0f573d2830",
+      "label": "HandPresenceWarmupTest.java",
+      "last": "2026-10-08T05:19:06.252240+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-08T05:19:06.252240+00:00",
+          "outcome": "useful",
+          "q": "¿Cómo funciona y se bloquea el calentamiento de presencia bilateral de 3 segundos antes de detectar pasos?"
+        }
+      ],
+      "score": 0.985142294,
+      "source_file": "backend/src/test/java/com/handwash/intention/HandPresenceWarmupTest.java",
+      "status": "tentative",
+      "uses": 1
+    },
+    "backend_src_test_java_com_handwash_intention_handpresencewarmuptest_handpresencewarmuptest": {
+      "code_fingerprint": "57d6150fcd4f011c1fdd0dc513ebe485388b5d48e8fd2f66b4dedb0f573d2830",
+      "label": "HandPresenceWarmupTest",
+      "last": "2026-10-08T20:06:13.255883+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-08T20:06:13.255883+00:00",
+          "outcome": "useful",
+          "q": "¿Qué prueban el preflight de cámara, los pesos YOLO activos y el warmup bilateral en el estado actual?"
+        },
+        {
+          "date": "2026-10-08T20:04:31.682604+00:00",
+          "outcome": "useful",
+          "q": "¿El clasificador YOLO26n OMS de ocho clases complementa al activo y cómo verifica Java el prerrequisito de dos manos por tres segundos?"
+        },
+        {
+          "date": "2026-10-08T15:56:47.403008+00:00",
+          "outcome": "useful",
+          "q": "Audita el flujo de presencia de manos, estado Java y dashboard para mejorar el sistema clínico"
+        },
+        {
+          "date": "2026-10-08T05:19:06.252240+00:00",
+          "outcome": "useful",
+          "q": "¿Cómo funciona y se bloquea el calentamiento de presencia bilateral de 3 segundos antes de detectar pasos?"
+        },
+        {
+          "date": "2026-10-08T04:00:01.420385+00:00",
+          "outcome": "useful",
+          "q": "¿Dónde se detecta la presencia bilateral de manos, cómo se mide su frescura/continuidad y cómo se habilita el inicio de una sesión o la evaluación de pasos? Busca configuraciones de timeout o warmup."
+        }
+      ],
+      "score": 7.90774549,
+      "source_file": "backend/src/test/java/com/handwash/intention/HandPresenceWarmupTest.java",
+      "status": "preferred",
+      "uses": 8
+    },
+    "backend_src_test_java_com_handwash_model_accionomsclinicalcontracttest_accionomsclinicalcontracttest": {
+      "code_fingerprint": "65760213d5b332670164f0782e0a74a2934b3d8a3c3200494a6b0fff399eb41a",
+      "label": "AccionOmsClinicalContractTest",
+      "last": "2026-10-08T04:26:02.097537+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-08T04:26:02.097537+00:00",
+          "outcome": "useful",
+          "q": "Can the Java OMS sequence and bilateral soap-region evidence drift from the clinical protocol?"
+        }
+      ],
+      "score": 0.984303803,
+      "source_file": "backend/src/test/java/com/handwash/model/AccionOmsClinicalContractTest.java",
+      "status": "tentative",
+      "uses": 1
+    },
+    "backend_src_test_java_com_handwash_model_intencionlavadotest_intencionlavadotest": {
+      "code_fingerprint": "84a9cb5232fd05fc0dc5a36e56250df0719878c87b18c5c719a9b50abff403bd",
+      "label": "IntencionLavadoTest",
+      "last": "2026-10-08T01:58:12.615807+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-08T01:58:12.615807+00:00",
+          "outcome": "useful",
+          "q": "¿La espera de tres segundos debe iniciar la sesión automáticamente?"
+        },
+        {
+          "date": "2026-10-07T06:47:51.492427+00:00",
+          "outcome": "useful",
+          "q": "enfocate en mejorar el proyecto segun el objetivo del lavado de manos, no te desvies"
+        }
+      ],
+      "score": 1.945985394,
+      "source_file": "backend/src/test/java/com/handwash/model/IntencionLavadoTest.java",
+      "status": "preferred",
+      "uses": 2
+    },
+    "backend_src_test_java_com_handwash_service_sessionmanagerpresencewarmuptest": {
+      "code_fingerprint": "deb4b59a0da3db665726e977a96e31866f17738b947dbe782e1b04e44732d45c",
+      "label": "SessionManagerPresenceWarmupTest.java",
+      "last": "2026-10-08T16:40:12.070732+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-08T16:40:12.070732+00:00",
+          "outcome": "useful",
+          "q": "Audita la ruta Java↔YOLO de presencia, secuencia temporal y errores reproducibles para avanzar el proyecto hacia despliegue hospitalario, sin entrenar modelos."
+        },
+        {
+          "date": "2026-10-08T04:20:51.952232+00:00",
+          "outcome": "useful",
+          "q": "Continue improving the clinical handwash project by auditing the hand-presence gate and step recognition end to end."
+        },
+        {
+          "date": "2026-10-08T04:10:36.091955+00:00",
+          "outcome": "useful",
+          "q": "Does the dashboard distinguish local Python hand-presence warmup readiness from Java server-side warmup readiness? Trace the health endpoint, WebSocket state, SessionManager rejected-step reason, and frontend rendering."
+        },
+        {
+          "date": "2026-10-08T04:00:01.420385+00:00",
+          "outcome": "useful",
+          "q": "¿Dónde se detecta la presencia bilateral de manos, cómo se mide su frescura/continuidad y cómo se habilita el inicio de una sesión o la evaluación de pasos? Busca configuraciones de timeout o warmup."
+        }
+      ],
+      "score": 3.948142563,
+      "source_file": "backend/src/test/java/com/handwash/service/SessionManagerPresenceWarmupTest.java",
+      "status": "preferred",
+      "uses": 4
+    },
+    "backend_src_test_java_com_handwash_service_sessionmanagerpresencewarmuptest_sessionmanagerpresencewarmuptest": {
+      "code_fingerprint": "deb4b59a0da3db665726e977a96e31866f17738b947dbe782e1b04e44732d45c",
+      "label": "SessionManagerPresenceWarmupTest",
+      "last": "2026-10-08T20:04:31.682604+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-08T20:04:31.682604+00:00",
+          "outcome": "useful",
+          "q": "¿El clasificador YOLO26n OMS de ocho clases complementa al activo y cómo verifica Java el prerrequisito de dos manos por tres segundos?"
+        },
+        {
+          "date": "2026-10-08T17:15:24.630711+00:00",
+          "outcome": "useful",
+          "q": "Evalúa si JavaCV+OpenCV+YOLO y cinco patrones son viables para auditar lavado OMS; propone mejoras aditivas sin reemplazar la arquitectura"
+        },
+        {
+          "date": "2026-10-08T15:56:47.403008+00:00",
+          "outcome": "useful",
+          "q": "Audita el flujo de presencia de manos, estado Java y dashboard para mejorar el sistema clínico"
+        },
+        {
+          "date": "2026-10-08T02:43:11.660827+00:00",
+          "outcome": "useful",
+          "q": "propon agregar un parametro que haga que primero se deban detectar las manos, y cuando ya esten manos presentes despues de 3 segundos de detectar las manos, empiece el lavado por los pasos correspondientes, esto que quede super bien funcional para el uso clinico en hospitales"
+        },
+        {
+          "date": "2026-10-08T02:09:30.115014+00:00",
+          "outcome": "useful",
+          "q": "propon agregar un parametro que haga que primero se deban detectar las manos, y cuando ya esten manos presentes despues de 3 segundos de detectar las manos, empiece el lavado por los pasos correspondientes, esto que quede super bien funcional para el uso clinico en hospitales"
+        }
+      ],
+      "score": 8.882662904,
+      "source_file": "backend/src/test/java/com/handwash/service/SessionManagerPresenceWarmupTest.java",
+      "status": "preferred",
+      "uses": 9
+    },
+    "frontend_src_components_livecamerafeed": {
+      "code_fingerprint": "4e65e03364d52d40ce0baa91c808ce36d795d30df8443b7c57566fbeee910b16",
+      "label": "LiveCameraFeed.tsx",
+      "last": "2026-10-08T15:56:47.403008+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-08T15:56:47.403008+00:00",
+          "outcome": "useful",
+          "q": "Audita el flujo de presencia de manos, estado Java y dashboard para mejorar el sistema clínico"
+        },
+        {
+          "date": "2026-10-08T15:50:41.156369+00:00",
+          "outcome": "useful",
+          "q": "propon agregar un parametro que primero detecte manos y, tras 3 segundos, habilite el lavado por pasos para uso clinico"
+        },
+        {
+          "date": "2026-10-08T04:54:31.357942+00:00",
+          "outcome": "useful",
+          "q": "propon agregar un parametro que haga que primero se deban detectar las manos, y cuando ya esten manos presentes despues de 3 segundos de detectar las manos, empiece el lavado por los pasos correspondientes, esto que quede super bien funcional para el uso clinico en hospitales"
+        },
+        {
+          "date": "2026-10-08T04:10:36.091955+00:00",
+          "outcome": "useful",
+          "q": "Does the dashboard distinguish local Python hand-presence warmup readiness from Java server-side warmup readiness? Trace the health endpoint, WebSocket state, SessionManager rejected-step reason, and frontend rendering."
+        },
+        {
+          "date": "2026-10-08T04:00:01.420385+00:00",
+          "outcome": "useful",
+          "q": "¿Dónde se detecta la presencia bilateral de manos, cómo se mide su frescura/continuidad y cómo se habilita el inicio de una sesión o la evaluación de pasos? Busca configuraciones de timeout o warmup."
+        }
+      ],
+      "score": 7.887070655,
+      "source_file": "frontend/src/components/LiveCameraFeed.tsx",
+      "status": "preferred",
+      "uses": 8
+    },
+    "frontend_src_components_stepstepper": {
+      "code_fingerprint": "d55d0f64988f01bdcd2d5b28ff24f52a1b0f7749ad02c8667d528bec400006f7",
+      "label": "StepStepper.tsx",
+      "last": "2026-10-08T04:10:36.091955+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-08T04:10:36.091955+00:00",
+          "outcome": "useful",
+          "q": "Does the dashboard distinguish local Python hand-presence warmup readiness from Java server-side warmup readiness? Trace the health endpoint, WebSocket state, SessionManager rejected-step reason, and frontend rendering."
+        }
+      ],
+      "score": 0.984060089,
+      "source_file": "frontend/src/components/StepStepper.tsx",
+      "status": "tentative",
+      "uses": 1
+    },
+    "frontend_src_stores_sessionstore": {
+      "code_fingerprint": "5baeffcfca49d403d920200e7fb88768474add700dde42c49f8da96253bda5b5",
+      "label": "sessionStore.ts",
+      "last": "2026-10-08T01:59:43.032418+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-08T01:59:43.032418+00:00",
+          "outcome": "useful",
+          "q": "¿El dashboard muestra el calentamiento bilateral antes del primer paso?"
+        }
+      ],
+      "score": 0.981995684,
+      "source_file": "frontend/src/stores/sessionStore.ts",
+      "status": "tentative",
+      "uses": 1
+    },
+    "frontend_src_test_livecamerafeed_test": {
+      "code_fingerprint": "312de001bad8cbf0cd35d961fb16fcc5d27b8c3fcf1a06e21b5a36234d4f8a25",
+      "label": "LiveCameraFeed.test.tsx",
+      "last": "2026-10-08T01:59:43.032418+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-08T01:59:43.032418+00:00",
+          "outcome": "useful",
+          "q": "¿El dashboard muestra el calentamiento bilateral antes del primer paso?"
+        }
+      ],
+      "score": 0.981995684,
+      "source_file": "frontend/src/test/LiveCameraFeed.test.tsx",
+      "status": "tentative",
+      "uses": 1
+    },
+    "scripts_dataset_contracts": {
+      "code_fingerprint": "1707a79da0d17815c286308d512126d6ad6bc907c2286d99d579250246adf48b",
+      "label": "dataset_contracts.py",
+      "last": "2026-10-08T05:43:15.265083+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-08T05:43:15.265083+00:00",
+          "outcome": "useful",
+          "q": "Is the stored DataSet5 YAML safe for training, and does the full verifier enforce that?"
+        },
+        {
+          "date": "2026-10-07T16:02:41.530358+00:00",
+          "outcome": "useful",
+          "q": "Trace DataSet5 movement-code labels into friction classes and identify the faucet-closure mislabel."
+        }
+      ],
+      "score": 1.958157857,
+      "source_file": "scripts/dataset_contracts.py",
+      "status": "preferred",
+      "uses": 2
+    },
+    "scripts_dataset_contracts_validate_dataset5_contract": {
+      "code_fingerprint": "1707a79da0d17815c286308d512126d6ad6bc907c2286d99d579250246adf48b",
+      "label": "validate_dataset5_contract()",
+      "last": "2026-10-08T15:42:39.685786+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-08T15:42:39.685786+00:00",
+          "outcome": "useful",
+          "q": "¿Qué evidencia exige el gate de release para validar la taxonomía del checkpoint antes del uso hospitalario?"
+        }
+      ],
+      "score": 0.995048136,
+      "source_file": "scripts/dataset_contracts.py",
+      "status": "tentative",
+      "uses": 1
+    },
+    "scripts_dataset_contracts_validate_dataset5_contract_file": {
+      "code_fingerprint": "1707a79da0d17815c286308d512126d6ad6bc907c2286d99d579250246adf48b",
+      "label": "validate_dataset5_contract_file()",
+      "last": "2026-10-08T05:43:15.265083+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-08T05:43:15.265083+00:00",
+          "outcome": "useful",
+          "q": "Is the stored DataSet5 YAML safe for training, and does the full verifier enforce that?"
+        }
+      ],
+      "score": 0.985524103,
+      "source_file": "scripts/dataset_contracts.py",
+      "status": "tentative",
+      "uses": 1
+    },
+    "scripts_evaluate_derived_detector": {
+      "code_fingerprint": "ea52b2d0d29d1a74c08ab67af4964a162994377a7d1aa8d4da690496566cbf32",
+      "label": "evaluate_derived_detector.py",
+      "last": "2026-10-08T19:46:21.797742+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-08T19:46:21.797742+00:00",
+          "outcome": "useful",
+          "q": "enfocate en mejorar todo, y dejarlo apto para hospitales, haciendo que el modelo funcione bien de la mano ahora usando yolo26 con el modelo entrenado, java con patrones de software y en estos patrones en java ahora usando OPENCV, necesito que todo quede perfecto para el uso hospitalario, haciendo que detecte cada paso, empezando primero por que detecte las manos, al detectar las manos empezar con el primer paso y asi hasta el final, todo funcional desde distintos angulos"
+        },
+        {
+          "date": "2026-10-08T19:26:25.924866+00:00",
+          "outcome": "useful",
+          "q": "Does the per-camera evaluator match the current hand-pose recovery path?"
+        },
+        {
+          "date": "2026-10-08T19:19:50.985583+00:00",
+          "outcome": "useful",
+          "q": "¿Mejorar resolución de pose de 320 a 416 px aumenta la detección bilateral por cámara en el test de video?"
+        },
+        {
+          "date": "2026-10-08T19:18:36.161607+00:00",
+          "outcome": "useful",
+          "q": "Evalúa el detector y el clasificador por cada cámara disponible, sin entrenar ni guardar medios, para identificar vistas débiles."
+        },
+        {
+          "date": "2026-10-08T17:03:40.673840+00:00",
+          "outcome": "useful",
+          "q": "Audita la evaluación offline del detector para distinguir poses bilaterales de evidencia de movimiento y aceptación Java."
+        }
+      ],
+      "score": 7.890168886,
+      "source_file": "scripts/evaluate_derived_detector.py",
+      "status": "preferred",
+      "uses": 8
+    },
+    "scripts_prepare_dataset5": {
+      "code_fingerprint": "74ac66ee9e5dc20a68c4cff7616bea877e82a47ad05499175894dd815dcb3090",
+      "label": "prepare_dataset5.py",
+      "last": "2026-10-08T05:43:15.265083+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-08T05:43:15.265083+00:00",
+          "outcome": "useful",
+          "q": "Is the stored DataSet5 YAML safe for training, and does the full verifier enforce that?"
+        }
+      ],
+      "score": 0.985524103,
+      "source_file": "scripts/prepare_dataset5.py",
+      "status": "tentative",
+      "uses": 1
+    },
+    "scripts_prepare_dataset5_create_yaml": {
+      "code_fingerprint": "74ac66ee9e5dc20a68c4cff7616bea877e82a47ad05499175894dd815dcb3090",
+      "label": "create_yaml()",
+      "last": "2026-10-08T15:42:39.685786+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-08T15:42:39.685786+00:00",
+          "outcome": "useful",
+          "q": "¿Qué evidencia exige el gate de release para validar la taxonomía del checkpoint antes del uso hospitalario?"
+        }
+      ],
+      "score": 0.995048136,
+      "source_file": "scripts/prepare_dataset5.py",
+      "status": "tentative",
+      "uses": 1
+    },
+    "scripts_run_handwash_station": {
+      "code_fingerprint": "623ec61f87ba9f842eb03f8d600a6d3caf12c746ff35502b8941fb04ceeda8ab",
+      "label": "run_handwash_station.py",
+      "last": "2026-10-08T04:40:40.777432+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-08T04:40:40.777432+00:00",
+          "outcome": "useful",
+          "q": "Do the release manifest flags for active movement magnitude thresholds match Java behavior?"
+        },
+        {
+          "date": "2026-10-07T23:38:10.769412+00:00",
+          "outcome": "useful",
+          "q": "propon agregar un parametro que haga que primero se deban detectar las manos, y cuando ya esten manos presentes despues de 3 segundos de detectar las manos, empiece el lavado por los pasos correspondientes, esto que quede super bien funcional para el uso clinico en hospitales"
+        }
+      ],
+      "score": 1.964303235,
+      "source_file": "scripts/run_handwash_station.py",
+      "status": "preferred",
+      "uses": 2
+    },
+    "scripts_run_handwash_station_stationsupervisor": {
+      "code_fingerprint": "623ec61f87ba9f842eb03f8d600a6d3caf12c746ff35502b8941fb04ceeda8ab",
+      "label": "StationSupervisor",
+      "last": "2026-10-07T21:13:50.342896+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-07T21:13:50.342896+00:00",
+          "outcome": "useful",
+          "q": "Does the camera gate reliably wait for both hands before step inference and preserve independent Java intent confirmation?"
+        }
+      ],
+      "score": 0.977501647,
+      "source_file": "scripts/run_handwash_station.py",
+      "status": "tentative",
+      "uses": 1
+    },
+    "scripts_run_yolo26_continuity_camera": {
+      "code_fingerprint": "c7818b44e392ce5b02f392eb3193a0e2d7328f5ad570b8da0d88afbd66aa1760",
+      "label": "run_yolo26_continuity_camera.py",
+      "last": "2026-10-08T20:17:47.149692+00:00",
+      "neg": 2,
+      "provenance": [
+        {
+          "date": "2026-10-08T20:17:47.149692+00:00",
+          "outcome": "corrected",
+          "q": "What owns the current Continuity Camera-to-dashboard video path?"
+        },
+        {
+          "date": "2026-10-08T20:04:31.682604+00:00",
+          "outcome": "useful",
+          "q": "¿El clasificador YOLO26n OMS de ocho clases complementa al activo y cómo verifica Java el prerrequisito de dos manos por tres segundos?"
+        },
+        {
+          "date": "2026-10-08T19:46:21.797742+00:00",
+          "outcome": "useful",
+          "q": "enfocate en mejorar todo, y dejarlo apto para hospitales, haciendo que el modelo funcione bien de la mano ahora usando yolo26 con el modelo entrenado, java con patrones de software y en estos patrones en java ahora usando OPENCV, necesito que todo quede perfecto para el uso hospitalario, haciendo que detecte cada paso, empezando primero por que detecte las manos, al detectar las manos empezar con el primer paso y asi hasta el final, todo funcional desde distintos angulos"
+        },
+        {
+          "date": "2026-10-08T19:38:09.582709+00:00",
+          "outcome": "useful",
+          "q": "Actúa como un Arquitecto de Software Senior y Experto en Visión por Computadora en Java. Estoy diseñando un sistema de auditoría en tiempo real para validar el lavado de manos según el protocolo de la OMS. Evalúa la viabilidad de JavaCV + OpenCV + YOLO con Singleton, Factory Method, Strategy, Chain of Responsibility y Observer; propone adiciones de precisión sin reemplazar la arquitectura."
+        },
+        {
+          "date": "2026-10-08T19:26:25.924866+00:00",
+          "outcome": "useful",
+          "q": "Does the per-camera evaluator match the current hand-pose recovery path?"
+        }
+      ],
+      "score": 34.500530251,
+      "source_file": "scripts/run_yolo26_continuity_camera.py",
+      "status": "contested",
+      "uses": 37,
+      "verdict": "useful"
+    },
+    "scripts_run_yolo26_continuity_camera_best_detection": {
+      "code_fingerprint": "c7818b44e392ce5b02f392eb3193a0e2d7328f5ad570b8da0d88afbd66aa1760",
+      "label": "best_detection()",
+      "last": "2026-10-08T04:07:00.206705+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-08T04:07:00.206705+00:00",
+          "outcome": "useful",
+          "q": "Trace the live detector-to-clinical-decision path: YOLO hand pose and step/classifier candidates, transport v2 validation, bilateral evidence, Java intention start, State/Strategy acceptance, and the ACK. Identify inconsistencies that can make a visible/correct step be missed or a false step credited."
+        }
+      ],
+      "score": 0.98400328,
+      "source_file": "scripts/run_yolo26_continuity_camera.py",
+      "status": "tentative",
+      "uses": 1
+    },
+    "scripts_run_yolo26_continuity_camera_bilateral_presence_is_fresh": {
+      "code_fingerprint": "c7818b44e392ce5b02f392eb3193a0e2d7328f5ad570b8da0d88afbd66aa1760",
+      "label": "bilateral_presence_is_fresh()",
+      "last": "2026-10-07T19:48:52.811327+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-07T19:48:52.811327+00:00",
+          "outcome": "useful",
+          "q": "propon agregar un parametro que haga que primero se deban detectar las manos, y cuando ya esten manos presentes despues de 3 segundos de detectar las manos, empiece el lavado por los pasos correspondientes, esto que quede super bien funcional para el uso clinico en hospitales"
+        }
+      ],
+      "score": 0.976170053,
+      "source_file": "scripts/run_yolo26_continuity_camera.py",
+      "status": "tentative",
+      "uses": 1
+    },
+    "scripts_run_yolo26_continuity_camera_classifier_challenge_allowed": {
+      "code_fingerprint": "c7818b44e392ce5b02f392eb3193a0e2d7328f5ad570b8da0d88afbd66aa1760",
+      "label": "classifier_challenge_allowed()",
+      "last": "2026-10-07T14:52:41.794346+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-07T14:52:41.794346+00:00",
+          "outcome": "useful",
+          "q": "¿Cómo se conecta el control de Fondo con el clasificador de pasos YOLO en el flujo de cámara?"
+        }
+      ],
+      "score": 0.971542017,
+      "source_file": "scripts/run_yolo26_continuity_camera.py",
+      "status": "tentative",
+      "uses": 1
+    },
+    "scripts_run_yolo26_continuity_camera_handmotionestimator": {
+      "code_fingerprint": "c7818b44e392ce5b02f392eb3193a0e2d7328f5ad570b8da0d88afbd66aa1760",
+      "label": "HandMotionEstimator",
+      "last": "2026-10-08T19:19:50.985583+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-08T19:19:50.985583+00:00",
+          "outcome": "useful",
+          "q": "¿Mejorar resolución de pose de 320 a 416 px aumenta la detección bilateral por cámara en el test de video?"
+        },
+        {
+          "date": "2026-10-08T19:18:36.161607+00:00",
+          "outcome": "useful",
+          "q": "Evalúa el detector y el clasificador por cada cámara disponible, sin entrenar ni guardar medios, para identificar vistas débiles."
+        },
+        {
+          "date": "2026-10-08T18:05:13.313001+00:00",
+          "outcome": "useful",
+          "q": "Evalúa la viabilidad de JavaCV, OpenCV, YOLO y cinco patrones para detectar pasos OMS; propone complementos aditivos de precisión."
+        },
+        {
+          "date": "2026-10-08T17:47:52.035539+00:00",
+          "outcome": "useful",
+          "q": "Actúa como un Arquitecto de Software Senior y Experto en Visión por Computadora en Java.\n\nEstoy diseñando un sistema de auditoría en tiempo real para validar el lavado de manos según el protocolo de la OMS. Ya tengo una arquitectura base definida y aprobada. El objetivo es evaluarla y proponer adiciones técnicas, sin reemplazar los componentes ni patrones actuales.\n\nBase: JavaCV para captura/OpenCV/YOLO; YOLO localiza manos y ROI; OpenCV usa HSV para espuma y Optical Flow para movimiento; patrones Singleton, Factory Method, Strategy, Chain of Responsibility y Observer.\n\nTareas: validar viabilidad/riesgos de rendimiento y memoria nativa; proponer técnicas y capas para mejorar precisión de pasos finos; explicar cómo se integran en los cinco patrones."
+        },
+        {
+          "date": "2026-10-08T17:43:29.853167+00:00",
+          "outcome": "useful",
+          "q": "¿Cómo se mejora la detección bilateral de manos sin ralentizar cada frame?"
+        }
+      ],
+      "score": 20.574086835,
+      "source_file": "scripts/run_yolo26_continuity_camera.py",
+      "status": "preferred",
+      "uses": 21
+    },
+    "scripts_run_yolo26_continuity_camera_mjpegframeserver": {
+      "code_fingerprint": "c7818b44e392ce5b02f392eb3193a0e2d7328f5ad570b8da0d88afbd66aa1760",
+      "label": "MjpegFrameServer",
+      "last": "2026-10-08T20:17:47.149692+00:00",
+      "neg": 1,
+      "provenance": [
+        {
+          "date": "2026-10-08T20:17:47.149692+00:00",
+          "outcome": "corrected",
+          "q": "What owns the current Continuity Camera-to-dashboard video path?"
+        },
+        {
+          "date": "2026-10-07T22:07:15.831337+00:00",
+          "outcome": "useful",
+          "q": "¿El dashboard muestra el calentamiento real de manos antes del primer paso?"
+        }
+      ],
+      "score": -0.021110451,
+      "source_file": "scripts/run_yolo26_continuity_camera.py",
+      "status": "contested",
+      "uses": 1,
+      "verdict": "dead end"
+    },
+    "scripts_run_yolo26_continuity_camera_motion_evidence_matches_frame": {
+      "code_fingerprint": "c7818b44e392ce5b02f392eb3193a0e2d7328f5ad570b8da0d88afbd66aa1760",
+      "label": "motion_evidence_matches_frame()",
+      "last": "2026-10-08T17:03:40.673840+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-08T17:03:40.673840+00:00",
+          "outcome": "useful",
+          "q": "Audita la evaluación offline del detector para distinguir poses bilaterales de evidencia de movimiento y aceptación Java."
+        },
+        {
+          "date": "2026-10-07T21:33:24.645210+00:00",
+          "outcome": "useful",
+          "q": "Trace the camera-to-Java bilateral evidence path for step credit and identify trust-boundary errors."
+        },
+        {
+          "date": "2026-10-07T19:44:15.642986+00:00",
+          "outcome": "useful",
+          "q": "Audit whether the hand-presence warmup makes clinical handwashing verification production-ready"
+        },
+        {
+          "date": "2026-10-07T19:01:10.904432+00:00",
+          "outcome": "useful",
+          "q": "Audita el flujo actual de evidencia bilateral YOLO→Java y los bloqueos de producción hospitalaria."
+        }
+      ],
+      "score": 3.925672068,
+      "source_file": "scripts/run_yolo26_continuity_camera.py",
+      "status": "preferred",
+      "uses": 4
+    },
+    "scripts_run_yolo26_continuity_camera_producerepochstream": {
+      "code_fingerprint": "c7818b44e392ce5b02f392eb3193a0e2d7328f5ad570b8da0d88afbd66aa1760",
+      "label": "ProducerEpochStream",
+      "last": "2026-10-08T05:37:15.711018+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-08T05:37:15.711018+00:00",
+          "outcome": "useful",
+          "q": "Can delayed presence pulses falsely complete the three-second hand warmup?"
+        },
+        {
+          "date": "2026-10-08T04:07:00.206705+00:00",
+          "outcome": "useful",
+          "q": "Trace the live detector-to-clinical-decision path: YOLO hand pose and step/classifier candidates, transport v2 validation, bilateral evidence, Java intention start, State/Strategy acceptance, and the ACK. Identify inconsistencies that can make a visible/correct step be missed or a false step credited."
+        }
+      ],
+      "score": 1.969432628,
+      "source_file": "scripts/run_yolo26_continuity_camera.py",
+      "status": "preferred",
+      "uses": 2
+    },
+    "scripts_run_yolo26_continuity_camera_validate_step_model": {
+      "code_fingerprint": "c7818b44e392ce5b02f392eb3193a0e2d7328f5ad570b8da0d88afbd66aa1760",
+      "label": "validate_step_model()",
+      "last": "2026-10-08T04:07:00.206705+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-08T04:07:00.206705+00:00",
+          "outcome": "useful",
+          "q": "Trace the live detector-to-clinical-decision path: YOLO hand pose and step/classifier candidates, transport v2 validation, bilateral evidence, Java intention start, State/Strategy acceptance, and the ACK. Identify inconsistencies that can make a visible/correct step be missed or a false step credited."
+        }
+      ],
+      "score": 0.98400328,
+      "source_file": "scripts/run_yolo26_continuity_camera.py",
+      "status": "tentative",
+      "uses": 1
+    },
+    "scripts_test_handwash_motion_motiontest": {
+      "code_fingerprint": "ce5e6df764bac58bfc91dcff405469a40761d269dd2e45444b7bd0153ebfb43f",
+      "label": "MotionTest",
+      "last": "2026-10-07T17:32:48.114987+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-07T17:32:48.114987+00:00",
+          "outcome": "useful",
+          "q": "Why can two touching hands be collapsed into one pose in the camera pipeline?"
+        }
+      ],
+      "score": 0.974041022,
+      "source_file": "scripts/test_handwash_motion.py",
+      "status": "tentative",
+      "uses": 1
+    },
+    "scripts_test_run_handwash_station_stationsupervisorpolicytest": {
+      "code_fingerprint": "1ea57d627c7648f6714c0f9ce886b3f5bda92f6259cf70ddb8b273640920b70a",
+      "label": "StationSupervisorPolicyTest",
+      "last": "2026-10-07T23:34:11.294509+00:00",
+      "neg": 1,
+      "provenance": [
+        {
+          "date": "2026-10-07T23:34:11.294509+00:00",
+          "outcome": "useful",
+          "q": "Auditoría del estado actual para producción hospitalaria: detectar mejoras corregibles en Java, YOLO y verificación"
+        },
+        {
+          "date": "2026-10-07T06:51:58.471057+00:00",
+          "outcome": "corrected",
+          "q": "¿El endpoint auxiliar de inferencia puede activarse en la estación hospitalaria?"
+        }
+      ],
+      "score": 0.015628251,
+      "source_file": "scripts/test_run_handwash_station.py",
+      "status": "contested",
+      "uses": 1,
+      "verdict": "useful"
+    },
+    "scripts_test_run_yolo26_continuity_camera": {
+      "code_fingerprint": "86bf8f97d35af2e3692d12b23b77726895d613db877ee7eff61b0e2034479268",
+      "label": "test_run_yolo26_continuity_camera.py",
+      "last": "2026-10-07T14:52:41.794346+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-07T14:52:41.794346+00:00",
+          "outcome": "useful",
+          "q": "¿Cómo se conecta el control de Fondo con el clasificador de pasos YOLO en el flujo de cámara?"
+        }
+      ],
+      "score": 0.971542017,
+      "source_file": "scripts/test_run_yolo26_continuity_camera.py",
+      "status": "tentative",
+      "uses": 1
+    },
+    "scripts_test_run_yolo26_continuity_camera_continuitycameradetectiontest": {
+      "code_fingerprint": "86bf8f97d35af2e3692d12b23b77726895d613db877ee7eff61b0e2034479268",
+      "label": "ContinuityCameraDetectionTest",
+      "last": "2026-10-08T20:06:13.255883+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-08T20:06:13.255883+00:00",
+          "outcome": "useful",
+          "q": "¿Qué prueban el preflight de cámara, los pesos YOLO activos y el warmup bilateral en el estado actual?"
+        },
+        {
+          "date": "2026-10-07T20:22:04.271706+00:00",
+          "outcome": "useful",
+          "q": "¿El contador de 3 segundos de manos puede mostrar progreso desactualizado cuando YOLO deja de actualizar poses?"
+        }
+      ],
+      "score": 1.975954989,
+      "source_file": "scripts/test_run_yolo26_continuity_camera.py",
+      "status": "preferred",
+      "uses": 2
+    },
+    "scripts_train_dataset5": {
+      "code_fingerprint": "0bf7263194c9671d22bcd25a3843831e497a9c3c63565ee8339fb7ecd49a05f6",
+      "label": "train_dataset5.py",
+      "last": "2026-10-07T16:02:41.530358+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-07T16:02:41.530358+00:00",
+          "outcome": "useful",
+          "q": "Trace DataSet5 movement-code labels into friction classes and identify the faucet-closure mislabel."
+        }
+      ],
+      "score": 0.972633754,
+      "source_file": "scripts/train_dataset5.py",
+      "status": "tentative",
+      "uses": 1
+    },
+    "scripts_train_v2": {
+      "code_fingerprint": "dbd384e57ea5a561d9882c0f35c20eb72fb2c5921827daf7441a43116dbafaf2",
+      "label": "train_v2.py",
+      "last": "2026-10-07T16:02:41.530358+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-07T16:02:41.530358+00:00",
+          "outcome": "useful",
+          "q": "Trace DataSet5 movement-code labels into friction classes and identify the faucet-closure mislabel."
+        }
+      ],
+      "score": 0.972633754,
+      "source_file": "scripts/train_v2.py",
+      "status": "tentative",
+      "uses": 1
+    }
+  },
+  "version": 1
+}

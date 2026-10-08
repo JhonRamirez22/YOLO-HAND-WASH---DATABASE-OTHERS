@@ -1,0 +1,2 @@
+# Build-time-only CycloneDX generator; never installed in the YOLO runtime.
+cyclonedx-bom==7.5.0

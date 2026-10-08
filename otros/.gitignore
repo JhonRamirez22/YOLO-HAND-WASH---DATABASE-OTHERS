@@ -1,0 +1,60 @@
+# Java
+*.class
+*.jar
+*.war
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# Python (legacy)
+__pycache__/
+*.pyc
+venv/
+.venv/
+*.egg-info/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+.runtime/
+Thumbs.db
+
+# ONNX models (too large for git)
+backend/src/main/resources/models/*.onnx
+backend/models/*.onnx
+*.onnx
+
+# Certs
+backend/certs/
+
+# Build artifacts
+*.exe
+cloudflared.exe
+tunnel.log
+
+# Xcode
+**/build/
+**/DerivedData/
+**/xcuserdata/
+*.xcuserstate
+
+# Temporary files
+*.tmp
+*.bak
+
+# Large files
+ENTRENAMIENTO/
+dataset.tar
+hand-wash-compliance-yolo/
+datasets/handwash_public_7steps/
+datasets/oms_review/
+runs/detect/runs/
+runs/detect/handwash-hygiene-transfer/
+
+# Python venv
+venv/

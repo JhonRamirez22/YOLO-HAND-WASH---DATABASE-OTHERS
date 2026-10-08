@@ -1,0 +1,3 @@
+# Runtime exacto de captura/inferencia para macOS arm64; excluye entrenamiento.
+# La estación valida versiones instaladas y vincula el hash del lock al release firmado.
+-r requirements-camera-macos-arm64.lock

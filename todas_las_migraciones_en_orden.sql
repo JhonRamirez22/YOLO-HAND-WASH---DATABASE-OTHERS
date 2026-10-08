@@ -154,3 +154,7 @@ CREATE TABLE friction_step_validation (
     reason VARCHAR(80),
     PRIMARY KEY (session_id, attempt_number, step_code),
     FOREIGN KEY (session_id, attempt_number) REFERENCES friction_attempt_validation(session_id, attempt_number)
+);
+
+
+-- ===== V7__protocol_profiles.sql =====

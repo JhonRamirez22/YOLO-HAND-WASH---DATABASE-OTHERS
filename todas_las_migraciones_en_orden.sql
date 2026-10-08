@@ -130,3 +130,7 @@ CREATE INDEX idx_operator_grants_station
     ON station_operator_grants (station_id, revoked_at_epoch_ms);
 
 
+-- ===== V6__balanced_friction_attempts.sql =====
+CREATE TABLE friction_attempt_validation (
+    session_id VARCHAR(36) NOT NULL,
+    attempt_number INTEGER NOT NULL CHECK (attempt_number > 0),

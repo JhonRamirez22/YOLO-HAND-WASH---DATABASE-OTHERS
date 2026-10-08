@@ -122,3 +122,7 @@ CREATE TABLE station_operator_grants (
     email VARCHAR(254) NOT NULL,
     station_id VARCHAR(36) NOT NULL REFERENCES handwash_stations(station_id),
     granted_by VARCHAR(128) NOT NULL,
+    granted_at_epoch_ms BIGINT NOT NULL,
+    revoked_at_epoch_ms BIGINT
+);
+

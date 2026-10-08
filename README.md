@@ -10,11 +10,11 @@ flowchart LR
   Py -->|video MJPEG local :8091| UI[Dashboard React]
   Py -->|REST POST /api/v1/deteccion| Java[Backend Java / Spring Boot]
   Java -->|H2: resúmenes de intentos fallidos| DB[(Base H2 local)]
-  Java -->|WebSocket /ws/{sessionId}| UI
+  Java -->|WebSocket por sesión| UI
 ```
 
 - El proceso Python de `otros/scripts/run_yolo26_continuity_camera.py` captura la cámara, ejecuta YOLO y publica el video anotado localmente. Envía al backend eventos JSON con detecciones y metadatos; no transmite los fotogramas al backend.
-- El backend Java controla las sesiones y la evaluación. El dashboard consume su API y recibe actualizaciones por WebSocket; el video lo consume desde el stream MJPEG.
+- El backend Java controla las sesiones y la evaluación. El dashboard consume su API y recibe actualizaciones por WebSocket en `/ws/{sessionId}`; el video lo consume desde el stream MJPEG.
 - La base H2 guarda resúmenes limitados de intentos fallidos. No es el almacén de imágenes, videos ni inferencias normales.
 - El modelo disponible detecta siete movimientos de fricción; no evalúa todas las acciones del procedimiento OMS ni certifica un lavado clínico completo.
 

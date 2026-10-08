@@ -1,0 +1,5023 @@
+{
+  "schemaVersion": 1,
+  "method": "connected-components over exact SHA-256 or perceptual hash plus grayscale MAE",
+  "thresholds": {
+    "perceptualHashMaxHammingDistance": 4,
+    "grayscaleThumbnail": "64x64",
+    "meanAbsoluteErrorMaxOutOf255": 5.0
+  },
+  "sourceVideoSeparationProven": false,
+  "limitations": [
+    "This only groups exact/near-duplicate-looking images; different frames from one source video may remain in separate groups.",
+    "Connected components can over-group transitive chains of visually similar frames.",
+    "No annotation semantics or clinical validity are inferred by this split tool."
+  ],
+  "sourceDataYaml": "handwash_public_7steps.yaml",
+  "sourceImageCount": 707,
+  "similarityGroupCount": 55,
+  "similarityCandidateEdgeCount": 2918,
+  "splitRatiosRequested": {
+    "train": 0.7,
+    "val": 0.15,
+    "test": 0.15
+  },
+  "splitCounts": {
+    "train": 465,
+    "val": 121,
+    "test": 121
+  },
+  "similarityGroupsPerSplit": {
+    "train": 37,
+    "val": 10,
+    "test": 8
+  },
+  "similarityGroupsByClass": {
+    "Paso1_Palmas": 3,
+    "Paso2_Dorsos": 7,
+    "Paso3_Interdigitales": 8,
+    "Paso4_Nudillos": 6,
+    "Paso5_Pulgar": 12,
+    "Paso6_PuntaDeDedos": 5,
+    "Paso7_Circulares": 14
+  },
+  "instanceCountsByClassAndSplit": {
+    "train": {
+      "0": 75,
+      "1": 59,
+      "2": 64,
+      "3": 59,
+      "4": 53,
+      "5": 93,
+      "6": 62
+    },
+    "val": {
+      "0": 18,
+      "1": 17,
+      "2": 16,
+      "3": 15,
+      "4": 28,
+      "5": 2,
+      "6": 25
+    },
+    "test": {
+      "0": 8,
+      "1": 25,
+      "2": 21,
+      "3": 27,
+      "4": 20,
+      "5": 6,
+      "6": 14
+    }
+  },
+  "files": [
+    {
+      "image": "images/train/train_000000.jpg",
+      "label": "labels/train/train_000000.txt",
+      "source": "handwash_public_7steps/images/train/0_26.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000001.jpg",
+      "label": "labels/train/train_000001.txt",
+      "source": "handwash_public_7steps/images/train/0_27.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000002.jpg",
+      "label": "labels/train/train_000002.txt",
+      "source": "handwash_public_7steps/images/train/0_28.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000003.jpg",
+      "label": "labels/train/train_000003.txt",
+      "source": "handwash_public_7steps/images/train/0_29.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000004.jpg",
+      "label": "labels/train/train_000004.txt",
+      "source": "handwash_public_7steps/images/train/0_30.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000005.jpg",
+      "label": "labels/train/train_000005.txt",
+      "source": "handwash_public_7steps/images/train/0_31.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000006.jpg",
+      "label": "labels/train/train_000006.txt",
+      "source": "handwash_public_7steps/images/train/0_32.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000007.jpg",
+      "label": "labels/train/train_000007.txt",
+      "source": "handwash_public_7steps/images/train/0_33.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000008.jpg",
+      "label": "labels/train/train_000008.txt",
+      "source": "handwash_public_7steps/images/train/0_34.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000009.jpg",
+      "label": "labels/train/train_000009.txt",
+      "source": "handwash_public_7steps/images/train/0_35.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000010.jpg",
+      "label": "labels/train/train_000010.txt",
+      "source": "handwash_public_7steps/images/train/0_36.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000011.jpg",
+      "label": "labels/train/train_000011.txt",
+      "source": "handwash_public_7steps/images/train/0_37.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000012.jpg",
+      "label": "labels/train/train_000012.txt",
+      "source": "handwash_public_7steps/images/train/0_38.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000013.jpg",
+      "label": "labels/train/train_000013.txt",
+      "source": "handwash_public_7steps/images/train/0_39.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000014.jpg",
+      "label": "labels/train/train_000014.txt",
+      "source": "handwash_public_7steps/images/train/0_40.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000015.jpg",
+      "label": "labels/train/train_000015.txt",
+      "source": "handwash_public_7steps/images/train/0_41.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000016.jpg",
+      "label": "labels/train/train_000016.txt",
+      "source": "handwash_public_7steps/images/train/0_42.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000017.jpg",
+      "label": "labels/train/train_000017.txt",
+      "source": "handwash_public_7steps/images/train/0_43.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000018.jpg",
+      "label": "labels/train/train_000018.txt",
+      "source": "handwash_public_7steps/images/train/0_44.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000019.jpg",
+      "label": "labels/train/train_000019.txt",
+      "source": "handwash_public_7steps/images/train/0_45.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000020.jpg",
+      "label": "labels/train/train_000020.txt",
+      "source": "handwash_public_7steps/images/train/0_46.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000021.jpg",
+      "label": "labels/train/train_000021.txt",
+      "source": "handwash_public_7steps/images/train/0_47.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000022.jpg",
+      "label": "labels/train/train_000022.txt",
+      "source": "handwash_public_7steps/images/train/0_48.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000023.jpg",
+      "label": "labels/train/train_000023.txt",
+      "source": "handwash_public_7steps/images/train/0_49.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000024.jpg",
+      "label": "labels/train/train_000024.txt",
+      "source": "handwash_public_7steps/images/train/0_50.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000025.jpg",
+      "label": "labels/train/train_000025.txt",
+      "source": "handwash_public_7steps/images/train/0_51.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000026.jpg",
+      "label": "labels/train/train_000026.txt",
+      "source": "handwash_public_7steps/images/train/0_52.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000027.jpg",
+      "label": "labels/train/train_000027.txt",
+      "source": "handwash_public_7steps/images/train/0_53.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000028.jpg",
+      "label": "labels/train/train_000028.txt",
+      "source": "handwash_public_7steps/images/train/0_54.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000029.jpg",
+      "label": "labels/train/train_000029.txt",
+      "source": "handwash_public_7steps/images/train/0_55.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000030.jpg",
+      "label": "labels/train/train_000030.txt",
+      "source": "handwash_public_7steps/images/train/0_56.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000031.jpg",
+      "label": "labels/train/train_000031.txt",
+      "source": "handwash_public_7steps/images/train/0_57.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000032.jpg",
+      "label": "labels/train/train_000032.txt",
+      "source": "handwash_public_7steps/images/train/0_58.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000033.jpg",
+      "label": "labels/train/train_000033.txt",
+      "source": "handwash_public_7steps/images/train/0_59.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000034.jpg",
+      "label": "labels/train/train_000034.txt",
+      "source": "handwash_public_7steps/images/train/0_60.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000035.jpg",
+      "label": "labels/train/train_000035.txt",
+      "source": "handwash_public_7steps/images/train/0_61.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000036.jpg",
+      "label": "labels/train/train_000036.txt",
+      "source": "handwash_public_7steps/images/train/0_62.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000037.jpg",
+      "label": "labels/train/train_000037.txt",
+      "source": "handwash_public_7steps/images/train/0_63.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000038.jpg",
+      "label": "labels/train/train_000038.txt",
+      "source": "handwash_public_7steps/images/train/0_64.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000039.jpg",
+      "label": "labels/train/train_000039.txt",
+      "source": "handwash_public_7steps/images/train/0_65.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000040.jpg",
+      "label": "labels/train/train_000040.txt",
+      "source": "handwash_public_7steps/images/train/0_66.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000041.jpg",
+      "label": "labels/train/train_000041.txt",
+      "source": "handwash_public_7steps/images/train/0_67.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000042.jpg",
+      "label": "labels/train/train_000042.txt",
+      "source": "handwash_public_7steps/images/train/0_68.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000043.jpg",
+      "label": "labels/train/train_000043.txt",
+      "source": "handwash_public_7steps/images/train/0_69.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000044.jpg",
+      "label": "labels/train/train_000044.txt",
+      "source": "handwash_public_7steps/images/train/0_70.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000045.jpg",
+      "label": "labels/train/train_000045.txt",
+      "source": "handwash_public_7steps/images/train/0_71.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000046.jpg",
+      "label": "labels/train/train_000046.txt",
+      "source": "handwash_public_7steps/images/train/0_72.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000047.jpg",
+      "label": "labels/train/train_000047.txt",
+      "source": "handwash_public_7steps/images/train/0_73.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000048.jpg",
+      "label": "labels/train/train_000048.txt",
+      "source": "handwash_public_7steps/images/train/0_74.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000049.jpg",
+      "label": "labels/train/train_000049.txt",
+      "source": "handwash_public_7steps/images/train/0_75.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000050.jpg",
+      "label": "labels/train/train_000050.txt",
+      "source": "handwash_public_7steps/images/train/0_76.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000051.jpg",
+      "label": "labels/train/train_000051.txt",
+      "source": "handwash_public_7steps/images/train/0_77.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000052.jpg",
+      "label": "labels/train/train_000052.txt",
+      "source": "handwash_public_7steps/images/train/0_78.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000053.jpg",
+      "label": "labels/train/train_000053.txt",
+      "source": "handwash_public_7steps/images/train/0_79.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000054.jpg",
+      "label": "labels/train/train_000054.txt",
+      "source": "handwash_public_7steps/images/train/0_80.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000055.jpg",
+      "label": "labels/train/train_000055.txt",
+      "source": "handwash_public_7steps/images/train/1_30.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "d87e3f6df5535c83"
+    },
+    {
+      "image": "images/train/train_000056.jpg",
+      "label": "labels/train/train_000056.txt",
+      "source": "handwash_public_7steps/images/train/1_31.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "d87e3f6df5535c83"
+    },
+    {
+      "image": "images/train/train_000057.jpg",
+      "label": "labels/train/train_000057.txt",
+      "source": "handwash_public_7steps/images/train/1_32.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "d87e3f6df5535c83"
+    },
+    {
+      "image": "images/train/train_000058.jpg",
+      "label": "labels/train/train_000058.txt",
+      "source": "handwash_public_7steps/images/train/1_33.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "d87e3f6df5535c83"
+    },
+    {
+      "image": "images/train/train_000059.jpg",
+      "label": "labels/train/train_000059.txt",
+      "source": "handwash_public_7steps/images/train/1_34.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "d87e3f6df5535c83"
+    },
+    {
+      "image": "images/train/train_000060.jpg",
+      "label": "labels/train/train_000060.txt",
+      "source": "handwash_public_7steps/images/train/1_40.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "a4ef7342cc26117e"
+    },
+    {
+      "image": "images/train/train_000061.jpg",
+      "label": "labels/train/train_000061.txt",
+      "source": "handwash_public_7steps/images/train/1_48.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "53b55db5df217241"
+    },
+    {
+      "image": "images/train/train_000062.jpg",
+      "label": "labels/train/train_000062.txt",
+      "source": "handwash_public_7steps/images/train/1_49.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "53b55db5df217241"
+    },
+    {
+      "image": "images/train/train_000063.jpg",
+      "label": "labels/train/train_000063.txt",
+      "source": "handwash_public_7steps/images/train/1_50.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "53b55db5df217241"
+    },
+    {
+      "image": "images/train/train_000064.jpg",
+      "label": "labels/train/train_000064.txt",
+      "source": "handwash_public_7steps/images/train/1_51.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000065.jpg",
+      "label": "labels/train/train_000065.txt",
+      "source": "handwash_public_7steps/images/train/1_52.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000066.jpg",
+      "label": "labels/train/train_000066.txt",
+      "source": "handwash_public_7steps/images/train/1_53.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000067.jpg",
+      "label": "labels/train/train_000067.txt",
+      "source": "handwash_public_7steps/images/train/1_54.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000068.jpg",
+      "label": "labels/train/train_000068.txt",
+      "source": "handwash_public_7steps/images/train/1_55.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000069.jpg",
+      "label": "labels/train/train_000069.txt",
+      "source": "handwash_public_7steps/images/train/1_56.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000070.jpg",
+      "label": "labels/train/train_000070.txt",
+      "source": "handwash_public_7steps/images/train/1_57.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000071.jpg",
+      "label": "labels/train/train_000071.txt",
+      "source": "handwash_public_7steps/images/train/1_58.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000072.jpg",
+      "label": "labels/train/train_000072.txt",
+      "source": "handwash_public_7steps/images/train/1_59.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000073.jpg",
+      "label": "labels/train/train_000073.txt",
+      "source": "handwash_public_7steps/images/train/1_60.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000074.jpg",
+      "label": "labels/train/train_000074.txt",
+      "source": "handwash_public_7steps/images/train/1_61.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000075.jpg",
+      "label": "labels/train/train_000075.txt",
+      "source": "handwash_public_7steps/images/train/1_62.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000076.jpg",
+      "label": "labels/train/train_000076.txt",
+      "source": "handwash_public_7steps/images/train/1_63.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000077.jpg",
+      "label": "labels/train/train_000077.txt",
+      "source": "handwash_public_7steps/images/train/1_64.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000078.jpg",
+      "label": "labels/train/train_000078.txt",
+      "source": "handwash_public_7steps/images/train/1_65.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000079.jpg",
+      "label": "labels/train/train_000079.txt",
+      "source": "handwash_public_7steps/images/train/1_66.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000080.jpg",
+      "label": "labels/train/train_000080.txt",
+      "source": "handwash_public_7steps/images/train/1_67.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000081.jpg",
+      "label": "labels/train/train_000081.txt",
+      "source": "handwash_public_7steps/images/train/1_68.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000082.jpg",
+      "label": "labels/train/train_000082.txt",
+      "source": "handwash_public_7steps/images/train/1_69.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000083.jpg",
+      "label": "labels/train/train_000083.txt",
+      "source": "handwash_public_7steps/images/train/1_70.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000084.jpg",
+      "label": "labels/train/train_000084.txt",
+      "source": "handwash_public_7steps/images/train/1_71.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000085.jpg",
+      "label": "labels/train/train_000085.txt",
+      "source": "handwash_public_7steps/images/train/1_72.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000086.jpg",
+      "label": "labels/train/train_000086.txt",
+      "source": "handwash_public_7steps/images/train/1_73.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000087.jpg",
+      "label": "labels/train/train_000087.txt",
+      "source": "handwash_public_7steps/images/train/1_74.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000088.jpg",
+      "label": "labels/train/train_000088.txt",
+      "source": "handwash_public_7steps/images/train/1_75.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000089.jpg",
+      "label": "labels/train/train_000089.txt",
+      "source": "handwash_public_7steps/images/train/1_76.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000090.jpg",
+      "label": "labels/train/train_000090.txt",
+      "source": "handwash_public_7steps/images/train/1_77.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000091.jpg",
+      "label": "labels/train/train_000091.txt",
+      "source": "handwash_public_7steps/images/train/1_78.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000092.jpg",
+      "label": "labels/train/train_000092.txt",
+      "source": "handwash_public_7steps/images/train/1_79.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000093.jpg",
+      "label": "labels/train/train_000093.txt",
+      "source": "handwash_public_7steps/images/train/1_80.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000094.jpg",
+      "label": "labels/train/train_000094.txt",
+      "source": "handwash_public_7steps/images/train/2_10.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "243ad5f471534f2d"
+    },
+    {
+      "image": "images/train/train_000095.jpg",
+      "label": "labels/train/train_000095.txt",
+      "source": "handwash_public_7steps/images/train/2_16.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "6892b272e74b3b42"
+    },
+    {
+      "image": "images/train/train_000096.jpg",
+      "label": "labels/train/train_000096.txt",
+      "source": "handwash_public_7steps/images/train/2_17.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "6892b272e74b3b42"
+    },
+    {
+      "image": "images/train/train_000097.jpg",
+      "label": "labels/train/train_000097.txt",
+      "source": "handwash_public_7steps/images/train/2_21.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "6892b272e74b3b42"
+    },
+    {
+      "image": "images/train/train_000098.jpg",
+      "label": "labels/train/train_000098.txt",
+      "source": "handwash_public_7steps/images/train/2_22.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "6892b272e74b3b42"
+    },
+    {
+      "image": "images/train/train_000099.jpg",
+      "label": "labels/train/train_000099.txt",
+      "source": "handwash_public_7steps/images/train/2_29.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "6892b272e74b3b42"
+    },
+    {
+      "image": "images/train/train_000100.jpg",
+      "label": "labels/train/train_000100.txt",
+      "source": "handwash_public_7steps/images/train/2_34.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "6892b272e74b3b42"
+    },
+    {
+      "image": "images/train/train_000101.jpg",
+      "label": "labels/train/train_000101.txt",
+      "source": "handwash_public_7steps/images/train/2_40.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "6892b272e74b3b42"
+    },
+    {
+      "image": "images/train/train_000102.jpg",
+      "label": "labels/train/train_000102.txt",
+      "source": "handwash_public_7steps/images/train/2_46.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "3a0467fd28d4288b"
+    },
+    {
+      "image": "images/train/train_000103.jpg",
+      "label": "labels/train/train_000103.txt",
+      "source": "handwash_public_7steps/images/train/2_47.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "3a0467fd28d4288b"
+    },
+    {
+      "image": "images/train/train_000104.jpg",
+      "label": "labels/train/train_000104.txt",
+      "source": "handwash_public_7steps/images/train/2_48.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "3a0467fd28d4288b"
+    },
+    {
+      "image": "images/train/train_000105.jpg",
+      "label": "labels/train/train_000105.txt",
+      "source": "handwash_public_7steps/images/train/2_49.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "3a0467fd28d4288b"
+    },
+    {
+      "image": "images/train/train_000106.jpg",
+      "label": "labels/train/train_000106.txt",
+      "source": "handwash_public_7steps/images/train/2_5.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "6892b272e74b3b42"
+    },
+    {
+      "image": "images/train/train_000107.jpg",
+      "label": "labels/train/train_000107.txt",
+      "source": "handwash_public_7steps/images/train/2_50.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "3a0467fd28d4288b"
+    },
+    {
+      "image": "images/train/train_000108.jpg",
+      "label": "labels/train/train_000108.txt",
+      "source": "handwash_public_7steps/images/train/2_51.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "4eca8291ec5cde60"
+    },
+    {
+      "image": "images/train/train_000109.jpg",
+      "label": "labels/train/train_000109.txt",
+      "source": "handwash_public_7steps/images/train/2_52.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "4eca8291ec5cde60"
+    },
+    {
+      "image": "images/train/train_000110.jpg",
+      "label": "labels/train/train_000110.txt",
+      "source": "handwash_public_7steps/images/train/2_53.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "4eca8291ec5cde60"
+    },
+    {
+      "image": "images/train/train_000111.jpg",
+      "label": "labels/train/train_000111.txt",
+      "source": "handwash_public_7steps/images/train/2_54.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "4eca8291ec5cde60"
+    },
+    {
+      "image": "images/train/train_000112.jpg",
+      "label": "labels/train/train_000112.txt",
+      "source": "handwash_public_7steps/images/train/2_55.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "4eca8291ec5cde60"
+    },
+    {
+      "image": "images/train/train_000113.jpg",
+      "label": "labels/train/train_000113.txt",
+      "source": "handwash_public_7steps/images/train/2_56.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "4eca8291ec5cde60"
+    },
+    {
+      "image": "images/train/train_000114.jpg",
+      "label": "labels/train/train_000114.txt",
+      "source": "handwash_public_7steps/images/train/2_57.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "4eca8291ec5cde60"
+    },
+    {
+      "image": "images/train/train_000115.jpg",
+      "label": "labels/train/train_000115.txt",
+      "source": "handwash_public_7steps/images/train/2_58.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "4eca8291ec5cde60"
+    },
+    {
+      "image": "images/train/train_000116.jpg",
+      "label": "labels/train/train_000116.txt",
+      "source": "handwash_public_7steps/images/train/2_59.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "4eca8291ec5cde60"
+    },
+    {
+      "image": "images/train/train_000117.jpg",
+      "label": "labels/train/train_000117.txt",
+      "source": "handwash_public_7steps/images/train/2_60.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "4eca8291ec5cde60"
+    },
+    {
+      "image": "images/train/train_000118.jpg",
+      "label": "labels/train/train_000118.txt",
+      "source": "handwash_public_7steps/images/train/2_61.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "4eca8291ec5cde60"
+    },
+    {
+      "image": "images/train/train_000119.jpg",
+      "label": "labels/train/train_000119.txt",
+      "source": "handwash_public_7steps/images/train/2_62.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "4eca8291ec5cde60"
+    },
+    {
+      "image": "images/train/train_000120.jpg",
+      "label": "labels/train/train_000120.txt",
+      "source": "handwash_public_7steps/images/train/2_63.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "4eca8291ec5cde60"
+    },
+    {
+      "image": "images/train/train_000121.jpg",
+      "label": "labels/train/train_000121.txt",
+      "source": "handwash_public_7steps/images/train/2_64.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "f94e81088cf01e11"
+    },
+    {
+      "image": "images/train/train_000122.jpg",
+      "label": "labels/train/train_000122.txt",
+      "source": "handwash_public_7steps/images/train/2_65.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "f94e81088cf01e11"
+    },
+    {
+      "image": "images/train/train_000123.jpg",
+      "label": "labels/train/train_000123.txt",
+      "source": "handwash_public_7steps/images/train/2_66.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "f94e81088cf01e11"
+    },
+    {
+      "image": "images/train/train_000124.jpg",
+      "label": "labels/train/train_000124.txt",
+      "source": "handwash_public_7steps/images/train/2_67.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "4eca8291ec5cde60"
+    },
+    {
+      "image": "images/train/train_000125.jpg",
+      "label": "labels/train/train_000125.txt",
+      "source": "handwash_public_7steps/images/train/2_68.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "4eca8291ec5cde60"
+    },
+    {
+      "image": "images/train/train_000126.jpg",
+      "label": "labels/train/train_000126.txt",
+      "source": "handwash_public_7steps/images/train/2_69.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "4eca8291ec5cde60"
+    },
+    {
+      "image": "images/train/train_000127.jpg",
+      "label": "labels/train/train_000127.txt",
+      "source": "handwash_public_7steps/images/train/2_70.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "4eca8291ec5cde60"
+    },
+    {
+      "image": "images/train/train_000128.jpg",
+      "label": "labels/train/train_000128.txt",
+      "source": "handwash_public_7steps/images/train/2_71.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "4eca8291ec5cde60"
+    },
+    {
+      "image": "images/train/train_000129.jpg",
+      "label": "labels/train/train_000129.txt",
+      "source": "handwash_public_7steps/images/train/2_72.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "4eca8291ec5cde60"
+    },
+    {
+      "image": "images/train/train_000130.jpg",
+      "label": "labels/train/train_000130.txt",
+      "source": "handwash_public_7steps/images/train/2_73.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "4eca8291ec5cde60"
+    },
+    {
+      "image": "images/train/train_000131.jpg",
+      "label": "labels/train/train_000131.txt",
+      "source": "handwash_public_7steps/images/train/2_74.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "4eca8291ec5cde60"
+    },
+    {
+      "image": "images/train/train_000132.jpg",
+      "label": "labels/train/train_000132.txt",
+      "source": "handwash_public_7steps/images/train/2_75.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "4eca8291ec5cde60"
+    },
+    {
+      "image": "images/train/train_000133.jpg",
+      "label": "labels/train/train_000133.txt",
+      "source": "handwash_public_7steps/images/train/2_76.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "4eca8291ec5cde60"
+    },
+    {
+      "image": "images/train/train_000134.jpg",
+      "label": "labels/train/train_000134.txt",
+      "source": "handwash_public_7steps/images/train/2_77.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "4eca8291ec5cde60"
+    },
+    {
+      "image": "images/train/train_000135.jpg",
+      "label": "labels/train/train_000135.txt",
+      "source": "handwash_public_7steps/images/train/2_78.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "4eca8291ec5cde60"
+    },
+    {
+      "image": "images/train/train_000136.jpg",
+      "label": "labels/train/train_000136.txt",
+      "source": "handwash_public_7steps/images/train/2_79.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "4eca8291ec5cde60"
+    },
+    {
+      "image": "images/train/train_000137.jpg",
+      "label": "labels/train/train_000137.txt",
+      "source": "handwash_public_7steps/images/train/2_80.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "4eca8291ec5cde60"
+    },
+    {
+      "image": "images/train/train_000138.jpg",
+      "label": "labels/train/train_000138.txt",
+      "source": "handwash_public_7steps/images/train/3_0.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "c726709172fdecfe"
+    },
+    {
+      "image": "images/train/train_000139.jpg",
+      "label": "labels/train/train_000139.txt",
+      "source": "handwash_public_7steps/images/train/3_1.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "c726709172fdecfe"
+    },
+    {
+      "image": "images/train/train_000140.jpg",
+      "label": "labels/train/train_000140.txt",
+      "source": "handwash_public_7steps/images/train/3_2.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "c726709172fdecfe"
+    },
+    {
+      "image": "images/train/train_000141.jpg",
+      "label": "labels/train/train_000141.txt",
+      "source": "handwash_public_7steps/images/train/3_3.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "c726709172fdecfe"
+    },
+    {
+      "image": "images/train/train_000142.jpg",
+      "label": "labels/train/train_000142.txt",
+      "source": "handwash_public_7steps/images/train/3_4.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "c726709172fdecfe"
+    },
+    {
+      "image": "images/train/train_000143.jpg",
+      "label": "labels/train/train_000143.txt",
+      "source": "handwash_public_7steps/images/train/3_5.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "c726709172fdecfe"
+    },
+    {
+      "image": "images/train/train_000144.jpg",
+      "label": "labels/train/train_000144.txt",
+      "source": "handwash_public_7steps/images/train/3_51.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000145.jpg",
+      "label": "labels/train/train_000145.txt",
+      "source": "handwash_public_7steps/images/train/3_52.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000146.jpg",
+      "label": "labels/train/train_000146.txt",
+      "source": "handwash_public_7steps/images/train/3_53.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000147.jpg",
+      "label": "labels/train/train_000147.txt",
+      "source": "handwash_public_7steps/images/train/3_54.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000148.jpg",
+      "label": "labels/train/train_000148.txt",
+      "source": "handwash_public_7steps/images/train/3_55.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000149.jpg",
+      "label": "labels/train/train_000149.txt",
+      "source": "handwash_public_7steps/images/train/3_56.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000150.jpg",
+      "label": "labels/train/train_000150.txt",
+      "source": "handwash_public_7steps/images/train/3_57.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000151.jpg",
+      "label": "labels/train/train_000151.txt",
+      "source": "handwash_public_7steps/images/train/3_58.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000152.jpg",
+      "label": "labels/train/train_000152.txt",
+      "source": "handwash_public_7steps/images/train/3_59.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000153.jpg",
+      "label": "labels/train/train_000153.txt",
+      "source": "handwash_public_7steps/images/train/3_6.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "20cba79e42554057"
+    },
+    {
+      "image": "images/train/train_000154.jpg",
+      "label": "labels/train/train_000154.txt",
+      "source": "handwash_public_7steps/images/train/3_60.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000155.jpg",
+      "label": "labels/train/train_000155.txt",
+      "source": "handwash_public_7steps/images/train/3_61.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000156.jpg",
+      "label": "labels/train/train_000156.txt",
+      "source": "handwash_public_7steps/images/train/3_62.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000157.jpg",
+      "label": "labels/train/train_000157.txt",
+      "source": "handwash_public_7steps/images/train/3_63.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000158.jpg",
+      "label": "labels/train/train_000158.txt",
+      "source": "handwash_public_7steps/images/train/3_64.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000159.jpg",
+      "label": "labels/train/train_000159.txt",
+      "source": "handwash_public_7steps/images/train/3_65.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000160.jpg",
+      "label": "labels/train/train_000160.txt",
+      "source": "handwash_public_7steps/images/train/3_66.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000161.jpg",
+      "label": "labels/train/train_000161.txt",
+      "source": "handwash_public_7steps/images/train/3_67.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000162.jpg",
+      "label": "labels/train/train_000162.txt",
+      "source": "handwash_public_7steps/images/train/3_68.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000163.jpg",
+      "label": "labels/train/train_000163.txt",
+      "source": "handwash_public_7steps/images/train/3_69.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000164.jpg",
+      "label": "labels/train/train_000164.txt",
+      "source": "handwash_public_7steps/images/train/3_7.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "f019598fc24c8d0b"
+    },
+    {
+      "image": "images/train/train_000165.jpg",
+      "label": "labels/train/train_000165.txt",
+      "source": "handwash_public_7steps/images/train/3_70.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000166.jpg",
+      "label": "labels/train/train_000166.txt",
+      "source": "handwash_public_7steps/images/train/3_71.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000167.jpg",
+      "label": "labels/train/train_000167.txt",
+      "source": "handwash_public_7steps/images/train/3_72.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000168.jpg",
+      "label": "labels/train/train_000168.txt",
+      "source": "handwash_public_7steps/images/train/3_73.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000169.jpg",
+      "label": "labels/train/train_000169.txt",
+      "source": "handwash_public_7steps/images/train/3_74.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000170.jpg",
+      "label": "labels/train/train_000170.txt",
+      "source": "handwash_public_7steps/images/train/3_75.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000171.jpg",
+      "label": "labels/train/train_000171.txt",
+      "source": "handwash_public_7steps/images/train/3_76.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000172.jpg",
+      "label": "labels/train/train_000172.txt",
+      "source": "handwash_public_7steps/images/train/3_77.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000173.jpg",
+      "label": "labels/train/train_000173.txt",
+      "source": "handwash_public_7steps/images/train/3_78.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000174.jpg",
+      "label": "labels/train/train_000174.txt",
+      "source": "handwash_public_7steps/images/train/3_79.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000175.jpg",
+      "label": "labels/train/train_000175.txt",
+      "source": "handwash_public_7steps/images/train/3_8.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "f019598fc24c8d0b"
+    },
+    {
+      "image": "images/train/train_000176.jpg",
+      "label": "labels/train/train_000176.txt",
+      "source": "handwash_public_7steps/images/train/3_80.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000177.jpg",
+      "label": "labels/train/train_000177.txt",
+      "source": "handwash_public_7steps/images/train/4_0.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "d5689f719325aaf9"
+    },
+    {
+      "image": "images/train/train_000178.jpg",
+      "label": "labels/train/train_000178.txt",
+      "source": "handwash_public_7steps/images/train/4_1.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "d5689f719325aaf9"
+    },
+    {
+      "image": "images/train/train_000179.jpg",
+      "label": "labels/train/train_000179.txt",
+      "source": "handwash_public_7steps/images/train/4_2.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "d5689f719325aaf9"
+    },
+    {
+      "image": "images/train/train_000180.jpg",
+      "label": "labels/train/train_000180.txt",
+      "source": "handwash_public_7steps/images/train/4_24.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "a904680542e77c3c"
+    },
+    {
+      "image": "images/train/train_000181.jpg",
+      "label": "labels/train/train_000181.txt",
+      "source": "handwash_public_7steps/images/train/4_25.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "a904680542e77c3c"
+    },
+    {
+      "image": "images/train/train_000182.jpg",
+      "label": "labels/train/train_000182.txt",
+      "source": "handwash_public_7steps/images/train/4_26.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "a904680542e77c3c"
+    },
+    {
+      "image": "images/train/train_000183.jpg",
+      "label": "labels/train/train_000183.txt",
+      "source": "handwash_public_7steps/images/train/4_27.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "a904680542e77c3c"
+    },
+    {
+      "image": "images/train/train_000184.jpg",
+      "label": "labels/train/train_000184.txt",
+      "source": "handwash_public_7steps/images/train/4_28.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "a904680542e77c3c"
+    },
+    {
+      "image": "images/train/train_000185.jpg",
+      "label": "labels/train/train_000185.txt",
+      "source": "handwash_public_7steps/images/train/4_29.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "a904680542e77c3c"
+    },
+    {
+      "image": "images/train/train_000186.jpg",
+      "label": "labels/train/train_000186.txt",
+      "source": "handwash_public_7steps/images/train/4_3.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "d5689f719325aaf9"
+    },
+    {
+      "image": "images/train/train_000187.jpg",
+      "label": "labels/train/train_000187.txt",
+      "source": "handwash_public_7steps/images/train/4_30.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "5ab0ab79f6690df7"
+    },
+    {
+      "image": "images/train/train_000188.jpg",
+      "label": "labels/train/train_000188.txt",
+      "source": "handwash_public_7steps/images/train/4_4.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "d5689f719325aaf9"
+    },
+    {
+      "image": "images/train/train_000189.jpg",
+      "label": "labels/train/train_000189.txt",
+      "source": "handwash_public_7steps/images/train/4_44.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "4c70ccdcb1d39541"
+    },
+    {
+      "image": "images/train/train_000190.jpg",
+      "label": "labels/train/train_000190.txt",
+      "source": "handwash_public_7steps/images/train/4_45.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "4c70ccdcb1d39541"
+    },
+    {
+      "image": "images/train/train_000191.jpg",
+      "label": "labels/train/train_000191.txt",
+      "source": "handwash_public_7steps/images/train/4_46.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "4c70ccdcb1d39541"
+    },
+    {
+      "image": "images/train/train_000192.jpg",
+      "label": "labels/train/train_000192.txt",
+      "source": "handwash_public_7steps/images/train/4_47.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "4c70ccdcb1d39541"
+    },
+    {
+      "image": "images/train/train_000193.jpg",
+      "label": "labels/train/train_000193.txt",
+      "source": "handwash_public_7steps/images/train/4_48.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "4c70ccdcb1d39541"
+    },
+    {
+      "image": "images/train/train_000194.jpg",
+      "label": "labels/train/train_000194.txt",
+      "source": "handwash_public_7steps/images/train/4_49.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "a904680542e77c3c"
+    },
+    {
+      "image": "images/train/train_000195.jpg",
+      "label": "labels/train/train_000195.txt",
+      "source": "handwash_public_7steps/images/train/4_5.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "d5689f719325aaf9"
+    },
+    {
+      "image": "images/train/train_000196.jpg",
+      "label": "labels/train/train_000196.txt",
+      "source": "handwash_public_7steps/images/train/4_50.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "a904680542e77c3c"
+    },
+    {
+      "image": "images/train/train_000197.jpg",
+      "label": "labels/train/train_000197.txt",
+      "source": "handwash_public_7steps/images/train/4_6.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "d5689f719325aaf9"
+    },
+    {
+      "image": "images/train/train_000198.jpg",
+      "label": "labels/train/train_000198.txt",
+      "source": "handwash_public_7steps/images/train/4_62.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "7d3648484d63cd12"
+    },
+    {
+      "image": "images/train/train_000199.jpg",
+      "label": "labels/train/train_000199.txt",
+      "source": "handwash_public_7steps/images/train/4_63.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "7d3648484d63cd12"
+    },
+    {
+      "image": "images/train/train_000200.jpg",
+      "label": "labels/train/train_000200.txt",
+      "source": "handwash_public_7steps/images/train/4_64.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "fc820cbd518d9e9a"
+    },
+    {
+      "image": "images/train/train_000201.jpg",
+      "label": "labels/train/train_000201.txt",
+      "source": "handwash_public_7steps/images/train/4_65.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "fc820cbd518d9e9a"
+    },
+    {
+      "image": "images/train/train_000202.jpg",
+      "label": "labels/train/train_000202.txt",
+      "source": "handwash_public_7steps/images/train/4_66.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "fc820cbd518d9e9a"
+    },
+    {
+      "image": "images/train/train_000203.jpg",
+      "label": "labels/train/train_000203.txt",
+      "source": "handwash_public_7steps/images/train/4_67.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "fc820cbd518d9e9a"
+    },
+    {
+      "image": "images/train/train_000204.jpg",
+      "label": "labels/train/train_000204.txt",
+      "source": "handwash_public_7steps/images/train/4_68.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "fc820cbd518d9e9a"
+    },
+    {
+      "image": "images/train/train_000205.jpg",
+      "label": "labels/train/train_000205.txt",
+      "source": "handwash_public_7steps/images/train/4_7.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "d5689f719325aaf9"
+    },
+    {
+      "image": "images/train/train_000206.jpg",
+      "label": "labels/train/train_000206.txt",
+      "source": "handwash_public_7steps/images/train/4_74.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "9d0dfd2ac615b95f"
+    },
+    {
+      "image": "images/train/train_000207.jpg",
+      "label": "labels/train/train_000207.txt",
+      "source": "handwash_public_7steps/images/train/4_75.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "9d0dfd2ac615b95f"
+    },
+    {
+      "image": "images/train/train_000208.jpg",
+      "label": "labels/train/train_000208.txt",
+      "source": "handwash_public_7steps/images/train/4_76.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "9d0dfd2ac615b95f"
+    },
+    {
+      "image": "images/train/train_000209.jpg",
+      "label": "labels/train/train_000209.txt",
+      "source": "handwash_public_7steps/images/train/4_77.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "9d0dfd2ac615b95f"
+    },
+    {
+      "image": "images/train/train_000210.jpg",
+      "label": "labels/train/train_000210.txt",
+      "source": "handwash_public_7steps/images/train/4_78.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "9d0dfd2ac615b95f"
+    },
+    {
+      "image": "images/train/train_000211.jpg",
+      "label": "labels/train/train_000211.txt",
+      "source": "handwash_public_7steps/images/train/4_79.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "9d0dfd2ac615b95f"
+    },
+    {
+      "image": "images/train/train_000212.jpg",
+      "label": "labels/train/train_000212.txt",
+      "source": "handwash_public_7steps/images/train/4_8.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "2ebe38547ec65d5f"
+    },
+    {
+      "image": "images/train/train_000213.jpg",
+      "label": "labels/train/train_000213.txt",
+      "source": "handwash_public_7steps/images/train/4_80.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "9d0dfd2ac615b95f"
+    },
+    {
+      "image": "images/train/train_000214.jpg",
+      "label": "labels/train/train_000214.txt",
+      "source": "handwash_public_7steps/images/train/5_0.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000215.jpg",
+      "label": "labels/train/train_000215.txt",
+      "source": "handwash_public_7steps/images/train/5_1.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000216.jpg",
+      "label": "labels/train/train_000216.txt",
+      "source": "handwash_public_7steps/images/train/5_10.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000217.jpg",
+      "label": "labels/train/train_000217.txt",
+      "source": "handwash_public_7steps/images/train/5_11.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000218.jpg",
+      "label": "labels/train/train_000218.txt",
+      "source": "handwash_public_7steps/images/train/5_12.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000219.jpg",
+      "label": "labels/train/train_000219.txt",
+      "source": "handwash_public_7steps/images/train/5_13.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000220.jpg",
+      "label": "labels/train/train_000220.txt",
+      "source": "handwash_public_7steps/images/train/5_14.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000221.jpg",
+      "label": "labels/train/train_000221.txt",
+      "source": "handwash_public_7steps/images/train/5_15.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000222.jpg",
+      "label": "labels/train/train_000222.txt",
+      "source": "handwash_public_7steps/images/train/5_16.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000223.jpg",
+      "label": "labels/train/train_000223.txt",
+      "source": "handwash_public_7steps/images/train/5_17.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000224.jpg",
+      "label": "labels/train/train_000224.txt",
+      "source": "handwash_public_7steps/images/train/5_18.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000225.jpg",
+      "label": "labels/train/train_000225.txt",
+      "source": "handwash_public_7steps/images/train/5_19.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000226.jpg",
+      "label": "labels/train/train_000226.txt",
+      "source": "handwash_public_7steps/images/train/5_2.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000227.jpg",
+      "label": "labels/train/train_000227.txt",
+      "source": "handwash_public_7steps/images/train/5_20.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000228.jpg",
+      "label": "labels/train/train_000228.txt",
+      "source": "handwash_public_7steps/images/train/5_21.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000229.jpg",
+      "label": "labels/train/train_000229.txt",
+      "source": "handwash_public_7steps/images/train/5_22.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000230.jpg",
+      "label": "labels/train/train_000230.txt",
+      "source": "handwash_public_7steps/images/train/5_23.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000231.jpg",
+      "label": "labels/train/train_000231.txt",
+      "source": "handwash_public_7steps/images/train/5_24.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000232.jpg",
+      "label": "labels/train/train_000232.txt",
+      "source": "handwash_public_7steps/images/train/5_25.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000233.jpg",
+      "label": "labels/train/train_000233.txt",
+      "source": "handwash_public_7steps/images/train/5_26.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000234.jpg",
+      "label": "labels/train/train_000234.txt",
+      "source": "handwash_public_7steps/images/train/5_27.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000235.jpg",
+      "label": "labels/train/train_000235.txt",
+      "source": "handwash_public_7steps/images/train/5_28.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000236.jpg",
+      "label": "labels/train/train_000236.txt",
+      "source": "handwash_public_7steps/images/train/5_29.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000237.jpg",
+      "label": "labels/train/train_000237.txt",
+      "source": "handwash_public_7steps/images/train/5_3.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000238.jpg",
+      "label": "labels/train/train_000238.txt",
+      "source": "handwash_public_7steps/images/train/5_30.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000239.jpg",
+      "label": "labels/train/train_000239.txt",
+      "source": "handwash_public_7steps/images/train/5_31.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000240.jpg",
+      "label": "labels/train/train_000240.txt",
+      "source": "handwash_public_7steps/images/train/5_32.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000241.jpg",
+      "label": "labels/train/train_000241.txt",
+      "source": "handwash_public_7steps/images/train/5_33.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000242.jpg",
+      "label": "labels/train/train_000242.txt",
+      "source": "handwash_public_7steps/images/train/5_34.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000243.jpg",
+      "label": "labels/train/train_000243.txt",
+      "source": "handwash_public_7steps/images/train/5_35.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000244.jpg",
+      "label": "labels/train/train_000244.txt",
+      "source": "handwash_public_7steps/images/train/5_36.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000245.jpg",
+      "label": "labels/train/train_000245.txt",
+      "source": "handwash_public_7steps/images/train/5_37.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000246.jpg",
+      "label": "labels/train/train_000246.txt",
+      "source": "handwash_public_7steps/images/train/5_38.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000247.jpg",
+      "label": "labels/train/train_000247.txt",
+      "source": "handwash_public_7steps/images/train/5_39.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000248.jpg",
+      "label": "labels/train/train_000248.txt",
+      "source": "handwash_public_7steps/images/train/5_4.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000249.jpg",
+      "label": "labels/train/train_000249.txt",
+      "source": "handwash_public_7steps/images/train/5_40.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000250.jpg",
+      "label": "labels/train/train_000250.txt",
+      "source": "handwash_public_7steps/images/train/5_41.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000251.jpg",
+      "label": "labels/train/train_000251.txt",
+      "source": "handwash_public_7steps/images/train/5_42.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000252.jpg",
+      "label": "labels/train/train_000252.txt",
+      "source": "handwash_public_7steps/images/train/5_43.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000253.jpg",
+      "label": "labels/train/train_000253.txt",
+      "source": "handwash_public_7steps/images/train/5_44.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000254.jpg",
+      "label": "labels/train/train_000254.txt",
+      "source": "handwash_public_7steps/images/train/5_45.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000255.jpg",
+      "label": "labels/train/train_000255.txt",
+      "source": "handwash_public_7steps/images/train/5_46.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000256.jpg",
+      "label": "labels/train/train_000256.txt",
+      "source": "handwash_public_7steps/images/train/5_47.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000257.jpg",
+      "label": "labels/train/train_000257.txt",
+      "source": "handwash_public_7steps/images/train/5_48.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000258.jpg",
+      "label": "labels/train/train_000258.txt",
+      "source": "handwash_public_7steps/images/train/5_49.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000259.jpg",
+      "label": "labels/train/train_000259.txt",
+      "source": "handwash_public_7steps/images/train/5_5.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000260.jpg",
+      "label": "labels/train/train_000260.txt",
+      "source": "handwash_public_7steps/images/train/5_50.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000261.jpg",
+      "label": "labels/train/train_000261.txt",
+      "source": "handwash_public_7steps/images/train/5_51.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1299565811377b46"
+    },
+    {
+      "image": "images/train/train_000262.jpg",
+      "label": "labels/train/train_000262.txt",
+      "source": "handwash_public_7steps/images/train/5_52.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1299565811377b46"
+    },
+    {
+      "image": "images/train/train_000263.jpg",
+      "label": "labels/train/train_000263.txt",
+      "source": "handwash_public_7steps/images/train/5_53.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1299565811377b46"
+    },
+    {
+      "image": "images/train/train_000264.jpg",
+      "label": "labels/train/train_000264.txt",
+      "source": "handwash_public_7steps/images/train/5_54.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1299565811377b46"
+    },
+    {
+      "image": "images/train/train_000265.jpg",
+      "label": "labels/train/train_000265.txt",
+      "source": "handwash_public_7steps/images/train/5_55.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1299565811377b46"
+    },
+    {
+      "image": "images/train/train_000266.jpg",
+      "label": "labels/train/train_000266.txt",
+      "source": "handwash_public_7steps/images/train/5_56.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1299565811377b46"
+    },
+    {
+      "image": "images/train/train_000267.jpg",
+      "label": "labels/train/train_000267.txt",
+      "source": "handwash_public_7steps/images/train/5_57.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1299565811377b46"
+    },
+    {
+      "image": "images/train/train_000268.jpg",
+      "label": "labels/train/train_000268.txt",
+      "source": "handwash_public_7steps/images/train/5_58.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1299565811377b46"
+    },
+    {
+      "image": "images/train/train_000269.jpg",
+      "label": "labels/train/train_000269.txt",
+      "source": "handwash_public_7steps/images/train/5_59.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1299565811377b46"
+    },
+    {
+      "image": "images/train/train_000270.jpg",
+      "label": "labels/train/train_000270.txt",
+      "source": "handwash_public_7steps/images/train/5_6.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000271.jpg",
+      "label": "labels/train/train_000271.txt",
+      "source": "handwash_public_7steps/images/train/5_60.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1299565811377b46"
+    },
+    {
+      "image": "images/train/train_000272.jpg",
+      "label": "labels/train/train_000272.txt",
+      "source": "handwash_public_7steps/images/train/5_61.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1299565811377b46"
+    },
+    {
+      "image": "images/train/train_000273.jpg",
+      "label": "labels/train/train_000273.txt",
+      "source": "handwash_public_7steps/images/train/5_62.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1299565811377b46"
+    },
+    {
+      "image": "images/train/train_000274.jpg",
+      "label": "labels/train/train_000274.txt",
+      "source": "handwash_public_7steps/images/train/5_63.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1299565811377b46"
+    },
+    {
+      "image": "images/train/train_000275.jpg",
+      "label": "labels/train/train_000275.txt",
+      "source": "handwash_public_7steps/images/train/5_64.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1299565811377b46"
+    },
+    {
+      "image": "images/train/train_000276.jpg",
+      "label": "labels/train/train_000276.txt",
+      "source": "handwash_public_7steps/images/train/5_65.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1299565811377b46"
+    },
+    {
+      "image": "images/train/train_000277.jpg",
+      "label": "labels/train/train_000277.txt",
+      "source": "handwash_public_7steps/images/train/5_66.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1299565811377b46"
+    },
+    {
+      "image": "images/train/train_000278.jpg",
+      "label": "labels/train/train_000278.txt",
+      "source": "handwash_public_7steps/images/train/5_67.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1299565811377b46"
+    },
+    {
+      "image": "images/train/train_000279.jpg",
+      "label": "labels/train/train_000279.txt",
+      "source": "handwash_public_7steps/images/train/5_68.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1299565811377b46"
+    },
+    {
+      "image": "images/train/train_000280.jpg",
+      "label": "labels/train/train_000280.txt",
+      "source": "handwash_public_7steps/images/train/5_69.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1299565811377b46"
+    },
+    {
+      "image": "images/train/train_000281.jpg",
+      "label": "labels/train/train_000281.txt",
+      "source": "handwash_public_7steps/images/train/5_7.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000282.jpg",
+      "label": "labels/train/train_000282.txt",
+      "source": "handwash_public_7steps/images/train/5_70.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1299565811377b46"
+    },
+    {
+      "image": "images/train/train_000283.jpg",
+      "label": "labels/train/train_000283.txt",
+      "source": "handwash_public_7steps/images/train/5_71.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1299565811377b46"
+    },
+    {
+      "image": "images/train/train_000284.jpg",
+      "label": "labels/train/train_000284.txt",
+      "source": "handwash_public_7steps/images/train/5_72.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1299565811377b46"
+    },
+    {
+      "image": "images/train/train_000285.jpg",
+      "label": "labels/train/train_000285.txt",
+      "source": "handwash_public_7steps/images/train/5_73.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1299565811377b46"
+    },
+    {
+      "image": "images/train/train_000286.jpg",
+      "label": "labels/train/train_000286.txt",
+      "source": "handwash_public_7steps/images/train/5_74.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1299565811377b46"
+    },
+    {
+      "image": "images/train/train_000287.jpg",
+      "label": "labels/train/train_000287.txt",
+      "source": "handwash_public_7steps/images/train/5_75.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1299565811377b46"
+    },
+    {
+      "image": "images/train/train_000288.jpg",
+      "label": "labels/train/train_000288.txt",
+      "source": "handwash_public_7steps/images/train/5_76.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1299565811377b46"
+    },
+    {
+      "image": "images/train/train_000289.jpg",
+      "label": "labels/train/train_000289.txt",
+      "source": "handwash_public_7steps/images/train/5_77.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1299565811377b46"
+    },
+    {
+      "image": "images/train/train_000290.jpg",
+      "label": "labels/train/train_000290.txt",
+      "source": "handwash_public_7steps/images/train/5_78.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1299565811377b46"
+    },
+    {
+      "image": "images/train/train_000291.jpg",
+      "label": "labels/train/train_000291.txt",
+      "source": "handwash_public_7steps/images/train/5_79.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1299565811377b46"
+    },
+    {
+      "image": "images/train/train_000292.jpg",
+      "label": "labels/train/train_000292.txt",
+      "source": "handwash_public_7steps/images/train/5_8.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000293.jpg",
+      "label": "labels/train/train_000293.txt",
+      "source": "handwash_public_7steps/images/train/5_80.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1299565811377b46"
+    },
+    {
+      "image": "images/train/train_000294.jpg",
+      "label": "labels/train/train_000294.txt",
+      "source": "handwash_public_7steps/images/train/5_9.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "33fe2b4bff1de293"
+    },
+    {
+      "image": "images/train/train_000295.jpg",
+      "label": "labels/train/train_000295.txt",
+      "source": "handwash_public_7steps/images/train/6_0.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "7061fa687a777158"
+    },
+    {
+      "image": "images/train/train_000296.jpg",
+      "label": "labels/train/train_000296.txt",
+      "source": "handwash_public_7steps/images/train/6_1.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "7061fa687a777158"
+    },
+    {
+      "image": "images/train/train_000297.jpg",
+      "label": "labels/train/train_000297.txt",
+      "source": "handwash_public_7steps/images/train/6_12.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "78d6ea936c2a6fc8"
+    },
+    {
+      "image": "images/train/train_000298.jpg",
+      "label": "labels/train/train_000298.txt",
+      "source": "handwash_public_7steps/images/train/6_13.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "78d6ea936c2a6fc8"
+    },
+    {
+      "image": "images/train/train_000299.jpg",
+      "label": "labels/train/train_000299.txt",
+      "source": "handwash_public_7steps/images/train/6_2.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "7061fa687a777158"
+    },
+    {
+      "image": "images/train/train_000300.jpg",
+      "label": "labels/train/train_000300.txt",
+      "source": "handwash_public_7steps/images/train/6_20.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "17473c528d999eaf"
+    },
+    {
+      "image": "images/train/train_000301.jpg",
+      "label": "labels/train/train_000301.txt",
+      "source": "handwash_public_7steps/images/train/6_21.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "2edf084b26bbab51"
+    },
+    {
+      "image": "images/train/train_000302.jpg",
+      "label": "labels/train/train_000302.txt",
+      "source": "handwash_public_7steps/images/train/6_3.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "7061fa687a777158"
+    },
+    {
+      "image": "images/train/train_000303.jpg",
+      "label": "labels/train/train_000303.txt",
+      "source": "handwash_public_7steps/images/train/6_31.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "7cdb59cae9dce9cd"
+    },
+    {
+      "image": "images/train/train_000304.jpg",
+      "label": "labels/train/train_000304.txt",
+      "source": "handwash_public_7steps/images/train/6_4.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "7061fa687a777158"
+    },
+    {
+      "image": "images/train/train_000305.jpg",
+      "label": "labels/train/train_000305.txt",
+      "source": "handwash_public_7steps/images/train/6_40.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "6949d6e8bf145587"
+    },
+    {
+      "image": "images/train/train_000306.jpg",
+      "label": "labels/train/train_000306.txt",
+      "source": "handwash_public_7steps/images/train/6_50.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "7626271108bb422c"
+    },
+    {
+      "image": "images/train/train_000307.jpg",
+      "label": "labels/train/train_000307.txt",
+      "source": "handwash_public_7steps/images/train/6_51.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "fe4a0bb80dc7bd1d"
+    },
+    {
+      "image": "images/train/train_000308.jpg",
+      "label": "labels/train/train_000308.txt",
+      "source": "handwash_public_7steps/images/train/6_52.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "fe4a0bb80dc7bd1d"
+    },
+    {
+      "image": "images/train/train_000309.jpg",
+      "label": "labels/train/train_000309.txt",
+      "source": "handwash_public_7steps/images/train/6_53.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "fe4a0bb80dc7bd1d"
+    },
+    {
+      "image": "images/train/train_000310.jpg",
+      "label": "labels/train/train_000310.txt",
+      "source": "handwash_public_7steps/images/train/6_54.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "fe4a0bb80dc7bd1d"
+    },
+    {
+      "image": "images/train/train_000311.jpg",
+      "label": "labels/train/train_000311.txt",
+      "source": "handwash_public_7steps/images/train/6_55.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "fe4a0bb80dc7bd1d"
+    },
+    {
+      "image": "images/train/train_000312.jpg",
+      "label": "labels/train/train_000312.txt",
+      "source": "handwash_public_7steps/images/train/6_56.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "fe4a0bb80dc7bd1d"
+    },
+    {
+      "image": "images/train/train_000313.jpg",
+      "label": "labels/train/train_000313.txt",
+      "source": "handwash_public_7steps/images/train/6_57.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "fe4a0bb80dc7bd1d"
+    },
+    {
+      "image": "images/train/train_000314.jpg",
+      "label": "labels/train/train_000314.txt",
+      "source": "handwash_public_7steps/images/train/6_58.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "fe4a0bb80dc7bd1d"
+    },
+    {
+      "image": "images/train/train_000315.jpg",
+      "label": "labels/train/train_000315.txt",
+      "source": "handwash_public_7steps/images/train/6_59.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "fe4a0bb80dc7bd1d"
+    },
+    {
+      "image": "images/train/train_000316.jpg",
+      "label": "labels/train/train_000316.txt",
+      "source": "handwash_public_7steps/images/train/6_60.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "fe4f9ac4ee212f2d"
+    },
+    {
+      "image": "images/train/train_000317.jpg",
+      "label": "labels/train/train_000317.txt",
+      "source": "handwash_public_7steps/images/train/6_61.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "7ea35fe6f89db13a"
+    },
+    {
+      "image": "images/train/train_000318.jpg",
+      "label": "labels/train/train_000318.txt",
+      "source": "handwash_public_7steps/images/train/6_62.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "7ea35fe6f89db13a"
+    },
+    {
+      "image": "images/train/train_000319.jpg",
+      "label": "labels/train/train_000319.txt",
+      "source": "handwash_public_7steps/images/train/6_63.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "7ea35fe6f89db13a"
+    },
+    {
+      "image": "images/train/train_000320.jpg",
+      "label": "labels/train/train_000320.txt",
+      "source": "handwash_public_7steps/images/train/6_64.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "7ea35fe6f89db13a"
+    },
+    {
+      "image": "images/train/train_000321.jpg",
+      "label": "labels/train/train_000321.txt",
+      "source": "handwash_public_7steps/images/train/6_65.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "7ea35fe6f89db13a"
+    },
+    {
+      "image": "images/train/train_000322.jpg",
+      "label": "labels/train/train_000322.txt",
+      "source": "handwash_public_7steps/images/train/6_66.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "7ea35fe6f89db13a"
+    },
+    {
+      "image": "images/train/train_000323.jpg",
+      "label": "labels/train/train_000323.txt",
+      "source": "handwash_public_7steps/images/train/6_67.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "7ea35fe6f89db13a"
+    },
+    {
+      "image": "images/train/train_000324.jpg",
+      "label": "labels/train/train_000324.txt",
+      "source": "handwash_public_7steps/images/train/6_68.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "7ea35fe6f89db13a"
+    },
+    {
+      "image": "images/train/train_000325.jpg",
+      "label": "labels/train/train_000325.txt",
+      "source": "handwash_public_7steps/images/train/6_69.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "7ea35fe6f89db13a"
+    },
+    {
+      "image": "images/train/train_000326.jpg",
+      "label": "labels/train/train_000326.txt",
+      "source": "handwash_public_7steps/images/train/6_70.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "7ea35fe6f89db13a"
+    },
+    {
+      "image": "images/train/train_000327.jpg",
+      "label": "labels/train/train_000327.txt",
+      "source": "handwash_public_7steps/images/train/6_71.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "7ea35fe6f89db13a"
+    },
+    {
+      "image": "images/train/train_000328.jpg",
+      "label": "labels/train/train_000328.txt",
+      "source": "handwash_public_7steps/images/train/6_72.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "7ea35fe6f89db13a"
+    },
+    {
+      "image": "images/train/train_000329.jpg",
+      "label": "labels/train/train_000329.txt",
+      "source": "handwash_public_7steps/images/train/6_73.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "7ea35fe6f89db13a"
+    },
+    {
+      "image": "images/train/train_000330.jpg",
+      "label": "labels/train/train_000330.txt",
+      "source": "handwash_public_7steps/images/train/6_74.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "7ea35fe6f89db13a"
+    },
+    {
+      "image": "images/train/train_000331.jpg",
+      "label": "labels/train/train_000331.txt",
+      "source": "handwash_public_7steps/images/train/6_75.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "7ea35fe6f89db13a"
+    },
+    {
+      "image": "images/train/train_000332.jpg",
+      "label": "labels/train/train_000332.txt",
+      "source": "handwash_public_7steps/images/train/6_76.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "7ea35fe6f89db13a"
+    },
+    {
+      "image": "images/train/train_000333.jpg",
+      "label": "labels/train/train_000333.txt",
+      "source": "handwash_public_7steps/images/train/6_77.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "7ea35fe6f89db13a"
+    },
+    {
+      "image": "images/train/train_000334.jpg",
+      "label": "labels/train/train_000334.txt",
+      "source": "handwash_public_7steps/images/train/6_78.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "7ea35fe6f89db13a"
+    },
+    {
+      "image": "images/train/train_000335.jpg",
+      "label": "labels/train/train_000335.txt",
+      "source": "handwash_public_7steps/images/train/6_79.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "7ea35fe6f89db13a"
+    },
+    {
+      "image": "images/train/train_000336.jpg",
+      "label": "labels/train/train_000336.txt",
+      "source": "handwash_public_7steps/images/train/6_80.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "7ea35fe6f89db13a"
+    },
+    {
+      "image": "images/train/train_000337.jpg",
+      "label": "labels/train/train_000337.txt",
+      "source": "handwash_public_7steps/images/val/0_0.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000338.jpg",
+      "label": "labels/train/train_000338.txt",
+      "source": "handwash_public_7steps/images/val/0_1.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000339.jpg",
+      "label": "labels/train/train_000339.txt",
+      "source": "handwash_public_7steps/images/val/0_10.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000340.jpg",
+      "label": "labels/train/train_000340.txt",
+      "source": "handwash_public_7steps/images/val/0_11.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000341.jpg",
+      "label": "labels/train/train_000341.txt",
+      "source": "handwash_public_7steps/images/val/0_12.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000342.jpg",
+      "label": "labels/train/train_000342.txt",
+      "source": "handwash_public_7steps/images/val/0_13.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000343.jpg",
+      "label": "labels/train/train_000343.txt",
+      "source": "handwash_public_7steps/images/val/0_14.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000344.jpg",
+      "label": "labels/train/train_000344.txt",
+      "source": "handwash_public_7steps/images/val/0_15.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000345.jpg",
+      "label": "labels/train/train_000345.txt",
+      "source": "handwash_public_7steps/images/val/0_16.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000346.jpg",
+      "label": "labels/train/train_000346.txt",
+      "source": "handwash_public_7steps/images/val/0_17.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000347.jpg",
+      "label": "labels/train/train_000347.txt",
+      "source": "handwash_public_7steps/images/val/0_18.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000348.jpg",
+      "label": "labels/train/train_000348.txt",
+      "source": "handwash_public_7steps/images/val/0_19.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000349.jpg",
+      "label": "labels/train/train_000349.txt",
+      "source": "handwash_public_7steps/images/val/0_2.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000350.jpg",
+      "label": "labels/train/train_000350.txt",
+      "source": "handwash_public_7steps/images/val/0_3.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000351.jpg",
+      "label": "labels/train/train_000351.txt",
+      "source": "handwash_public_7steps/images/val/0_4.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000352.jpg",
+      "label": "labels/train/train_000352.txt",
+      "source": "handwash_public_7steps/images/val/0_5.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000353.jpg",
+      "label": "labels/train/train_000353.txt",
+      "source": "handwash_public_7steps/images/val/0_6.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000354.jpg",
+      "label": "labels/train/train_000354.txt",
+      "source": "handwash_public_7steps/images/val/0_7.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000355.jpg",
+      "label": "labels/train/train_000355.txt",
+      "source": "handwash_public_7steps/images/val/0_8.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000356.jpg",
+      "label": "labels/train/train_000356.txt",
+      "source": "handwash_public_7steps/images/val/0_9.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "8d29c9a54c1abd6e"
+    },
+    {
+      "image": "images/train/train_000357.jpg",
+      "label": "labels/train/train_000357.txt",
+      "source": "handwash_public_7steps/images/val/1_0.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000358.jpg",
+      "label": "labels/train/train_000358.txt",
+      "source": "handwash_public_7steps/images/val/1_1.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000359.jpg",
+      "label": "labels/train/train_000359.txt",
+      "source": "handwash_public_7steps/images/val/1_10.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000360.jpg",
+      "label": "labels/train/train_000360.txt",
+      "source": "handwash_public_7steps/images/val/1_11.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000361.jpg",
+      "label": "labels/train/train_000361.txt",
+      "source": "handwash_public_7steps/images/val/1_12.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000362.jpg",
+      "label": "labels/train/train_000362.txt",
+      "source": "handwash_public_7steps/images/val/1_13.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000363.jpg",
+      "label": "labels/train/train_000363.txt",
+      "source": "handwash_public_7steps/images/val/1_14.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000364.jpg",
+      "label": "labels/train/train_000364.txt",
+      "source": "handwash_public_7steps/images/val/1_15.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000365.jpg",
+      "label": "labels/train/train_000365.txt",
+      "source": "handwash_public_7steps/images/val/1_16.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000366.jpg",
+      "label": "labels/train/train_000366.txt",
+      "source": "handwash_public_7steps/images/val/1_17.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000367.jpg",
+      "label": "labels/train/train_000367.txt",
+      "source": "handwash_public_7steps/images/val/1_18.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000368.jpg",
+      "label": "labels/train/train_000368.txt",
+      "source": "handwash_public_7steps/images/val/1_19.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000369.jpg",
+      "label": "labels/train/train_000369.txt",
+      "source": "handwash_public_7steps/images/val/1_2.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000370.jpg",
+      "label": "labels/train/train_000370.txt",
+      "source": "handwash_public_7steps/images/val/1_3.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000371.jpg",
+      "label": "labels/train/train_000371.txt",
+      "source": "handwash_public_7steps/images/val/1_4.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000372.jpg",
+      "label": "labels/train/train_000372.txt",
+      "source": "handwash_public_7steps/images/val/1_5.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000373.jpg",
+      "label": "labels/train/train_000373.txt",
+      "source": "handwash_public_7steps/images/val/1_6.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000374.jpg",
+      "label": "labels/train/train_000374.txt",
+      "source": "handwash_public_7steps/images/val/1_7.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000375.jpg",
+      "label": "labels/train/train_000375.txt",
+      "source": "handwash_public_7steps/images/val/1_8.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000376.jpg",
+      "label": "labels/train/train_000376.txt",
+      "source": "handwash_public_7steps/images/val/1_9.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "aaf64d43269642a1"
+    },
+    {
+      "image": "images/train/train_000377.jpg",
+      "label": "labels/train/train_000377.txt",
+      "source": "handwash_public_7steps/images/val/2_0.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "4eca8291ec5cde60"
+    },
+    {
+      "image": "images/train/train_000378.jpg",
+      "label": "labels/train/train_000378.txt",
+      "source": "handwash_public_7steps/images/val/2_1.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "4eca8291ec5cde60"
+    },
+    {
+      "image": "images/train/train_000379.jpg",
+      "label": "labels/train/train_000379.txt",
+      "source": "handwash_public_7steps/images/val/2_10.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "4eca8291ec5cde60"
+    },
+    {
+      "image": "images/train/train_000380.jpg",
+      "label": "labels/train/train_000380.txt",
+      "source": "handwash_public_7steps/images/val/2_11.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "4eca8291ec5cde60"
+    },
+    {
+      "image": "images/train/train_000381.jpg",
+      "label": "labels/train/train_000381.txt",
+      "source": "handwash_public_7steps/images/val/2_12.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "4eca8291ec5cde60"
+    },
+    {
+      "image": "images/train/train_000382.jpg",
+      "label": "labels/train/train_000382.txt",
+      "source": "handwash_public_7steps/images/val/2_13.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "4eca8291ec5cde60"
+    },
+    {
+      "image": "images/train/train_000383.jpg",
+      "label": "labels/train/train_000383.txt",
+      "source": "handwash_public_7steps/images/val/2_14.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "4eca8291ec5cde60"
+    },
+    {
+      "image": "images/train/train_000384.jpg",
+      "label": "labels/train/train_000384.txt",
+      "source": "handwash_public_7steps/images/val/2_15.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "4eca8291ec5cde60"
+    },
+    {
+      "image": "images/train/train_000385.jpg",
+      "label": "labels/train/train_000385.txt",
+      "source": "handwash_public_7steps/images/val/2_16.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "4eca8291ec5cde60"
+    },
+    {
+      "image": "images/train/train_000386.jpg",
+      "label": "labels/train/train_000386.txt",
+      "source": "handwash_public_7steps/images/val/2_17.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "4eca8291ec5cde60"
+    },
+    {
+      "image": "images/train/train_000387.jpg",
+      "label": "labels/train/train_000387.txt",
+      "source": "handwash_public_7steps/images/val/2_18.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "4eca8291ec5cde60"
+    },
+    {
+      "image": "images/train/train_000388.jpg",
+      "label": "labels/train/train_000388.txt",
+      "source": "handwash_public_7steps/images/val/2_19.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "4eca8291ec5cde60"
+    },
+    {
+      "image": "images/train/train_000389.jpg",
+      "label": "labels/train/train_000389.txt",
+      "source": "handwash_public_7steps/images/val/2_2.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "4eca8291ec5cde60"
+    },
+    {
+      "image": "images/train/train_000390.jpg",
+      "label": "labels/train/train_000390.txt",
+      "source": "handwash_public_7steps/images/val/2_3.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "4eca8291ec5cde60"
+    },
+    {
+      "image": "images/train/train_000391.jpg",
+      "label": "labels/train/train_000391.txt",
+      "source": "handwash_public_7steps/images/val/2_4.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "4eca8291ec5cde60"
+    },
+    {
+      "image": "images/train/train_000392.jpg",
+      "label": "labels/train/train_000392.txt",
+      "source": "handwash_public_7steps/images/val/2_5.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "4eca8291ec5cde60"
+    },
+    {
+      "image": "images/train/train_000393.jpg",
+      "label": "labels/train/train_000393.txt",
+      "source": "handwash_public_7steps/images/val/2_6.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "4eca8291ec5cde60"
+    },
+    {
+      "image": "images/train/train_000394.jpg",
+      "label": "labels/train/train_000394.txt",
+      "source": "handwash_public_7steps/images/val/2_7.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "4eca8291ec5cde60"
+    },
+    {
+      "image": "images/train/train_000395.jpg",
+      "label": "labels/train/train_000395.txt",
+      "source": "handwash_public_7steps/images/val/2_8.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "4eca8291ec5cde60"
+    },
+    {
+      "image": "images/train/train_000396.jpg",
+      "label": "labels/train/train_000396.txt",
+      "source": "handwash_public_7steps/images/val/2_9.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "4eca8291ec5cde60"
+    },
+    {
+      "image": "images/train/train_000397.jpg",
+      "label": "labels/train/train_000397.txt",
+      "source": "handwash_public_7steps/images/val/3_0.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000398.jpg",
+      "label": "labels/train/train_000398.txt",
+      "source": "handwash_public_7steps/images/val/3_1.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000399.jpg",
+      "label": "labels/train/train_000399.txt",
+      "source": "handwash_public_7steps/images/val/3_10.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000400.jpg",
+      "label": "labels/train/train_000400.txt",
+      "source": "handwash_public_7steps/images/val/3_11.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000401.jpg",
+      "label": "labels/train/train_000401.txt",
+      "source": "handwash_public_7steps/images/val/3_12.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000402.jpg",
+      "label": "labels/train/train_000402.txt",
+      "source": "handwash_public_7steps/images/val/3_13.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000403.jpg",
+      "label": "labels/train/train_000403.txt",
+      "source": "handwash_public_7steps/images/val/3_14.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000404.jpg",
+      "label": "labels/train/train_000404.txt",
+      "source": "handwash_public_7steps/images/val/3_15.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000405.jpg",
+      "label": "labels/train/train_000405.txt",
+      "source": "handwash_public_7steps/images/val/3_16.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000406.jpg",
+      "label": "labels/train/train_000406.txt",
+      "source": "handwash_public_7steps/images/val/3_17.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000407.jpg",
+      "label": "labels/train/train_000407.txt",
+      "source": "handwash_public_7steps/images/val/3_18.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000408.jpg",
+      "label": "labels/train/train_000408.txt",
+      "source": "handwash_public_7steps/images/val/3_19.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000409.jpg",
+      "label": "labels/train/train_000409.txt",
+      "source": "handwash_public_7steps/images/val/3_2.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000410.jpg",
+      "label": "labels/train/train_000410.txt",
+      "source": "handwash_public_7steps/images/val/3_3.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000411.jpg",
+      "label": "labels/train/train_000411.txt",
+      "source": "handwash_public_7steps/images/val/3_4.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000412.jpg",
+      "label": "labels/train/train_000412.txt",
+      "source": "handwash_public_7steps/images/val/3_5.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000413.jpg",
+      "label": "labels/train/train_000413.txt",
+      "source": "handwash_public_7steps/images/val/3_6.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000414.jpg",
+      "label": "labels/train/train_000414.txt",
+      "source": "handwash_public_7steps/images/val/3_7.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000415.jpg",
+      "label": "labels/train/train_000415.txt",
+      "source": "handwash_public_7steps/images/val/3_8.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000416.jpg",
+      "label": "labels/train/train_000416.txt",
+      "source": "handwash_public_7steps/images/val/3_9.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "ba9e7916289dcedf"
+    },
+    {
+      "image": "images/train/train_000417.jpg",
+      "label": "labels/train/train_000417.txt",
+      "source": "handwash_public_7steps/images/val/4_0.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "9d0dfd2ac615b95f"
+    },
+    {
+      "image": "images/train/train_000418.jpg",
+      "label": "labels/train/train_000418.txt",
+      "source": "handwash_public_7steps/images/val/4_1.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "9d0dfd2ac615b95f"
+    },
+    {
+      "image": "images/train/train_000419.jpg",
+      "label": "labels/train/train_000419.txt",
+      "source": "handwash_public_7steps/images/val/4_13.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "b61c947deb5faa2b"
+    },
+    {
+      "image": "images/train/train_000420.jpg",
+      "label": "labels/train/train_000420.txt",
+      "source": "handwash_public_7steps/images/val/4_14.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "b61c947deb5faa2b"
+    },
+    {
+      "image": "images/train/train_000421.jpg",
+      "label": "labels/train/train_000421.txt",
+      "source": "handwash_public_7steps/images/val/4_15.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "b61c947deb5faa2b"
+    },
+    {
+      "image": "images/train/train_000422.jpg",
+      "label": "labels/train/train_000422.txt",
+      "source": "handwash_public_7steps/images/val/4_16.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "b61c947deb5faa2b"
+    },
+    {
+      "image": "images/train/train_000423.jpg",
+      "label": "labels/train/train_000423.txt",
+      "source": "handwash_public_7steps/images/val/4_17.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "b61c947deb5faa2b"
+    },
+    {
+      "image": "images/train/train_000424.jpg",
+      "label": "labels/train/train_000424.txt",
+      "source": "handwash_public_7steps/images/val/4_18.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "b61c947deb5faa2b"
+    },
+    {
+      "image": "images/train/train_000425.jpg",
+      "label": "labels/train/train_000425.txt",
+      "source": "handwash_public_7steps/images/val/4_19.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "b61c947deb5faa2b"
+    },
+    {
+      "image": "images/train/train_000426.jpg",
+      "label": "labels/train/train_000426.txt",
+      "source": "handwash_public_7steps/images/val/4_2.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "9d0dfd2ac615b95f"
+    },
+    {
+      "image": "images/train/train_000427.jpg",
+      "label": "labels/train/train_000427.txt",
+      "source": "handwash_public_7steps/images/val/4_3.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "b6bbed6b27d032dd"
+    },
+    {
+      "image": "images/train/train_000428.jpg",
+      "label": "labels/train/train_000428.txt",
+      "source": "handwash_public_7steps/images/val/4_4.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "fc820cbd518d9e9a"
+    },
+    {
+      "image": "images/train/train_000429.jpg",
+      "label": "labels/train/train_000429.txt",
+      "source": "handwash_public_7steps/images/val/4_5.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "fc820cbd518d9e9a"
+    },
+    {
+      "image": "images/train/train_000430.jpg",
+      "label": "labels/train/train_000430.txt",
+      "source": "handwash_public_7steps/images/val/4_6.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "fc820cbd518d9e9a"
+    },
+    {
+      "image": "images/train/train_000431.jpg",
+      "label": "labels/train/train_000431.txt",
+      "source": "handwash_public_7steps/images/val/4_7.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "fc820cbd518d9e9a"
+    },
+    {
+      "image": "images/train/train_000432.jpg",
+      "label": "labels/train/train_000432.txt",
+      "source": "handwash_public_7steps/images/val/4_8.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "b6bbed6b27d032dd"
+    },
+    {
+      "image": "images/train/train_000433.jpg",
+      "label": "labels/train/train_000433.txt",
+      "source": "handwash_public_7steps/images/val/5_0.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "1299565811377b46"
+    },
+    {
+      "image": "images/train/train_000434.jpg",
+      "label": "labels/train/train_000434.txt",
+      "source": "handwash_public_7steps/images/val/5_1.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "1299565811377b46"
+    },
+    {
+      "image": "images/train/train_000435.jpg",
+      "label": "labels/train/train_000435.txt",
+      "source": "handwash_public_7steps/images/val/5_13.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "1299565811377b46"
+    },
+    {
+      "image": "images/train/train_000436.jpg",
+      "label": "labels/train/train_000436.txt",
+      "source": "handwash_public_7steps/images/val/5_14.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "1299565811377b46"
+    },
+    {
+      "image": "images/train/train_000437.jpg",
+      "label": "labels/train/train_000437.txt",
+      "source": "handwash_public_7steps/images/val/5_15.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "1299565811377b46"
+    },
+    {
+      "image": "images/train/train_000438.jpg",
+      "label": "labels/train/train_000438.txt",
+      "source": "handwash_public_7steps/images/val/5_16.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "1299565811377b46"
+    },
+    {
+      "image": "images/train/train_000439.jpg",
+      "label": "labels/train/train_000439.txt",
+      "source": "handwash_public_7steps/images/val/5_17.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "1299565811377b46"
+    },
+    {
+      "image": "images/train/train_000440.jpg",
+      "label": "labels/train/train_000440.txt",
+      "source": "handwash_public_7steps/images/val/5_3.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "1299565811377b46"
+    },
+    {
+      "image": "images/train/train_000441.jpg",
+      "label": "labels/train/train_000441.txt",
+      "source": "handwash_public_7steps/images/val/5_4.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "1299565811377b46"
+    },
+    {
+      "image": "images/train/train_000442.jpg",
+      "label": "labels/train/train_000442.txt",
+      "source": "handwash_public_7steps/images/val/5_5.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "1299565811377b46"
+    },
+    {
+      "image": "images/train/train_000443.jpg",
+      "label": "labels/train/train_000443.txt",
+      "source": "handwash_public_7steps/images/val/5_6.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "1299565811377b46"
+    },
+    {
+      "image": "images/train/train_000444.jpg",
+      "label": "labels/train/train_000444.txt",
+      "source": "handwash_public_7steps/images/val/5_7.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "1299565811377b46"
+    },
+    {
+      "image": "images/train/train_000445.jpg",
+      "label": "labels/train/train_000445.txt",
+      "source": "handwash_public_7steps/images/val/6_0.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "7ea35fe6f89db13a"
+    },
+    {
+      "image": "images/train/train_000446.jpg",
+      "label": "labels/train/train_000446.txt",
+      "source": "handwash_public_7steps/images/val/6_1.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "7ea35fe6f89db13a"
+    },
+    {
+      "image": "images/train/train_000447.jpg",
+      "label": "labels/train/train_000447.txt",
+      "source": "handwash_public_7steps/images/val/6_10.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "7ea35fe6f89db13a"
+    },
+    {
+      "image": "images/train/train_000448.jpg",
+      "label": "labels/train/train_000448.txt",
+      "source": "handwash_public_7steps/images/val/6_11.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "7ea35fe6f89db13a"
+    },
+    {
+      "image": "images/train/train_000449.jpg",
+      "label": "labels/train/train_000449.txt",
+      "source": "handwash_public_7steps/images/val/6_12.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "7ea35fe6f89db13a"
+    },
+    {
+      "image": "images/train/train_000450.jpg",
+      "label": "labels/train/train_000450.txt",
+      "source": "handwash_public_7steps/images/val/6_13.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "7ea35fe6f89db13a"
+    },
+    {
+      "image": "images/train/train_000451.jpg",
+      "label": "labels/train/train_000451.txt",
+      "source": "handwash_public_7steps/images/val/6_14.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "7ea35fe6f89db13a"
+    },
+    {
+      "image": "images/train/train_000452.jpg",
+      "label": "labels/train/train_000452.txt",
+      "source": "handwash_public_7steps/images/val/6_15.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "7ea35fe6f89db13a"
+    },
+    {
+      "image": "images/train/train_000453.jpg",
+      "label": "labels/train/train_000453.txt",
+      "source": "handwash_public_7steps/images/val/6_16.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "7ea35fe6f89db13a"
+    },
+    {
+      "image": "images/train/train_000454.jpg",
+      "label": "labels/train/train_000454.txt",
+      "source": "handwash_public_7steps/images/val/6_17.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "7ea35fe6f89db13a"
+    },
+    {
+      "image": "images/train/train_000455.jpg",
+      "label": "labels/train/train_000455.txt",
+      "source": "handwash_public_7steps/images/val/6_18.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "7ea35fe6f89db13a"
+    },
+    {
+      "image": "images/train/train_000456.jpg",
+      "label": "labels/train/train_000456.txt",
+      "source": "handwash_public_7steps/images/val/6_19.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "7ea35fe6f89db13a"
+    },
+    {
+      "image": "images/train/train_000457.jpg",
+      "label": "labels/train/train_000457.txt",
+      "source": "handwash_public_7steps/images/val/6_2.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "7ea35fe6f89db13a"
+    },
+    {
+      "image": "images/train/train_000458.jpg",
+      "label": "labels/train/train_000458.txt",
+      "source": "handwash_public_7steps/images/val/6_3.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "7ea35fe6f89db13a"
+    },
+    {
+      "image": "images/train/train_000459.jpg",
+      "label": "labels/train/train_000459.txt",
+      "source": "handwash_public_7steps/images/val/6_4.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "7ea35fe6f89db13a"
+    },
+    {
+      "image": "images/train/train_000460.jpg",
+      "label": "labels/train/train_000460.txt",
+      "source": "handwash_public_7steps/images/val/6_5.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "7ea35fe6f89db13a"
+    },
+    {
+      "image": "images/train/train_000461.jpg",
+      "label": "labels/train/train_000461.txt",
+      "source": "handwash_public_7steps/images/val/6_6.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "7ea35fe6f89db13a"
+    },
+    {
+      "image": "images/train/train_000462.jpg",
+      "label": "labels/train/train_000462.txt",
+      "source": "handwash_public_7steps/images/val/6_7.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "7ea35fe6f89db13a"
+    },
+    {
+      "image": "images/train/train_000463.jpg",
+      "label": "labels/train/train_000463.txt",
+      "source": "handwash_public_7steps/images/val/6_8.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "7ea35fe6f89db13a"
+    },
+    {
+      "image": "images/train/train_000464.jpg",
+      "label": "labels/train/train_000464.txt",
+      "source": "handwash_public_7steps/images/val/6_9.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "d61fa1aed6286a7d"
+    },
+    {
+      "image": "images/val/val_000000.jpg",
+      "label": "labels/val/val_000000.txt",
+      "source": "handwash_public_7steps/images/train/0_0.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "df76c74390d592e0"
+    },
+    {
+      "image": "images/val/val_000001.jpg",
+      "label": "labels/val/val_000001.txt",
+      "source": "handwash_public_7steps/images/train/0_1.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "df76c74390d592e0"
+    },
+    {
+      "image": "images/val/val_000002.jpg",
+      "label": "labels/val/val_000002.txt",
+      "source": "handwash_public_7steps/images/train/0_10.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "df76c74390d592e0"
+    },
+    {
+      "image": "images/val/val_000003.jpg",
+      "label": "labels/val/val_000003.txt",
+      "source": "handwash_public_7steps/images/train/0_11.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "df76c74390d592e0"
+    },
+    {
+      "image": "images/val/val_000004.jpg",
+      "label": "labels/val/val_000004.txt",
+      "source": "handwash_public_7steps/images/train/0_12.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "df76c74390d592e0"
+    },
+    {
+      "image": "images/val/val_000005.jpg",
+      "label": "labels/val/val_000005.txt",
+      "source": "handwash_public_7steps/images/train/0_13.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "df76c74390d592e0"
+    },
+    {
+      "image": "images/val/val_000006.jpg",
+      "label": "labels/val/val_000006.txt",
+      "source": "handwash_public_7steps/images/train/0_14.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "df76c74390d592e0"
+    },
+    {
+      "image": "images/val/val_000007.jpg",
+      "label": "labels/val/val_000007.txt",
+      "source": "handwash_public_7steps/images/train/0_15.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "df76c74390d592e0"
+    },
+    {
+      "image": "images/val/val_000008.jpg",
+      "label": "labels/val/val_000008.txt",
+      "source": "handwash_public_7steps/images/train/0_16.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "df76c74390d592e0"
+    },
+    {
+      "image": "images/val/val_000009.jpg",
+      "label": "labels/val/val_000009.txt",
+      "source": "handwash_public_7steps/images/train/0_2.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "df76c74390d592e0"
+    },
+    {
+      "image": "images/val/val_000010.jpg",
+      "label": "labels/val/val_000010.txt",
+      "source": "handwash_public_7steps/images/train/0_20.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "df76c74390d592e0"
+    },
+    {
+      "image": "images/val/val_000011.jpg",
+      "label": "labels/val/val_000011.txt",
+      "source": "handwash_public_7steps/images/train/0_21.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "df76c74390d592e0"
+    },
+    {
+      "image": "images/val/val_000012.jpg",
+      "label": "labels/val/val_000012.txt",
+      "source": "handwash_public_7steps/images/train/0_22.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "df76c74390d592e0"
+    },
+    {
+      "image": "images/val/val_000013.jpg",
+      "label": "labels/val/val_000013.txt",
+      "source": "handwash_public_7steps/images/train/0_23.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "df76c74390d592e0"
+    },
+    {
+      "image": "images/val/val_000014.jpg",
+      "label": "labels/val/val_000014.txt",
+      "source": "handwash_public_7steps/images/train/0_24.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "df76c74390d592e0"
+    },
+    {
+      "image": "images/val/val_000015.jpg",
+      "label": "labels/val/val_000015.txt",
+      "source": "handwash_public_7steps/images/train/0_25.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "df76c74390d592e0"
+    },
+    {
+      "image": "images/val/val_000016.jpg",
+      "label": "labels/val/val_000016.txt",
+      "source": "handwash_public_7steps/images/train/0_3.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "df76c74390d592e0"
+    },
+    {
+      "image": "images/val/val_000017.jpg",
+      "label": "labels/val/val_000017.txt",
+      "source": "handwash_public_7steps/images/train/0_4.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "df76c74390d592e0"
+    },
+    {
+      "image": "images/val/val_000018.jpg",
+      "label": "labels/val/val_000018.txt",
+      "source": "handwash_public_7steps/images/train/1_25.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "9dcd58288654900b"
+    },
+    {
+      "image": "images/val/val_000019.jpg",
+      "label": "labels/val/val_000019.txt",
+      "source": "handwash_public_7steps/images/train/1_26.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "9dcd58288654900b"
+    },
+    {
+      "image": "images/val/val_000020.jpg",
+      "label": "labels/val/val_000020.txt",
+      "source": "handwash_public_7steps/images/train/1_27.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "9dcd58288654900b"
+    },
+    {
+      "image": "images/val/val_000021.jpg",
+      "label": "labels/val/val_000021.txt",
+      "source": "handwash_public_7steps/images/train/1_28.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "9dcd58288654900b"
+    },
+    {
+      "image": "images/val/val_000022.jpg",
+      "label": "labels/val/val_000022.txt",
+      "source": "handwash_public_7steps/images/train/1_29.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "9dcd58288654900b"
+    },
+    {
+      "image": "images/val/val_000023.jpg",
+      "label": "labels/val/val_000023.txt",
+      "source": "handwash_public_7steps/images/train/1_35.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "9dcd58288654900b"
+    },
+    {
+      "image": "images/val/val_000024.jpg",
+      "label": "labels/val/val_000024.txt",
+      "source": "handwash_public_7steps/images/train/1_36.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "9dcd58288654900b"
+    },
+    {
+      "image": "images/val/val_000025.jpg",
+      "label": "labels/val/val_000025.txt",
+      "source": "handwash_public_7steps/images/train/1_37.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "9dcd58288654900b"
+    },
+    {
+      "image": "images/val/val_000026.jpg",
+      "label": "labels/val/val_000026.txt",
+      "source": "handwash_public_7steps/images/train/1_38.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "9dcd58288654900b"
+    },
+    {
+      "image": "images/val/val_000027.jpg",
+      "label": "labels/val/val_000027.txt",
+      "source": "handwash_public_7steps/images/train/1_39.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "9dcd58288654900b"
+    },
+    {
+      "image": "images/val/val_000028.jpg",
+      "label": "labels/val/val_000028.txt",
+      "source": "handwash_public_7steps/images/train/1_41.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "bce8bfc25015a6e5"
+    },
+    {
+      "image": "images/val/val_000029.jpg",
+      "label": "labels/val/val_000029.txt",
+      "source": "handwash_public_7steps/images/train/1_42.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "bce8bfc25015a6e5"
+    },
+    {
+      "image": "images/val/val_000030.jpg",
+      "label": "labels/val/val_000030.txt",
+      "source": "handwash_public_7steps/images/train/1_43.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "bce8bfc25015a6e5"
+    },
+    {
+      "image": "images/val/val_000031.jpg",
+      "label": "labels/val/val_000031.txt",
+      "source": "handwash_public_7steps/images/train/1_44.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "bce8bfc25015a6e5"
+    },
+    {
+      "image": "images/val/val_000032.jpg",
+      "label": "labels/val/val_000032.txt",
+      "source": "handwash_public_7steps/images/train/1_45.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "bce8bfc25015a6e5"
+    },
+    {
+      "image": "images/val/val_000033.jpg",
+      "label": "labels/val/val_000033.txt",
+      "source": "handwash_public_7steps/images/train/1_46.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "bce8bfc25015a6e5"
+    },
+    {
+      "image": "images/val/val_000034.jpg",
+      "label": "labels/val/val_000034.txt",
+      "source": "handwash_public_7steps/images/train/1_47.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "bce8bfc25015a6e5"
+    },
+    {
+      "image": "images/val/val_000035.jpg",
+      "label": "labels/val/val_000035.txt",
+      "source": "handwash_public_7steps/images/train/2_18.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8451d90de71cd01e"
+    },
+    {
+      "image": "images/val/val_000036.jpg",
+      "label": "labels/val/val_000036.txt",
+      "source": "handwash_public_7steps/images/train/2_19.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8451d90de71cd01e"
+    },
+    {
+      "image": "images/val/val_000037.jpg",
+      "label": "labels/val/val_000037.txt",
+      "source": "handwash_public_7steps/images/train/2_20.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8451d90de71cd01e"
+    },
+    {
+      "image": "images/val/val_000038.jpg",
+      "label": "labels/val/val_000038.txt",
+      "source": "handwash_public_7steps/images/train/2_30.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8451d90de71cd01e"
+    },
+    {
+      "image": "images/val/val_000039.jpg",
+      "label": "labels/val/val_000039.txt",
+      "source": "handwash_public_7steps/images/train/2_31.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8451d90de71cd01e"
+    },
+    {
+      "image": "images/val/val_000040.jpg",
+      "label": "labels/val/val_000040.txt",
+      "source": "handwash_public_7steps/images/train/2_32.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8451d90de71cd01e"
+    },
+    {
+      "image": "images/val/val_000041.jpg",
+      "label": "labels/val/val_000041.txt",
+      "source": "handwash_public_7steps/images/train/2_33.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8451d90de71cd01e"
+    },
+    {
+      "image": "images/val/val_000042.jpg",
+      "label": "labels/val/val_000042.txt",
+      "source": "handwash_public_7steps/images/train/2_41.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8451d90de71cd01e"
+    },
+    {
+      "image": "images/val/val_000043.jpg",
+      "label": "labels/val/val_000043.txt",
+      "source": "handwash_public_7steps/images/train/2_42.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8451d90de71cd01e"
+    },
+    {
+      "image": "images/val/val_000044.jpg",
+      "label": "labels/val/val_000044.txt",
+      "source": "handwash_public_7steps/images/train/2_43.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8451d90de71cd01e"
+    },
+    {
+      "image": "images/val/val_000045.jpg",
+      "label": "labels/val/val_000045.txt",
+      "source": "handwash_public_7steps/images/train/2_44.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8451d90de71cd01e"
+    },
+    {
+      "image": "images/val/val_000046.jpg",
+      "label": "labels/val/val_000046.txt",
+      "source": "handwash_public_7steps/images/train/2_45.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "8451d90de71cd01e"
+    },
+    {
+      "image": "images/val/val_000047.jpg",
+      "label": "labels/val/val_000047.txt",
+      "source": "handwash_public_7steps/images/train/2_6.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "00aa72bf4115b039"
+    },
+    {
+      "image": "images/val/val_000048.jpg",
+      "label": "labels/val/val_000048.txt",
+      "source": "handwash_public_7steps/images/train/2_7.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "00aa72bf4115b039"
+    },
+    {
+      "image": "images/val/val_000049.jpg",
+      "label": "labels/val/val_000049.txt",
+      "source": "handwash_public_7steps/images/train/2_8.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "00aa72bf4115b039"
+    },
+    {
+      "image": "images/val/val_000050.jpg",
+      "label": "labels/val/val_000050.txt",
+      "source": "handwash_public_7steps/images/train/2_9.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "00aa72bf4115b039"
+    },
+    {
+      "image": "images/val/val_000051.jpg",
+      "label": "labels/val/val_000051.txt",
+      "source": "handwash_public_7steps/images/train/3_10.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "df491ad08d4af91d"
+    },
+    {
+      "image": "images/val/val_000052.jpg",
+      "label": "labels/val/val_000052.txt",
+      "source": "handwash_public_7steps/images/train/3_11.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "df491ad08d4af91d"
+    },
+    {
+      "image": "images/val/val_000053.jpg",
+      "label": "labels/val/val_000053.txt",
+      "source": "handwash_public_7steps/images/train/3_12.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "df491ad08d4af91d"
+    },
+    {
+      "image": "images/val/val_000054.jpg",
+      "label": "labels/val/val_000054.txt",
+      "source": "handwash_public_7steps/images/train/3_13.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "df491ad08d4af91d"
+    },
+    {
+      "image": "images/val/val_000055.jpg",
+      "label": "labels/val/val_000055.txt",
+      "source": "handwash_public_7steps/images/train/3_14.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "df491ad08d4af91d"
+    },
+    {
+      "image": "images/val/val_000056.jpg",
+      "label": "labels/val/val_000056.txt",
+      "source": "handwash_public_7steps/images/train/3_15.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "df491ad08d4af91d"
+    },
+    {
+      "image": "images/val/val_000057.jpg",
+      "label": "labels/val/val_000057.txt",
+      "source": "handwash_public_7steps/images/train/3_16.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "df491ad08d4af91d"
+    },
+    {
+      "image": "images/val/val_000058.jpg",
+      "label": "labels/val/val_000058.txt",
+      "source": "handwash_public_7steps/images/train/3_17.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "df491ad08d4af91d"
+    },
+    {
+      "image": "images/val/val_000059.jpg",
+      "label": "labels/val/val_000059.txt",
+      "source": "handwash_public_7steps/images/train/3_18.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "df491ad08d4af91d"
+    },
+    {
+      "image": "images/val/val_000060.jpg",
+      "label": "labels/val/val_000060.txt",
+      "source": "handwash_public_7steps/images/train/3_19.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "df491ad08d4af91d"
+    },
+    {
+      "image": "images/val/val_000061.jpg",
+      "label": "labels/val/val_000061.txt",
+      "source": "handwash_public_7steps/images/train/3_20.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "df491ad08d4af91d"
+    },
+    {
+      "image": "images/val/val_000062.jpg",
+      "label": "labels/val/val_000062.txt",
+      "source": "handwash_public_7steps/images/train/3_21.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "df491ad08d4af91d"
+    },
+    {
+      "image": "images/val/val_000063.jpg",
+      "label": "labels/val/val_000063.txt",
+      "source": "handwash_public_7steps/images/train/3_22.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "df491ad08d4af91d"
+    },
+    {
+      "image": "images/val/val_000064.jpg",
+      "label": "labels/val/val_000064.txt",
+      "source": "handwash_public_7steps/images/train/3_23.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "df491ad08d4af91d"
+    },
+    {
+      "image": "images/val/val_000065.jpg",
+      "label": "labels/val/val_000065.txt",
+      "source": "handwash_public_7steps/images/train/3_9.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "df491ad08d4af91d"
+    },
+    {
+      "image": "images/val/val_000066.jpg",
+      "label": "labels/val/val_000066.txt",
+      "source": "handwash_public_7steps/images/train/4_10.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1ef5ae9ba1a92214"
+    },
+    {
+      "image": "images/val/val_000067.jpg",
+      "label": "labels/val/val_000067.txt",
+      "source": "handwash_public_7steps/images/train/4_11.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1ef5ae9ba1a92214"
+    },
+    {
+      "image": "images/val/val_000068.jpg",
+      "label": "labels/val/val_000068.txt",
+      "source": "handwash_public_7steps/images/train/4_12.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1ef5ae9ba1a92214"
+    },
+    {
+      "image": "images/val/val_000069.jpg",
+      "label": "labels/val/val_000069.txt",
+      "source": "handwash_public_7steps/images/train/4_13.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1ef5ae9ba1a92214"
+    },
+    {
+      "image": "images/val/val_000070.jpg",
+      "label": "labels/val/val_000070.txt",
+      "source": "handwash_public_7steps/images/train/4_14.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1ef5ae9ba1a92214"
+    },
+    {
+      "image": "images/val/val_000071.jpg",
+      "label": "labels/val/val_000071.txt",
+      "source": "handwash_public_7steps/images/train/4_15.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1ef5ae9ba1a92214"
+    },
+    {
+      "image": "images/val/val_000072.jpg",
+      "label": "labels/val/val_000072.txt",
+      "source": "handwash_public_7steps/images/train/4_16.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1ef5ae9ba1a92214"
+    },
+    {
+      "image": "images/val/val_000073.jpg",
+      "label": "labels/val/val_000073.txt",
+      "source": "handwash_public_7steps/images/train/4_17.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1ef5ae9ba1a92214"
+    },
+    {
+      "image": "images/val/val_000074.jpg",
+      "label": "labels/val/val_000074.txt",
+      "source": "handwash_public_7steps/images/train/4_18.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1ef5ae9ba1a92214"
+    },
+    {
+      "image": "images/val/val_000075.jpg",
+      "label": "labels/val/val_000075.txt",
+      "source": "handwash_public_7steps/images/train/4_19.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1ef5ae9ba1a92214"
+    },
+    {
+      "image": "images/val/val_000076.jpg",
+      "label": "labels/val/val_000076.txt",
+      "source": "handwash_public_7steps/images/train/4_20.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1ef5ae9ba1a92214"
+    },
+    {
+      "image": "images/val/val_000077.jpg",
+      "label": "labels/val/val_000077.txt",
+      "source": "handwash_public_7steps/images/train/4_21.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1ef5ae9ba1a92214"
+    },
+    {
+      "image": "images/val/val_000078.jpg",
+      "label": "labels/val/val_000078.txt",
+      "source": "handwash_public_7steps/images/train/4_22.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1ef5ae9ba1a92214"
+    },
+    {
+      "image": "images/val/val_000079.jpg",
+      "label": "labels/val/val_000079.txt",
+      "source": "handwash_public_7steps/images/train/4_23.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1ef5ae9ba1a92214"
+    },
+    {
+      "image": "images/val/val_000080.jpg",
+      "label": "labels/val/val_000080.txt",
+      "source": "handwash_public_7steps/images/train/4_31.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1ef5ae9ba1a92214"
+    },
+    {
+      "image": "images/val/val_000081.jpg",
+      "label": "labels/val/val_000081.txt",
+      "source": "handwash_public_7steps/images/train/4_32.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1ef5ae9ba1a92214"
+    },
+    {
+      "image": "images/val/val_000082.jpg",
+      "label": "labels/val/val_000082.txt",
+      "source": "handwash_public_7steps/images/train/4_33.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1ef5ae9ba1a92214"
+    },
+    {
+      "image": "images/val/val_000083.jpg",
+      "label": "labels/val/val_000083.txt",
+      "source": "handwash_public_7steps/images/train/4_34.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1ef5ae9ba1a92214"
+    },
+    {
+      "image": "images/val/val_000084.jpg",
+      "label": "labels/val/val_000084.txt",
+      "source": "handwash_public_7steps/images/train/4_35.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1ef5ae9ba1a92214"
+    },
+    {
+      "image": "images/val/val_000085.jpg",
+      "label": "labels/val/val_000085.txt",
+      "source": "handwash_public_7steps/images/train/4_36.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1ef5ae9ba1a92214"
+    },
+    {
+      "image": "images/val/val_000086.jpg",
+      "label": "labels/val/val_000086.txt",
+      "source": "handwash_public_7steps/images/train/4_37.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1ef5ae9ba1a92214"
+    },
+    {
+      "image": "images/val/val_000087.jpg",
+      "label": "labels/val/val_000087.txt",
+      "source": "handwash_public_7steps/images/train/4_38.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1ef5ae9ba1a92214"
+    },
+    {
+      "image": "images/val/val_000088.jpg",
+      "label": "labels/val/val_000088.txt",
+      "source": "handwash_public_7steps/images/train/4_39.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1ef5ae9ba1a92214"
+    },
+    {
+      "image": "images/val/val_000089.jpg",
+      "label": "labels/val/val_000089.txt",
+      "source": "handwash_public_7steps/images/train/4_40.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1ef5ae9ba1a92214"
+    },
+    {
+      "image": "images/val/val_000090.jpg",
+      "label": "labels/val/val_000090.txt",
+      "source": "handwash_public_7steps/images/train/4_41.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1ef5ae9ba1a92214"
+    },
+    {
+      "image": "images/val/val_000091.jpg",
+      "label": "labels/val/val_000091.txt",
+      "source": "handwash_public_7steps/images/train/4_42.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1ef5ae9ba1a92214"
+    },
+    {
+      "image": "images/val/val_000092.jpg",
+      "label": "labels/val/val_000092.txt",
+      "source": "handwash_public_7steps/images/train/4_43.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1ef5ae9ba1a92214"
+    },
+    {
+      "image": "images/val/val_000093.jpg",
+      "label": "labels/val/val_000093.txt",
+      "source": "handwash_public_7steps/images/train/4_9.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1ef5ae9ba1a92214"
+    },
+    {
+      "image": "images/val/val_000094.jpg",
+      "label": "labels/val/val_000094.txt",
+      "source": "handwash_public_7steps/images/train/6_10.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "b803888c4cda6a41"
+    },
+    {
+      "image": "images/val/val_000095.jpg",
+      "label": "labels/val/val_000095.txt",
+      "source": "handwash_public_7steps/images/train/6_11.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "b803888c4cda6a41"
+    },
+    {
+      "image": "images/val/val_000096.jpg",
+      "label": "labels/val/val_000096.txt",
+      "source": "handwash_public_7steps/images/train/6_22.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "b803888c4cda6a41"
+    },
+    {
+      "image": "images/val/val_000097.jpg",
+      "label": "labels/val/val_000097.txt",
+      "source": "handwash_public_7steps/images/train/6_23.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "b803888c4cda6a41"
+    },
+    {
+      "image": "images/val/val_000098.jpg",
+      "label": "labels/val/val_000098.txt",
+      "source": "handwash_public_7steps/images/train/6_24.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "b803888c4cda6a41"
+    },
+    {
+      "image": "images/val/val_000099.jpg",
+      "label": "labels/val/val_000099.txt",
+      "source": "handwash_public_7steps/images/train/6_25.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "b803888c4cda6a41"
+    },
+    {
+      "image": "images/val/val_000100.jpg",
+      "label": "labels/val/val_000100.txt",
+      "source": "handwash_public_7steps/images/train/6_26.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "b803888c4cda6a41"
+    },
+    {
+      "image": "images/val/val_000101.jpg",
+      "label": "labels/val/val_000101.txt",
+      "source": "handwash_public_7steps/images/train/6_27.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "b803888c4cda6a41"
+    },
+    {
+      "image": "images/val/val_000102.jpg",
+      "label": "labels/val/val_000102.txt",
+      "source": "handwash_public_7steps/images/train/6_28.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "b803888c4cda6a41"
+    },
+    {
+      "image": "images/val/val_000103.jpg",
+      "label": "labels/val/val_000103.txt",
+      "source": "handwash_public_7steps/images/train/6_29.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "b803888c4cda6a41"
+    },
+    {
+      "image": "images/val/val_000104.jpg",
+      "label": "labels/val/val_000104.txt",
+      "source": "handwash_public_7steps/images/train/6_30.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "b803888c4cda6a41"
+    },
+    {
+      "image": "images/val/val_000105.jpg",
+      "label": "labels/val/val_000105.txt",
+      "source": "handwash_public_7steps/images/train/6_41.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "b803888c4cda6a41"
+    },
+    {
+      "image": "images/val/val_000106.jpg",
+      "label": "labels/val/val_000106.txt",
+      "source": "handwash_public_7steps/images/train/6_42.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "b803888c4cda6a41"
+    },
+    {
+      "image": "images/val/val_000107.jpg",
+      "label": "labels/val/val_000107.txt",
+      "source": "handwash_public_7steps/images/train/6_43.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "b803888c4cda6a41"
+    },
+    {
+      "image": "images/val/val_000108.jpg",
+      "label": "labels/val/val_000108.txt",
+      "source": "handwash_public_7steps/images/train/6_44.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "b803888c4cda6a41"
+    },
+    {
+      "image": "images/val/val_000109.jpg",
+      "label": "labels/val/val_000109.txt",
+      "source": "handwash_public_7steps/images/train/6_45.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "b803888c4cda6a41"
+    },
+    {
+      "image": "images/val/val_000110.jpg",
+      "label": "labels/val/val_000110.txt",
+      "source": "handwash_public_7steps/images/train/6_46.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "b803888c4cda6a41"
+    },
+    {
+      "image": "images/val/val_000111.jpg",
+      "label": "labels/val/val_000111.txt",
+      "source": "handwash_public_7steps/images/train/6_47.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "b803888c4cda6a41"
+    },
+    {
+      "image": "images/val/val_000112.jpg",
+      "label": "labels/val/val_000112.txt",
+      "source": "handwash_public_7steps/images/train/6_48.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "b803888c4cda6a41"
+    },
+    {
+      "image": "images/val/val_000113.jpg",
+      "label": "labels/val/val_000113.txt",
+      "source": "handwash_public_7steps/images/train/6_49.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "b803888c4cda6a41"
+    },
+    {
+      "image": "images/val/val_000114.jpg",
+      "label": "labels/val/val_000114.txt",
+      "source": "handwash_public_7steps/images/train/6_5.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "b803888c4cda6a41"
+    },
+    {
+      "image": "images/val/val_000115.jpg",
+      "label": "labels/val/val_000115.txt",
+      "source": "handwash_public_7steps/images/train/6_6.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "b803888c4cda6a41"
+    },
+    {
+      "image": "images/val/val_000116.jpg",
+      "label": "labels/val/val_000116.txt",
+      "source": "handwash_public_7steps/images/train/6_7.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "b803888c4cda6a41"
+    },
+    {
+      "image": "images/val/val_000117.jpg",
+      "label": "labels/val/val_000117.txt",
+      "source": "handwash_public_7steps/images/train/6_8.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "b803888c4cda6a41"
+    },
+    {
+      "image": "images/val/val_000118.jpg",
+      "label": "labels/val/val_000118.txt",
+      "source": "handwash_public_7steps/images/train/6_9.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "b803888c4cda6a41"
+    },
+    {
+      "image": "images/val/val_000119.jpg",
+      "label": "labels/val/val_000119.txt",
+      "source": "handwash_public_7steps/images/val/5_2.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "eeac32635db06ebb"
+    },
+    {
+      "image": "images/val/val_000120.jpg",
+      "label": "labels/val/val_000120.txt",
+      "source": "handwash_public_7steps/images/val/5_8.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "089ff65ec1cf1e36"
+    },
+    {
+      "image": "images/test/test_000000.jpg",
+      "label": "labels/test/test_000000.txt",
+      "source": "handwash_public_7steps/images/train/0_17.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1189126dc9f0a5ee"
+    },
+    {
+      "image": "images/test/test_000001.jpg",
+      "label": "labels/test/test_000001.txt",
+      "source": "handwash_public_7steps/images/train/0_18.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1189126dc9f0a5ee"
+    },
+    {
+      "image": "images/test/test_000002.jpg",
+      "label": "labels/test/test_000002.txt",
+      "source": "handwash_public_7steps/images/train/0_19.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1189126dc9f0a5ee"
+    },
+    {
+      "image": "images/test/test_000003.jpg",
+      "label": "labels/test/test_000003.txt",
+      "source": "handwash_public_7steps/images/train/0_5.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1189126dc9f0a5ee"
+    },
+    {
+      "image": "images/test/test_000004.jpg",
+      "label": "labels/test/test_000004.txt",
+      "source": "handwash_public_7steps/images/train/0_6.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1189126dc9f0a5ee"
+    },
+    {
+      "image": "images/test/test_000005.jpg",
+      "label": "labels/test/test_000005.txt",
+      "source": "handwash_public_7steps/images/train/0_7.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1189126dc9f0a5ee"
+    },
+    {
+      "image": "images/test/test_000006.jpg",
+      "label": "labels/test/test_000006.txt",
+      "source": "handwash_public_7steps/images/train/0_8.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1189126dc9f0a5ee"
+    },
+    {
+      "image": "images/test/test_000007.jpg",
+      "label": "labels/test/test_000007.txt",
+      "source": "handwash_public_7steps/images/train/0_9.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "1189126dc9f0a5ee"
+    },
+    {
+      "image": "images/test/test_000008.jpg",
+      "label": "labels/test/test_000008.txt",
+      "source": "handwash_public_7steps/images/train/1_0.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "117a1cb2439ef4a3"
+    },
+    {
+      "image": "images/test/test_000009.jpg",
+      "label": "labels/test/test_000009.txt",
+      "source": "handwash_public_7steps/images/train/1_1.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "117a1cb2439ef4a3"
+    },
+    {
+      "image": "images/test/test_000010.jpg",
+      "label": "labels/test/test_000010.txt",
+      "source": "handwash_public_7steps/images/train/1_10.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "117a1cb2439ef4a3"
+    },
+    {
+      "image": "images/test/test_000011.jpg",
+      "label": "labels/test/test_000011.txt",
+      "source": "handwash_public_7steps/images/train/1_11.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "117a1cb2439ef4a3"
+    },
+    {
+      "image": "images/test/test_000012.jpg",
+      "label": "labels/test/test_000012.txt",
+      "source": "handwash_public_7steps/images/train/1_12.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "117a1cb2439ef4a3"
+    },
+    {
+      "image": "images/test/test_000013.jpg",
+      "label": "labels/test/test_000013.txt",
+      "source": "handwash_public_7steps/images/train/1_13.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "117a1cb2439ef4a3"
+    },
+    {
+      "image": "images/test/test_000014.jpg",
+      "label": "labels/test/test_000014.txt",
+      "source": "handwash_public_7steps/images/train/1_14.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "117a1cb2439ef4a3"
+    },
+    {
+      "image": "images/test/test_000015.jpg",
+      "label": "labels/test/test_000015.txt",
+      "source": "handwash_public_7steps/images/train/1_15.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "117a1cb2439ef4a3"
+    },
+    {
+      "image": "images/test/test_000016.jpg",
+      "label": "labels/test/test_000016.txt",
+      "source": "handwash_public_7steps/images/train/1_16.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "117a1cb2439ef4a3"
+    },
+    {
+      "image": "images/test/test_000017.jpg",
+      "label": "labels/test/test_000017.txt",
+      "source": "handwash_public_7steps/images/train/1_17.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "117a1cb2439ef4a3"
+    },
+    {
+      "image": "images/test/test_000018.jpg",
+      "label": "labels/test/test_000018.txt",
+      "source": "handwash_public_7steps/images/train/1_18.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "117a1cb2439ef4a3"
+    },
+    {
+      "image": "images/test/test_000019.jpg",
+      "label": "labels/test/test_000019.txt",
+      "source": "handwash_public_7steps/images/train/1_19.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "117a1cb2439ef4a3"
+    },
+    {
+      "image": "images/test/test_000020.jpg",
+      "label": "labels/test/test_000020.txt",
+      "source": "handwash_public_7steps/images/train/1_2.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "117a1cb2439ef4a3"
+    },
+    {
+      "image": "images/test/test_000021.jpg",
+      "label": "labels/test/test_000021.txt",
+      "source": "handwash_public_7steps/images/train/1_20.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "117a1cb2439ef4a3"
+    },
+    {
+      "image": "images/test/test_000022.jpg",
+      "label": "labels/test/test_000022.txt",
+      "source": "handwash_public_7steps/images/train/1_21.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "117a1cb2439ef4a3"
+    },
+    {
+      "image": "images/test/test_000023.jpg",
+      "label": "labels/test/test_000023.txt",
+      "source": "handwash_public_7steps/images/train/1_22.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "117a1cb2439ef4a3"
+    },
+    {
+      "image": "images/test/test_000024.jpg",
+      "label": "labels/test/test_000024.txt",
+      "source": "handwash_public_7steps/images/train/1_23.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "117a1cb2439ef4a3"
+    },
+    {
+      "image": "images/test/test_000025.jpg",
+      "label": "labels/test/test_000025.txt",
+      "source": "handwash_public_7steps/images/train/1_24.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "117a1cb2439ef4a3"
+    },
+    {
+      "image": "images/test/test_000026.jpg",
+      "label": "labels/test/test_000026.txt",
+      "source": "handwash_public_7steps/images/train/1_3.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "117a1cb2439ef4a3"
+    },
+    {
+      "image": "images/test/test_000027.jpg",
+      "label": "labels/test/test_000027.txt",
+      "source": "handwash_public_7steps/images/train/1_4.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "117a1cb2439ef4a3"
+    },
+    {
+      "image": "images/test/test_000028.jpg",
+      "label": "labels/test/test_000028.txt",
+      "source": "handwash_public_7steps/images/train/1_5.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "117a1cb2439ef4a3"
+    },
+    {
+      "image": "images/test/test_000029.jpg",
+      "label": "labels/test/test_000029.txt",
+      "source": "handwash_public_7steps/images/train/1_6.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "117a1cb2439ef4a3"
+    },
+    {
+      "image": "images/test/test_000030.jpg",
+      "label": "labels/test/test_000030.txt",
+      "source": "handwash_public_7steps/images/train/1_7.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "117a1cb2439ef4a3"
+    },
+    {
+      "image": "images/test/test_000031.jpg",
+      "label": "labels/test/test_000031.txt",
+      "source": "handwash_public_7steps/images/train/1_8.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "117a1cb2439ef4a3"
+    },
+    {
+      "image": "images/test/test_000032.jpg",
+      "label": "labels/test/test_000032.txt",
+      "source": "handwash_public_7steps/images/train/1_9.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "117a1cb2439ef4a3"
+    },
+    {
+      "image": "images/test/test_000033.jpg",
+      "label": "labels/test/test_000033.txt",
+      "source": "handwash_public_7steps/images/train/2_0.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "196c5f50efe36048"
+    },
+    {
+      "image": "images/test/test_000034.jpg",
+      "label": "labels/test/test_000034.txt",
+      "source": "handwash_public_7steps/images/train/2_1.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "196c5f50efe36048"
+    },
+    {
+      "image": "images/test/test_000035.jpg",
+      "label": "labels/test/test_000035.txt",
+      "source": "handwash_public_7steps/images/train/2_11.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "196c5f50efe36048"
+    },
+    {
+      "image": "images/test/test_000036.jpg",
+      "label": "labels/test/test_000036.txt",
+      "source": "handwash_public_7steps/images/train/2_12.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "196c5f50efe36048"
+    },
+    {
+      "image": "images/test/test_000037.jpg",
+      "label": "labels/test/test_000037.txt",
+      "source": "handwash_public_7steps/images/train/2_13.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "196c5f50efe36048"
+    },
+    {
+      "image": "images/test/test_000038.jpg",
+      "label": "labels/test/test_000038.txt",
+      "source": "handwash_public_7steps/images/train/2_14.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "196c5f50efe36048"
+    },
+    {
+      "image": "images/test/test_000039.jpg",
+      "label": "labels/test/test_000039.txt",
+      "source": "handwash_public_7steps/images/train/2_15.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "196c5f50efe36048"
+    },
+    {
+      "image": "images/test/test_000040.jpg",
+      "label": "labels/test/test_000040.txt",
+      "source": "handwash_public_7steps/images/train/2_2.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "196c5f50efe36048"
+    },
+    {
+      "image": "images/test/test_000041.jpg",
+      "label": "labels/test/test_000041.txt",
+      "source": "handwash_public_7steps/images/train/2_23.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "196c5f50efe36048"
+    },
+    {
+      "image": "images/test/test_000042.jpg",
+      "label": "labels/test/test_000042.txt",
+      "source": "handwash_public_7steps/images/train/2_24.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "196c5f50efe36048"
+    },
+    {
+      "image": "images/test/test_000043.jpg",
+      "label": "labels/test/test_000043.txt",
+      "source": "handwash_public_7steps/images/train/2_25.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "196c5f50efe36048"
+    },
+    {
+      "image": "images/test/test_000044.jpg",
+      "label": "labels/test/test_000044.txt",
+      "source": "handwash_public_7steps/images/train/2_26.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "196c5f50efe36048"
+    },
+    {
+      "image": "images/test/test_000045.jpg",
+      "label": "labels/test/test_000045.txt",
+      "source": "handwash_public_7steps/images/train/2_27.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "196c5f50efe36048"
+    },
+    {
+      "image": "images/test/test_000046.jpg",
+      "label": "labels/test/test_000046.txt",
+      "source": "handwash_public_7steps/images/train/2_28.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "196c5f50efe36048"
+    },
+    {
+      "image": "images/test/test_000047.jpg",
+      "label": "labels/test/test_000047.txt",
+      "source": "handwash_public_7steps/images/train/2_3.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "196c5f50efe36048"
+    },
+    {
+      "image": "images/test/test_000048.jpg",
+      "label": "labels/test/test_000048.txt",
+      "source": "handwash_public_7steps/images/train/2_35.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "196c5f50efe36048"
+    },
+    {
+      "image": "images/test/test_000049.jpg",
+      "label": "labels/test/test_000049.txt",
+      "source": "handwash_public_7steps/images/train/2_36.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "196c5f50efe36048"
+    },
+    {
+      "image": "images/test/test_000050.jpg",
+      "label": "labels/test/test_000050.txt",
+      "source": "handwash_public_7steps/images/train/2_37.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "196c5f50efe36048"
+    },
+    {
+      "image": "images/test/test_000051.jpg",
+      "label": "labels/test/test_000051.txt",
+      "source": "handwash_public_7steps/images/train/2_38.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "196c5f50efe36048"
+    },
+    {
+      "image": "images/test/test_000052.jpg",
+      "label": "labels/test/test_000052.txt",
+      "source": "handwash_public_7steps/images/train/2_39.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "196c5f50efe36048"
+    },
+    {
+      "image": "images/test/test_000053.jpg",
+      "label": "labels/test/test_000053.txt",
+      "source": "handwash_public_7steps/images/train/2_4.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "196c5f50efe36048"
+    },
+    {
+      "image": "images/test/test_000054.jpg",
+      "label": "labels/test/test_000054.txt",
+      "source": "handwash_public_7steps/images/train/3_24.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ec4bec56dfa62db1"
+    },
+    {
+      "image": "images/test/test_000055.jpg",
+      "label": "labels/test/test_000055.txt",
+      "source": "handwash_public_7steps/images/train/3_25.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ec4bec56dfa62db1"
+    },
+    {
+      "image": "images/test/test_000056.jpg",
+      "label": "labels/test/test_000056.txt",
+      "source": "handwash_public_7steps/images/train/3_26.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ec4bec56dfa62db1"
+    },
+    {
+      "image": "images/test/test_000057.jpg",
+      "label": "labels/test/test_000057.txt",
+      "source": "handwash_public_7steps/images/train/3_27.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ec4bec56dfa62db1"
+    },
+    {
+      "image": "images/test/test_000058.jpg",
+      "label": "labels/test/test_000058.txt",
+      "source": "handwash_public_7steps/images/train/3_28.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ec4bec56dfa62db1"
+    },
+    {
+      "image": "images/test/test_000059.jpg",
+      "label": "labels/test/test_000059.txt",
+      "source": "handwash_public_7steps/images/train/3_29.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ec4bec56dfa62db1"
+    },
+    {
+      "image": "images/test/test_000060.jpg",
+      "label": "labels/test/test_000060.txt",
+      "source": "handwash_public_7steps/images/train/3_30.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ec4bec56dfa62db1"
+    },
+    {
+      "image": "images/test/test_000061.jpg",
+      "label": "labels/test/test_000061.txt",
+      "source": "handwash_public_7steps/images/train/3_31.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ec4bec56dfa62db1"
+    },
+    {
+      "image": "images/test/test_000062.jpg",
+      "label": "labels/test/test_000062.txt",
+      "source": "handwash_public_7steps/images/train/3_32.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ec4bec56dfa62db1"
+    },
+    {
+      "image": "images/test/test_000063.jpg",
+      "label": "labels/test/test_000063.txt",
+      "source": "handwash_public_7steps/images/train/3_33.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ec4bec56dfa62db1"
+    },
+    {
+      "image": "images/test/test_000064.jpg",
+      "label": "labels/test/test_000064.txt",
+      "source": "handwash_public_7steps/images/train/3_34.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ec4bec56dfa62db1"
+    },
+    {
+      "image": "images/test/test_000065.jpg",
+      "label": "labels/test/test_000065.txt",
+      "source": "handwash_public_7steps/images/train/3_35.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ec4bec56dfa62db1"
+    },
+    {
+      "image": "images/test/test_000066.jpg",
+      "label": "labels/test/test_000066.txt",
+      "source": "handwash_public_7steps/images/train/3_36.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ec4bec56dfa62db1"
+    },
+    {
+      "image": "images/test/test_000067.jpg",
+      "label": "labels/test/test_000067.txt",
+      "source": "handwash_public_7steps/images/train/3_37.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ec4bec56dfa62db1"
+    },
+    {
+      "image": "images/test/test_000068.jpg",
+      "label": "labels/test/test_000068.txt",
+      "source": "handwash_public_7steps/images/train/3_38.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ec4bec56dfa62db1"
+    },
+    {
+      "image": "images/test/test_000069.jpg",
+      "label": "labels/test/test_000069.txt",
+      "source": "handwash_public_7steps/images/train/3_39.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ec4bec56dfa62db1"
+    },
+    {
+      "image": "images/test/test_000070.jpg",
+      "label": "labels/test/test_000070.txt",
+      "source": "handwash_public_7steps/images/train/3_40.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ec4bec56dfa62db1"
+    },
+    {
+      "image": "images/test/test_000071.jpg",
+      "label": "labels/test/test_000071.txt",
+      "source": "handwash_public_7steps/images/train/3_41.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ec4bec56dfa62db1"
+    },
+    {
+      "image": "images/test/test_000072.jpg",
+      "label": "labels/test/test_000072.txt",
+      "source": "handwash_public_7steps/images/train/3_42.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ec4bec56dfa62db1"
+    },
+    {
+      "image": "images/test/test_000073.jpg",
+      "label": "labels/test/test_000073.txt",
+      "source": "handwash_public_7steps/images/train/3_43.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ec4bec56dfa62db1"
+    },
+    {
+      "image": "images/test/test_000074.jpg",
+      "label": "labels/test/test_000074.txt",
+      "source": "handwash_public_7steps/images/train/3_44.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ec4bec56dfa62db1"
+    },
+    {
+      "image": "images/test/test_000075.jpg",
+      "label": "labels/test/test_000075.txt",
+      "source": "handwash_public_7steps/images/train/3_45.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ec4bec56dfa62db1"
+    },
+    {
+      "image": "images/test/test_000076.jpg",
+      "label": "labels/test/test_000076.txt",
+      "source": "handwash_public_7steps/images/train/3_46.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ec4bec56dfa62db1"
+    },
+    {
+      "image": "images/test/test_000077.jpg",
+      "label": "labels/test/test_000077.txt",
+      "source": "handwash_public_7steps/images/train/3_47.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ec4bec56dfa62db1"
+    },
+    {
+      "image": "images/test/test_000078.jpg",
+      "label": "labels/test/test_000078.txt",
+      "source": "handwash_public_7steps/images/train/3_48.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ec4bec56dfa62db1"
+    },
+    {
+      "image": "images/test/test_000079.jpg",
+      "label": "labels/test/test_000079.txt",
+      "source": "handwash_public_7steps/images/train/3_49.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ec4bec56dfa62db1"
+    },
+    {
+      "image": "images/test/test_000080.jpg",
+      "label": "labels/test/test_000080.txt",
+      "source": "handwash_public_7steps/images/train/3_50.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "ec4bec56dfa62db1"
+    },
+    {
+      "image": "images/test/test_000081.jpg",
+      "label": "labels/test/test_000081.txt",
+      "source": "handwash_public_7steps/images/train/4_51.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "581322ef5c0980f5"
+    },
+    {
+      "image": "images/test/test_000082.jpg",
+      "label": "labels/test/test_000082.txt",
+      "source": "handwash_public_7steps/images/train/4_52.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "581322ef5c0980f5"
+    },
+    {
+      "image": "images/test/test_000083.jpg",
+      "label": "labels/test/test_000083.txt",
+      "source": "handwash_public_7steps/images/train/4_53.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "581322ef5c0980f5"
+    },
+    {
+      "image": "images/test/test_000084.jpg",
+      "label": "labels/test/test_000084.txt",
+      "source": "handwash_public_7steps/images/train/4_54.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "581322ef5c0980f5"
+    },
+    {
+      "image": "images/test/test_000085.jpg",
+      "label": "labels/test/test_000085.txt",
+      "source": "handwash_public_7steps/images/train/4_55.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "581322ef5c0980f5"
+    },
+    {
+      "image": "images/test/test_000086.jpg",
+      "label": "labels/test/test_000086.txt",
+      "source": "handwash_public_7steps/images/train/4_56.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "581322ef5c0980f5"
+    },
+    {
+      "image": "images/test/test_000087.jpg",
+      "label": "labels/test/test_000087.txt",
+      "source": "handwash_public_7steps/images/train/4_57.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "581322ef5c0980f5"
+    },
+    {
+      "image": "images/test/test_000088.jpg",
+      "label": "labels/test/test_000088.txt",
+      "source": "handwash_public_7steps/images/train/4_58.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "581322ef5c0980f5"
+    },
+    {
+      "image": "images/test/test_000089.jpg",
+      "label": "labels/test/test_000089.txt",
+      "source": "handwash_public_7steps/images/train/4_59.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "581322ef5c0980f5"
+    },
+    {
+      "image": "images/test/test_000090.jpg",
+      "label": "labels/test/test_000090.txt",
+      "source": "handwash_public_7steps/images/train/4_60.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "581322ef5c0980f5"
+    },
+    {
+      "image": "images/test/test_000091.jpg",
+      "label": "labels/test/test_000091.txt",
+      "source": "handwash_public_7steps/images/train/4_61.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "581322ef5c0980f5"
+    },
+    {
+      "image": "images/test/test_000092.jpg",
+      "label": "labels/test/test_000092.txt",
+      "source": "handwash_public_7steps/images/train/4_69.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "581322ef5c0980f5"
+    },
+    {
+      "image": "images/test/test_000093.jpg",
+      "label": "labels/test/test_000093.txt",
+      "source": "handwash_public_7steps/images/train/4_70.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "581322ef5c0980f5"
+    },
+    {
+      "image": "images/test/test_000094.jpg",
+      "label": "labels/test/test_000094.txt",
+      "source": "handwash_public_7steps/images/train/4_71.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "581322ef5c0980f5"
+    },
+    {
+      "image": "images/test/test_000095.jpg",
+      "label": "labels/test/test_000095.txt",
+      "source": "handwash_public_7steps/images/train/4_72.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "581322ef5c0980f5"
+    },
+    {
+      "image": "images/test/test_000096.jpg",
+      "label": "labels/test/test_000096.txt",
+      "source": "handwash_public_7steps/images/train/4_73.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "581322ef5c0980f5"
+    },
+    {
+      "image": "images/test/test_000097.jpg",
+      "label": "labels/test/test_000097.txt",
+      "source": "handwash_public_7steps/images/train/6_14.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "c698212d0d5ba419"
+    },
+    {
+      "image": "images/test/test_000098.jpg",
+      "label": "labels/test/test_000098.txt",
+      "source": "handwash_public_7steps/images/train/6_15.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "c698212d0d5ba419"
+    },
+    {
+      "image": "images/test/test_000099.jpg",
+      "label": "labels/test/test_000099.txt",
+      "source": "handwash_public_7steps/images/train/6_16.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "c698212d0d5ba419"
+    },
+    {
+      "image": "images/test/test_000100.jpg",
+      "label": "labels/test/test_000100.txt",
+      "source": "handwash_public_7steps/images/train/6_17.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "c698212d0d5ba419"
+    },
+    {
+      "image": "images/test/test_000101.jpg",
+      "label": "labels/test/test_000101.txt",
+      "source": "handwash_public_7steps/images/train/6_18.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "c698212d0d5ba419"
+    },
+    {
+      "image": "images/test/test_000102.jpg",
+      "label": "labels/test/test_000102.txt",
+      "source": "handwash_public_7steps/images/train/6_19.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "c698212d0d5ba419"
+    },
+    {
+      "image": "images/test/test_000103.jpg",
+      "label": "labels/test/test_000103.txt",
+      "source": "handwash_public_7steps/images/train/6_32.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "15a079cbad1add82"
+    },
+    {
+      "image": "images/test/test_000104.jpg",
+      "label": "labels/test/test_000104.txt",
+      "source": "handwash_public_7steps/images/train/6_33.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "15a079cbad1add82"
+    },
+    {
+      "image": "images/test/test_000105.jpg",
+      "label": "labels/test/test_000105.txt",
+      "source": "handwash_public_7steps/images/train/6_34.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "c698212d0d5ba419"
+    },
+    {
+      "image": "images/test/test_000106.jpg",
+      "label": "labels/test/test_000106.txt",
+      "source": "handwash_public_7steps/images/train/6_35.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "c698212d0d5ba419"
+    },
+    {
+      "image": "images/test/test_000107.jpg",
+      "label": "labels/test/test_000107.txt",
+      "source": "handwash_public_7steps/images/train/6_36.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "c698212d0d5ba419"
+    },
+    {
+      "image": "images/test/test_000108.jpg",
+      "label": "labels/test/test_000108.txt",
+      "source": "handwash_public_7steps/images/train/6_37.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "c698212d0d5ba419"
+    },
+    {
+      "image": "images/test/test_000109.jpg",
+      "label": "labels/test/test_000109.txt",
+      "source": "handwash_public_7steps/images/train/6_38.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "c698212d0d5ba419"
+    },
+    {
+      "image": "images/test/test_000110.jpg",
+      "label": "labels/test/test_000110.txt",
+      "source": "handwash_public_7steps/images/train/6_39.jpg",
+      "sourceSplit": "train",
+      "similarityGroup": "c698212d0d5ba419"
+    },
+    {
+      "image": "images/test/test_000111.jpg",
+      "label": "labels/test/test_000111.txt",
+      "source": "handwash_public_7steps/images/val/4_10.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "581322ef5c0980f5"
+    },
+    {
+      "image": "images/test/test_000112.jpg",
+      "label": "labels/test/test_000112.txt",
+      "source": "handwash_public_7steps/images/val/4_11.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "581322ef5c0980f5"
+    },
+    {
+      "image": "images/test/test_000113.jpg",
+      "label": "labels/test/test_000113.txt",
+      "source": "handwash_public_7steps/images/val/4_12.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "581322ef5c0980f5"
+    },
+    {
+      "image": "images/test/test_000114.jpg",
+      "label": "labels/test/test_000114.txt",
+      "source": "handwash_public_7steps/images/val/4_9.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "581322ef5c0980f5"
+    },
+    {
+      "image": "images/test/test_000115.jpg",
+      "label": "labels/test/test_000115.txt",
+      "source": "handwash_public_7steps/images/val/5_10.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "b3d720506189726a"
+    },
+    {
+      "image": "images/test/test_000116.jpg",
+      "label": "labels/test/test_000116.txt",
+      "source": "handwash_public_7steps/images/val/5_11.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "b3d720506189726a"
+    },
+    {
+      "image": "images/test/test_000117.jpg",
+      "label": "labels/test/test_000117.txt",
+      "source": "handwash_public_7steps/images/val/5_12.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "b3d720506189726a"
+    },
+    {
+      "image": "images/test/test_000118.jpg",
+      "label": "labels/test/test_000118.txt",
+      "source": "handwash_public_7steps/images/val/5_18.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "b3d720506189726a"
+    },
+    {
+      "image": "images/test/test_000119.jpg",
+      "label": "labels/test/test_000119.txt",
+      "source": "handwash_public_7steps/images/val/5_19.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "b3d720506189726a"
+    },
+    {
+      "image": "images/test/test_000120.jpg",
+      "label": "labels/test/test_000120.txt",
+      "source": "handwash_public_7steps/images/val/5_9.jpg",
+      "sourceSplit": "val",
+      "similarityGroup": "b3d720506189726a"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+path: datasets
+train: handwash_public_7steps/images/train
+val: handwash_public_7steps/images/val
+nc: 7
+names:
+  0: Paso1_Palmas
+  1: Paso2_Dorsos
+  2: Paso3_Interdigitales
+  3: Paso4_Nudillos
+  4: Paso5_Pulgar
+  5: Paso6_PuntaDeDedos
+  6: Paso7_Circulares

@@ -1,0 +1,19 @@
+# HISTORICAL EXPORT — NOT VALID FOR TRAINING.
+# Generated with an incorrect mapping: movement_code 7 (faucet closure) was
+# labeled Paso7_Circulares. The current generator rejects this unversioned YAML.
+# Do not relabel by changing this comment; rebuild from verified annotations.
+
+path: .
+train: images/train
+val: images/val
+
+nc: 8
+names:
+  0: Paso1_Palmas
+  1: Paso2_Dorsos
+  2: Paso3_Interdigitales
+  3: Paso4_Nudillos
+  4: Paso5_Pulgar
+  5: Paso6_PuntaDeDedos
+  6: Paso7_Circulares
+  7: Fondo

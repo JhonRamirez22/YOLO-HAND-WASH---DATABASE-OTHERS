@@ -1,0 +1,1 @@
+Synthetic unit-test evidence fixture only. It is not a clinical validation report and must never be used to authorize a hospital release.

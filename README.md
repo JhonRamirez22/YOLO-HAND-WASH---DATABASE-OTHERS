@@ -31,7 +31,7 @@ flowchart LR
 | `otros/circuito/` | Documentación y prototipos de integración con sensores, ESP32, Android e iOS; no son necesarios para el flujo actual de cámara YOLO. |
 | `otros/docs/` | Operación de estación, requisitos del modelo OMS, evaluación, decisiones de arquitectura y documentación técnica. |
 | `otros/archive/` | Implementaciones históricas y prototipos —incluido el gateway FastAPI legado— fuera del runtime activo. |
-| `otros/graphify-out/`, `otros/GRAFO_PROYECTO.md` | Grafos y reportes de análisis estructural del proyecto. |
+| `otros/scripts/graphify-out/`, `otros/GRAFO_PROYECTO.md` | Grafos y reportes de análisis estructural del proyecto. |
 | `otros/README.md`, `otros/SUMMARY.md` | Documentación detallada del sistema completo y resumen operativo. Algunos comandos allí requieren el monorepo completo. |
 
 ## Esquema de persistencia

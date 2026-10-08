@@ -10,14 +10,14 @@ import json
 import logging
 
 from schemas.models import (
-    EstadoLavadoResponse, ResumenSesionLavado,
-    Infraccion, EstadoSesion, Progreso, DetallePaso
+    HandWashStatusResponse, HandWashSessionSummary,
+    Violation, SessionStatus, Progress, StepDetail
 )
 
 logger = logging.getLogger(__name__)
 
 
-class DeteccionObserver(ABC):
+class DetectionObserver(ABC):
     """Observer interface for detection events"""
 
     @abstractmethod
@@ -25,7 +25,7 @@ class DeteccionObserver(ABC):
         pass
 
 
-class NotificadorWebSocket(DeteccionObserver):
+class WebSocketNotifier(DetectionObserver):
     """
     WebSocket-based notification agent.
     Sends real-time updates to connected clients.
@@ -68,11 +68,11 @@ class NotificadorWebSocket(DeteccionObserver):
         for ws in disconnected:
             self._conexiones[session_id].discard(ws)
 
-    async def enviar_estado(self, session_id: str, estado: EstadoLavadoResponse):
+    async def enviar_estado(self, session_id: str, estado: HandWashStatusResponse):
         """Send state update to client"""
         await self.on_deteccion(session_id, estado.model_dump())
 
-    async def enviar_resumen(self, session_id: str, resumen: ResumenSesionLavado):
+    async def enviar_resumen(self, session_id: str, resumen: HandWashSessionSummary):
         """Send final session summary to client"""
         await self.on_deteccion(session_id, resumen.model_dump())
 
@@ -81,18 +81,18 @@ class NotificadorWebSocket(DeteccionObserver):
         return session_id in self._conexiones and len(self._conexiones[session_id]) > 0
 
 
-class EventoDeteccion:
+class DetectionEventPublisher:
     """Subject that publishes detection events to observers"""
 
     def __init__(self):
-        self._observadores: List[DeteccionObserver] = []
+        self._observadores: List[DetectionObserver] = []
 
-    def agregar_observador(self, observer: DeteccionObserver):
+    def agregar_observador(self, observer: DetectionObserver):
         """Subscribe an observer to detection events"""
         if observer not in self._observadores:
             self._observadores.append(observer)
 
-    def eliminar_observador(self, observer: DeteccionObserver):
+    def eliminar_observador(self, observer: DetectionObserver):
         """Unsubscribe an observer"""
         if observer in self._observadores:
             self._observadores.remove(observer)

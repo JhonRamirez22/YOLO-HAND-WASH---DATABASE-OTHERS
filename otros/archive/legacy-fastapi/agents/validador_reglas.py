@@ -5,10 +5,10 @@ Based on AGENTS.md specification
 """
 from abc import ABC, abstractmethod
 from typing import Dict
-from schemas.models import PasoLavado, TipoProtocolo
+from schemas.models import HandWashStep, ProtocolType
 
 
-class ReglaValidacionStrategy(ABC):
+class ValidationStrategy(ABC):
     """Interface for validation strategies"""
 
     @property
@@ -22,17 +22,17 @@ class ReglaValidacionStrategy(ABC):
         pass
 
     @abstractmethod
-    def get_tiempos_minimos_por_paso(self) -> Dict[PasoLavado, int]:
+    def get_tiempos_minimos_por_paso(self) -> Dict[HandWashStep, int]:
         """Return minimum time required for each step in ms"""
         pass
 
-    def validar_duracion(self, paso: PasoLavado, tiempo_acumulado_ms: int) -> bool:
+    def validar_duracion(self, paso: HandWashStep, tiempo_acumulado_ms: int) -> bool:
         """Check if accumulated time meets minimum requirement for a step"""
         tiempos = self.get_tiempos_minimos_por_paso()
         tiempo_minimo = tiempos.get(paso, 5000)
         return tiempo_acumulado_ms >= tiempo_minimo
 
-    def validar_sesion_completa(self, tiempos_por_paso: Dict[PasoLavado, int]) -> dict:
+    def validar_sesion_completa(self, tiempos_por_paso: Dict[HandWashStep, int]) -> dict:
         """
         Validate entire session.
         Returns: {cumple: bool, pasos_conforme: list, pasos_incumple: list}
@@ -55,7 +55,7 @@ class ReglaValidacionStrategy(ABC):
         }
 
 
-class LavadoClinicoStrategy(ReglaValidacionStrategy):
+class ClinicalWashStrategy(ValidationStrategy):
     """
     Clinical/Surgical hand wash protocol (WHO).
     Total duration: 60 seconds minimum.
@@ -70,19 +70,19 @@ class LavadoClinicoStrategy(ReglaValidacionStrategy):
     def duracion_total_requerida_ms(self) -> int:
         return 60000  # 60 seconds
 
-    def get_tiempos_minimos_por_paso(self) -> Dict[PasoLavado, int]:
+    def get_tiempos_minimos_por_paso(self) -> Dict[HandWashStep, int]:
         return {
-            PasoLavado.PASO1_PALMAS: 8000,
-            PasoLavado.PASO2_DORSOS: 8000,
-            PasoLavado.PASO3_INTERDIGITALES: 8000,
-            PasoLavado.PASO4_NUDILLOS: 8000,
-            PasoLavado.PASO5_PULGAR: 8000,
-            PasoLavado.PASO6_PUNTA_DE_DEDOS: 8000,
-            PasoLavado.PASO7_CIRCULARES: 12000,
+            HandWashStep.PASO1_PALMAS: 8000,
+            HandWashStep.PASO2_DORSOS: 8000,
+            HandWashStep.PASO3_INTERDIGITALES: 8000,
+            HandWashStep.PASO4_NUDILLOS: 8000,
+            HandWashStep.PASO5_PULGAR: 8000,
+            HandWashStep.PASO6_PUNTA_DE_DEDOS: 8000,
+            HandWashStep.PASO7_CIRCULARES: 12000,
         }
 
 
-class LavadoDomesticoStrategy(ReglaValidacionStrategy):
+class DomesticWashStrategy(ValidationStrategy):
     """
     Domestic/General hand wash protocol.
     Total duration: 20 seconds minimum.
@@ -97,53 +97,53 @@ class LavadoDomesticoStrategy(ReglaValidacionStrategy):
     def duracion_total_requerida_ms(self) -> int:
         return 20000  # 20 seconds
 
-    def get_tiempos_minimos_por_paso(self) -> Dict[PasoLavado, int]:
+    def get_tiempos_minimos_por_paso(self) -> Dict[HandWashStep, int]:
         return {
-            PasoLavado.PASO1_PALMAS: 3000,
-            PasoLavado.PASO2_DORSOS: 3000,
-            PasoLavado.PASO3_INTERDIGITALES: 3000,
-            PasoLavado.PASO4_NUDILLOS: 3000,
-            PasoLavado.PASO5_PULGAR: 2000,
-            PasoLavado.PASO6_PUNTA_DE_DEDOS: 2000,
-            PasoLavado.PASO7_CIRCULARES: 4000,
+            HandWashStep.PASO1_PALMAS: 3000,
+            HandWashStep.PASO2_DORSOS: 3000,
+            HandWashStep.PASO3_INTERDIGITALES: 3000,
+            HandWashStep.PASO4_NUDILLOS: 3000,
+            HandWashStep.PASO5_PULGAR: 2000,
+            HandWashStep.PASO6_PUNTA_DE_DEDOS: 2000,
+            HandWashStep.PASO7_CIRCULARES: 4000,
         }
 
 
-class ValidadorReglas:
+class RulesValidator:
     """
     Strategy executor for time validation.
     Selects and applies the appropriate validation strategy.
     """
 
-    def __init__(self, protocolo: TipoProtocolo = TipoProtocolo.CLINICO_QUIRURGICO):
+    def __init__(self, protocolo: ProtocolType = ProtocolType.CLINICO_QUIRURGICO):
         self._protocolo = protocolo
         self._estrategia = self._seleccionar_estrategia(protocolo)
 
-    def _seleccionar_estrategia(self, protocolo: TipoProtocolo) -> ReglaValidacionStrategy:
+    def _seleccionar_estrategia(self, protocolo: ProtocolType) -> ValidationStrategy:
         estrategias = {
-            TipoProtocolo.CLINICO_QUIRURGICO: LavadoClinicoStrategy,
-            TipoProtocolo.DOMESTICO: LavadoDomesticoStrategy,
+            ProtocolType.CLINICO_QUIRURGICO: ClinicalWashStrategy,
+            ProtocolType.DOMESTICO: DomesticWashStrategy,
         }
-        clase = estrategias.get(protocolo, LavadoClinicoStrategy)
+        clase = estrategias.get(protocolo, ClinicalWashStrategy)
         return clase()
 
     @property
-    def protocolo(self) -> TipoProtocolo:
+    def protocolo(self) -> ProtocolType:
         return self._protocolo
 
     @property
-    def estrategia(self) -> ReglaValidacionStrategy:
+    def estrategia(self) -> ValidationStrategy:
         return self._estrategia
 
-    def validar_paso(self, paso: PasoLavado, tiempo_acumulado_ms: int) -> bool:
+    def validar_paso(self, paso: HandWashStep, tiempo_acumulado_ms: int) -> bool:
         """Check if a specific step meets time requirement"""
         return self._estrategia.validar_duracion(paso, tiempo_acumulado_ms)
 
-    def validar_sesion(self, tiempos_por_paso: Dict[PasoLavado, int]) -> dict:
+    def validar_sesion(self, tiempos_por_paso: Dict[HandWashStep, int]) -> dict:
         """Validate entire session against current strategy"""
         return self._estrategia.validar_sesion_completa(tiempos_por_paso)
 
-    def get_tiempos_requeridos(self) -> Dict[PasoLavado, int]:
+    def get_tiempos_requeridos(self) -> Dict[HandWashStep, int]:
         """Get minimum times for current protocol"""
         return self._estrategia.get_tiempos_minimos_por_paso()
 

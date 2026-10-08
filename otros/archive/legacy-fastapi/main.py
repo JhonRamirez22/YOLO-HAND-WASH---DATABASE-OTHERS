@@ -14,8 +14,8 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 
 from schemas.models import (
-    IniciarSesionRequest, TipoProtocolo,
-    EstadoLavadoResponse, ResumenSesionLavado
+    StartSessionRequest, ProtocolType,
+    HandWashStatusResponse, HandWashSessionSummary
 )
 from agents.receptor import receptor
 from services.inference import pipeline
@@ -76,7 +76,7 @@ async def test_page():
 
 
 @app.post("/api/session")
-async def crear_sesion(request: IniciarSesionRequest):
+async def crear_sesion(request: StartSessionRequest):
     """Create a new hand wash session"""
     session_id = receptor.crear_sesion(request.protocolo)
     return {
@@ -107,10 +107,10 @@ async def obtener_sesion(session_id: str):
 @app.get("/api/protocols")
 async def obtener_protocolos():
     """Get available validation protocols"""
-    from agents.validador_reglas import ValidadorReglas
+    from agents.validador_reglas import RulesValidator
     protocols = {}
-    for proto in TipoProtocolo:
-        v = ValidadorReglas(proto)
+    for proto in ProtocolType:
+        v = RulesValidator(proto)
         protocols[proto.value] = v.get_resumen_protocolo()
     return protocols
 
@@ -139,10 +139,10 @@ async def inferir_imagen(
 
     # If session provided, also process through agent pipeline
     if session_id and result["claseBackend"]:
-        from schemas.models import DeteccionEvento
+        from schemas.models import DetectionEventRequest
         from datetime import datetime
 
-        evento = DeteccionEvento(
+        evento = DetectionEventRequest(
             sessionId=session_id,
             claseDetectada=result["claseBackend"],
             confianza=result["pasoConfianza"],
@@ -172,8 +172,8 @@ async def websocket_endpoint(websocket: WebSocket, session_id: str):
                 evento_dict = json.loads(data)
 
                 # Create DeteccionEvento
-                from schemas.models import DeteccionEvento
-                evento = DeteccionEvento(
+                from schemas.models import DetectionEventRequest
+                evento = DetectionEventRequest(
                     sessionId=session_id,
                     claseDetectada=evento_dict.get("claseDetectada", ""),
                     confianza=evento_dict.get("confianza", 0.0),

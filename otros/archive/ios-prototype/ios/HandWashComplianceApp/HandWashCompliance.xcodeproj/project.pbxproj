@@ -1,0 +1,414 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 71;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		145104570BE41C3D9EDFF8C0 /* SessionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2783D8D6A3A416BD0D7C5B7D /* SessionResult.swift */; };
+		14B56F2D3372344331D09300 /* StepIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A2CAC790715F3CD5D25FD1 /* StepIndicator.swift */; };
+		1C23D3426F7F64AD58A97D22 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7592E8FB1455AEA06F63473 /* CameraManager.swift */; };
+		281228427E6B0606ACD68FCB /* Violation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E8AA2DB32373C59172A4A7 /* Violation.swift */; };
+		370F5D5683B073B2ECB9B04E /* CompletionOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92A92F9727947728672C2D5 /* CompletionOverlay.swift */; };
+		4057C14709C871060368C73D /* HandWashApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AC289726DCAF7DF32FD4C9 /* HandWashApp.swift */; };
+		4E9B4E4F297137FBB925AF30 /* HandWashStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEE516BEE5C6E393FF7CEF1 /* HandWashStep.swift */; };
+		57C67F163060B29300B0A69D /* UltralyticsYOLO in Frameworks */ = {isa = PBXBuildFile; productRef = 94E540DEBA4A770FB9DFD443 /* UltralyticsYOLO */; };
+		618BD7709A5073062C6C7F14 /* WebSocketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5196495D8EFE70F078DEAA6 /* WebSocketClient.swift */; };
+		6D6700DA5DB20E8435810A67 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F526A6D3AC4A5EDACAC9B2 /* Foundation.framework */; };
+		AB958912DB3C63FA5734EFAC /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7353CA91001183DDB3B64D9A /* ViewModel.swift */; };
+		B6B7FC149603335BC81D7D07 /* YOLODetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9730F37C0E6C3FF6FF8AD1 /* YOLODetector.swift */; };
+		C8D6E73D7CA068577289F36E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCC687D5B175610ECFF7398 /* ContentView.swift */; };
+		CA0626CA4D250CF6BEE1E48B /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39156B77B438CBD3269C4D9 /* CameraPreview.swift */; };
+		E769928E1F5ECBD1EA141ADF /* ConnectionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA92FC6EDB7C5FE5C13EBF4 /* ConnectionStatus.swift */; };
+		E8E6F7533F696D67E51A0A08 /* ViolationAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E560445B936FFE8358E70F /* ViolationAlert.swift */; };
+		EF1E163BA00A03222FE7C60B /* BackendConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E388ADE78B1CB46266306D15 /* BackendConfig.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0D795A8E67EA2114CD657664 /* HandWashCompliance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HandWashCompliance.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2783D8D6A3A416BD0D7C5B7D /* SessionResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionResult.swift; path = Models/SessionResult.swift; sourceTree = "<group>"; };
+		31E8AA2DB32373C59172A4A7 /* Violation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Violation.swift; path = Models/Violation.swift; sourceTree = "<group>"; };
+		37AC289726DCAF7DF32FD4C9 /* HandWashApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HandWashApp.swift; sourceTree = "<group>"; };
+		3EEE516BEE5C6E393FF7CEF1 /* HandWashStep.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HandWashStep.swift; path = Models/HandWashStep.swift; sourceTree = "<group>"; };
+		49F526A6D3AC4A5EDACAC9B2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		7353CA91001183DDB3B64D9A /* ViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		A7592E8FB1455AEA06F63473 /* CameraManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CameraManager.swift; path = Services/CameraManager.swift; sourceTree = "<group>"; };
+		B4A2CAC790715F3CD5D25FD1 /* StepIndicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StepIndicator.swift; path = Views/StepIndicator.swift; sourceTree = "<group>"; };
+		B5196495D8EFE70F078DEAA6 /* WebSocketClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WebSocketClient.swift; path = Services/WebSocketClient.swift; sourceTree = "<group>"; };
+		C39156B77B438CBD3269C4D9 /* CameraPreview.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CameraPreview.swift; path = Views/CameraPreview.swift; sourceTree = "<group>"; };
+		C7E560445B936FFE8358E70F /* ViolationAlert.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViolationAlert.swift; path = Views/ViolationAlert.swift; sourceTree = "<group>"; };
+		CBA92FC6EDB7C5FE5C13EBF4 /* ConnectionStatus.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConnectionStatus.swift; path = Views/ConnectionStatus.swift; sourceTree = "<group>"; };
+		E388ADE78B1CB46266306D15 /* BackendConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BackendConfig.swift; path = Models/BackendConfig.swift; sourceTree = "<group>"; };
+		E92A92F9727947728672C2D5 /* CompletionOverlay.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CompletionOverlay.swift; path = Views/CompletionOverlay.swift; sourceTree = "<group>"; };
+		EDCC687D5B175610ECFF7398 /* ContentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = Views/ContentView.swift; sourceTree = "<group>"; };
+		FB9730F37C0E6C3FF6FF8AD1 /* YOLODetector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YOLODetector.swift; path = Services/YOLODetector.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1A7EC3B138DD58C5223498C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57C67F163060B29300B0A69D /* UltralyticsYOLO in Frameworks */,
+				6D6700DA5DB20E8435810A67 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0CBB0AD45D46D05B54F465AB /* HandWashCompliance */ = {
+			isa = PBXGroup;
+			children = (
+				37AC289726DCAF7DF32FD4C9 /* HandWashApp.swift */,
+				E388ADE78B1CB46266306D15 /* BackendConfig.swift */,
+				3EEE516BEE5C6E393FF7CEF1 /* HandWashStep.swift */,
+				2783D8D6A3A416BD0D7C5B7D /* SessionResult.swift */,
+				31E8AA2DB32373C59172A4A7 /* Violation.swift */,
+				A7592E8FB1455AEA06F63473 /* CameraManager.swift */,
+				B5196495D8EFE70F078DEAA6 /* WebSocketClient.swift */,
+				FB9730F37C0E6C3FF6FF8AD1 /* YOLODetector.swift */,
+				7353CA91001183DDB3B64D9A /* ViewModel.swift */,
+				C39156B77B438CBD3269C4D9 /* CameraPreview.swift */,
+				E92A92F9727947728672C2D5 /* CompletionOverlay.swift */,
+				CBA92FC6EDB7C5FE5C13EBF4 /* ConnectionStatus.swift */,
+				EDCC687D5B175610ECFF7398 /* ContentView.swift */,
+				B4A2CAC790715F3CD5D25FD1 /* StepIndicator.swift */,
+				C7E560445B936FFE8358E70F /* ViolationAlert.swift */,
+			);
+			name = HandWashCompliance;
+			path = ../HandWashCompliance/HandWashCompliance;
+			sourceTree = "<group>";
+		};
+		2B3EE402F2A1E29C7227D353 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				49F526A6D3AC4A5EDACAC9B2 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		31BDDDCD318D0A38CFA78EB7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0D795A8E67EA2114CD657664 /* HandWashCompliance.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5ADF5C10C284DD6A02D05368 = {
+			isa = PBXGroup;
+			children = (
+				31BDDDCD318D0A38CFA78EB7 /* Products */,
+				E114034C13CC73D7233AB690 /* Frameworks */,
+				0CBB0AD45D46D05B54F465AB /* HandWashCompliance */,
+			);
+			sourceTree = "<group>";
+		};
+		E114034C13CC73D7233AB690 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2B3EE402F2A1E29C7227D353 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		56BB5B1A9A7CA922528D8546 /* HandWashCompliance */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B103012FF7438B4CD332BD99 /* Build configuration list for PBXNativeTarget "HandWashCompliance" */;
+			buildPhases = (
+				C6050FDF5FD3F37952BEC9BF /* Sources */,
+				1A7EC3B138DD58C5223498C3 /* Frameworks */,
+				56AE50168731E743B1FF9819 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HandWashCompliance;
+			packageProductDependencies = (
+				94E540DEBA4A770FB9DFD443 /* UltralyticsYOLO */,
+			);
+			productName = HandWashCompliance;
+			productReference = 0D795A8E67EA2114CD657664 /* HandWashCompliance.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FCF0E54471016D6BF7E2AF32 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 2700;
+			};
+			buildConfigurationList = DC34554BC331A9C81D4BF455 /* Build configuration list for PBXProject "HandWashCompliance" */;
+			compatibilityVersion = "Xcode 16.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5ADF5C10C284DD6A02D05368;
+			packageReferences = (
+				32DE6CADDE45F6E0EEAD1AB6 /* XCRemoteSwiftPackageReference "yolo-ios-app" */,
+			);
+			productRefGroup = 31BDDDCD318D0A38CFA78EB7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				56BB5B1A9A7CA922528D8546 /* HandWashCompliance */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		56AE50168731E743B1FF9819 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C6050FDF5FD3F37952BEC9BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4057C14709C871060368C73D /* HandWashApp.swift in Sources */,
+				EF1E163BA00A03222FE7C60B /* BackendConfig.swift in Sources */,
+				4E9B4E4F297137FBB925AF30 /* HandWashStep.swift in Sources */,
+				145104570BE41C3D9EDFF8C0 /* SessionResult.swift in Sources */,
+				281228427E6B0606ACD68FCB /* Violation.swift in Sources */,
+				1C23D3426F7F64AD58A97D22 /* CameraManager.swift in Sources */,
+				618BD7709A5073062C6C7F14 /* WebSocketClient.swift in Sources */,
+				B6B7FC149603335BC81D7D07 /* YOLODetector.swift in Sources */,
+				AB958912DB3C63FA5734EFAC /* ViewModel.swift in Sources */,
+				CA0626CA4D250CF6BEE1E48B /* CameraPreview.swift in Sources */,
+				370F5D5683B073B2ECB9B04E /* CompletionOverlay.swift in Sources */,
+				E769928E1F5ECBD1EA141ADF /* ConnectionStatus.swift in Sources */,
+				C8D6E73D7CA068577289F36E /* ContentView.swift in Sources */,
+				14B56F2D3372344331D09300 /* StepIndicator.swift in Sources */,
+				E8E6F7533F696D67E51A0A08 /* ViolationAlert.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		000B6F09B8070B086A0D0E66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				DEVELOPMENT_TEAM = P4WH8TH5QY;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "$(SRCROOT)/../HandWashCompliance/HandWashCompliance/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = "$(RECOMMENDED_IPHONEOS_DEPLOYMENT_TARGET)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.handwash.compliance;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A90F906BBE69A865AD2424E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		CE10DC0F01623CE2A1BAB913 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				DEVELOPMENT_TEAM = P4WH8TH5QY;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "$(SRCROOT)/../HandWashCompliance/HandWashCompliance/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = "$(RECOMMENDED_IPHONEOS_DEPLOYMENT_TARGET)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.handwash.compliance;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CF33B5E6066A0925B4D49482 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B103012FF7438B4CD332BD99 /* Build configuration list for PBXNativeTarget "HandWashCompliance" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				000B6F09B8070B086A0D0E66 /* Release */,
+				CE10DC0F01623CE2A1BAB913 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC34554BC331A9C81D4BF455 /* Build configuration list for PBXProject "HandWashCompliance" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A90F906BBE69A865AD2424E1 /* Debug */,
+				CF33B5E6066A0925B4D49482 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		32DE6CADDE45F6E0EEAD1AB6 /* XCRemoteSwiftPackageReference "yolo-ios-app" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ultralytics/yolo-ios-app.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.9.13;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		94E540DEBA4A770FB9DFD443 /* UltralyticsYOLO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 32DE6CADDE45F6E0EEAD1AB6 /* XCRemoteSwiftPackageReference "yolo-ios-app" */;
+			productName = UltralyticsYOLO;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = FCF0E54471016D6BF7E2AF32 /* Project object */;
+}

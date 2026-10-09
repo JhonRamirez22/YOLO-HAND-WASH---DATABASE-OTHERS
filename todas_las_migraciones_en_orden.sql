@@ -194,3 +194,7 @@ CREATE INDEX idx_friction_attempt_outcome_finished
 
 -- Reference to an encrypted photo object for a REPORTADO attempt. Images never live in
 -- the database; capture stays disabled until a presence camera and approval exist.
+CREATE TABLE wash_report_evidence (
+    session_id VARCHAR(36) NOT NULL,
+    attempt_number INTEGER NOT NULL,
+    object_key VARCHAR(256) NOT NULL,

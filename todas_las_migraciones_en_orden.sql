@@ -190,3 +190,7 @@ ALTER TABLE friction_attempt_validation ADD COLUMN evidence_status VARCHAR(24)
     CHECK (evidence_status IN ('DESACTIVADA', 'PENDIENTE', 'CAPTURADA', 'NO_CAPTURADA', 'EXPIRADA'));
 
 CREATE INDEX idx_friction_attempt_outcome_finished
+    ON friction_attempt_validation (outcome, finished_at_epoch_ms);
+
+-- Reference to an encrypted photo object for a REPORTADO attempt. Images never live in
+-- the database; capture stays disabled until a presence camera and approval exist.

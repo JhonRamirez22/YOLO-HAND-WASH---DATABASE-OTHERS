@@ -178,3 +178,7 @@ VALUES (1, 7000, 7000, 7000, 7000, 7000, 7000, 60000, 'SYSTEM', 0);
 ALTER TABLE wash_encounters ADD COLUMN protocol_profile_version INTEGER;
 
 
+-- ===== V8__wash_reports.sql =====
+-- Exact wall-clock start/end of each V2 attempt, its audit outcome and photo status.
+ALTER TABLE friction_attempt_validation ADD COLUMN started_at_epoch_ms BIGINT;
+ALTER TABLE friction_attempt_validation ADD COLUMN finished_at_epoch_ms BIGINT;

@@ -206,3 +206,7 @@ CREATE TABLE wash_report_evidence (
 );
 
 
+-- ===== V9__station_shifts.sql =====
+-- A shift is the span during which a station keeps evaluating without an operator present.
+CREATE TABLE station_shifts (
+    shift_id VARCHAR(36) PRIMARY KEY,

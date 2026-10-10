@@ -202,3 +202,7 @@ CREATE TABLE wash_report_evidence (
     captured_at_epoch_ms BIGINT NOT NULL,
     expires_at_epoch_ms BIGINT NOT NULL CHECK (expires_at_epoch_ms > captured_at_epoch_ms),
     PRIMARY KEY (session_id, attempt_number),
+    FOREIGN KEY (session_id, attempt_number) REFERENCES friction_attempt_validation(session_id, attempt_number)
+);
+
+

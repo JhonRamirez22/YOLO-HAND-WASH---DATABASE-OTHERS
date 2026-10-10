@@ -198,3 +198,7 @@ CREATE TABLE wash_report_evidence (
     session_id VARCHAR(36) NOT NULL,
     attempt_number INTEGER NOT NULL,
     object_key VARCHAR(256) NOT NULL,
+    sha256 CHAR(64) NOT NULL,
+    captured_at_epoch_ms BIGINT NOT NULL,
+    expires_at_epoch_ms BIGINT NOT NULL CHECK (expires_at_epoch_ms > captured_at_epoch_ms),
+    PRIMARY KEY (session_id, attempt_number),

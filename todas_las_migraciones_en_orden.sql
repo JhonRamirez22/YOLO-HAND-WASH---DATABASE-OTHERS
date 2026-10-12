@@ -226,3 +226,7 @@ CREATE TABLE station_shifts (
     CONSTRAINT chk_shift_open_marker CHECK ((ended_at_epoch_ms IS NULL) = (open_station_id IS NOT NULL))
 );
 
+
+-- ===== V10__evidence_settings.sql =====
+-- Runtime kill switch for photo capture of reported washes. Starts disabled; ADMIN switches it.
+CREATE TABLE evidence_settings (

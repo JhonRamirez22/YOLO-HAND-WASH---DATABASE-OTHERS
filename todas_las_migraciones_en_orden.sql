@@ -238,3 +238,7 @@ CREATE TABLE evidence_settings (
 );
 
 INSERT INTO evidence_settings (id, capture_enabled, updated_by, updated_at_epoch_ms)
+VALUES (1, FALSE, 'SYSTEM', 0);
+
+
+-- ===== V11__audit_chain.sql =====

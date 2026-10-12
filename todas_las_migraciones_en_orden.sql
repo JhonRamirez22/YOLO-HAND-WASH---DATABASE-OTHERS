@@ -222,3 +222,7 @@ CREATE TABLE station_shifts (
     open_station_id VARCHAR(36),
     CONSTRAINT uq_station_open_shift UNIQUE (open_station_id),
     CONSTRAINT chk_shift_window CHECK (ends_at_epoch_ms > started_at_epoch_ms),
+    CONSTRAINT chk_shift_closed CHECK ((ended_at_epoch_ms IS NULL) = (end_reason IS NULL)),
+    CONSTRAINT chk_shift_open_marker CHECK ((ended_at_epoch_ms IS NULL) = (open_station_id IS NOT NULL))
+);
+

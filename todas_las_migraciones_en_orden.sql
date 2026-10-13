@@ -286,3 +286,7 @@ ALTER TABLE protocol_profiles ADD COLUMN decided_by VARCHAR(128);
 ALTER TABLE protocol_profiles ADD COLUMN decided_at_epoch_ms BIGINT;
 ALTER TABLE protocol_profiles ADD CONSTRAINT chk_protocol_profile_status CHECK (status IN ('ACTIVE', 'PENDING', 'REJECTED'));
 UPDATE protocol_profiles SET reason = 'Perfil inicial del proyecto' WHERE reason IS NULL;
+
+CREATE TABLE change_control_settings (
+    id SMALLINT PRIMARY KEY,
+    second_approver_required BOOLEAN NOT NULL,

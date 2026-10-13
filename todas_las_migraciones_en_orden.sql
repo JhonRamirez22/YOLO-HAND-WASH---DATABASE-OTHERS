@@ -274,3 +274,7 @@ CREATE TABLE audit_seals (
 );
 CREATE INDEX idx_audit_seals_time ON audit_seals (sealed_at_epoch_ms DESC);
 
+
+-- ===== V12__change_control.sql =====
+-- Change control for the protocol profile and the model (R-16, R-17).
+-- Profile versions stay append-only; they now carry the reason, an approval state and, for rollbacks, the

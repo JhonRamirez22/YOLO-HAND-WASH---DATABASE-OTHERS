@@ -270,3 +270,7 @@ CREATE TABLE audit_seals (
     results_count BIGINT NOT NULL CHECK (results_count >= 0),
     keyed BOOLEAN NOT NULL,
     signature CHAR(64) NOT NULL,
+    object_key VARCHAR(160)
+);
+CREATE INDEX idx_audit_seals_time ON audit_seals (sealed_at_epoch_ms DESC);
+

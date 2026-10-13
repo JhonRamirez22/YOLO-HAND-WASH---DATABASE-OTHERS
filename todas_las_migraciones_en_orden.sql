@@ -290,3 +290,7 @@ UPDATE protocol_profiles SET reason = 'Perfil inicial del proyecto' WHERE reason
 CREATE TABLE change_control_settings (
     id SMALLINT PRIMARY KEY,
     second_approver_required BOOLEAN NOT NULL,
+    updated_by VARCHAR(128) NOT NULL,
+    updated_at_epoch_ms BIGINT NOT NULL CHECK (updated_at_epoch_ms >= 0),
+    CONSTRAINT chk_change_control_single CHECK (id = 1)
+);

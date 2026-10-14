@@ -294,3 +294,7 @@ CREATE TABLE change_control_settings (
     updated_at_epoch_ms BIGINT NOT NULL CHECK (updated_at_epoch_ms >= 0),
     CONSTRAINT chk_change_control_single CHECK (id = 1)
 );
+INSERT INTO change_control_settings (id, second_approver_required, updated_by, updated_at_epoch_ms)
+VALUES (1, FALSE, 'SYSTEM', 0);
+
+CREATE TABLE model_releases (

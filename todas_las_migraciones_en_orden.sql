@@ -302,3 +302,7 @@ CREATE TABLE model_releases (
     model_version VARCHAR(128) NOT NULL,
     dataset_version VARCHAR(128) NOT NULL,
     first_seen_epoch_ms BIGINT NOT NULL CHECK (first_seen_epoch_ms >= 0),
+    PRIMARY KEY (model_sha256, model_version, dataset_version)
+);
+
+CREATE TABLE validation_reports (

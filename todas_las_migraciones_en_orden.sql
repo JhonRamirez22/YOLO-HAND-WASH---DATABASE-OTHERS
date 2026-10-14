@@ -326,3 +326,7 @@ ALTER TABLE handwash_stations ADD COLUMN activation_expires_at_epoch_ms BIGINT;
 ALTER TABLE handwash_stations ADD COLUMN activated_at_epoch_ms BIGINT;
 
 CREATE UNIQUE INDEX uq_handwash_stations_activation
+    ON handwash_stations (activation_hash);
+
+
+-- ===== V14__api_keys.sql =====

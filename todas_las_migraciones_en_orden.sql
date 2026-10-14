@@ -338,3 +338,7 @@ CREATE TABLE api_keys (
     label VARCHAR(80) NOT NULL,
     secret_hash VARCHAR(64) NOT NULL,
     scopes VARCHAR(32) NOT NULL,
+    created_by VARCHAR(128) NOT NULL,
+    created_at_epoch_ms BIGINT NOT NULL,
+    last_used_at_epoch_ms BIGINT,
+    last_used_ip VARCHAR(64),

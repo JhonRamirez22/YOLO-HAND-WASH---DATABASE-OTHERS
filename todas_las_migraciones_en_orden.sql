@@ -310,3 +310,7 @@ CREATE TABLE validation_reports (
     model_sha256 CHAR(64) NOT NULL,
     profile_version INTEGER,
     title VARCHAR(120) NOT NULL,
+    summary VARCHAR(500) NOT NULL,
+    document_sha256 CHAR(64) NOT NULL,
+    created_by VARCHAR(128) NOT NULL,
+    created_at_epoch_ms BIGINT NOT NULL CHECK (created_at_epoch_ms >= 0)

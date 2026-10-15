@@ -346,3 +346,7 @@ CREATE TABLE api_keys (
     revoked_by VARCHAR(128)
 );
 
+CREATE INDEX idx_api_keys_station ON api_keys (station_id, revoked_at_epoch_ms);
+
+CREATE TABLE api_key_sessions (
+    token_hash VARCHAR(64) PRIMARY KEY,

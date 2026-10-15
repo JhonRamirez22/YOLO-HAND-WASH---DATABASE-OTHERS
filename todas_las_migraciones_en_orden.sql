@@ -358,3 +358,7 @@ CREATE INDEX idx_api_key_sessions_expiry ON api_key_sessions (expires_at_epoch_m
 
 
 -- ===== V15__linked_stations.sql =====
+-- A station whose Mac already holds a device credential counts as linked, so a key-login from another
+-- device cannot silently replace it. Stations enrolled the old way were never marked.
+UPDATE handwash_stations
+SET activated_at_epoch_ms = created_at_epoch_ms

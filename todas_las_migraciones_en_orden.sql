@@ -386,3 +386,7 @@ CREATE TABLE admin_accounts (
 CREATE TABLE admin_sessions (
     token_hash VARCHAR(64) PRIMARY KEY,
     account_id BIGINT NOT NULL REFERENCES admin_accounts(account_id),
+    expires_at_epoch_ms BIGINT NOT NULL
+);
+
+CREATE INDEX idx_admin_sessions_expiry ON admin_sessions (expires_at_epoch_ms);

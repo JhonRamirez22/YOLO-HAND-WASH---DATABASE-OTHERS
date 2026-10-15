@@ -362,3 +362,7 @@ CREATE INDEX idx_api_key_sessions_expiry ON api_key_sessions (expires_at_epoch_m
 -- device cannot silently replace it. Stations enrolled the old way were never marked.
 UPDATE handwash_stations
 SET activated_at_epoch_ms = created_at_epoch_ms
+WHERE activated_at_epoch_ms IS NULL AND activation_hash IS NULL;
+
+
+-- ===== V16__admin_accounts.sql =====

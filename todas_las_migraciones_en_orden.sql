@@ -390,3 +390,7 @@ CREATE TABLE admin_sessions (
 );
 
 CREATE INDEX idx_admin_sessions_expiry ON admin_sessions (expires_at_epoch_ms);
+
+
+-- ===== V17__wash_quality_score.sql =====
+-- How well each movement was done and the final verdict of a finished attempt: the average quality of the six

@@ -18,3 +18,7 @@ class FailedAttemptRepositoryTest {
     private EmbeddedDatabase database;
     private FailedAttemptRepository repository;
 
+    @BeforeEach
+    void setUp() {
+        database = new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.H2)
+            .addScript("schema.sql").build();

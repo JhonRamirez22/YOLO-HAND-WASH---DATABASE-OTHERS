@@ -38,3 +38,7 @@ class FailedAttemptRepositoryTest {
             INSERT INTO failed_attempts
                 (session_id, attempt_number, result, reason, duration_ms, payload_json, created_at_epoch_ms)
             VALUES (?, ?, ?, ?, ?, ?, ?)
+            """, sessionId, 1, "REINICIADO", "CONTACTO_RIESGO", 1500, "{\"private\":\"hidden\"}", 100);
+        jdbc.update("""
+            INSERT INTO failed_attempts
+                (session_id, attempt_number, result, reason, duration_ms, payload_json, created_at_epoch_ms)

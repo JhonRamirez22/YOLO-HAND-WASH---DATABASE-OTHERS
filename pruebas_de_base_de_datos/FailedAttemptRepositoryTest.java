@@ -10,3 +10,7 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import tools.jackson.databind.ObjectMapper;
 
 import java.util.UUID;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+

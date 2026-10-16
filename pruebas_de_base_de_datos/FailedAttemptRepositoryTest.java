@@ -34,3 +34,7 @@ class FailedAttemptRepositoryTest {
     void returnsNewestSanitizedMetadataWithoutStoredPayload() {
         String sessionId = UUID.randomUUID().toString();
         JdbcTemplate jdbc = new JdbcTemplate(database);
+        jdbc.update("""
+            INSERT INTO failed_attempts
+                (session_id, attempt_number, result, reason, duration_ms, payload_json, created_at_epoch_ms)
+            VALUES (?, ?, ?, ?, ?, ?, ?)

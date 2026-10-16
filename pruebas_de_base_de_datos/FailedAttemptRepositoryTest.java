@@ -22,3 +22,7 @@ class FailedAttemptRepositoryTest {
     void setUp() {
         database = new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.H2)
             .addScript("schema.sql").build();
+        repository = new FailedAttemptRepository(new JdbcTemplate(database), new ObjectMapper());
+    }
+
+    @AfterEach

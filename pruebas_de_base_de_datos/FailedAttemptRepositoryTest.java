@@ -26,3 +26,7 @@ class FailedAttemptRepositoryTest {
     }
 
     @AfterEach
+    void tearDown() {
+        database.shutdown();
+    }
+

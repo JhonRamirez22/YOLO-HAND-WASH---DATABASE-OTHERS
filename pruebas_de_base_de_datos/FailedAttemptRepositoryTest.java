@@ -30,3 +30,7 @@ class FailedAttemptRepositoryTest {
         database.shutdown();
     }
 
+    @Test
+    void returnsNewestSanitizedMetadataWithoutStoredPayload() {
+        String sessionId = UUID.randomUUID().toString();
+        JdbcTemplate jdbc = new JdbcTemplate(database);

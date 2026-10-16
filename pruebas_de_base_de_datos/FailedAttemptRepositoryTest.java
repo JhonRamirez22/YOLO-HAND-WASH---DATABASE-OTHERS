@@ -14,3 +14,7 @@ import java.util.UUID;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+class FailedAttemptRepositoryTest {
+    private EmbeddedDatabase database;
+    private FailedAttemptRepository repository;
+

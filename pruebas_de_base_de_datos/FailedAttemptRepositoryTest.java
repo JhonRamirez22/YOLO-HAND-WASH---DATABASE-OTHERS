@@ -42,3 +42,7 @@ class FailedAttemptRepositoryTest {
         jdbc.update("""
             INSERT INTO failed_attempts
                 (session_id, attempt_number, result, reason, duration_ms, payload_json, created_at_epoch_ms)
+            VALUES (?, ?, ?, ?, ?, ?, ?)
+            """, UUID.randomUUID().toString(), 1, "unexpected", "operator name", 900, "{}", 200);
+
+        var results = repository.findRecentAuditRecords(1);

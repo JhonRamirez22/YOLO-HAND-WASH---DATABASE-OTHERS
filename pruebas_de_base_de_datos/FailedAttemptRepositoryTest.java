@@ -46,3 +46,6 @@ class FailedAttemptRepositoryTest {
             """, UUID.randomUUID().toString(), 1, "unexpected", "operator name", 900, "{}", 200);
 
         var results = repository.findRecentAuditRecords(1);
+
+        assertEquals(1, results.size());
+        assertEquals("UNKNOWN", results.get(0).result());

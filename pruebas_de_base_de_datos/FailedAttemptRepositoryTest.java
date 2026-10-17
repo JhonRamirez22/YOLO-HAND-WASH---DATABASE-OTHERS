@@ -52,3 +52,6 @@ class FailedAttemptRepositoryTest {
         assertEquals("OTHER", results.get(0).reasonCode());
         assertEquals(900, results.get(0).durationMs());
     }
+
+    @Test
+    void enforcesAdminPageLimit() {

@@ -49,3 +49,6 @@ class FailedAttemptRepositoryTest {
 
         assertEquals(1, results.size());
         assertEquals("UNKNOWN", results.get(0).result());
+        assertEquals("OTHER", results.get(0).reasonCode());
+        assertEquals(900, results.get(0).durationMs());
+    }

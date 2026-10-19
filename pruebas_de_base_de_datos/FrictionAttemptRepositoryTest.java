@@ -14,3 +14,7 @@ class FrictionAttemptRepositoryTest {
         var ds = new DriverManagerDataSource("jdbc:h2:mem:" + java.util.UUID.randomUUID() + ";DB_CLOSE_DELAY=-1", "sa", "");
         new ResourceDatabasePopulator(new ClassPathResource("schema.sql")).execute(ds);
         var jdbc = new JdbcTemplate(ds);
+        var repo = new FrictionAttemptRepository(jdbc);
+        var a = new BalancedFrictionAttempt("test", new BalancedFrictionStrategy(new DomesticStrategy()),1500,650);
+        a.observe(WashStep.PASO_1_PALMAS,1000,0);
+        var record = a.pendingRecord();

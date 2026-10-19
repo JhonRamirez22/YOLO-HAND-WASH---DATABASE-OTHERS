@@ -55,3 +55,6 @@ class FailedAttemptRepositoryTest {
 
     @Test
     void enforcesAdminPageLimit() {
+        assertThrows(IllegalArgumentException.class, () -> repository.findRecentAuditRecords(101));
+    }
+}

@@ -22,3 +22,7 @@ class FrictionAttemptRepositoryTest {
         repo.save(record);
         assertEquals(1, jdbc.queryForObject("SELECT COUNT(*) FROM friction_attempt_validation", Integer.class));
         assertEquals(6, jdbc.queryForObject("SELECT COUNT(*) FROM friction_step_validation", Integer.class));
+        assertEquals(1, repo.interruptAfterRestart());
+        assertEquals(0, repo.interruptAfterRestart());
+        assertEquals("BACKEND_RESTART", jdbc.queryForObject("SELECT reason FROM friction_attempt_validation", String.class));
+        assertThrows(IllegalStateException.class, () -> repo.save(new FrictionAttemptRecord("test",1,record.policyVersion(),100,"ACTIVO",null,null,false,record.steps())));

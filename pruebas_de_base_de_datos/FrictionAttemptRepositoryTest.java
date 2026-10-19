@@ -26,3 +26,7 @@ class FrictionAttemptRepositoryTest {
         assertEquals(0, repo.interruptAfterRestart());
         assertEquals("BACKEND_RESTART", jdbc.queryForObject("SELECT reason FROM friction_attempt_validation", String.class));
         assertThrows(IllegalStateException.class, () -> repo.save(new FrictionAttemptRecord("test",1,record.policyVersion(),100,"ACTIVO",null,null,false,record.steps())));
+    }
+    @Test void failingStepWriteRollsBackEntireDecision() {
+        var ds = new DriverManagerDataSource("jdbc:h2:mem:" + java.util.UUID.randomUUID() + ";DB_CLOSE_DELAY=-1", "sa", "");
+        new ResourceDatabasePopulator(new ClassPathResource("schema.sql")).execute(ds);

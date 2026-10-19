@@ -18,3 +18,7 @@ class FrictionAttemptRepositoryTest {
         var a = new BalancedFrictionAttempt("test", new BalancedFrictionStrategy(new DomesticStrategy()),1500,650);
         a.observe(WashStep.PASO_1_PALMAS,1000,0);
         var record = a.pendingRecord();
+        repo.save(record);
+        repo.save(record);
+        assertEquals(1, jdbc.queryForObject("SELECT COUNT(*) FROM friction_attempt_validation", Integer.class));
+        assertEquals(6, jdbc.queryForObject("SELECT COUNT(*) FROM friction_step_validation", Integer.class));

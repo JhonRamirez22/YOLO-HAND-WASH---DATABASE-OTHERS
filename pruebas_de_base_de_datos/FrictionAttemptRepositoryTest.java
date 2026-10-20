@@ -34,3 +34,7 @@ class FrictionAttemptRepositoryTest {
         var repo = new FrictionAttemptRepository(jdbc);
         var invalid = new FrictionEvaluation.Step("PASO_1_PALMAS", FrictionEvaluation.StepStatus.EN_CURSO, -1,6000,null);
         var record = new FrictionAttemptRecord("test",1,BalancedFrictionStrategy.VERSION,1,"ACTIVO",null,null,false,java.util.List.of(invalid));
+        assertThrows(org.springframework.dao.DataAccessException.class, () -> repo.save(record));
+        assertEquals(0, jdbc.queryForObject("SELECT COUNT(*) FROM friction_attempt_validation", Integer.class));
+    }
+    @Test void theQualityOfEachStepAndTheVerdictAreStored() {

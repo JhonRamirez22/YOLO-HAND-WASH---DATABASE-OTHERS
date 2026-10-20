@@ -46,3 +46,6 @@ class FrictionAttemptRepositoryTest {
         long now = 1000;
         for (int step = 0; step < 6; step++) {
             var s = BalancedFrictionStrategy.STEPS.get(step);
+            for (int i = 0; i <= 8; i++) { a.observe(s, now, 0, 0.9f); now += 1000; }
+            if (step < 5) { a.observe(BalancedFrictionStrategy.STEPS.get(step + 1), now, 0, 0.9f); now += 200;
+                a.observe(BalancedFrictionStrategy.STEPS.get(step + 1), now, 0, 0.9f); now += 200; }

@@ -49,3 +49,6 @@ class FrictionAttemptRepositoryTest {
             for (int i = 0; i <= 8; i++) { a.observe(s, now, 0, 0.9f); now += 1000; }
             if (step < 5) { a.observe(BalancedFrictionStrategy.STEPS.get(step + 1), now, 0, 0.9f); now += 200;
                 a.observe(BalancedFrictionStrategy.STEPS.get(step + 1), now, 0, 0.9f); now += 200; }
+        }
+        var record = a.pendingRecord();
+        assertNotNull(record.scorePct());

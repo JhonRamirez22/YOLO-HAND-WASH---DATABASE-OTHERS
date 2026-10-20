@@ -42,3 +42,7 @@ class FrictionAttemptRepositoryTest {
         new ResourceDatabasePopulator(new ClassPathResource("schema.sql")).execute(ds);
         var jdbc = new JdbcTemplate(ds);
         var repo = new FrictionAttemptRepository(jdbc);
+        var a = new BalancedFrictionAttempt("test", new BalancedFrictionStrategy(new DomesticStrategy()), 1500, 650);
+        long now = 1000;
+        for (int step = 0; step < 6; step++) {
+            var s = BalancedFrictionStrategy.STEPS.get(step);

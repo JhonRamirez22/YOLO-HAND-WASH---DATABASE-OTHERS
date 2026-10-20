@@ -30,3 +30,7 @@ class FrictionAttemptRepositoryTest {
     @Test void failingStepWriteRollsBackEntireDecision() {
         var ds = new DriverManagerDataSource("jdbc:h2:mem:" + java.util.UUID.randomUUID() + ";DB_CLOSE_DELAY=-1", "sa", "");
         new ResourceDatabasePopulator(new ClassPathResource("schema.sql")).execute(ds);
+        var jdbc = new JdbcTemplate(ds);
+        var repo = new FrictionAttemptRepository(jdbc);
+        var invalid = new FrictionEvaluation.Step("PASO_1_PALMAS", FrictionEvaluation.StepStatus.EN_CURSO, -1,6000,null);
+        var record = new FrictionAttemptRecord("test",1,BalancedFrictionStrategy.VERSION,1,"ACTIVO",null,null,false,java.util.List.of(invalid));

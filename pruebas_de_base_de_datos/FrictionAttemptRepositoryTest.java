@@ -55,3 +55,6 @@ class FrictionAttemptRepositoryTest {
         repo.save(record);
         assertEquals(record.scorePct(), jdbc.queryForObject("SELECT score_pct FROM friction_attempt_validation", Integer.class));
         assertEquals(record.verdict(), jdbc.queryForObject("SELECT verdict FROM friction_attempt_validation", String.class));
+        assertEquals(6, jdbc.queryForObject("SELECT COUNT(quality_pct) FROM friction_step_validation WHERE quality_pct > 0", Integer.class));
+    }
+}

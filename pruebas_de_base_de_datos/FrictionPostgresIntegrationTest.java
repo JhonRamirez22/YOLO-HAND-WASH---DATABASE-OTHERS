@@ -22,3 +22,6 @@ class FrictionPostgresIntegrationTest {
         a.observe(WashStep.PASO_1_PALMAS,1000,0);
         var initial=a.pendingRecord();
         repo.save(initial); repo.save(initial); a.persisted(initial);
+        assertEquals(6,jdbc.queryForObject("SELECT COUNT(*) FROM friction_step_validation WHERE session_id=?",Integer.class,id));
+        a.interrupt("SESSION_CLOSED");
+        var terminal=a.pendingRecord();

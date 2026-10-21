@@ -25,3 +25,6 @@ class FrictionPostgresIntegrationTest {
         assertEquals(6,jdbc.queryForObject("SELECT COUNT(*) FROM friction_step_validation WHERE session_id=?",Integer.class,id));
         a.interrupt("SESSION_CLOSED");
         var terminal=a.pendingRecord();
+        repo.save(terminal);repo.save(terminal);
+        assertEquals("INTERRUPTED",jdbc.queryForObject("SELECT result FROM friction_attempt_validation WHERE session_id=?",String.class,id));
+        assertThrows(IllegalStateException.class,()->repo.save(new FrictionAttemptRecord(id,1,terminal.policyVersion(),terminal.revision()+1,"ACTIVO",null,null,false,terminal.steps())));

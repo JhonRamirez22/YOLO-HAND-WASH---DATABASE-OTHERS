@@ -28,3 +28,6 @@ class FrictionPostgresIntegrationTest {
         repo.save(terminal);repo.save(terminal);
         assertEquals("INTERRUPTED",jdbc.queryForObject("SELECT result FROM friction_attempt_validation WHERE session_id=?",String.class,id));
         assertThrows(IllegalStateException.class,()->repo.save(new FrictionAttemptRecord(id,1,terminal.policyVersion(),terminal.revision()+1,"ACTIVO",null,null,false,terminal.steps())));
+        String failingId=java.util.UUID.randomUUID().toString();
+        var invalid=new FrictionEvaluation.Step("PASO_1_PALMAS",FrictionEvaluation.StepStatus.EN_CURSO,-1,6000,null);
+        assertThrows(org.springframework.dao.DataAccessException.class,()->repo.save(new FrictionAttemptRecord(failingId,1,BalancedFrictionStrategy.VERSION,1,"ACTIVO",null,null,false,java.util.List.of(invalid))));

@@ -14,3 +14,7 @@ class FrictionPostgresIntegrationTest {
     @Test void postgresWritesAreAtomicIdempotentAndTerminalResultsImmutable() {
         var ds=new DriverManagerDataSource(System.getenv("HANDWASH_TEST_PG_URL"),"handwash_test","");
         // Idempotent: class order is not guaranteed, so this test must not rely on another class migrating first.
+        org.flywaydb.core.Flyway.configure().dataSource(ds).locations("classpath:db/migration").load().migrate();
+        var jdbc=new JdbcTemplate(ds);
+        var repo=new FrictionAttemptRepository(jdbc);
+        String id=java.util.UUID.randomUUID().toString();

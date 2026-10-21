@@ -18,3 +18,7 @@ class FrictionPostgresIntegrationTest {
         var jdbc=new JdbcTemplate(ds);
         var repo=new FrictionAttemptRepository(jdbc);
         String id=java.util.UUID.randomUUID().toString();
+        var a=new BalancedFrictionAttempt(id,new BalancedFrictionStrategy(new DomesticStrategy()),1500,650);
+        a.observe(WashStep.PASO_1_PALMAS,1000,0);
+        var initial=a.pendingRecord();
+        repo.save(initial); repo.save(initial); a.persisted(initial);

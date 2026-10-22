@@ -27,3 +27,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class MigrationsPostgresIntegrationTest {
     private static final DriverManagerDataSource DS =
+        new DriverManagerDataSource(System.getenv("HANDWASH_TEST_PG_URL"), "handwash_test", "");
+    private final JdbcTemplate jdbc = new JdbcTemplate(DS);
+
+    @Test @Order(1) void flywayAppliesAndValidatesAllSeventeenMigrations() {

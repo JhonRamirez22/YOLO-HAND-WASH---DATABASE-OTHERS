@@ -31,3 +31,7 @@ class MigrationsPostgresIntegrationTest {
     private final JdbcTemplate jdbc = new JdbcTemplate(DS);
 
     @Test @Order(1) void flywayAppliesAndValidatesAllSeventeenMigrations() {
+        var flyway = Flyway.configure().dataSource(DS).locations("classpath:db/migration").load();
+        var result = flyway.migrate();
+        flyway.validate();
+        assertEquals("17", flyway.info().current().getVersion().getVersion());

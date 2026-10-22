@@ -35,3 +35,7 @@ class MigrationsPostgresIntegrationTest {
         var result = flyway.migrate();
         flyway.validate();
         assertEquals("17", flyway.info().current().getVersion().getVersion());
+        assertEquals(17, jdbc.queryForObject("SELECT COUNT(*) FROM flyway_schema_history WHERE success", Integer.class));
+    }
+
+    @Test @Order(2) void protocolProfilesSeedAppendAuditAndConstraints() {

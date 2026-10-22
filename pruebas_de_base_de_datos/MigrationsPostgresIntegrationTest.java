@@ -23,3 +23,7 @@ import java.util.UUID;
 import static org.junit.jupiter.api.Assertions.*;
 
 /** Opt-in: applies V1-V8 with Flyway on a disposable local PostgreSQL and exercises V7/V8. */
+@EnabledIfEnvironmentVariable(named = "HANDWASH_TEST_PG_URL", matches = "jdbc:postgresql://127\\.0\\.0\\.1:[0-9]+/handwash_test")
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+class MigrationsPostgresIntegrationTest {
+    private static final DriverManagerDataSource DS =

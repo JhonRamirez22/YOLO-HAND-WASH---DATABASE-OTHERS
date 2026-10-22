@@ -19,3 +19,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import java.util.List;
 import java.util.UUID;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+/** Opt-in: applies V1-V8 with Flyway on a disposable local PostgreSQL and exercises V7/V8. */

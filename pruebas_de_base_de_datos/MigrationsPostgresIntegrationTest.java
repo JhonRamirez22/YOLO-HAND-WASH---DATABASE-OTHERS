@@ -39,3 +39,7 @@ class MigrationsPostgresIntegrationTest {
     }
 
     @Test @Order(2) void protocolProfilesSeedAppendAuditAndConstraints() {
+        var audit = new SessionAuditService(new SessionAuditRepository(jdbc));
+        var service = new ProtocolProfileService(new ProtocolProfileRepository(jdbc), new com.handwash.repository.ChangeControlRepository(jdbc), audit, new DataSourceTransactionManager(DS));
+        assertEquals(ProtocolProfile.PREDETERMINADO.tiemposPasoMs(), service.perfilVigente().tiemposPasoMs());
+        assertEquals(1, service.perfilVigente().version());

@@ -71,3 +71,7 @@ class MigrationsPostgresIntegrationTest {
         repo.save(new FrictionAttemptRecord(active, 1, BalancedFrictionStrategy.VERSION, 1, "ACTIVO", null, null, false, steps(1), 3_000L, null, null, false, null, null));
 
         var reported = repo.findReports(0, 100_000, WashOutcome.REPORTADO, 10);
+        assertEquals(List.of(left), reported.stream().map(WashReportRecord::sessionId).toList());
+        assertEquals("DESACTIVADA", reported.get(0).estadoEvidencia());
+        var exported = repo.findExportRows(0, 100_000, null, 10);
+        assertEquals(2, exported.size(), "export query runs on PostgreSQL too");

@@ -55,3 +55,7 @@ class MigrationsPostgresIntegrationTest {
         audit.createEncounter(new WashSession(sessionId, ProtocolType.AGUA_Y_JABON, strategy));
         assertEquals(2, jdbc.queryForObject("SELECT protocol_profile_version FROM wash_encounters WHERE session_id=?", Integer.class, sessionId));
     }
+
+    private static List<FrictionEvaluation.Step> steps(int validated) {
+        return BalancedFrictionStrategy.STEPS.stream().map(s -> new FrictionEvaluation.Step(s.name(),
+            s.getNumero() <= validated ? FrictionEvaluation.StepStatus.VALIDADO : FrictionEvaluation.StepStatus.PENDIENTE,

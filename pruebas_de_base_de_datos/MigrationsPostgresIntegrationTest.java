@@ -47,3 +47,7 @@ class MigrationsPostgresIntegrationTest {
         assertEquals(2, v2.version());
         assertEquals(1, jdbc.queryForObject("SELECT COUNT(*) FROM wash_audit_events WHERE event_type='PROTOCOL_PROFILE_VERSION_CREATED' AND reason_code='VERSION_2'", Integer.class));
         assertThrows(DuplicateKeyException.class, () -> new ProtocolProfileRepository(jdbc).insert(v2, "duplicado", null, "ACTIVE"));
+        assertThrows(DataIntegrityViolationException.class, () -> jdbc.update(
+            "INSERT INTO protocol_profiles VALUES (9, 2000, 7000, 7000, 7000, 7000, 7000, 60000, 'x', 0)"));
+
+        String sessionId = UUID.randomUUID().toString();

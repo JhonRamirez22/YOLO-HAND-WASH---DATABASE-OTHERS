@@ -75,3 +75,7 @@ class MigrationsPostgresIntegrationTest {
         assertEquals("DESACTIVADA", reported.get(0).estadoEvidencia());
         var exported = repo.findExportRows(0, 100_000, null, 10);
         assertEquals(2, exported.size(), "export query runs on PostgreSQL too");
+        assertEquals(1, repo.findExportRows(0, 100_000, WashOutcome.REPORTADO, 10).size());
+        var correct = repo.findReports(0, 100_000, WashOutcome.CORRECTO, 10).get(0);
+        assertTrue(correct.lento());
+        assertEquals(65_000L, correct.duracionMs());

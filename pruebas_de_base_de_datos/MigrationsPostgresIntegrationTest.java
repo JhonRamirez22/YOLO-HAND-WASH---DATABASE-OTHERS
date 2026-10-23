@@ -67,3 +67,7 @@ class MigrationsPostgresIntegrationTest {
         String good = UUID.randomUUID().toString(), left = UUID.randomUUID().toString(), active = UUID.randomUUID().toString();
         repo.save(new FrictionAttemptRecord(good, 1, BalancedFrictionStrategy.VERSION, 1, "ACTIVO", null, null, false, steps(0), 1_000L, null, null, false, null, null));
         repo.save(new FrictionAttemptRecord(good, 1, BalancedFrictionStrategy.VERSION, 2, "COMPLETO_PARCIAL", "FRICTION_SEQUENCE_COMPLETE", null, true, steps(6), 1_000L, 66_000L, 65_000L, true, WashOutcome.CORRECTO, null));
+        repo.save(new FrictionAttemptRecord(left, 1, BalancedFrictionStrategy.VERSION, 1, "INTERRUMPIDO", "INTERRUPTED", "HANDS_ABSENT", true, steps(2), 2_000L, 20_000L, 18_000L, false, WashOutcome.REPORTADO, "DESACTIVADA"));
+        repo.save(new FrictionAttemptRecord(active, 1, BalancedFrictionStrategy.VERSION, 1, "ACTIVO", null, null, false, steps(1), 3_000L, null, null, false, null, null));
+
+        var reported = repo.findReports(0, 100_000, WashOutcome.REPORTADO, 10);

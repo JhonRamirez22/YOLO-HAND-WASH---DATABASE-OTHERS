@@ -51,3 +51,7 @@ class MigrationsPostgresIntegrationTest {
             "INSERT INTO protocol_profiles VALUES (9, 2000, 7000, 7000, 7000, 7000, 7000, 60000, 'x', 0)"));
 
         String sessionId = UUID.randomUUID().toString();
+        var strategy = new BalancedFrictionStrategy(new ProtocolProfileStrategy(v2));
+        audit.createEncounter(new WashSession(sessionId, ProtocolType.AGUA_Y_JABON, strategy));
+        assertEquals(2, jdbc.queryForObject("SELECT protocol_profile_version FROM wash_encounters WHERE session_id=?", Integer.class, sessionId));
+    }

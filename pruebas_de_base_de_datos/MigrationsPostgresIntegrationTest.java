@@ -43,3 +43,7 @@ class MigrationsPostgresIntegrationTest {
         var service = new ProtocolProfileService(new ProtocolProfileRepository(jdbc), new com.handwash.repository.ChangeControlRepository(jdbc), audit, new DataSourceTransactionManager(DS));
         assertEquals(ProtocolProfile.PREDETERMINADO.tiemposPasoMs(), service.perfilVigente().tiemposPasoMs());
         assertEquals(1, service.perfilVigente().version());
+        var v2 = service.crearVersion(ProtocolProfile.uniforme(8_000L), 70_000L, "admin-sub", "Ajuste de prueba en PostgreSQL").perfil();
+        assertEquals(2, v2.version());
+        assertEquals(1, jdbc.queryForObject("SELECT COUNT(*) FROM wash_audit_events WHERE event_type='PROTOCOL_PROFILE_VERSION_CREATED' AND reason_code='VERSION_2'", Integer.class));
+        assertThrows(DuplicateKeyException.class, () -> new ProtocolProfileRepository(jdbc).insert(v2, "duplicado", null, "ACTIVE"));

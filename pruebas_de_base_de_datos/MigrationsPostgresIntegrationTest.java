@@ -79,3 +79,7 @@ class MigrationsPostgresIntegrationTest {
         var correct = repo.findReports(0, 100_000, WashOutcome.CORRECTO, 10).get(0);
         assertTrue(correct.lento());
         assertEquals(65_000L, correct.duracionMs());
+        assertEquals(6, correct.pasos().size());
+
+        assertEquals(1, repo.interruptAfterRestart());
+        assertEquals("INTERRUMPIDO", jdbc.queryForObject("SELECT outcome FROM friction_attempt_validation WHERE session_id=?", String.class, active));

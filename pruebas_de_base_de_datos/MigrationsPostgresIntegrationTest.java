@@ -87,3 +87,7 @@ class MigrationsPostgresIntegrationTest {
         assertThrows(DataIntegrityViolationException.class, () -> jdbc.update("UPDATE friction_attempt_validation SET outcome='APROBADO' WHERE session_id=?", good));
         assertThrows(DataIntegrityViolationException.class, () -> jdbc.update("UPDATE friction_attempt_validation SET evidence_status='FOTO' WHERE session_id=?", left));
         assertThrows(DataIntegrityViolationException.class, () -> jdbc.update("UPDATE friction_attempt_validation SET duration_ms=-1 WHERE session_id=?", left));
+        assertThrows(DataIntegrityViolationException.class, () -> jdbc.update(
+            "INSERT INTO wash_report_evidence VALUES (?, 1, 'k', ?, 10, 5)", left, "a".repeat(64)));
+        assertThrows(DataIntegrityViolationException.class, () -> jdbc.update(
+            "INSERT INTO wash_report_evidence VALUES (?, 1, 'k', ?, 10, 20)", UUID.randomUUID().toString(), "a".repeat(64)));

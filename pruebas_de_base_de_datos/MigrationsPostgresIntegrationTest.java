@@ -83,3 +83,7 @@ class MigrationsPostgresIntegrationTest {
 
         assertEquals(1, repo.interruptAfterRestart());
         assertEquals("INTERRUMPIDO", jdbc.queryForObject("SELECT outcome FROM friction_attempt_validation WHERE session_id=?", String.class, active));
+
+        assertThrows(DataIntegrityViolationException.class, () -> jdbc.update("UPDATE friction_attempt_validation SET outcome='APROBADO' WHERE session_id=?", good));
+        assertThrows(DataIntegrityViolationException.class, () -> jdbc.update("UPDATE friction_attempt_validation SET evidence_status='FOTO' WHERE session_id=?", left));
+        assertThrows(DataIntegrityViolationException.class, () -> jdbc.update("UPDATE friction_attempt_validation SET duration_ms=-1 WHERE session_id=?", left));

@@ -103,3 +103,7 @@ class MigrationsPostgresIntegrationTest {
         repo.insert(open);
 
         assertEquals(open, repo.findOpenByStation(station).orElseThrow());
+        assertThrows(DuplicateKeyException.class, () -> repo.insert(new StationShift(UUID.randomUUID().toString(),
+            station, "AGUA_Y_JABON", "op", 2_000L, 9_000L, null, null)), "second open shift for the same station");
+        assertEquals(1, repo.close(open.shiftId(), 5_000L, StationShift.ShiftEndReason.STOPPED));
+        assertEquals(0, repo.close(open.shiftId(), 6_000L, StationShift.ShiftEndReason.EXPIRED), "already closed");

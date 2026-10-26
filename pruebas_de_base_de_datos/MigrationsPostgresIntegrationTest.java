@@ -99,3 +99,7 @@ class MigrationsPostgresIntegrationTest {
         jdbc.update("INSERT INTO handwash_stations (station_id, station_name, credential_hash, created_at_epoch_ms, created_by) VALUES (?,?,?,?,?)",
             station, "Puesto", "h".repeat(64), 1L, "admin");
         var repo = new StationShiftRepository(jdbc);
+        var open = new StationShift(UUID.randomUUID().toString(), station, "AGUA_Y_JABON", "op", 1_000L, 9_000L, null, null);
+        repo.insert(open);
+
+        assertEquals(open, repo.findOpenByStation(station).orElseThrow());

@@ -123,3 +123,7 @@ class MigrationsPostgresIntegrationTest {
             "UPDATE station_shifts SET ended_at_epoch_ms = 8000 WHERE ended_at_epoch_ms IS NULL AND station_id = ?", station),
             "closed shift without a reason or released marker");
 
+        // V10: the kill switch is seeded off, single-row, and photo statuses accept the full lifecycle.
+        assertEquals(Boolean.FALSE, jdbc.queryForObject("SELECT capture_enabled FROM evidence_settings WHERE id = 1", Boolean.class));
+        assertThrows(DataIntegrityViolationException.class, () -> jdbc.update(
+            "INSERT INTO evidence_settings VALUES (2, TRUE, 'x', 1)"));

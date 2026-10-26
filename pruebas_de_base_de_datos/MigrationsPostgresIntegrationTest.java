@@ -119,3 +119,7 @@ class MigrationsPostgresIntegrationTest {
             "ends before it starts");
         assertThrows(DataIntegrityViolationException.class, () -> jdbc.update(
             "UPDATE station_shifts SET end_reason = 'OTRO' WHERE shift_id = ?", open.shiftId()));
+        assertThrows(DataIntegrityViolationException.class, () -> jdbc.update(
+            "UPDATE station_shifts SET ended_at_epoch_ms = 8000 WHERE ended_at_epoch_ms IS NULL AND station_id = ?", station),
+            "closed shift without a reason or released marker");
+

@@ -111,3 +111,7 @@ class MigrationsPostgresIntegrationTest {
             "a closed shift no longer counts as open");
         repo.insert(new StationShift(UUID.randomUUID().toString(), station, "AGUA_Y_JABON", "op", 7_000L, 9_000L, null, null));
 
+        assertThrows(DataIntegrityViolationException.class, () -> repo.insert(new StationShift(UUID.randomUUID().toString(),
+            UUID.randomUUID().toString(), "AGUA_Y_JABON", "op", 1L, 2L, null, null)), "unknown station (FK)");
+        assertThrows(DataIntegrityViolationException.class, () -> jdbc.update(
+            "INSERT INTO station_shifts (shift_id, station_id, protocol_code, started_by, started_at_epoch_ms, ends_at_epoch_ms, open_station_id) VALUES (?, ?, 'AGUA_Y_JABON', 'op', 10, 5, NULL)",

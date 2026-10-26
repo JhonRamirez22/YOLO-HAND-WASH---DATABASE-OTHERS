@@ -127,3 +127,7 @@ class MigrationsPostgresIntegrationTest {
         assertEquals(Boolean.FALSE, jdbc.queryForObject("SELECT capture_enabled FROM evidence_settings WHERE id = 1", Boolean.class));
         assertThrows(DataIntegrityViolationException.class, () -> jdbc.update(
             "INSERT INTO evidence_settings VALUES (2, TRUE, 'x', 1)"));
+        String anyAttempt = jdbc.queryForObject("SELECT session_id FROM friction_attempt_validation LIMIT 1", String.class);
+        for (String status : new String[]{"DESACTIVADA", "PENDIENTE", "CAPTURADA", "NO_CAPTURADA", "EXPIRADA"}) {
+            jdbc.update("UPDATE friction_attempt_validation SET evidence_status = ? WHERE session_id = ?", status, anyAttempt);
+        }

@@ -95,3 +95,7 @@ class MigrationsPostgresIntegrationTest {
     }
 
     @Test @Order(4) void stationShiftsAllowOneOpenShiftPerStationAndRejectInvalidRows() {
+        String station = UUID.randomUUID().toString();
+        jdbc.update("INSERT INTO handwash_stations (station_id, station_name, credential_hash, created_at_epoch_ms, created_by) VALUES (?,?,?,?,?)",
+            station, "Puesto", "h".repeat(64), 1L, "admin");
+        var repo = new StationShiftRepository(jdbc);

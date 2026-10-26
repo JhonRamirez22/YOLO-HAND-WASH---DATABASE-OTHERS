@@ -115,3 +115,7 @@ class MigrationsPostgresIntegrationTest {
             UUID.randomUUID().toString(), "AGUA_Y_JABON", "op", 1L, 2L, null, null)), "unknown station (FK)");
         assertThrows(DataIntegrityViolationException.class, () -> jdbc.update(
             "INSERT INTO station_shifts (shift_id, station_id, protocol_code, started_by, started_at_epoch_ms, ends_at_epoch_ms, open_station_id) VALUES (?, ?, 'AGUA_Y_JABON', 'op', 10, 5, NULL)",
+            UUID.randomUUID().toString(), station),
+            "ends before it starts");
+        assertThrows(DataIntegrityViolationException.class, () -> jdbc.update(
+            "UPDATE station_shifts SET end_reason = 'OTRO' WHERE shift_id = ?", open.shiftId()));

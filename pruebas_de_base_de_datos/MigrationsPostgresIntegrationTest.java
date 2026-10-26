@@ -91,3 +91,7 @@ class MigrationsPostgresIntegrationTest {
             "INSERT INTO wash_report_evidence VALUES (?, 1, 'k', ?, 10, 5)", left, "a".repeat(64)));
         assertThrows(DataIntegrityViolationException.class, () -> jdbc.update(
             "INSERT INTO wash_report_evidence VALUES (?, 1, 'k', ?, 10, 20)", UUID.randomUUID().toString(), "a".repeat(64)));
+        assertEquals(1, jdbc.update("INSERT INTO wash_report_evidence VALUES (?, 1, 'reports/x.jpg.enc', ?, 10, 20)", left, "a".repeat(64)));
+    }
+
+    @Test @Order(4) void stationShiftsAllowOneOpenShiftPerStationAndRejectInvalidRows() {

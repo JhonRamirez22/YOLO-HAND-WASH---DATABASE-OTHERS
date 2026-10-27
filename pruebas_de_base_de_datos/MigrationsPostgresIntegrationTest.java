@@ -159,3 +159,7 @@ class MigrationsPostgresIntegrationTest {
         jdbc.update("UPDATE wash_audit_events SET decision_code = 'REJECTED' WHERE event_id = (SELECT MIN(event_id) FROM wash_audit_events WHERE event_hash IS NOT NULL)");
         assertTrue(verifier.verify().problems().stream().anyMatch(p -> p.code().equals("HASH_MISMATCH")));
     }
+
+    @Test @Order(20) void stationProvisioningAndSingleUseActivationOnPostgres() {
+        var audit = new SessionAuditService(new SessionAuditRepository(jdbc));
+        var stations = new com.handwash.service.StationCredentialService(new StationRepository(jdbc), audit);

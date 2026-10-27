@@ -163,3 +163,7 @@ class MigrationsPostgresIntegrationTest {
     @Test @Order(20) void stationProvisioningAndSingleUseActivationOnPostgres() {
         var audit = new SessionAuditService(new SessionAuditRepository(jdbc));
         var stations = new com.handwash.service.StationCredentialService(new StationRepository(jdbc), audit);
+        var provisioned = stations.provision("Lavamanos PG", "producer-pg", "admin-sub");
+        assertNull(stations.authenticate(provisioned.activationToken()));
+        var activated = stations.activate(provisioned.activationToken());
+        assertNotNull(activated);

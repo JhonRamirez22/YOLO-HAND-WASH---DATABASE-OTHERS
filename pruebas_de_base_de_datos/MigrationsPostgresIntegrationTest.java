@@ -171,3 +171,7 @@ class MigrationsPostgresIntegrationTest {
         assertNull(stations.activate(provisioned.activationToken()));
     }
 
+    @Test @Order(21) void apiKeysIssueVerifySessionAndRevokeOnPostgres() {
+        var audit = new SessionAuditService(new SessionAuditRepository(jdbc));
+        var stations = new com.handwash.service.StationCredentialService(new StationRepository(jdbc), audit);
+        var keys = new com.handwash.security.ApiKeyService(new com.handwash.security.ApiKeyRepository(jdbc), stations,

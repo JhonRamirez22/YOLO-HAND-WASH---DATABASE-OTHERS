@@ -155,3 +155,7 @@ class MigrationsPostgresIntegrationTest {
         var clean = verifier.verify();
         assertTrue(clean.ok(), clean.problems().toString());
         assertTrue(clean.checked() >= 200);
+
+        jdbc.update("UPDATE wash_audit_events SET decision_code = 'REJECTED' WHERE event_id = (SELECT MIN(event_id) FROM wash_audit_events WHERE event_hash IS NOT NULL)");
+        assertTrue(verifier.verify().problems().stream().anyMatch(p -> p.code().equals("HASH_MISMATCH")));
+    }

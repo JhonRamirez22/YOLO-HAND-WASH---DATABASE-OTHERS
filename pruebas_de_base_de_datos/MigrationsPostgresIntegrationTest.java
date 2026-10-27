@@ -151,3 +151,7 @@ class MigrationsPostgresIntegrationTest {
         }
         for (var job : jobs) job.get();
         pool.shutdown();
+
+        var clean = verifier.verify();
+        assertTrue(clean.ok(), clean.problems().toString());
+        assertTrue(clean.checked() >= 200);

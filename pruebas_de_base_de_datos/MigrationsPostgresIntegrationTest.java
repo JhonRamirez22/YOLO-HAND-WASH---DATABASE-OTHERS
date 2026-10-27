@@ -147,3 +147,7 @@ class MigrationsPostgresIntegrationTest {
                         "ACCEPTED", null, null, null, null, worker * 1000L + i));
                 }
                 return null;
+            }));
+        }
+        for (var job : jobs) job.get();
+        pool.shutdown();

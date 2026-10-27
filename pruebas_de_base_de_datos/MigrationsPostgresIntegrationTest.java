@@ -131,3 +131,7 @@ class MigrationsPostgresIntegrationTest {
         for (String status : new String[]{"DESACTIVADA", "PENDIENTE", "CAPTURADA", "NO_CAPTURADA", "EXPIRADA"}) {
             jdbc.update("UPDATE friction_attempt_validation SET evidence_status = ? WHERE session_id = ?", status, anyAttempt);
         }
+    }
+
+    @Test @Order(5) void auditChainSerializesConcurrentAppendsAndDetectsTampering() throws Exception {
+        var hasher = new com.handwash.service.audit.AuditChainHasher(null); // same unkeyed mode as the earlier tests of this class

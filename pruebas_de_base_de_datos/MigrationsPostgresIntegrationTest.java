@@ -135,3 +135,7 @@ class MigrationsPostgresIntegrationTest {
 
     @Test @Order(5) void auditChainSerializesConcurrentAppendsAndDetectsTampering() throws Exception {
         var hasher = new com.handwash.service.audit.AuditChainHasher(null); // same unkeyed mode as the earlier tests of this class
+        var repo = new com.handwash.repository.SessionAuditRepository(jdbc, hasher);
+        var verifier = new com.handwash.service.audit.AuditChainVerifier(jdbc, hasher);
+        var pool = java.util.concurrent.Executors.newFixedThreadPool(8);
+        var jobs = new java.util.ArrayList<java.util.concurrent.Future<?>>();

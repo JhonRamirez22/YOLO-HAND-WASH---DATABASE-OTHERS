@@ -143,3 +143,7 @@ class MigrationsPostgresIntegrationTest {
             int worker = t;
             jobs.add(pool.submit(() -> {
                 for (int i = 0; i < 25; i++) {
+                    repo.appendEvent(new com.handwash.model.SessionAuditEvent(0, null, "STEP_CONFIRMED", "SYSTEM", null,
+                        "ACCEPTED", null, null, null, null, worker * 1000L + i));
+                }
+                return null;

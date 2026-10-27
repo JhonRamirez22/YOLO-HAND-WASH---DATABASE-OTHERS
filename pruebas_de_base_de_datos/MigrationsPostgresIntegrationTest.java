@@ -167,3 +167,7 @@ class MigrationsPostgresIntegrationTest {
         assertNull(stations.authenticate(provisioned.activationToken()));
         var activated = stations.activate(provisioned.activationToken());
         assertNotNull(activated);
+        assertEquals(provisioned.station().stationId(), stations.authenticate(activated.credential()).stationId());
+        assertNull(stations.activate(provisioned.activationToken()));
+    }
+

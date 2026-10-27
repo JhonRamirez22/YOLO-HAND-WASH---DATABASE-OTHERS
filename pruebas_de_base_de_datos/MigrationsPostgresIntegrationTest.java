@@ -139,3 +139,7 @@ class MigrationsPostgresIntegrationTest {
         var verifier = new com.handwash.service.audit.AuditChainVerifier(jdbc, hasher);
         var pool = java.util.concurrent.Executors.newFixedThreadPool(8);
         var jobs = new java.util.ArrayList<java.util.concurrent.Future<?>>();
+        for (int t = 0; t < 8; t++) {
+            int worker = t;
+            jobs.add(pool.submit(() -> {
+                for (int i = 0; i < 25; i++) {

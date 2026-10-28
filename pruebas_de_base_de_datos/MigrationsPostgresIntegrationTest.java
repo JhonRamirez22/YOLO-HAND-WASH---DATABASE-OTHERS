@@ -179,3 +179,7 @@ class MigrationsPostgresIntegrationTest {
         String stationId = stations.provision("Lavamanos Keys", null, "admin-sub").station().stationId();
         var issued = keys.issue(stationId, "María", java.util.EnumSet.of(com.handwash.security.ApiKeyScope.CONSOLE,
             com.handwash.security.ApiKeyScope.PRODUCER), "admin-sub");
+        var login = keys.login(issued.key(), "203.0.113.5");
+        assertTrue(login.accepted());
+        assertTrue(keys.authenticateSession(login.sessionToken()).accepted());
+        assertTrue(keys.revoke(issued.keyId(), "admin-sub"));

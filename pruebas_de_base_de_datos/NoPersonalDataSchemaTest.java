@@ -22,3 +22,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class NoPersonalDataSchemaTest {
     private static final Set<String> WASH_TABLES = Set.of("WASH_ENCOUNTERS", "WASH_AUDIT_EVENTS", "FRICTION_ATTEMPT_VALIDATION",
         "FRICTION_STEP_VALIDATION", "FAILED_ATTEMPTS", "WASH_REPORT_EVIDENCE", "AUDIT_SEALS");
+    private static final Pattern IDENTITY = Pattern.compile("(?i)(^|_)(name|email|mail|phone|telefono|document|cedula|dni|passport|"
+        + "face|rostro|employee|empleado|patient|paciente|badge|nfc|rfid|username|user_id)(_|$)");
+    /** Staff accounts (operators/admins) are referenced by their opaque Cognito subject, never by name. */
+    private static final Set<String> ALLOWED = Set.of("ACTOR_SUBJECT");

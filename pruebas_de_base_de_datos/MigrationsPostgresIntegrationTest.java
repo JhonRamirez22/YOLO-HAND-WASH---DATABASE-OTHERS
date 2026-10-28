@@ -183,3 +183,7 @@ class MigrationsPostgresIntegrationTest {
         assertTrue(login.accepted());
         assertTrue(keys.authenticateSession(login.sessionToken()).accepted());
         assertTrue(keys.revoke(issued.keyId(), "admin-sub"));
+        assertFalse(keys.authenticateSession(login.sessionToken()).accepted());
+        assertFalse(keys.verify(issued.key(), "203.0.113.5").accepted());
+    }
+}

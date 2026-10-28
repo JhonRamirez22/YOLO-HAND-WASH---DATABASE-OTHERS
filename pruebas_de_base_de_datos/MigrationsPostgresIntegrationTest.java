@@ -175,3 +175,7 @@ class MigrationsPostgresIntegrationTest {
         var audit = new SessionAuditService(new SessionAuditRepository(jdbc));
         var stations = new com.handwash.service.StationCredentialService(new StationRepository(jdbc), audit);
         var keys = new com.handwash.security.ApiKeyService(new com.handwash.security.ApiKeyRepository(jdbc), stations,
+            new com.handwash.repository.StationOperatorAccessRepository(jdbc), audit);
+        String stationId = stations.provision("Lavamanos Keys", null, "admin-sub").station().stationId();
+        var issued = keys.issue(stationId, "María", java.util.EnumSet.of(com.handwash.security.ApiKeyScope.CONSOLE,
+            com.handwash.security.ApiKeyScope.PRODUCER), "admin-sub");

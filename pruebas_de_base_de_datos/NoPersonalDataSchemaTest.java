@@ -42,3 +42,7 @@ class NoPersonalDataSchemaTest {
     void washTablesCarryNoColumnThatCouldIdentifyThePersonWhoWashed() {
         List<String> offenders = new ArrayList<>();
         var columns = jdbc.queryForList("SELECT TABLE_NAME, COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = 'PUBLIC'");
+        long seen = 0;
+        for (var column : columns) {
+            String table = String.valueOf(column.get("TABLE_NAME")), name = String.valueOf(column.get("COLUMN_NAME"));
+            if (!WASH_TABLES.contains(table)) continue;

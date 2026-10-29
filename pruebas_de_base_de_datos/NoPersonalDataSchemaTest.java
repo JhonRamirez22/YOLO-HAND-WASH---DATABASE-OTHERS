@@ -59,3 +59,6 @@ class NoPersonalDataSchemaTest {
             SELECT TABLE_NAME || '.' || COLUMN_NAME AS col FROM INFORMATION_SCHEMA.COLUMNS
             WHERE TABLE_SCHEMA = 'PUBLIC' AND DATA_TYPE IN ('BINARY LARGE OBJECT', 'BINARY VARYING', 'BINARY', 'CHARACTER LARGE OBJECT')
               AND TABLE_NAME NOT IN ('FAILED_ATTEMPTS')""", String.class);
+        assertTrue(binary.isEmpty(), "Binary or large-object columns found (photos live in the encrypted bucket only): " + binary);
+    }
+}

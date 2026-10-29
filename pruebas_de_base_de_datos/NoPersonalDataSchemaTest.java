@@ -30,3 +30,7 @@ class NoPersonalDataSchemaTest {
     private JdbcTemplate jdbc;
 
     @BeforeEach
+    void setUp() {
+        database = new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.H2).addScript("schema.sql").build();
+        jdbc = new JdbcTemplate(database);
+    }

@@ -53,3 +53,6 @@ class NoPersonalDataSchemaTest {
         assertTrue(offenders.isEmpty(), "Possible personal-data columns: " + offenders);
     }
 
+    @Test
+    void noTableStoresBinaryMediaInTheDatabase() {
+        var binary = jdbc.queryForList("""

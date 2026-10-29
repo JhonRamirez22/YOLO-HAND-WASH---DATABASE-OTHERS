@@ -38,3 +38,7 @@ class NoPersonalDataSchemaTest {
     @AfterEach
     void tearDown() { database.shutdown(); }
 
+    @Test
+    void washTablesCarryNoColumnThatCouldIdentifyThePersonWhoWashed() {
+        List<String> offenders = new ArrayList<>();
+        var columns = jdbc.queryForList("SELECT TABLE_NAME, COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = 'PUBLIC'");

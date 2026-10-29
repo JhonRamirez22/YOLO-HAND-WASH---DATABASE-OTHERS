@@ -26,3 +26,7 @@ class NoPersonalDataSchemaTest {
         + "face|rostro|employee|empleado|patient|paciente|badge|nfc|rfid|username|user_id)(_|$)");
     /** Staff accounts (operators/admins) are referenced by their opaque Cognito subject, never by name. */
     private static final Set<String> ALLOWED = Set.of("ACTOR_SUBJECT");
+    private EmbeddedDatabase database;
+    private JdbcTemplate jdbc;
+
+    @BeforeEach

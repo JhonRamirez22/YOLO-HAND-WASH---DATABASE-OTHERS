@@ -34,3 +34,7 @@ class NoPersonalDataSchemaTest {
         database = new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.H2).addScript("schema.sql").build();
         jdbc = new JdbcTemplate(database);
     }
+
+    @AfterEach
+    void tearDown() { database.shutdown(); }
+

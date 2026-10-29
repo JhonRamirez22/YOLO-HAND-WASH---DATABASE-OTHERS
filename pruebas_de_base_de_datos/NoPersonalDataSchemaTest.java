@@ -50,3 +50,6 @@ class NoPersonalDataSchemaTest {
             if (IDENTITY.matcher(name).find() && !ALLOWED.contains(name)) offenders.add(table + "." + name);
         }
         assertTrue(seen > 40, "the wash tables were inspected: " + seen);
+        assertTrue(offenders.isEmpty(), "Possible personal-data columns: " + offenders);
+    }
+

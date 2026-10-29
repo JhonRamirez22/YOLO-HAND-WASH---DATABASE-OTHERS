@@ -46,3 +46,7 @@ class NoPersonalDataSchemaTest {
         for (var column : columns) {
             String table = String.valueOf(column.get("TABLE_NAME")), name = String.valueOf(column.get("COLUMN_NAME"));
             if (!WASH_TABLES.contains(table)) continue;
+            seen++;
+            if (IDENTITY.matcher(name).find() && !ALLOWED.contains(name)) offenders.add(table + "." + name);
+        }
+        assertTrue(seen > 40, "the wash tables were inspected: " + seen);

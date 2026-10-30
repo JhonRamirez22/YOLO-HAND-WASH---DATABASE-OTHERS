@@ -26,3 +26,7 @@ class RestoreDrillTest {
     private final DriverManagerDataSource ds =
         new DriverManagerDataSource(System.getenv("HANDWASH_TEST_PG_URL"), "handwash_test", "");
     private final JdbcTemplate jdbc = new JdbcTemplate(ds);
+    private final AuditChainHasher hasher = new AuditChainHasher("drill-secret-" + "x".repeat(40));
+
+    @Test
+    void seedOrVerify() {

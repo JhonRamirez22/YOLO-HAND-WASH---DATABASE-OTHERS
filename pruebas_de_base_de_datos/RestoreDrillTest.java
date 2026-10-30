@@ -34,3 +34,7 @@ class RestoreDrillTest {
     }
 
     private void seed() {
+        Flyway.configure().dataSource(ds).locations("classpath:db/migration").load().migrate();
+        var repo = new SessionAuditRepository(jdbc, hasher);
+        for (int i = 0; i < EVENTS; i++) {
+            repo.appendEvent(new SessionAuditEvent(0, null, "STEP_CONFIRMED", "SYSTEM", "PASO_1_PALMAS", "ACCEPTED",

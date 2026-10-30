@@ -46,3 +46,7 @@ class RestoreDrillTest {
             VALUES ('11111111-1111-1111-1111-111111111111', 1, 'V2', 1, 'DONE', TRUE, 1, 5, 5, 1, 40000,
                     'FRICTION_SEQUENCE_COMPLETE', 'CORRECTO')""");
         new AuditSealService(jdbc, hasher, new UnavailableAuditSealStore()).sealIfNeeded().orElseThrow();
+    }
+
+    private void verify() {
+        var flyway = Flyway.configure().dataSource(ds).locations("classpath:db/migration").load();

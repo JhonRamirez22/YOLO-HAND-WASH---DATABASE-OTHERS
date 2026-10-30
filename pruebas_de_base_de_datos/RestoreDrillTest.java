@@ -42,3 +42,7 @@ class RestoreDrillTest {
         }
         jdbc.update("""
             INSERT INTO friction_attempt_validation (session_id, attempt_number, policy_version, revision, status, terminal,
+                created_at_epoch_ms, updated_at_epoch_ms, finished_at_epoch_ms, started_at_epoch_ms, duration_ms, result, outcome)
+            VALUES ('11111111-1111-1111-1111-111111111111', 1, 'V2', 1, 'DONE', TRUE, 1, 5, 5, 1, 40000,
+                    'FRICTION_SEQUENCE_COMPLETE', 'CORRECTO')""");
+        new AuditSealService(jdbc, hasher, new UnavailableAuditSealStore()).sealIfNeeded().orElseThrow();

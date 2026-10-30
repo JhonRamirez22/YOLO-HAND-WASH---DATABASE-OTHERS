@@ -22,3 +22,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @EnabledIfEnvironmentVariable(named = "HANDWASH_DRILL", matches = "seed|verify")
 @EnabledIfEnvironmentVariable(named = "HANDWASH_TEST_PG_URL", matches = "jdbc:postgresql://127\\.0\\.0\\.1:[0-9]+/[a-z_0-9]+")
 class RestoreDrillTest {
+    private static final int EVENTS = 500;
+    private final DriverManagerDataSource ds =
+        new DriverManagerDataSource(System.getenv("HANDWASH_TEST_PG_URL"), "handwash_test", "");
+    private final JdbcTemplate jdbc = new JdbcTemplate(ds);

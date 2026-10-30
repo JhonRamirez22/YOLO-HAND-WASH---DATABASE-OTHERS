@@ -18,3 +18,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  * Opt-in restore rehearsal driven by scripts/chaos/restore-drill.sh against disposable local PostgreSQL:
  * HANDWASH_DRILL=seed fills a database, the script dumps and restores it, HANDWASH_DRILL=verify proves the
  * restored copy has the same schema history, rows, audit chain and seal. Nothing here touches AWS.
+ */
+@EnabledIfEnvironmentVariable(named = "HANDWASH_DRILL", matches = "seed|verify")
+@EnabledIfEnvironmentVariable(named = "HANDWASH_TEST_PG_URL", matches = "jdbc:postgresql://127\\.0\\.0\\.1:[0-9]+/[a-z_0-9]+")
+class RestoreDrillTest {

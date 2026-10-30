@@ -38,3 +38,7 @@ class RestoreDrillTest {
         var repo = new SessionAuditRepository(jdbc, hasher);
         for (int i = 0; i < EVENTS; i++) {
             repo.appendEvent(new SessionAuditEvent(0, null, "STEP_CONFIRMED", "SYSTEM", "PASO_1_PALMAS", "ACCEPTED",
+                null, i, null, null, 1_000L + i));
+        }
+        jdbc.update("""
+            INSERT INTO friction_attempt_validation (session_id, attempt_number, policy_version, revision, status, terminal,

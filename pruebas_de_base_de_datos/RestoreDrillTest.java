@@ -30,3 +30,7 @@ class RestoreDrillTest {
 
     @Test
     void seedOrVerify() {
+        if ("seed".equals(System.getenv("HANDWASH_DRILL"))) seed(); else verify();
+    }
+
+    private void seed() {

@@ -6,3 +6,7 @@ import com.handwash.service.audit.AuditChainVerifier;
 import com.handwash.service.audit.AuditSealService;
 import com.handwash.service.audit.UnavailableAuditSealStore;
 import org.flywaydb.core.Flyway;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;

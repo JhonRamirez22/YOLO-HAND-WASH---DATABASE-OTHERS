@@ -50,3 +50,6 @@ class RestoreDrillTest {
 
     private void verify() {
         var flyway = Flyway.configure().dataSource(ds).locations("classpath:db/migration").load();
+        flyway.validate();
+        assertEquals("12", flyway.info().current().getVersion().getVersion());
+        assertEquals(EVENTS, jdbc.queryForObject("SELECT COUNT(*) FROM wash_audit_events WHERE event_hash IS NOT NULL", Integer.class));

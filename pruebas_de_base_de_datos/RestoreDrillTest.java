@@ -53,3 +53,6 @@ class RestoreDrillTest {
         flyway.validate();
         assertEquals("12", flyway.info().current().getVersion().getVersion());
         assertEquals(EVENTS, jdbc.queryForObject("SELECT COUNT(*) FROM wash_audit_events WHERE event_hash IS NOT NULL", Integer.class));
+        var report = new AuditChainVerifier(jdbc, hasher).verify();
+        assertTrue(report.ok(), report.problems().toString());
+        assertTrue(report.matchesLatestSeal(), "the restored copy must still match its seal");

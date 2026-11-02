@@ -56,3 +56,6 @@ class RestoreDrillTest {
         var report = new AuditChainVerifier(jdbc, hasher).verify();
         assertTrue(report.ok(), report.problems().toString());
         assertTrue(report.matchesLatestSeal(), "the restored copy must still match its seal");
+        var seals = new AuditSealService(jdbc, hasher, new UnavailableAuditSealStore());
+        assertTrue(seals.resultsStillMatch(seals.recent(1).get(0)), "finished washes must match the sealed digest");
+        assertEquals(1, jdbc.queryForObject("SELECT COUNT(*) FROM friction_attempt_validation", Integer.class));

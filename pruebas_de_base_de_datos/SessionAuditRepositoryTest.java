@@ -30,3 +30,7 @@ class SessionAuditRepositoryTest {
     @AfterEach
     void tearDown() {
         database.shutdown();
+    }
+
+    @Test
+    void persistsMetadataAndPaginatesAuditEventsWithoutMediaFields() {

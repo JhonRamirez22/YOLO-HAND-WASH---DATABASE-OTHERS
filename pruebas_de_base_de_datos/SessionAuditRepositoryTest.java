@@ -26,3 +26,7 @@ class SessionAuditRepositoryTest {
             .addScript("schema.sql").build();
         repository = new SessionAuditRepository(new JdbcTemplate(database));
     }
+
+    @AfterEach
+    void tearDown() {
+        database.shutdown();

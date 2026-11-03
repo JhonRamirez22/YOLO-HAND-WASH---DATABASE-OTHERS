@@ -46,3 +46,7 @@ class SessionAuditRepositoryTest {
 
         assertTrue(repository.encounterExists(sessionId));
         assertEquals("model-v1", repository.findRecentEncounters(1).get(0).modelVersion());
+        var latest = repository.findEvents(sessionId, null, 1).get(0);
+        assertEquals("ATTEMPT_RESTARTED", latest.eventType());
+        var older = repository.findEvents(sessionId, latest.eventId(), 10).get(0);
+        assertEquals("STEP_CONFIRMED", older.eventType());

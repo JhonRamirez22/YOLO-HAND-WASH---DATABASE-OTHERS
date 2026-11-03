@@ -34,3 +34,7 @@ class SessionAuditRepositoryTest {
 
     @Test
     void persistsMetadataAndPaginatesAuditEventsWithoutMediaFields() {
+        String sessionId = UUID.randomUUID().toString();
+        repository.createEncounter(new EncounterAuditRecord(sessionId, "DOMESTICO", "ACTIVE",
+            1_000, null, "model-v1", "a".repeat(64), "dataset-v1", 0));
+        repository.appendEvent(new SessionAuditEvent(0, sessionId, "STEP_CONFIRMED", "SYSTEM",

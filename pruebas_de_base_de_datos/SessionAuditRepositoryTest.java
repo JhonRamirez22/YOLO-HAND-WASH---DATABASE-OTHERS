@@ -42,3 +42,7 @@ class SessionAuditRepositoryTest {
         repository.appendEvent(new SessionAuditEvent(0, sessionId, "ATTEMPT_RESTARTED", "SYSTEM",
             null, "RESTARTED", "PASO_OMITIDO", 2, 22L, 0.42, 1_200));
         repository.appendEvent(new SessionAuditEvent(0, null, "ADMIN_ENCOUNTERS_LISTED", "admin-sub",
+            null, "READ", null, null, null, null, 1_300));
+
+        assertTrue(repository.encounterExists(sessionId));
+        assertEquals("model-v1", repository.findRecentEncounters(1).get(0).modelVersion());

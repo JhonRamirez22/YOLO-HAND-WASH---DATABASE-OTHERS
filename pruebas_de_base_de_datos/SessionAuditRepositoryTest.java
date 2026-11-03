@@ -50,3 +50,7 @@ class SessionAuditRepositoryTest {
         assertEquals("ATTEMPT_RESTARTED", latest.eventType());
         var older = repository.findEvents(sessionId, latest.eventId(), 10).get(0);
         assertEquals("STEP_CONFIRMED", older.eventType());
+        assertEquals(latest.eventId() - 1, older.eventId());
+        assertEquals(1, repository.findAdminAccessEvents(10).size());
+    }
+

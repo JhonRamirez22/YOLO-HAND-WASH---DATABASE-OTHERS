@@ -18,3 +18,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class SessionAuditRepositoryTest {
     private EmbeddedDatabase database;
+    private SessionAuditRepository repository;
+
+    @BeforeEach
+    void setUp() {

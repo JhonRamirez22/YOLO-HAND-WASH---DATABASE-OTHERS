@@ -54,3 +54,7 @@ class SessionAuditRepositoryTest {
         assertEquals(1, repository.findAdminAccessEvents(10).size());
     }
 
+    @Test
+    void updateEncounterReportsMissingSessionRatherThanSilentlyLosingAuditState() {
+        assertEquals(0, repository.updateEncounter(UUID.randomUUID().toString(), "DELETED", 10L, 0));
+    }

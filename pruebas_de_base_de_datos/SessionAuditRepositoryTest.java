@@ -58,3 +58,7 @@ class SessionAuditRepositoryTest {
     void updateEncounterReportsMissingSessionRatherThanSilentlyLosingAuditState() {
         assertEquals(0, repository.updateEncounter(UUID.randomUUID().toString(), "DELETED", 10L, 0));
     }
+
+    @Test
+    void runtimeRestartInterruptsOnlyNonTerminalEncounters() {
+        String active = UUID.randomUUID().toString();

@@ -62,3 +62,7 @@ class SessionAuditRepositoryTest {
     @Test
     void runtimeRestartInterruptsOnlyNonTerminalEncounters() {
         String active = UUID.randomUUID().toString();
+        String inProgress = UUID.randomUUID().toString();
+        String completed = UUID.randomUUID().toString();
+        repository.createEncounter(new EncounterAuditRecord(active, "DOMESTICO", "ACTIVE",
+            1_000, null, "model-v1", "a".repeat(64), "dataset-v1", 0));

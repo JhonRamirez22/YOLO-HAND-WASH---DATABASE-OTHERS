@@ -74,3 +74,7 @@ class SessionAuditRepositoryTest {
         assertEquals(2, repository.findNonTerminalEncounterIds().size());
         SessionAuditService service = new SessionAuditService(repository);
         assertEquals(2, service.interruptNonTerminalEncountersAfterRestart());
+        assertEquals(0, service.interruptNonTerminalEncountersAfterRestart());
+        assertEquals("INTERRUPTED", jdbcStatus(active));
+        assertEquals("INTERRUPTED", jdbcStatus(inProgress));
+        assertEquals("COMPLETED", jdbcStatus(completed));

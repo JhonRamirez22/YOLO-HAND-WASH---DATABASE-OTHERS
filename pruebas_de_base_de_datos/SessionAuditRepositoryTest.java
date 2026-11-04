@@ -66,3 +66,7 @@ class SessionAuditRepositoryTest {
         String completed = UUID.randomUUID().toString();
         repository.createEncounter(new EncounterAuditRecord(active, "DOMESTICO", "ACTIVE",
             1_000, null, "model-v1", "a".repeat(64), "dataset-v1", 0));
+        repository.createEncounter(new EncounterAuditRecord(inProgress, "DOMESTICO", "IN_PROGRESS",
+            1_100, null, "model-v1", "a".repeat(64), "dataset-v1", 0));
+        repository.createEncounter(new EncounterAuditRecord(completed, "DOMESTICO", "COMPLETED",
+            1_200, 1_500L, "model-v1", "a".repeat(64), "dataset-v1", 0));

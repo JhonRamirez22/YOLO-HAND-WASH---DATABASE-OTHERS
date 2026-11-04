@@ -82,3 +82,7 @@ class SessionAuditRepositoryTest {
         assertEquals(1L, repository.findEvents(active, null, 10).stream()
             .filter(event -> "SESSION_INTERRUPTED".equals(event.eventType())
                 && "BACKEND_RESTART".equals(event.reasonCode())).count());
+    }
+
+    private String jdbcStatus(String sessionId) {
+        return new JdbcTemplate(database).queryForObject(

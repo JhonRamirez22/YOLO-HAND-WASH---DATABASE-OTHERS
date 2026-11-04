@@ -86,3 +86,6 @@ class SessionAuditRepositoryTest {
 
     private String jdbcStatus(String sessionId) {
         return new JdbcTemplate(database).queryForObject(
+            "SELECT status FROM wash_encounters WHERE session_id = ?", String.class, sessionId);
+    }
+}

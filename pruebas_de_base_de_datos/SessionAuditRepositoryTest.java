@@ -78,3 +78,7 @@ class SessionAuditRepositoryTest {
         assertEquals("INTERRUPTED", jdbcStatus(active));
         assertEquals("INTERRUPTED", jdbcStatus(inProgress));
         assertEquals("COMPLETED", jdbcStatus(completed));
+        assertEquals(0, repository.findNonTerminalEncounterIds().size());
+        assertEquals(1L, repository.findEvents(active, null, 10).stream()
+            .filter(event -> "SESSION_INTERRUPTED".equals(event.eventType())
+                && "BACKEND_RESTART".equals(event.reasonCode())).count());

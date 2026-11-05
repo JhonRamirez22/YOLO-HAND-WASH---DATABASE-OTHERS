@@ -54,3 +54,7 @@ class StationRepositoryTest {
     }
 
     @Test
+    void aStationHoldsOnlyOneActiveSessionAndReleasesItsReservation() {
+        String id = UUID.randomUUID().toString();
+        String firstSession = UUID.randomUUID().toString();
+        String secondSession = UUID.randomUUID().toString();

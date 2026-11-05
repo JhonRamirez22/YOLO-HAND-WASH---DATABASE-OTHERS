@@ -46,3 +46,7 @@ class StationRepositoryTest {
         String id = UUID.randomUUID().toString();
         repository.createStation(new StationRecord(id, "Puesto A", 1, "admin",
             null, null, null, null), "c".repeat(64));
+
+        assertEquals(id, repository.findActiveByCredentialHash("c".repeat(64)).stationId());
+        assertEquals(1, repository.revoke(id, 10));
+        assertNull(repository.findActiveByCredentialHash("c".repeat(64)));

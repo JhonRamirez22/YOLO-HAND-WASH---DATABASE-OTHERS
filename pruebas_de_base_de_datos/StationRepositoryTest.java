@@ -42,3 +42,7 @@ class StationRepositoryTest {
     }
 
     @Test
+    void stationCredentialHashIsUniqueAndRevocationDisablesAuthentication() {
+        String id = UUID.randomUUID().toString();
+        repository.createStation(new StationRecord(id, "Puesto A", 1, "admin",
+            null, null, null, null), "c".repeat(64));

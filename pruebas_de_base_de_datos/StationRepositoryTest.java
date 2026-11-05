@@ -50,3 +50,7 @@ class StationRepositoryTest {
         assertEquals(id, repository.findActiveByCredentialHash("c".repeat(64)).stationId());
         assertEquals(1, repository.revoke(id, 10));
         assertNull(repository.findActiveByCredentialHash("c".repeat(64)));
+        assertEquals(10L, repository.findAll().get(0).revokedAtEpochMs());
+    }
+
+    @Test

@@ -30,3 +30,7 @@ class StationRepositoryTest {
     void tearDown() {
         database.shutdown();
     }
+
+    @Test
+    void enrollmentCodeIsConsumedOnceAndExpiresStrictly() {
+        repository.createEnrollmentCode("a".repeat(64), "Lavamanos 1", "admin", 100, 200);

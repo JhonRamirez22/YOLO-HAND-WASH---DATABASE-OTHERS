@@ -34,3 +34,7 @@ class StationRepositoryTest {
     @Test
     void enrollmentCodeIsConsumedOnceAndExpiresStrictly() {
         repository.createEnrollmentCode("a".repeat(64), "Lavamanos 1", "admin", 100, 200);
+        assertNotNull(repository.consumeEnrollmentCode("a".repeat(64), 150));
+        assertNull(repository.consumeEnrollmentCode("a".repeat(64), 150));
+
+        repository.createEnrollmentCode("b".repeat(64), "Lavamanos 2", "admin", 100, 200);

@@ -26,3 +26,7 @@ class StationRepositoryTest {
         repository = new StationRepository(new JdbcTemplate(database));
     }
 
+    @AfterEach
+    void tearDown() {
+        database.shutdown();
+    }

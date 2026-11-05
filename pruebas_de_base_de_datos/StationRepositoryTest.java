@@ -38,3 +38,7 @@ class StationRepositoryTest {
         assertNull(repository.consumeEnrollmentCode("a".repeat(64), 150));
 
         repository.createEnrollmentCode("b".repeat(64), "Lavamanos 2", "admin", 100, 200);
+        assertNull(repository.consumeEnrollmentCode("b".repeat(64), 200));
+    }
+
+    @Test

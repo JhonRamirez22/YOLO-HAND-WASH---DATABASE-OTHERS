@@ -22,3 +22,7 @@ class StationRepositoryTest {
     @BeforeEach
     void setUp() {
         database = new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.H2)
+            .addScript("schema.sql").build();
+        repository = new StationRepository(new JdbcTemplate(database));
+    }
+

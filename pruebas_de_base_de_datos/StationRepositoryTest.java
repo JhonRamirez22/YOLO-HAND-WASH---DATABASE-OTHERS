@@ -18,3 +18,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 class StationRepositoryTest {
     private EmbeddedDatabase database;
     private StationRepository repository;
+
+    @BeforeEach
+    void setUp() {
+        database = new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.H2)

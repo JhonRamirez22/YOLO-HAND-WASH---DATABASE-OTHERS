@@ -58,3 +58,7 @@ class StationRepositoryTest {
         String id = UUID.randomUUID().toString();
         String firstSession = UUID.randomUUID().toString();
         String secondSession = UUID.randomUUID().toString();
+        repository.createStation(new StationRecord(id, "Puesto A", 1, "admin",
+            null, null, null, null), "d".repeat(64));
+
+        assertEquals(1, repository.reserveSession(id, firstSession, UUID.randomUUID().toString(), 5));

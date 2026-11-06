@@ -77,3 +77,6 @@ class StationRepositoryTest {
         assertEquals(1, repository.bindProducerClient(id, "m2m_client_123"));
         assertEquals("m2m_client_123", repository.findActiveById(id).producerClientId());
         repository.revoke(id, 10);
+        assertEquals(0, repository.bindProducerClient(id, "other_client"));
+    }
+}

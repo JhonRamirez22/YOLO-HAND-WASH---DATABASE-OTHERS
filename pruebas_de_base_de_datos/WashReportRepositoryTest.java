@@ -6,3 +6,7 @@ import com.handwash.model.WashOutcome;
 import com.handwash.strategy.BalancedFrictionStrategy;
 import org.junit.jupiter.api.Test;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
+

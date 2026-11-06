@@ -70,3 +70,7 @@ class StationRepositoryTest {
 
     @Test
     void producerClientBindingIsPersistedAndCannotBeAddedToRevokedStations() {
+        String id = UUID.randomUUID().toString();
+        repository.createStation(new StationRecord(id, "Puesto RTX", 1, "admin",
+            null, null, null, null), "e".repeat(64));
+

@@ -74,3 +74,6 @@ class StationRepositoryTest {
         repository.createStation(new StationRecord(id, "Puesto RTX", 1, "admin",
             null, null, null, null), "e".repeat(64));
 
+        assertEquals(1, repository.bindProducerClient(id, "m2m_client_123"));
+        assertEquals("m2m_client_123", repository.findActiveById(id).producerClientId());
+        repository.revoke(id, 10);

@@ -66,3 +66,7 @@ class StationRepositoryTest {
         assertEquals(firstSession, repository.findActiveById(id).activeSessionId());
         assertEquals(1, repository.releaseSession(firstSession));
         assertEquals(1, repository.reserveSession(id, secondSession, UUID.randomUUID().toString(), 7));
+    }
+
+    @Test
+    void producerClientBindingIsPersistedAndCannotBeAddedToRevokedStations() {

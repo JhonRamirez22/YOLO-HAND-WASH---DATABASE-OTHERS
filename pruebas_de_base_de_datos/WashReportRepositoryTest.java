@@ -26,3 +26,7 @@ class WashReportRepositoryTest {
         repo = new FrictionAttemptRepository(jdbc);
     }
 
+    private static List<FrictionEvaluation.Step> steps(int validated) {
+        return BalancedFrictionStrategy.STEPS.stream().map(step -> new FrictionEvaluation.Step(step.name(),
+            step.getNumero() <= validated ? FrictionEvaluation.StepStatus.VALIDADO : FrictionEvaluation.StepStatus.PENDIENTE,
+            step.getNumero() <= validated ? 7_000 : 0, 7_000, null)).toList();

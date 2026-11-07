@@ -18,3 +18,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class WashReportRepositoryTest {
     private final JdbcTemplate jdbc;
     private final FrictionAttemptRepository repo;
+
+    WashReportRepositoryTest() {
+        var ds = new DriverManagerDataSource("jdbc:h2:mem:" + java.util.UUID.randomUUID() + ";DB_CLOSE_DELAY=-1", "sa", "");
+        new ResourceDatabasePopulator(new ClassPathResource("schema.sql")).execute(ds);

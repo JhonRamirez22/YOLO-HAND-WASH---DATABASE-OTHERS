@@ -38,3 +38,7 @@ class WashReportRepositoryTest {
             null, null, false, steps(0), finishedAt - 40_000, null, null, false, null, null));
         repo.save(new FrictionAttemptRecord(session, 1, BalancedFrictionStrategy.VERSION, 2, "INTERRUMPIDO",
             result, reason, true, steps(validated), finishedAt - 40_000, finishedAt, 40_000L,
+            false, outcome, evidence));
+    }
+
+    @Test

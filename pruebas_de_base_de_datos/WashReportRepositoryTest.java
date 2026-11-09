@@ -54,3 +54,7 @@ class WashReportRepositoryTest {
         assertEquals(2_960_000L, left.inicioEpochMs());
         assertEquals(3_000_000L, left.finEpochMs());
         assertEquals(40_000L, left.duracionMs());
+        assertEquals("DESACTIVADA", left.estadoEvidencia());
+        assertEquals(2, left.pasos().stream().filter(s -> s.estado() == FrictionEvaluation.StepStatus.VALIDADO).count());
+
+        var all = repo.findReports(1_000_000, 4_000_000, null, 10);

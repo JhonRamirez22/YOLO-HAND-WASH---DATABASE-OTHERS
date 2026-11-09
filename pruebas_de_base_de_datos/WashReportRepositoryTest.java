@@ -46,3 +46,7 @@ class WashReportRepositoryTest {
         finished("good", WashOutcome.CORRECTO, "FRICTION_SEQUENCE_COMPLETE", null, 6, 2_000_000, null);
         finished("left", WashOutcome.REPORTADO, "INTERRUPTED", "HANDS_ABSENT", 2, 3_000_000, "DESACTIVADA");
         finished("old", WashOutcome.REPORTADO, "INTERRUPTED", "HANDS_ABSENT", 1, 500_000, "DESACTIVADA");
+
+        var reported = repo.findReports(1_000_000, 4_000_000, WashOutcome.REPORTADO, 10);
+        assertEquals(1, reported.size());
+        var left = reported.get(0);

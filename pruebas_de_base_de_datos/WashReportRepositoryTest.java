@@ -58,3 +58,7 @@ class WashReportRepositoryTest {
         assertEquals(2, left.pasos().stream().filter(s -> s.estado() == FrictionEvaluation.StepStatus.VALIDADO).count());
 
         var all = repo.findReports(1_000_000, 4_000_000, null, 10);
+        assertEquals(List.of("left", "good"), all.stream().map(r -> r.sessionId()).toList(), "newest first");
+        assertEquals(1, repo.findReports(1_000_000, 4_000_000, null, 1).size());
+    }
+

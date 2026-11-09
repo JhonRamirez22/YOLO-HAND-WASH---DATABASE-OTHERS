@@ -50,3 +50,7 @@ class WashReportRepositoryTest {
         var reported = repo.findReports(1_000_000, 4_000_000, WashOutcome.REPORTADO, 10);
         assertEquals(1, reported.size());
         var left = reported.get(0);
+        assertEquals("left", left.sessionId());
+        assertEquals(2_960_000L, left.inicioEpochMs());
+        assertEquals(3_000_000L, left.finEpochMs());
+        assertEquals(40_000L, left.duracionMs());

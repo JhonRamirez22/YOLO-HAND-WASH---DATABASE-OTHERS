@@ -34,3 +34,7 @@ class WashReportRepositoryTest {
 
     private void finished(String session, WashOutcome outcome, String result, String reason,
                           int validated, long finishedAt, String evidence) {
+        repo.save(new FrictionAttemptRecord(session, 1, BalancedFrictionStrategy.VERSION, 1, "ACTIVO",
+            null, null, false, steps(0), finishedAt - 40_000, null, null, false, null, null));
+        repo.save(new FrictionAttemptRecord(session, 1, BalancedFrictionStrategy.VERSION, 2, "INTERRUMPIDO",
+            result, reason, true, steps(validated), finishedAt - 40_000, finishedAt, 40_000L,

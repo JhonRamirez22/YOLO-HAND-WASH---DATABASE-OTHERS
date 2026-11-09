@@ -30,3 +30,7 @@ class WashReportRepositoryTest {
         return BalancedFrictionStrategy.STEPS.stream().map(step -> new FrictionEvaluation.Step(step.name(),
             step.getNumero() <= validated ? FrictionEvaluation.StepStatus.VALIDADO : FrictionEvaluation.StepStatus.PENDIENTE,
             step.getNumero() <= validated ? 7_000 : 0, 7_000, null)).toList();
+    }
+
+    private void finished(String session, WashOutcome outcome, String result, String reason,
+                          int validated, long finishedAt, String evidence) {

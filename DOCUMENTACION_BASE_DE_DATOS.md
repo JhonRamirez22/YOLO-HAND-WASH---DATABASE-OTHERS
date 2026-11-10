@@ -8,3 +8,8 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 ## `failed_attempts`  _(creada en V1)_
 
 | Columna | Tipo y restricciones |
+|---|---|
+| `session_id` | VARCHAR(36) NOT NULL |
+| `attempt_number` | INTEGER NOT NULL |
+| `result` | VARCHAR(32) NOT NULL |
+| `reason` | VARCHAR(128) NOT NULL |

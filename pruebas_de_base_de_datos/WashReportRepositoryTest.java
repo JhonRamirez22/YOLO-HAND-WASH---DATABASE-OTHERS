@@ -70,3 +70,7 @@ class WashReportRepositoryTest {
 
         assertEquals("INTERRUMPIDO", jdbc.queryForObject(
             "SELECT outcome FROM friction_attempt_validation WHERE session_id='active'", String.class));
+        assertEquals(1_000L, jdbc.queryForObject(
+            "SELECT started_at_epoch_ms FROM friction_attempt_validation WHERE session_id='active'", Long.class));
+        assertTrue(repo.findReports(0, Long.MAX_VALUE, WashOutcome.REPORTADO, 10).isEmpty());
+    }

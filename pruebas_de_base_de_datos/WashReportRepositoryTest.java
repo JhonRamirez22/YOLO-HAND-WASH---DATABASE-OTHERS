@@ -90,3 +90,7 @@ class WashReportRepositoryTest {
         assertEquals("HANDS_ABSENT", rows.get(1).reason());
         assertEquals(2, rows.get(1).steps().values().stream().filter("VALIDADO"::equals).count());
         assertEquals(1, repo.findExportRows(1_000_000, 4_000_000, WashOutcome.REPORTADO, 10).size());
+        assertEquals(1, repo.findExportRows(1_000_000, 4_000_000, null, 1).size(), "the attempt limit applies");
+        assertTrue(repo.findExportRows(5_000_000, 6_000_000, null, 10).isEmpty());
+    }
+}

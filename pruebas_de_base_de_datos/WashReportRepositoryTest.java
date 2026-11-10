@@ -62,3 +62,7 @@ class WashReportRepositoryTest {
         assertEquals(1, repo.findReports(1_000_000, 4_000_000, null, 1).size());
     }
 
+    @Test
+    void restartInterruptsActiveAttemptsWithoutReportingThePerson() {
+        repo.save(new FrictionAttemptRecord("active", 1, BalancedFrictionStrategy.VERSION, 1, "ACTIVO",
+            null, null, false, steps(1), 1_000L, null, null, false, null, null));

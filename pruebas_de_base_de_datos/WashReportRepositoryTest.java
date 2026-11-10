@@ -86,3 +86,7 @@ class WashReportRepositoryTest {
         assertEquals(2, rows.size());
         assertEquals(2_000_000L, rows.get(0).finishedAtEpochMs(), "oldest first");
         assertEquals(WashOutcome.CORRECTO, rows.get(0).outcome());
+        assertEquals(6, rows.get(0).steps().values().stream().filter("VALIDADO"::equals).count());
+        assertEquals("HANDS_ABSENT", rows.get(1).reason());
+        assertEquals(2, rows.get(1).steps().values().stream().filter("VALIDADO"::equals).count());
+        assertEquals(1, repo.findExportRows(1_000_000, 4_000_000, WashOutcome.REPORTADO, 10).size());

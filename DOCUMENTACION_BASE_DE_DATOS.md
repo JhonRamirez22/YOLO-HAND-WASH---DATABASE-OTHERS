@@ -13,3 +13,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 | `attempt_number` | INTEGER NOT NULL |
 | `result` | VARCHAR(32) NOT NULL |
 | `reason` | VARCHAR(128) NOT NULL |
+| `duration_ms` | BIGINT NOT NULL |
+| `payload_json` | TEXT NOT NULL |
+| `created_at_epoch_ms` | BIGINT NOT NULL |
+| `(restricción)` | CONSTRAINT pk_failed_attempts PRIMARY KEY (session_id, attempt_number) |

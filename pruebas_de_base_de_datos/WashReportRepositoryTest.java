@@ -66,3 +66,7 @@ class WashReportRepositoryTest {
     void restartInterruptsActiveAttemptsWithoutReportingThePerson() {
         repo.save(new FrictionAttemptRecord("active", 1, BalancedFrictionStrategy.VERSION, 1, "ACTIVO",
             null, null, false, steps(1), 1_000L, null, null, false, null, null));
+        assertEquals(1, repo.interruptAfterRestart());
+
+        assertEquals("INTERRUMPIDO", jdbc.queryForObject(
+            "SELECT outcome FROM friction_attempt_validation WHERE session_id='active'", String.class));

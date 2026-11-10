@@ -82,3 +82,7 @@ class WashReportRepositoryTest {
         finished("old", WashOutcome.REPORTADO, "INTERRUPTED", "HANDS_ABSENT", 1, 500_000, "DESACTIVADA");
 
         var rows = repo.findExportRows(1_000_000, 4_000_000, null, 10);
+
+        assertEquals(2, rows.size());
+        assertEquals(2_000_000L, rows.get(0).finishedAtEpochMs(), "oldest first");
+        assertEquals(WashOutcome.CORRECTO, rows.get(0).outcome());

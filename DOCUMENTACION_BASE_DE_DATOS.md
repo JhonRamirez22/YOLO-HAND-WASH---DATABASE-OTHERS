@@ -17,3 +17,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 | `payload_json` | TEXT NOT NULL |
 | `created_at_epoch_ms` | BIGINT NOT NULL |
 | `(restricción)` | CONSTRAINT pk_failed_attempts PRIMARY KEY (session_id, attempt_number) |
+| `(restricción)` | CONSTRAINT chk_failed_attempts_number CHECK (attempt_number > 0) |
+| `(restricción)` | CONSTRAINT chk_failed_attempts_duration CHECK (duration_ms >= 0) |
+
+## `wash_encounters`  _(creada en V1)_

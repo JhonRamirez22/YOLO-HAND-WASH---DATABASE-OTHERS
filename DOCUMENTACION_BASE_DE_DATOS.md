@@ -25,3 +25,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 | Columna | Tipo y restricciones |
 |---|---|
 | `session_id` | VARCHAR(36) PRIMARY KEY |
+| `protocol_code` | VARCHAR(64) NOT NULL |
+| `status` | VARCHAR(32) NOT NULL |
+| `started_at_epoch_ms` | BIGINT NOT NULL |
+| `ended_at_epoch_ms` | BIGINT |

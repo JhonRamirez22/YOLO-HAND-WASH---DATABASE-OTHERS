@@ -21,3 +21,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 | `(restricción)` | CONSTRAINT chk_failed_attempts_duration CHECK (duration_ms >= 0) |
 
 ## `wash_encounters`  _(creada en V1)_
+
+| Columna | Tipo y restricciones |
+|---|---|
+| `session_id` | VARCHAR(36) PRIMARY KEY |

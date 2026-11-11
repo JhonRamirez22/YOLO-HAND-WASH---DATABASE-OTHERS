@@ -29,3 +29,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 | `status` | VARCHAR(32) NOT NULL |
 | `started_at_epoch_ms` | BIGINT NOT NULL |
 | `ended_at_epoch_ms` | BIGINT |
+| `model_version` | VARCHAR(128) NOT NULL |
+| `model_sha256` | VARCHAR(64) NOT NULL |
+| `dataset_version` | VARCHAR(128) NOT NULL |
+| `attempts_restarted` | INTEGER NOT NULL DEFAULT 0 |

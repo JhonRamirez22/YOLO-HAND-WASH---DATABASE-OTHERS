@@ -49,3 +49,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 | `step_code` | VARCHAR(64) |
 | `decision_code` | VARCHAR(48) NOT NULL |
 | `reason_code` | VARCHAR(80) |
+| `attempt_number` | INTEGER |
+| `frame_sequence` | BIGINT |
+| `confidence` | DOUBLE PRECISION |
+| `occurred_at_epoch_ms` | BIGINT NOT NULL |

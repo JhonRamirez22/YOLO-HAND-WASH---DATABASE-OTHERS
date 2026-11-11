@@ -53,3 +53,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 | `frame_sequence` | BIGINT |
 | `confidence` | DOUBLE PRECISION |
 | `occurred_at_epoch_ms` | BIGINT NOT NULL |
+| `(restricción)` | CONSTRAINT chk_wash_audit_confidence |
+| `(restricción)` | CHECK (confidence IS NULL OR (confidence >= 0 AND confidence <= 1)) |
+| `prev_hash` | CHAR(64) _(añadida en V11)_ |
+| `event_hash` | CHAR(64) _(añadida en V11)_ |

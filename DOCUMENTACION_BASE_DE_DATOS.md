@@ -33,3 +33,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 | `model_sha256` | VARCHAR(64) NOT NULL |
 | `dataset_version` | VARCHAR(128) NOT NULL |
 | `attempts_restarted` | INTEGER NOT NULL DEFAULT 0 |
+| `(restricción)` | CONSTRAINT chk_wash_encounters_attempts CHECK (attempts_restarted >= 0) |
+| `producer_client_id` | VARCHAR(128) _(añadida en V2)_ |
+| `producer_epoch` | VARCHAR(64) _(añadida en V2)_ |
+| `protocol_profile_version` | INTEGER _(añadida en V7)_ |

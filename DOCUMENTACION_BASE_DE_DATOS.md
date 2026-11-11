@@ -37,3 +37,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 | `producer_client_id` | VARCHAR(128) _(añadida en V2)_ |
 | `producer_epoch` | VARCHAR(64) _(añadida en V2)_ |
 | `protocol_profile_version` | INTEGER _(añadida en V7)_ |
+
+## `wash_audit_events`  _(creada en V1)_
+
+| Columna | Tipo y restricciones |

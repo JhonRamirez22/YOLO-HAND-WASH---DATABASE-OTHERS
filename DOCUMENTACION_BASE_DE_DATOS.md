@@ -89,3 +89,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 | `)` |  |
 | `activation_hash` | VARCHAR(64) _(añadida en V13)_ |
 | `activation_expires_at_epoch_ms` | BIGINT _(añadida en V13)_ |
+| `activated_at_epoch_ms` | BIGINT _(añadida en V13)_ |
+
+## `station_operator_access_codes`  _(creada en V5)_
+

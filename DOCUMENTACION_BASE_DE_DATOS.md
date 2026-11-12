@@ -69,3 +69,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 | `expires_at_epoch_ms` | BIGINT NOT NULL |
 | `consumed_at_epoch_ms` | BIGINT |
 | `(restricción)` | CONSTRAINT chk_station_enrollment_expiry CHECK (expires_at_epoch_ms > created_at_epoch_ms) |
+
+## `handwash_stations`  _(creada en V3)_
+
+| Columna | Tipo y restricciones |

@@ -81,3 +81,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 | `created_by` | VARCHAR(128) NOT NULL |
 | `revoked_at_epoch_ms` | BIGINT |
 | `last_started_at_epoch_ms` | BIGINT |
+| `active_session_id` | VARCHAR(36) |
+| `active_request_id` | VARCHAR(36) |
+| `(restricción)` | CONSTRAINT chk_station_active_reservation CHECK ( |
+| `(active_session_id` | IS NULL AND active_request_id IS NULL) |

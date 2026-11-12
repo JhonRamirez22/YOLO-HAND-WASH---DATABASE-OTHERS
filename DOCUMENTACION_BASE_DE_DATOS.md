@@ -97,3 +97,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 |---|---|
 | `code_id` | VARCHAR(36) PRIMARY KEY |
 | `code_hash` | VARCHAR(64) NOT NULL UNIQUE |
+| `station_id` | VARCHAR(36) NOT NULL REFERENCES handwash_stations(station_id) |
+| `target_email` | VARCHAR(254) NOT NULL |
+| `created_by` | VARCHAR(128) NOT NULL |
+| `created_at_epoch_ms` | BIGINT NOT NULL |

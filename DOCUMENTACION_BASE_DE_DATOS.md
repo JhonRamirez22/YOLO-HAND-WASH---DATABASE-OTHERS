@@ -61,3 +61,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 ## `station_enrollment_codes`  _(creada en V3)_
 
 | Columna | Tipo y restricciones |
+|---|---|
+| `code_hash` | VARCHAR(64) PRIMARY KEY |
+| `station_name` | VARCHAR(80) NOT NULL |
+| `created_by` | VARCHAR(128) NOT NULL |

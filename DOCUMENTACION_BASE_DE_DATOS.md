@@ -93,3 +93,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 
 ## `station_operator_access_codes`  _(creada en V5)_
 
+| Columna | Tipo y restricciones |
+|---|---|
+| `code_id` | VARCHAR(36) PRIMARY KEY |
+| `code_hash` | VARCHAR(64) NOT NULL UNIQUE |

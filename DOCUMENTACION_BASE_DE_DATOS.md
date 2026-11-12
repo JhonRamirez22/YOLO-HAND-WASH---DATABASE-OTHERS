@@ -57,3 +57,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 | `(restricción)` | CHECK (confidence IS NULL OR (confidence >= 0 AND confidence <= 1)) |
 | `prev_hash` | CHAR(64) _(añadida en V11)_ |
 | `event_hash` | CHAR(64) _(añadida en V11)_ |
+
+## `station_enrollment_codes`  _(creada en V3)_
+
+| Columna | Tipo y restricciones |

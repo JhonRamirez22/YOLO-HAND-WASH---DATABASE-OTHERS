@@ -73,3 +73,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 ## `handwash_stations`  _(creada en V3)_
 
 | Columna | Tipo y restricciones |
+|---|---|
+| `station_id` | VARCHAR(36) PRIMARY KEY |
+| `station_name` | VARCHAR(80) NOT NULL |
+| `credential_hash` | VARCHAR(64) NOT NULL UNIQUE |

@@ -101,3 +101,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 | `target_email` | VARCHAR(254) NOT NULL |
 | `created_by` | VARCHAR(128) NOT NULL |
 | `created_at_epoch_ms` | BIGINT NOT NULL |
+| `consumed_at_epoch_ms` | BIGINT |
+| `consumed_by` | VARCHAR(128) |
+| `revoked_at_epoch_ms` | BIGINT |
+

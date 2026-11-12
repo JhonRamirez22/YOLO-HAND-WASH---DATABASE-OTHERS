@@ -77,3 +77,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 | `station_id` | VARCHAR(36) PRIMARY KEY |
 | `station_name` | VARCHAR(80) NOT NULL |
 | `credential_hash` | VARCHAR(64) NOT NULL UNIQUE |
+| `created_at_epoch_ms` | BIGINT NOT NULL |
+| `created_by` | VARCHAR(128) NOT NULL |
+| `revoked_at_epoch_ms` | BIGINT |
+| `last_started_at_epoch_ms` | BIGINT |

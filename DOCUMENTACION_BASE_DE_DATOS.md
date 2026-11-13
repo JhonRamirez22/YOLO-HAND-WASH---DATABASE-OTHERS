@@ -117,3 +117,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 | `granted_by` | VARCHAR(128) NOT NULL |
 | `granted_at_epoch_ms` | BIGINT NOT NULL |
 | `revoked_at_epoch_ms` | BIGINT |
+
+- Relación: `station_id VARCHAR(36) NOT NULL REFERENCES handwash_stations(station_id)`
+
+## `friction_attempt_validation`  _(creada en V6)_

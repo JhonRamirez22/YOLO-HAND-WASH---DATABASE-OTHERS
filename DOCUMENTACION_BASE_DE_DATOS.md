@@ -141,3 +141,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 | `slow` | BOOLEAN NOT NULL DEFAULT FALSE _(añadida en V8)_ |
 | `outcome` | VARCHAR(16)
     CHECK (outcome IN ('CORRECTO', 'REPORTADO', 'REINICIADO', 'INTERRUMPIDO')) _(añadida en V8)_ |
+| `evidence_status` | VARCHAR(24)
+    CHECK (evidence_status IN ('DESACTIVADA', 'PENDIENTE', 'CAPTURADA', 'NO_CAPTURADA', 'EXPIRADA')) _(añadida en V8)_ |
+| `score_pct` | INTEGER
+    CHECK (score_pct BETWEEN 0 AND 100) _(añadida en V17)_ |

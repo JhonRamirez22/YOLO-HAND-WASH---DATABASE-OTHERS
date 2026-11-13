@@ -109,3 +109,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 
 ## `station_operator_grants`  _(creada en V5)_
 
+| Columna | Tipo y restricciones |
+|---|---|
+| `cognito_subject` | VARCHAR(128) PRIMARY KEY |
+| `email` | VARCHAR(254) NOT NULL |

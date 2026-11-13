@@ -113,3 +113,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 |---|---|
 | `cognito_subject` | VARCHAR(128) PRIMARY KEY |
 | `email` | VARCHAR(254) NOT NULL |
+| `station_id` | VARCHAR(36) NOT NULL REFERENCES handwash_stations(station_id) |
+| `granted_by` | VARCHAR(128) NOT NULL |
+| `granted_at_epoch_ms` | BIGINT NOT NULL |
+| `revoked_at_epoch_ms` | BIGINT |

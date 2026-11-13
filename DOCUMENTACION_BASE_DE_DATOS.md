@@ -129,3 +129,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 | `policy_version` | VARCHAR(48) NOT NULL |
 | `revision` | BIGINT NOT NULL |
 | `status` | VARCHAR(32) NOT NULL |
+| `result` | VARCHAR(48) |
+| `reason` | VARCHAR(80) |
+| `terminal` | BOOLEAN NOT NULL |
+| `created_at_epoch_ms` | BIGINT NOT NULL |

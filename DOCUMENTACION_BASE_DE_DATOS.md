@@ -137,3 +137,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 | `(restricción)` | PRIMARY KEY (session_id, attempt_number) |
 | `started_at_epoch_ms` | BIGINT _(añadida en V8)_ |
 | `finished_at_epoch_ms` | BIGINT _(añadida en V8)_ |
+| `duration_ms` | BIGINT CHECK (duration_ms >= 0) _(añadida en V8)_ |
+| `slow` | BOOLEAN NOT NULL DEFAULT FALSE _(añadida en V8)_ |
+| `outcome` | VARCHAR(16)
+    CHECK (outcome IN ('CORRECTO', 'REPORTADO', 'REINICIADO', 'INTERRUMPIDO')) _(añadida en V8)_ |

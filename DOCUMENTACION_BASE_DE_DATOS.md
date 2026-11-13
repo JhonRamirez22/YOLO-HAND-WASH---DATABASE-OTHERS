@@ -133,3 +133,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 | `reason` | VARCHAR(80) |
 | `terminal` | BOOLEAN NOT NULL |
 | `created_at_epoch_ms` | BIGINT NOT NULL |
+| `updated_at_epoch_ms` | BIGINT NOT NULL |
+| `(restricción)` | PRIMARY KEY (session_id, attempt_number) |
+| `started_at_epoch_ms` | BIGINT _(añadida en V8)_ |
+| `finished_at_epoch_ms` | BIGINT _(añadida en V8)_ |

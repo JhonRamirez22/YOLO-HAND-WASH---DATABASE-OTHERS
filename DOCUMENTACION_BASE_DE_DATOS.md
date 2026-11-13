@@ -145,3 +145,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
     CHECK (evidence_status IN ('DESACTIVADA', 'PENDIENTE', 'CAPTURADA', 'NO_CAPTURADA', 'EXPIRADA')) _(añadida en V8)_ |
 | `score_pct` | INTEGER
     CHECK (score_pct BETWEEN 0 AND 100) _(añadida en V17)_ |
+| `verdict` | VARCHAR(10)
+    CHECK (verdict IN ('CORRECTO', 'RECHAZADO')) _(añadida en V17)_ |
+
+## `friction_step_validation`  _(creada en V6)_

@@ -121,3 +121,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 - Relación: `station_id VARCHAR(36) NOT NULL REFERENCES handwash_stations(station_id)`
 
 ## `friction_attempt_validation`  _(creada en V6)_
+
+| Columna | Tipo y restricciones |
+|---|---|
+| `session_id` | VARCHAR(36) NOT NULL |

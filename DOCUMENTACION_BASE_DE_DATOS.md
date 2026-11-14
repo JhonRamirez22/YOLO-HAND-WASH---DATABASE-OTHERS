@@ -149,3 +149,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
     CHECK (verdict IN ('CORRECTO', 'RECHAZADO')) _(añadida en V17)_ |
 
 ## `friction_step_validation`  _(creada en V6)_
+
+| Columna | Tipo y restricciones |
+|---|---|
+| `session_id` | VARCHAR(36) NOT NULL |

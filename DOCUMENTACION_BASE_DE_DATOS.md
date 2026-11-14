@@ -157,3 +157,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 | `step_code` | VARCHAR(64) NOT NULL |
 | `status` | VARCHAR(32) NOT NULL |
 | `credited_ms` | BIGINT NOT NULL CHECK (credited_ms >= 0) |
+| `required_ms` | BIGINT NOT NULL CHECK (required_ms > 0) |
+| `reason` | VARCHAR(80) |
+| `(restricción)` | PRIMARY KEY (session_id, attempt_number, step_code) |
+| `quality_pct` | INTEGER

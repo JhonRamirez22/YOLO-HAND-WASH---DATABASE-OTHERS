@@ -153,3 +153,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 | Columna | Tipo y restricciones |
 |---|---|
 | `session_id` | VARCHAR(36) NOT NULL |
+| `attempt_number` | INTEGER NOT NULL |
+| `step_code` | VARCHAR(64) NOT NULL |
+| `status` | VARCHAR(32) NOT NULL |
+| `credited_ms` | BIGINT NOT NULL CHECK (credited_ms >= 0) |

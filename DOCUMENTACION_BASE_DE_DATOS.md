@@ -181,3 +181,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 | `created_at_epoch_ms` | BIGINT NOT NULL CHECK (created_at_epoch_ms >= 0) |
 | `reason` | VARCHAR(200) _(añadida en V12)_ |
 | `reverted_from` | INTEGER _(añadida en V12)_ |
+| `status` | VARCHAR(10) NOT NULL DEFAULT 'ACTIVE' _(añadida en V12)_ |
+| `decided_by` | VARCHAR(128) _(añadida en V12)_ |
+| `decided_at_epoch_ms` | BIGINT _(añadida en V12)_ |
+

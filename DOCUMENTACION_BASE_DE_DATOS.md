@@ -161,3 +161,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 | `reason` | VARCHAR(80) |
 | `(restricción)` | PRIMARY KEY (session_id, attempt_number, step_code) |
 | `quality_pct` | INTEGER
+    CHECK (quality_pct BETWEEN 0 AND 100) _(añadida en V17)_ |
+
+- Relación: `FOREIGN KEY (session_id, attempt_number) REFERENCES friction_attempt_validation(session_id, attempt_number)`
+

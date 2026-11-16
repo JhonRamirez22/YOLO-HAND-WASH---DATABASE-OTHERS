@@ -185,3 +185,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 | `decided_by` | VARCHAR(128) _(añadida en V12)_ |
 | `decided_at_epoch_ms` | BIGINT _(añadida en V12)_ |
 
+## `wash_report_evidence`  _(creada en V8)_
+
+| Columna | Tipo y restricciones |
+|---|---|

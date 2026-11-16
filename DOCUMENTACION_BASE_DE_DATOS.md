@@ -189,3 +189,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 
 | Columna | Tipo y restricciones |
 |---|---|
+| `session_id` | VARCHAR(36) NOT NULL |
+| `attempt_number` | INTEGER NOT NULL |
+| `object_key` | VARCHAR(256) NOT NULL |
+| `sha256` | CHAR(64) NOT NULL |

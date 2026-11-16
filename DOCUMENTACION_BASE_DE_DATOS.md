@@ -177,3 +177,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 | `step_5_ms` | BIGINT NOT NULL CHECK (step_5_ms BETWEEN 3000 AND 15000) |
 | `step_6_ms` | BIGINT NOT NULL CHECK (step_6_ms BETWEEN 3000 AND 15000) |
 | `slow_threshold_ms` | BIGINT NOT NULL CHECK (slow_threshold_ms BETWEEN 40000 AND 120000) |
+| `created_by` | VARCHAR(128) NOT NULL |
+| `created_at_epoch_ms` | BIGINT NOT NULL CHECK (created_at_epoch_ms >= 0) |
+| `reason` | VARCHAR(200) _(añadida en V12)_ |
+| `reverted_from` | INTEGER _(añadida en V12)_ |

@@ -165,3 +165,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 
 - Relación: `FOREIGN KEY (session_id, attempt_number) REFERENCES friction_attempt_validation(session_id, attempt_number)`
 
+## `protocol_profiles`  _(creada en V7)_
+
+| Columna | Tipo y restricciones |
+|---|---|

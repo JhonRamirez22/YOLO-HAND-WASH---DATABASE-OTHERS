@@ -197,3 +197,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 | `expires_at_epoch_ms` | BIGINT NOT NULL CHECK (expires_at_epoch_ms > captured_at_epoch_ms) |
 | `(restricción)` | PRIMARY KEY (session_id, attempt_number) |
 
+- Relación: `FOREIGN KEY (session_id, attempt_number) REFERENCES friction_attempt_validation(session_id, attempt_number)`
+
+## `station_shifts`  _(creada en V9)_
+

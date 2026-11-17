@@ -201,3 +201,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 
 ## `station_shifts`  _(creada en V9)_
 
+| Columna | Tipo y restricciones |
+|---|---|
+| `shift_id` | VARCHAR(36) PRIMARY KEY |
+| `station_id` | VARCHAR(36) NOT NULL REFERENCES handwash_stations(station_id) |

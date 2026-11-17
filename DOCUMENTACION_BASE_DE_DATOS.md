@@ -237,3 +237,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 | `last_event_id` | BIGINT |
 | `last_hash` | CHAR(64) NOT NULL |
 | `(restricción)` | CONSTRAINT chk_audit_chain_head_single CHECK (id = 1) |
+
+## `audit_seals`  _(creada en V11)_
+
+| Columna | Tipo y restricciones |

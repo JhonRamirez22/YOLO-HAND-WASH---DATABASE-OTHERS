@@ -217,3 +217,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 | `(restricción)` | CONSTRAINT chk_shift_closed CHECK ((ended_at_epoch_ms IS NULL) = (end_reason IS NULL)) |
 | `(restricción)` | CONSTRAINT chk_shift_open_marker CHECK ((ended_at_epoch_ms IS NULL) = (open_station_id IS NOT NULL)) |
 
+- Relación: `station_id VARCHAR(36) NOT NULL REFERENCES handwash_stations(station_id)`
+
+## `evidence_settings`  _(creada en V10)_
+

@@ -229,3 +229,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 | `updated_at_epoch_ms` | BIGINT NOT NULL CHECK (updated_at_epoch_ms >= 0) |
 | `(restricción)` | CONSTRAINT chk_evidence_settings_single CHECK (id = 1) |
 
+## `audit_chain_head`  _(creada en V11)_
+
+| Columna | Tipo y restricciones |
+|---|---|

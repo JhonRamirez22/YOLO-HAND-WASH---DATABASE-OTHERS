@@ -209,3 +209,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 | `started_by` | VARCHAR(128) NOT NULL |
 | `started_at_epoch_ms` | BIGINT NOT NULL |
 | `ends_at_epoch_ms` | BIGINT NOT NULL |
+| `ended_at_epoch_ms` | BIGINT |
+| `end_reason` | VARCHAR(24) CHECK (end_reason IN ('EXPIRED', 'STOPPED', 'STATION_REVOKED')) |
+| `open_station_id` | VARCHAR(36) |
+| `(restricción)` | CONSTRAINT uq_station_open_shift UNIQUE (open_station_id) |

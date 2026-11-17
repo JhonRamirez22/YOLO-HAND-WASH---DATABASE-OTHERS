@@ -221,3 +221,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 
 ## `evidence_settings`  _(creada en V10)_
 
+| Columna | Tipo y restricciones |
+|---|---|
+| `id` | SMALLINT PRIMARY KEY |
+| `capture_enabled` | BOOLEAN NOT NULL |

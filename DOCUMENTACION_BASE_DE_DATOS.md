@@ -265,3 +265,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 | `(restricción)` | CONSTRAINT chk_change_control_single CHECK (id = 1) |
 
 ## `model_releases`  _(creada en V12)_
+
+| Columna | Tipo y restricciones |
+|---|---|
+| `model_sha256` | CHAR(64) NOT NULL |

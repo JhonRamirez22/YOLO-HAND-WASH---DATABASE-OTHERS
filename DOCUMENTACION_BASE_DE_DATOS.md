@@ -261,3 +261,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 | `id` | SMALLINT PRIMARY KEY |
 | `second_approver_required` | BOOLEAN NOT NULL |
 | `updated_by` | VARCHAR(128) NOT NULL |
+| `updated_at_epoch_ms` | BIGINT NOT NULL CHECK (updated_at_epoch_ms >= 0) |
+| `(restricción)` | CONSTRAINT chk_change_control_single CHECK (id = 1) |
+
+## `model_releases`  _(creada en V12)_

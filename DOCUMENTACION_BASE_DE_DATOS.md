@@ -257,3 +257,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 ## `change_control_settings`  _(creada en V12)_
 
 | Columna | Tipo y restricciones |
+|---|---|
+| `id` | SMALLINT PRIMARY KEY |
+| `second_approver_required` | BOOLEAN NOT NULL |
+| `updated_by` | VARCHAR(128) NOT NULL |

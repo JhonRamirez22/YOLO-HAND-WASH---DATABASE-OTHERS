@@ -253,3 +253,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 | `keyed` | BOOLEAN NOT NULL |
 | `signature` | CHAR(64) NOT NULL |
 | `object_key` | VARCHAR(160) |
+
+## `change_control_settings`  _(creada en V12)_
+
+| Columna | Tipo y restricciones |

@@ -273,3 +273,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 | `dataset_version` | VARCHAR(128) NOT NULL |
 | `first_seen_epoch_ms` | BIGINT NOT NULL CHECK (first_seen_epoch_ms >= 0) |
 | `(restricción)` | PRIMARY KEY (model_sha256, model_version, dataset_version) |
+
+## `validation_reports`  _(creada en V12)_
+
+| Columna | Tipo y restricciones |

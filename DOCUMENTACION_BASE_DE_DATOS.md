@@ -309,3 +309,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 
 | Columna | Tipo y restricciones |
 |---|---|
+| `token_hash` | VARCHAR(64) PRIMARY KEY |
+| `key_id` | VARCHAR(16) NOT NULL REFERENCES api_keys(key_id) |
+| `expires_at_epoch_ms` | BIGINT NOT NULL |
+

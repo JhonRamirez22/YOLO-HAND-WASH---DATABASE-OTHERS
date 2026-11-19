@@ -313,3 +313,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 | `key_id` | VARCHAR(16) NOT NULL REFERENCES api_keys(key_id) |
 | `expires_at_epoch_ms` | BIGINT NOT NULL |
 
+- Relación: `key_id VARCHAR(16) NOT NULL REFERENCES api_keys(key_id)`
+
+## `admin_accounts`  _(creada en V16)_
+

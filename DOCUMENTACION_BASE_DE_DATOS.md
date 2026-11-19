@@ -289,3 +289,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 
 ## `api_keys`  _(creada en V14)_
 
+| Columna | Tipo y restricciones |
+|---|---|
+| `key_id` | VARCHAR(16) PRIMARY KEY |
+| `station_id` | VARCHAR(36) NOT NULL REFERENCES handwash_stations(station_id) |

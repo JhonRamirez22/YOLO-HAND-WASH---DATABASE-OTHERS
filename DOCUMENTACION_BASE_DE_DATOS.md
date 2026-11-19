@@ -301,3 +301,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 | `last_used_at_epoch_ms` | BIGINT |
 | `last_used_ip` | VARCHAR(64) |
 | `revoked_at_epoch_ms` | BIGINT |
+| `revoked_by` | VARCHAR(128) |
+
+- Relación: `station_id VARCHAR(36) NOT NULL REFERENCES handwash_stations(station_id)`
+

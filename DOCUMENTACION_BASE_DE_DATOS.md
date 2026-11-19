@@ -325,3 +325,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 | `totp_secret_enc` | VARCHAR(200) NOT NULL |
 | `totp_confirmed` | BOOLEAN NOT NULL DEFAULT FALSE |
 | `last_totp_step` | BIGINT NOT NULL DEFAULT 0 |
+| `password_failures` | INTEGER NOT NULL DEFAULT 0 |
+| `totp_failures` | INTEGER NOT NULL DEFAULT 0 |
+| `failure_window_start_ms` | BIGINT |
+| `locked_until_ms` | BIGINT |

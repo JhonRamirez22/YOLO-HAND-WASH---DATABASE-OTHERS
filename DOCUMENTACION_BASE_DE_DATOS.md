@@ -329,3 +329,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 | `totp_failures` | INTEGER NOT NULL DEFAULT 0 |
 | `failure_window_start_ms` | BIGINT |
 | `locked_until_ms` | BIGINT |
+| `created_at_epoch_ms` | BIGINT NOT NULL |
+| `disabled` | BOOLEAN NOT NULL DEFAULT FALSE |
+
+## `admin_sessions`  _(creada en V16)_

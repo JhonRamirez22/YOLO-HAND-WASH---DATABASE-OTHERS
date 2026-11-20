@@ -337,3 +337,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 | Columna | Tipo y restricciones |
 |---|---|
 | `token_hash` | VARCHAR(64) PRIMARY KEY |
+| `account_id` | BIGINT NOT NULL REFERENCES admin_accounts(account_id) |
+| `expires_at_epoch_ms` | BIGINT NOT NULL |
+
+- Relación: `account_id BIGINT NOT NULL REFERENCES admin_accounts(account_id)`

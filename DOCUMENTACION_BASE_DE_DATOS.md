@@ -333,3 +333,7 @@ Generado a partir de las migraciones Flyway `V1`–`V17` (fuente de verdad). Sol
 | `disabled` | BOOLEAN NOT NULL DEFAULT FALSE |
 
 ## `admin_sessions`  _(creada en V16)_
+
+| Columna | Tipo y restricciones |
+|---|---|
+| `token_hash` | VARCHAR(64) PRIMARY KEY |
